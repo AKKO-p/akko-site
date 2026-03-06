@@ -14,7 +14,7 @@
   --accent-glow: rgba(108,99,255,0.15);
   --text: #fafafa;
   --text-secondary: #a1a1aa;
-  --text-muted: #52525b;
+  --text-muted: #71717a;
   --green: #22c55e;
   --radius: 12px;
   --radius-sm: 8px;
@@ -284,11 +284,14 @@ nav {
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
   font-size: 0.82rem;
   line-height: 1.8;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .terminal-line {
   display: flex;
   gap: 10px;
+  white-space: nowrap;
 }
 
 .t-prompt { color: var(--accent); font-weight: 600; }
