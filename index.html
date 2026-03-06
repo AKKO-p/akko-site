@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AKKO — Own Every Layer</title>
-  <meta name="description" content="Stop renting your data stack. AKKO is the 100% open source data platform — 26 services, one command. Lakehouse, AI, governance, monitoring. All yours. Forever.">
+  <meta name="description" content="AKKO is the open source platform where AI, data engineering, and analytics converge. 26 next-gen services. Deploy anywhere — on-premise, cloud, or air-gapped. Achieve technological independence.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='8' y='8' width='64' height='64' rx='6' stroke='%236c63ff' stroke-width='4' fill='none'/%3E%3Crect x='28' y='28' width='24' height='24' rx='3' fill='%236c63ff'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,13 +21,22 @@
       <span>AKKO</span>
     </a>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#get-started">Get Started</a>
+      <a href="#features" data-lang="en" class="active">Features</a>
+      <a href="#features" data-lang="fr">Fonctionnalités</a>
+      <a href="#use-cases" data-lang="en" class="active">Use Cases</a>
+      <a href="#use-cases" data-lang="fr">Cas d'usage</a>
+      <a href="#architecture" data-lang="en" class="active">Architecture</a>
+      <a href="#architecture" data-lang="fr">Architecture</a>
+      <a href="#get-started" data-lang="en" class="active">Get Started</a>
+      <a href="#get-started" data-lang="fr">Démarrer</a>
       <a href="https://github.com/AKKO-p/AKKO" class="nav-github" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         GitHub
       </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-set-lang="en">EN</button>
+        <button class="lang-btn" data-set-lang="fr">FR</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -35,13 +44,22 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge">
+    <div class="hero-badge" data-lang="en" class="active">
       <span class="badge-dot"></span>
       Open Source &middot; Apache 2.0 &middot; Free Forever
     </div>
-    <h1>Stop renting your data stack.<br><span class="gradient-text">Own it.</span></h1>
-    <p class="hero-sub">AKKO replaces Databricks, Snowflake, and a dozen SaaS tools with 26 integrated open source services. One command. Your servers. No bills, no lock-in, no API calls home.</p>
-    <div class="hero-actions">
+    <div class="hero-badge" data-lang="fr">
+      <span class="badge-dot"></span>
+      Open Source &middot; Apache 2.0 &middot; Gratuit pour toujours
+    </div>
+
+    <h1 data-lang="en">AI. Engineering. Analytics.<br><span class="gradient-text">Achieve Technological Independence.</span></h1>
+    <h1 data-lang="fr">IA. Engineering. Analytique.<br><span class="gradient-text">Atteignez l'indépendance technologique.</span></h1>
+
+    <p class="hero-sub" data-lang="en">AKKO unifies the tools that AI teams, data engineers, and analysts need — in a single open source stack. Deploy anywhere: on-premise, in the cloud, or air-gapped. No vendor lock-in. No proprietary formats. Full sovereignty over your data and infrastructure.</p>
+    <p class="hero-sub" data-lang="fr">AKKO unifie les outils dont les équipes IA, les data engineers et les analystes ont besoin — dans une stack open source unique. Déployez partout&nbsp;: on-premise, dans le cloud ou en environnement déconnecté. Zéro verrouillage fournisseur. Zéro format propriétaire. Souveraineté totale sur vos données et votre infrastructure.</p>
+
+    <div class="hero-actions" data-lang="en">
       <a href="#get-started" class="btn-primary">
         Deploy in 5 Minutes
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -49,6 +67,16 @@
       <a href="https://github.com/AKKO-p/AKKO" class="btn-ghost" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         Star on GitHub
+      </a>
+    </div>
+    <div class="hero-actions" data-lang="fr">
+      <a href="#get-started" class="btn-primary">
+        Déployer en 5 minutes
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://github.com/AKKO-p/AKKO" class="btn-ghost" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        Star sur GitHub
       </a>
     </div>
 
@@ -88,15 +116,20 @@
 
 <!-- STATS -->
 <section class="stats-bar">
-  <div class="stats-inner">
+  <div class="stats-inner" data-lang="en">
     <div class="stat">
       <span class="stat-num">26</span>
       <span class="stat-label">Services, Wired Together</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
-      <span class="stat-num">100%</span>
-      <span class="stat-label">Open Source (Apache 2.0)</span>
+      <span class="stat-num">4</span>
+      <span class="stat-label">Languages (Python, R, Julia, SQL)</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">21</span>
+      <span class="stat-label">VS Code Extensions Built In</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
@@ -109,34 +142,90 @@
       <span class="stat-label">License Cost. Forever.</span>
     </div>
   </div>
+  <div class="stats-inner" data-lang="fr">
+    <div class="stat">
+      <span class="stat-num">26</span>
+      <span class="stat-label">Services interconnectés</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Langages (Python, R, Julia, SQL)</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">21</span>
+      <span class="stat-label">Extensions VS Code intégrées</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">5 min</span>
+      <span class="stat-label">Du clone à la production</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">0 €</span>
+      <span class="stat-label">Coût de licence. Pour toujours.</span>
+    </div>
+  </div>
 </section>
 
 <!-- PROBLEM -->
 <section class="problem" id="problem">
   <div class="container">
-    <div class="problem-grid">
+    <div class="problem-grid" data-lang="en">
       <div class="problem-card problem-before">
         <span class="problem-label">Without AKKO</span>
         <ul>
           <li>6-18 months stitching 15+ tools together</li>
-          <li>$50K-500K/year burned on cloud licenses</li>
+          <li>$50K-500K/year in platform and cloud licenses</li>
           <li>1-3 full-time engineers just keeping the lights on</li>
           <li>Data trapped in proprietary formats you can't export</li>
           <li>A different login for every single service</li>
+          <li>Your team juggles between 5 different IDEs and tools</li>
           <li>No lineage. No catalog. No idea where data flows.</li>
-          <li>Vendor raises prices? Start over.</li>
+          <li>Your vendor raises prices? You rebuild from scratch.</li>
         </ul>
       </div>
       <div class="problem-card problem-after">
         <span class="problem-label">With AKKO</span>
         <ul>
-          <li>5 minutes from git clone to full platform</li>
-          <li>$0 in software licenses. Run it on a $150/month server.</li>
+          <li>5 minutes from git clone to full stack</li>
+          <li>$0 in software licenses. Deploy on-premise or in any cloud.</li>
           <li>Zero infra team needed. It works out of the box.</li>
-          <li>Apache Iceberg format. Portable. Open. Yours.</li>
+          <li>Apache Iceberg format. Portable. Open. No lock-in.</li>
           <li>Keycloak SSO. One login. 14 clients. Done.</li>
+          <li>One IDE for everyone — notebooks, VS Code, reports, AI assistant</li>
           <li>OpenMetadata + OpenLineage. Automatic governance.</li>
           <li>Swap any service. The rest keeps running.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="problem-grid" data-lang="fr">
+      <div class="problem-card problem-before">
+        <span class="problem-label">Sans AKKO</span>
+        <ul>
+          <li>6 à 18 mois pour assembler plus de 15 outils</li>
+          <li>50 000 à 500 000 €/an en licences cloud</li>
+          <li>1 à 3 ingénieurs à temps plein juste pour maintenir l'ensemble</li>
+          <li>Données piégées dans des formats propriétaires impossibles à exporter</li>
+          <li>Un identifiant différent pour chaque service</li>
+          <li>Votre équipe jongle entre 5 IDE et outils différents</li>
+          <li>Pas de lignage. Pas de catalogue. Aucune visibilité sur les flux.</li>
+          <li>Le fournisseur augmente ses prix&nbsp;? Vous repartez de zéro.</li>
+        </ul>
+      </div>
+      <div class="problem-card problem-after">
+        <span class="problem-label">Avec AKKO</span>
+        <ul>
+          <li>5 minutes entre le git clone et la stack complète</li>
+          <li>0 € de licence logicielle. Déployez on-premise ou dans n'importe quel cloud.</li>
+          <li>Aucune équipe infrastructure requise. Tout fonctionne immédiatement.</li>
+          <li>Format Apache Iceberg. Portable. Ouvert. Aucun verrouillage.</li>
+          <li>SSO Keycloak. Un seul identifiant. 14 clients. C'est fait.</li>
+          <li>Un seul IDE pour tous — notebooks, VS Code, rapports, assistant IA</li>
+          <li>OpenMetadata + OpenLineage. Gouvernance automatique.</li>
+          <li>Remplacez n'importe quel service. Le reste continue de tourner.</li>
         </ul>
       </div>
     </div>
@@ -146,35 +235,37 @@
 <!-- FEATURES -->
 <section class="features" id="features">
   <div class="container">
-    <span class="section-label">Platform</span>
-    <h2 class="section-title">Not a bundle of tools.<br>A platform that works.</h2>
-    <p class="section-sub">26 services, deeply integrated. Unified SSO, automatic lineage, pre-configured monitoring. Replace any layer without touching the others.</p>
+    <span class="section-label" data-lang="en">Capabilities</span>
+    <span class="section-label" data-lang="fr">Fonctionnalités</span>
 
-    <div class="features-grid">
+    <h2 class="section-title" data-lang="en">Where AI, engineering,<br>and analytics converge.</h2>
+    <h2 class="section-title" data-lang="fr">Là où l'IA, l'engineering<br>et l'analytique convergent.</h2>
+
+    <p class="section-sub" data-lang="en">26 next-generation services, deeply integrated. IDE, lakehouse, sovereign AI, governance, monitoring — all connected. Replace any layer without touching the others. Deploy on-premise or in the cloud.</p>
+    <p class="section-sub" data-lang="fr">26 services dernière génération, profondément intégrés. IDE, lakehouse, IA souveraine, gouvernance, monitoring — tout est connecté. Remplacez n'importe quelle couche sans toucher aux autres. Déployez on-premise ou dans le cloud.</p>
+
+    <div class="features-grid" data-lang="en">
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #3b82f6;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
         <h3>Your Data Stays Portable</h3>
-        <p>Apache Iceberg with ACID transactions, time-travel, schema evolution. Polaris catalog with RBAC. Stored on MinIO. No format lock-in. Ever.</p>
+        <p>Apache Iceberg (not Hive) with ACID transactions, time-travel, schema evolution. Apache Polaris catalog (not Hive Metastore) with RBAC. Stored on MinIO. No format lock-in. Ever.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #f59e0b;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <h3>Query Anything, Anywhere</h3>
-        <p>Spark for heavy compute. Trino for federated SQL across Iceberg and PostgreSQL. Airflow for orchestration with OpenLineage tracking every step.</p>
+        <p>Spark Connect for heavy compute (not legacy Spark). Trino for federated SQL across Iceberg and PostgreSQL. Airflow for orchestration with OpenLineage tracking every step. All state-of-the-art 2025 engines.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #8b5cf6;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         </div>
-        <h3>AI That Never Phones Home</h3>
-        <p>Ollama runs LLMs locally. pgvector stores RAG embeddings. jupyter-ai for conversational AI. Your data never leaves your infrastructure. Period.</p>
+        <h3>Sovereign AI, Built Into Your Notebooks</h3>
+        <p>Ollama runs LLMs locally (Mistral, TinyLlama). pgvector stores RAG embeddings in PostgreSQL. jupyter-ai adds a conversational AI assistant directly inside your notebooks. LangChain pipelines ready to go. Zero calls to OpenAI, Google, or Anthropic. Your data stays yours.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #22c55e;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
@@ -182,7 +273,6 @@
         <h3>Know Where Every Byte Goes</h3>
         <p>OpenMetadata for catalog, lineage, PII classification, glossary, data quality tests. Domains, data products, ownership — automated from day one.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #ef4444;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -190,7 +280,6 @@
         <h3>One Login. Every Service.</h3>
         <p>Keycloak SSO with 14 pre-configured OAuth clients. 4 RBAC roles. Trino row-level access control. Authenticate once, access everything.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #06b6d4;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
@@ -198,15 +287,13 @@
         <h3>See Everything. Miss Nothing.</h3>
         <p>Prometheus metrics. Grafana dashboards. Loki logs. AlertManager alerts. Full observability for every service, pre-configured and ready.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #ec4899;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
         </div>
-        <h3>Code in Any Language</h3>
-        <p>JupyterHub with Python, R, Julia, VS Code, and Quarto. Pre-installed libraries. Publish reports. code-server built in for full IDE experience.</p>
+        <h3>A Professional IDE in Your Browser</h3>
+        <p>code-server (VS Code) with 21 pre-installed extensions — Python, Jupyter, SQLTools, dbt Power User, Git Lens, REST Client, and more. JupyterHub with Python, R (IRkernel), and Julia (IJulia) kernels. Quarto for publishing reports as HTML, PDF, or full websites. No local install. Open a tab, start coding.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #f97316;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
@@ -215,65 +302,287 @@
         <p>Apache Superset with auto-provisioned datasets, charts, and dashboards. SQL Lab for ad-hoc queries. Connected to Iceberg and PostgreSQL through Trino.</p>
       </div>
     </div>
+
+    <div class="features-grid" data-lang="fr">
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #3b82f6;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Vos données restent portables</h3>
+        <p>Apache Iceberg (pas Hive) avec transactions ACID, voyage dans le temps, évolution de schéma. Catalogue Apache Polaris (pas Hive Metastore) avec RBAC. Stockées sur MinIO. Aucun verrouillage de format. Jamais.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #f59e0b;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Interrogez tout, partout</h3>
+        <p>Spark Connect pour le calcul intensif (pas du Spark legacy). Trino pour le SQL fédéré entre Iceberg et PostgreSQL. Airflow pour l'orchestration avec OpenLineage qui trace chaque étape. Des moteurs state-of-the-art 2025.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #8b5cf6;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <h3>IA souveraine, intégrée dans vos notebooks</h3>
+        <p>Ollama fait tourner les LLM en local (Mistral, TinyLlama). pgvector stocke les embeddings RAG dans PostgreSQL. jupyter-ai ajoute un assistant IA conversationnel directement dans vos notebooks. Pipelines LangChain prêts à l'emploi. Zéro appel vers OpenAI, Google ou Anthropic. Vos données restent les vôtres.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #22c55e;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <h3>Sachez où va chaque octet</h3>
+        <p>OpenMetadata pour le catalogue, le lignage, la classification PII, le glossaire et les tests de qualité. Domaines, produits de données, propriétaires — automatisés dès le premier jour.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #ef4444;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3>Un seul identifiant. Tous les services.</h3>
+        <p>SSO Keycloak avec 14 clients OAuth préconfigurés. 4 rôles RBAC. Contrôle d'accès Trino par ligne. Connectez-vous une fois, accédez à tout.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #06b6d4;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Tout voir. Ne rien manquer.</h3>
+        <p>Métriques Prometheus. Tableaux de bord Grafana. Logs Loki. Alertes AlertManager. Observabilité complète pour chaque service, préconfigurée et prête.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #ec4899;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+        </div>
+        <h3>Un IDE professionnel dans votre navigateur</h3>
+        <p>code-server (VS Code) avec 21 extensions préinstallées — Python, Jupyter, SQLTools, dbt Power User, Git Lens, REST Client, et bien plus. JupyterHub avec les kernels Python, R (IRkernel) et Julia (IJulia). Quarto pour publier vos rapports en HTML, PDF ou sites web complets. Aucune installation locale. Ouvrez un onglet, codez.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #f97316;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Des tableaux de bord qui se construisent seuls</h3>
+        <p>Apache Superset avec jeux de données, graphiques et tableaux de bord autoprovisionnés. SQL Lab pour les requêtes ad hoc. Connecté à Iceberg et PostgreSQL via Trino.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="use-cases" id="use-cases">
+  <div class="container">
+    <span class="section-label" data-lang="en">Use Cases</span>
+    <span class="section-label" data-lang="fr">Cas d'usage</span>
+
+    <h2 class="section-title" data-lang="en">Real people. Real workflows.<br>One unified stack.</h2>
+    <h2 class="section-title" data-lang="fr">Des utilisateurs concrets. Des workflows concrets.<br>Une stack unifiée.</h2>
+
+    <p class="section-sub" data-lang="en">Five roles, five journeys through AKKO. Every use case shows how services work together &mdash; not in isolation.</p>
+    <p class="section-sub" data-lang="fr">Cinq profils, cinq parcours au sein d'AKKO. Chaque cas d'usage illustre l'int&eacute;gration entre les services &mdash; jamais un outil isol&eacute;.</p>
+
+    <div class="stories" data-lang="en">
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(59,130,246,0.12);">&#128736;</div>
+        <div>
+          <h3>Building an End-to-End Data Pipeline</h3>
+          <div class="story-persona">Amara Okonkwo, Data Engineer</div>
+          <p>Amara opens JupyterHub and writes a Spark notebook that ingests raw CSV files into Apache Iceberg tables stored on MinIO. She registers the tables in the Polaris catalog, then creates an Airflow DAG to orchestrate nightly refreshes. OpenLineage automatically captures every data movement. Within minutes, OpenMetadata displays the full lineage &mdash; from source files to curated tables &mdash; with no manual documentation required.</p>
+          <div class="story-services">
+            <span class="story-tag">JupyterHub</span>
+            <span class="story-tag">Spark</span>
+            <span class="story-tag">Iceberg</span>
+            <span class="story-tag">MinIO</span>
+            <span class="story-tag">Polaris</span>
+            <span class="story-tag">Airflow</span>
+            <span class="story-tag">OpenLineage</span>
+            <span class="story-tag">OpenMetadata</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(34,197,94,0.12);">&#128200;</div>
+        <div>
+          <h3>Exploring Data with Confidence</h3>
+          <div class="story-persona">Rafael Mendes, Business Analyst</div>
+          <p>Rafael searches OpenMetadata's catalog to find the datasets he needs &mdash; complete with descriptions, PII tags, and data quality scores. He jumps into Superset's SQL Lab and writes Trino queries that federate across Iceberg tables and PostgreSQL in a single statement. Satisfied with his findings, he builds an interactive dashboard and shares it with stakeholders. Every column he uses is documented, classified, and quality-tested.</p>
+          <div class="story-services">
+            <span class="story-tag">OpenMetadata</span>
+            <span class="story-tag">Trino</span>
+            <span class="story-tag">Superset</span>
+            <span class="story-tag">PostgreSQL</span>
+            <span class="story-tag">Iceberg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(236,72,153,0.12);">&#128187;</div>
+        <div>
+          <h3>Full IDE in the Browser &mdash; No Install Required</h3>
+          <div class="story-persona">Noa Lindqvist, Analytics Engineer</div>
+          <p>Noa opens code-server and lands in a full VS Code environment running in the browser &mdash; Dracula theme, 21 extensions pre-installed. They scaffold a dbt project using dbt Power User, inspect CSV files with Rainbow CSV, and test API endpoints with REST Client. Once the models compile, Noa writes a Quarto report that combines SQL results and markdown prose, then publishes it to AKKO Docs &mdash; accessible to the entire team without any local setup.</p>
+          <div class="story-services">
+            <span class="story-tag">code-server</span>
+            <span class="story-tag">JupyterHub</span>
+            <span class="story-tag">dbt</span>
+            <span class="story-tag">Quarto</span>
+            <span class="story-tag">AKKO Docs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(139,92,246,0.12);">&#129302;</div>
+        <div>
+          <h3>RAG Pipeline with Local AI &mdash; Zero Cloud APIs</h3>
+          <div class="story-persona">Wei Zhang, Data Scientist</div>
+          <p>Wei opens a Jupyter notebook and activates jupyter-ai to chat with a local Ollama model &mdash; no API key, no cloud call, no data exfiltration. He builds a RAG pipeline: documents are chunked, embedded with nomic-embed-text running on Ollama, and stored as vectors in pgvector. LangChain orchestrates retrieval and generation. The final results are rendered as a Quarto report and published internally. From embedding to answer, every byte stays on-premise.</p>
+          <div class="story-services">
+            <span class="story-tag">jupyter-ai</span>
+            <span class="story-tag">Ollama</span>
+            <span class="story-tag">pgvector</span>
+            <span class="story-tag">LangChain</span>
+            <span class="story-tag">JupyterHub</span>
+            <span class="story-tag">Quarto</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(239,68,68,0.12);">&#128737;</div>
+        <div>
+          <h3>Securing and Monitoring the Entire Platform</h3>
+          <div class="story-persona">Fatou Diallo, Platform Administrator</div>
+          <p>Fatou creates a new user in Keycloak and assigns them the &ldquo;analyst&rdquo; role. RBAC propagates instantly &mdash; Trino restricts table access, Superset limits dashboards, JupyterHub scopes notebook permissions. She then opens Grafana to check service health across pre-built dashboards, queries Loki for error logs from the last hour, and configures an AlertManager rule to notify the team on Slack if any service goes down. One identity layer. Full observability. No gaps.</p>
+          <div class="story-services">
+            <span class="story-tag">Keycloak</span>
+            <span class="story-tag">Trino RBAC</span>
+            <span class="story-tag">Grafana</span>
+            <span class="story-tag">Prometheus</span>
+            <span class="story-tag">Loki</span>
+            <span class="story-tag">AlertManager</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories" data-lang="fr">
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(59,130,246,0.12);">&#128736;</div>
+        <div>
+          <h3>Construire un pipeline de donn&eacute;es de bout en bout</h3>
+          <div class="story-persona">Amara Okonkwo, Data Engineer</div>
+          <p>Amara ouvre JupyterHub et r&eacute;dige un notebook Spark qui ing&egrave;re des fichiers CSV bruts dans des tables Apache Iceberg stock&eacute;es sur MinIO. Elle enregistre les tables dans le catalogue Polaris, puis cr&eacute;e un DAG Airflow pour orchestrer les rafra&icirc;chissements nocturnes. OpenLineage capture automatiquement chaque mouvement de donn&eacute;es. En quelques minutes, OpenMetadata affiche le lignage complet &mdash; des fichiers sources aux tables curat&eacute;es &mdash; sans aucune documentation manuelle.</p>
+          <div class="story-services">
+            <span class="story-tag">JupyterHub</span>
+            <span class="story-tag">Spark</span>
+            <span class="story-tag">Iceberg</span>
+            <span class="story-tag">MinIO</span>
+            <span class="story-tag">Polaris</span>
+            <span class="story-tag">Airflow</span>
+            <span class="story-tag">OpenLineage</span>
+            <span class="story-tag">OpenMetadata</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(34,197,94,0.12);">&#128200;</div>
+        <div>
+          <h3>Explorer les donn&eacute;es en toute confiance</h3>
+          <div class="story-persona">Rafael Mendes, Analyste m&eacute;tier</div>
+          <p>Rafael recherche dans le catalogue OpenMetadata les jeux de donn&eacute;es dont il a besoin &mdash; avec descriptions, &eacute;tiquettes PII et scores de qualit&eacute;. Il bascule dans le SQL Lab de Superset et r&eacute;dige des requ&ecirc;tes Trino qui f&eacute;d&egrave;rent tables Iceberg et PostgreSQL en une seule instruction. Satisfait de ses r&eacute;sultats, il construit un tableau de bord interactif qu'il partage avec les parties prenantes. Chaque colonne qu'il utilise est document&eacute;e, classifi&eacute;e et test&eacute;e en qualit&eacute;.</p>
+          <div class="story-services">
+            <span class="story-tag">OpenMetadata</span>
+            <span class="story-tag">Trino</span>
+            <span class="story-tag">Superset</span>
+            <span class="story-tag">PostgreSQL</span>
+            <span class="story-tag">Iceberg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(236,72,153,0.12);">&#128187;</div>
+        <div>
+          <h3>Un IDE complet dans le navigateur &mdash; sans installation</h3>
+          <div class="story-persona">Noa Lindqvist, Analytics Engineer</div>
+          <p>Noa ouvre code-server et acc&egrave;de &agrave; un environnement VS Code complet dans le navigateur &mdash; th&egrave;me Dracula, 21 extensions pr&eacute;install&eacute;es. Iel structure un projet dbt avec dbt Power User, inspecte des fichiers CSV avec Rainbow CSV et teste des endpoints API avec REST Client. Une fois les mod&egrave;les compil&eacute;s, Noa r&eacute;dige un rapport Quarto combinant r&eacute;sultats SQL et prose en markdown, puis le publie sur AKKO Docs &mdash; accessible &agrave; toute l'&eacute;quipe sans aucune installation locale.</p>
+          <div class="story-services">
+            <span class="story-tag">code-server</span>
+            <span class="story-tag">JupyterHub</span>
+            <span class="story-tag">dbt</span>
+            <span class="story-tag">Quarto</span>
+            <span class="story-tag">AKKO Docs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(139,92,246,0.12);">&#129302;</div>
+        <div>
+          <h3>Pipeline RAG avec IA locale &mdash; z&eacute;ro API cloud</h3>
+          <div class="story-persona">Wei Zhang, Data Scientist</div>
+          <p>Wei ouvre un notebook Jupyter et active jupyter-ai pour converser avec un mod&egrave;le Ollama local &mdash; aucune cl&eacute; API, aucun appel cloud, aucune exfiltration de donn&eacute;es. Il construit un pipeline RAG : les documents sont d&eacute;coup&eacute;s, vectoris&eacute;s avec nomic-embed-text sur Ollama, et stock&eacute;s dans pgvector. LangChain orchestre la recherche et la g&eacute;n&eacute;ration. Les r&eacute;sultats finaux sont rendus en rapport Quarto et publi&eacute;s en interne. De l'embedding &agrave; la r&eacute;ponse, chaque octet reste sur site.</p>
+          <div class="story-services">
+            <span class="story-tag">jupyter-ai</span>
+            <span class="story-tag">Ollama</span>
+            <span class="story-tag">pgvector</span>
+            <span class="story-tag">LangChain</span>
+            <span class="story-tag">JupyterHub</span>
+            <span class="story-tag">Quarto</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-avatar" style="background:rgba(239,68,68,0.12);">&#128737;</div>
+        <div>
+          <h3>S&eacute;curiser et superviser l'ensemble de la plateforme</h3>
+          <div class="story-persona">Fatou Diallo, Administratrice plateforme</div>
+          <p>Fatou cr&eacute;e un nouvel utilisateur dans Keycloak et lui attribue le r&ocirc;le &laquo;&nbsp;analyst&nbsp;&raquo;. Le RBAC se propage instantan&eacute;ment &mdash; Trino restreint l'acc&egrave;s aux tables, Superset limite les tableaux de bord, JupyterHub cadre les permissions des notebooks. Elle ouvre ensuite Grafana pour v&eacute;rifier la sant&eacute; des services via des tableaux de bord pr&eacute;construits, interroge Loki pour les logs d'erreur de la derni&egrave;re heure, et configure une r&egrave;gle AlertManager pour notifier l'&eacute;quipe sur Slack si un service tombe. Une seule couche d'identit&eacute;. Observabilit&eacute; compl&egrave;te. Aucun angle mort.</p>
+          <div class="story-services">
+            <span class="story-tag">Keycloak</span>
+            <span class="story-tag">Trino RBAC</span>
+            <span class="story-tag">Grafana</span>
+            <span class="story-tag">Prometheus</span>
+            <span class="story-tag">Loki</span>
+            <span class="story-tag">AlertManager</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ARCHITECTURE -->
 <section class="arch" id="architecture">
   <div class="container">
-    <span class="section-label">Architecture</span>
-    <h2 class="section-title">7 layers. Zero black boxes.<br>Replace any piece.</h2>
-    <p class="section-sub">Every layer is open source and independently swappable. Don't like Trino? Use something else. The rest doesn't care.</p>
+    <span class="section-label" data-lang="en">Architecture</span>
+    <span class="section-label" data-lang="fr">Architecture</span>
 
-    <div class="arch-stack">
-      <div class="arch-layer" style="--layer-color: #64748b;">
-        <span class="arch-name">Infrastructure</span>
-        <div class="arch-items">
-          <span>Traefik</span><span>PostgreSQL</span><span>PostGIS</span><span>Nginx</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #3b82f6;">
-        <span class="arch-name">Analytics</span>
-        <div class="arch-items">
-          <span>JupyterHub</span><span>Superset</span><span>Quarto</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #f59e0b;">
-        <span class="arch-name">Compute</span>
-        <div class="arch-items">
-          <span>Spark</span><span>Trino</span><span>Airflow</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #6c63ff;">
-        <span class="arch-name">Data Lake</span>
-        <div class="arch-items">
-          <span>Apache Iceberg</span><span>Apache Polaris</span><span>MinIO</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #22c55e;">
-        <span class="arch-name">Governance</span>
-        <div class="arch-items">
-          <span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #8b5cf6;">
-        <span class="arch-name">AI</span>
-        <div class="arch-items">
-          <span>Ollama</span><span>pgvector</span><span>jupyter-ai</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #ef4444;">
-        <span class="arch-name">Security</span>
-        <div class="arch-items">
-          <span>Keycloak</span><span>OAuth2 Proxy</span><span>Trino RBAC</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #06b6d4;">
-        <span class="arch-name">Monitoring</span>
-        <div class="arch-items">
-          <span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span>
-        </div>
-      </div>
+    <h2 class="section-title" data-lang="en">7 layers. Zero black boxes.<br>Replace any piece.</h2>
+    <h2 class="section-title" data-lang="fr">7 couches. Zéro boîte noire.<br>Remplacez n'importe quelle brique.</h2>
+
+    <p class="section-sub" data-lang="en">Every layer is open source and independently swappable. No proprietary dependency. No exit barrier. True independence.</p>
+    <p class="section-sub" data-lang="fr">Chaque couche est open source et remplaçable indépendamment. Aucune dépendance propriétaire. Aucune barrière de sortie. Une vraie indépendance.</p>
+
+    <div class="arch-stack" data-lang="en">
+      <div class="arch-layer" style="--layer-color: #64748b;"><span class="arch-name">Infrastructure</span><div class="arch-items"><span>Traefik</span><span>PostgreSQL</span><span>PostGIS</span><span>Nginx</span></div></div>
+      <div class="arch-layer" style="--layer-color: #3b82f6;"><span class="arch-name">Analytics</span><div class="arch-items"><span>JupyterHub</span><span>Superset</span><span>Quarto</span></div></div>
+      <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">Compute</span><div class="arch-items"><span>Spark</span><span>Trino</span><span>Airflow</span></div></div>
+      <div class="arch-layer" style="--layer-color: #6c63ff;"><span class="arch-name">Data Lake</span><div class="arch-items"><span>Apache Iceberg</span><span>Apache Polaris</span><span>MinIO</span></div></div>
+      <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Governance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span></div></div>
+      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">AI</span><div class="arch-items"><span>Ollama</span><span>pgvector</span><span>jupyter-ai</span></div></div>
+      <div class="arch-layer" style="--layer-color: #ef4444;"><span class="arch-name">Security</span><div class="arch-items"><span>Keycloak</span><span>OAuth2 Proxy</span><span>Trino RBAC</span></div></div>
+      <div class="arch-layer" style="--layer-color: #06b6d4;"><span class="arch-name">Monitoring</span><div class="arch-items"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span></div></div>
+    </div>
+    <div class="arch-stack" data-lang="fr">
+      <div class="arch-layer" style="--layer-color: #64748b;"><span class="arch-name">Infrastructure</span><div class="arch-items"><span>Traefik</span><span>PostgreSQL</span><span>PostGIS</span><span>Nginx</span></div></div>
+      <div class="arch-layer" style="--layer-color: #3b82f6;"><span class="arch-name">Analytique</span><div class="arch-items"><span>JupyterHub</span><span>Superset</span><span>Quarto</span></div></div>
+      <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">Calcul</span><div class="arch-items"><span>Spark</span><span>Trino</span><span>Airflow</span></div></div>
+      <div class="arch-layer" style="--layer-color: #6c63ff;"><span class="arch-name">Data Lake</span><div class="arch-items"><span>Apache Iceberg</span><span>Apache Polaris</span><span>MinIO</span></div></div>
+      <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Gouvernance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span></div></div>
+      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">IA</span><div class="arch-items"><span>Ollama</span><span>pgvector</span><span>jupyter-ai</span></div></div>
+      <div class="arch-layer" style="--layer-color: #ef4444;"><span class="arch-name">Sécurité</span><div class="arch-items"><span>Keycloak</span><span>OAuth2 Proxy</span><span>Trino RBAC</span></div></div>
+      <div class="arch-layer" style="--layer-color: #06b6d4;"><span class="arch-name">Monitoring</span><div class="arch-items"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span></div></div>
     </div>
   </div>
 </section>
@@ -281,53 +590,32 @@
 <!-- BUILT ON -->
 <section class="arch" id="built-on">
   <div class="container">
-    <span class="section-label">Built On</span>
-    <h2 class="section-title">Standing on the shoulders<br>of open source giants.</h2>
-    <p class="section-sub">No proprietary forks. No custom wrappers. Pure upstream projects from the Apache, CNCF, and open source ecosystems.</p>
+    <span class="section-label" data-lang="en">Built On</span>
+    <span class="section-label" data-lang="fr">Construit sur</span>
 
-    <div class="arch-stack">
-      <div class="arch-layer" style="--layer-color: #6c63ff;">
-        <span class="arch-name">Apache</span>
-        <div class="arch-items">
-          <span>Iceberg</span><span>Polaris</span><span>Spark</span><span>Airflow</span><span>Superset</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #3b82f6;">
-        <span class="arch-name">Compute</span>
-        <div class="arch-items">
-          <span>Trino</span><span>PostgreSQL</span><span>DuckDB</span><span>OpenSearch</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #22c55e;">
-        <span class="arch-name">Governance</span>
-        <div class="arch-items">
-          <span>OpenMetadata</span><span>OpenLineage</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #8b5cf6;">
-        <span class="arch-name">AI / ML</span>
-        <div class="arch-items">
-          <span>Ollama</span><span>pgvector</span><span>LangChain</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #f59e0b;">
-        <span class="arch-name">CNCF</span>
-        <div class="arch-items">
-          <span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span><span>Traefik</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #ef4444;">
-        <span class="arch-name">Identity</span>
-        <div class="arch-items">
-          <span>Keycloak</span><span>OAuth2</span>
-        </div>
-      </div>
-      <div class="arch-layer" style="--layer-color: #06b6d4;">
-        <span class="arch-name">Storage</span>
-        <div class="arch-items">
-          <span>MinIO</span><span>PostGIS</span>
-        </div>
-      </div>
+    <h2 class="section-title" data-lang="en">Standing on the shoulders<br>of open source giants.</h2>
+    <h2 class="section-title" data-lang="fr">Sur les épaules<br>des géants de l'open source.</h2>
+
+    <p class="section-sub" data-lang="en">No proprietary forks. No custom wrappers. Pure upstream projects from the Apache, CNCF, and open source ecosystems. Sovereignty starts with transparency.</p>
+    <p class="section-sub" data-lang="fr">Pas de forks propriétaires. Pas de surcouches maison. Les projets upstream purs des écosystèmes Apache, CNCF et open source. La souveraineté commence par la transparence.</p>
+
+    <div class="arch-stack" data-lang="en">
+      <div class="arch-layer" style="--layer-color: #6c63ff;"><span class="arch-name">Apache</span><div class="arch-items"><span>Iceberg</span><span>Polaris</span><span>Spark</span><span>Airflow</span><span>Superset</span></div></div>
+      <div class="arch-layer" style="--layer-color: #3b82f6;"><span class="arch-name">Compute</span><div class="arch-items"><span>Trino</span><span>PostgreSQL</span><span>DuckDB</span><span>OpenSearch</span></div></div>
+      <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Governance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenLineage</span></div></div>
+      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">AI / ML</span><div class="arch-items"><span>Ollama</span><span>pgvector</span><span>LangChain</span></div></div>
+      <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">CNCF</span><div class="arch-items"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span><span>Traefik</span></div></div>
+      <div class="arch-layer" style="--layer-color: #ef4444;"><span class="arch-name">Identity</span><div class="arch-items"><span>Keycloak</span><span>OAuth2</span></div></div>
+      <div class="arch-layer" style="--layer-color: #06b6d4;"><span class="arch-name">Storage</span><div class="arch-items"><span>MinIO</span><span>PostGIS</span></div></div>
+    </div>
+    <div class="arch-stack" data-lang="fr">
+      <div class="arch-layer" style="--layer-color: #6c63ff;"><span class="arch-name">Apache</span><div class="arch-items"><span>Iceberg</span><span>Polaris</span><span>Spark</span><span>Airflow</span><span>Superset</span></div></div>
+      <div class="arch-layer" style="--layer-color: #3b82f6;"><span class="arch-name">Calcul</span><div class="arch-items"><span>Trino</span><span>PostgreSQL</span><span>DuckDB</span><span>OpenSearch</span></div></div>
+      <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Gouvernance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenLineage</span></div></div>
+      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">IA / ML</span><div class="arch-items"><span>Ollama</span><span>pgvector</span><span>LangChain</span></div></div>
+      <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">CNCF</span><div class="arch-items"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span><span>Traefik</span></div></div>
+      <div class="arch-layer" style="--layer-color: #ef4444;"><span class="arch-name">Identité</span><div class="arch-items"><span>Keycloak</span><span>OAuth2</span></div></div>
+      <div class="arch-layer" style="--layer-color: #06b6d4;"><span class="arch-name">Stockage</span><div class="arch-items"><span>MinIO</span><span>PostGIS</span></div></div>
     </div>
   </div>
 </section>
@@ -335,11 +623,16 @@
 <!-- GET STARTED -->
 <section class="get-started" id="get-started">
   <div class="container">
-    <span class="section-label">Get Started</span>
-    <h2 class="section-title">Two commands.<br>Twenty-six services. Ready.</h2>
-    <p class="section-sub">All you need is Docker Desktop with 6 GB RAM. That's it. No Kubernetes. No Terraform. No cloud account.</p>
+    <span class="section-label" data-lang="en">Get Started</span>
+    <span class="section-label" data-lang="fr">Démarrage</span>
 
-    <div class="steps">
+    <h2 class="section-title" data-lang="en">Two commands.<br>Twenty-six services. Ready.</h2>
+    <h2 class="section-title" data-lang="fr">Deux commandes.<br>Vingt-six services. C'est prêt.</h2>
+
+    <p class="section-sub" data-lang="en">All you need is Docker with 6 GB RAM — on your laptop, a bare-metal server, or a cloud VM. No Kubernetes. No Terraform. No cloud account required.</p>
+    <p class="section-sub" data-lang="fr">Il vous suffit de Docker avec 6 Go de RAM — sur votre laptop, un serveur bare-metal ou une VM cloud. Pas de Kubernetes. Pas de Terraform. Aucun compte cloud requis.</p>
+
+    <div class="steps" data-lang="en">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
@@ -365,14 +658,47 @@
         </div>
       </div>
     </div>
+    <div class="steps" data-lang="fr">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Clonez et lancez</h3>
+          <div class="step-code">
+            <code>git clone https://github.com/AKKO-p/AKKO && cd AKKO</code>
+            <code>./scripts/start.sh</code>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Ouvrez le Cockpit</h3>
+          <p>Accédez à <code>https://localhost</code>. Les 26 services sont visibles dans un portail unique. État de santé en temps réel. Accès en un clic à tout.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Lancez la démo</h3>
+          <p>Ouvrez JupyterHub. Exécutez le notebook bancaire. Il crée des tables Iceberg via Spark, les interroge avec Trino et provisionne un tableau de bord Superset. De bout en bout. En un clic.</p>
+        </div>
+      </div>
+    </div>
 
     <div class="prereqs">
-      <h4>Prerequisites</h4>
-      <div class="prereq-items">
+      <h4 data-lang="en">Prerequisites</h4>
+      <h4 data-lang="fr">Prérequis</h4>
+      <div class="prereq-items" data-lang="en">
         <span>Docker Desktop (6 GB+ RAM)</span>
         <span>Docker Compose v2+</span>
         <span>20 GB free disk</span>
         <span>macOS or Linux</span>
+      </div>
+      <div class="prereq-items" data-lang="fr">
+        <span>Docker Desktop (6 Go+ de RAM)</span>
+        <span>Docker Compose v2+</span>
+        <span>20 Go d'espace disque</span>
+        <span>macOS ou Linux</span>
       </div>
     </div>
   </div>
@@ -381,15 +707,29 @@
 <!-- CTA -->
 <section class="cta">
   <div class="container">
-    <h2>Your data. Your rules.<br>Your infrastructure.</h2>
-    <p>Every day you wait is another day your data lives on someone else's servers. Take it back.</p>
-    <div class="cta-actions">
+    <h2 data-lang="en">Your independence starts<br>with one command.</h2>
+    <h2 data-lang="fr">Votre indépendance commence<br>par une seule commande.</h2>
+
+    <p data-lang="en">Open source. Cloud-agnostic. Sovereign by design. The future of data infrastructure is yours to own.</p>
+    <p data-lang="fr">Open source. Cloud-agnostique. Souverain par conception. L'avenir de l'infrastructure data vous appartient.</p>
+
+    <div class="cta-actions" data-lang="en">
       <a href="https://github.com/AKKO-p/AKKO" class="btn-primary" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         Clone the Repo — It's Free
       </a>
       <a href="#get-started" class="btn-ghost">
         See Setup Instructions
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="cta-actions" data-lang="fr">
+      <a href="https://github.com/AKKO-p/AKKO" class="btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        Cloner le dépôt — C'est gratuit
+      </a>
+      <a href="#get-started" class="btn-ghost">
+        Voir les instructions d'installation
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -410,6 +750,40 @@
     <p class="footer-copy">Own Every Layer.</p>
   </div>
 </footer>
+
+<script>
+  const LANG_KEY = 'akko_site_lang';
+
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.toggle('active', el.dataset.lang === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.setLang === lang);
+    });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+  });
+
+  // Restore saved language or detect from browser
+  const saved = localStorage.getItem(LANG_KEY);
+  if (saved) { setLang(saved); }
+  else if (navigator.language.startsWith('fr')) { setLang('fr'); }
+  else { setLang('en'); }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 
 </body>
 </html>
