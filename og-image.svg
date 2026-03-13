@@ -1,0 +1,71 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090b"/>
+      <stop offset="100%" style="stop-color:#111113"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6c63ff"/>
+      <stop offset="100%" style="stop-color:#8b7dff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(108,99,255,0.15)"/>
+      <stop offset="100%" style="stop-color:transparent"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Grid pattern -->
+  <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+    <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(108,99,255,0.04)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Logo -->
+  <g transform="translate(530, 120)">
+    <rect x="4" y="4" width="72" height="72" rx="6" stroke="#6c63ff" stroke-width="3" fill="none"/>
+    <rect x="18" y="18" width="44" height="44" rx="4" stroke="#6c63ff" stroke-width="2.5" fill="none"/>
+    <rect x="30" y="30" width="20" height="20" rx="3" fill="#6c63ff"/>
+  </g>
+  <text x="620" y="245" font-family="Inter, -apple-system, sans-serif" font-size="28" font-weight="800" fill="#fafafa" text-anchor="start" letter-spacing="3">AKKO</text>
+
+  <!-- Title -->
+  <text x="600" y="320" font-family="Inter, -apple-system, sans-serif" font-size="48" font-weight="800" fill="#fafafa" text-anchor="middle">The Sovereign Data Platform.</text>
+  <text x="600" y="380" font-family="Inter, -apple-system, sans-serif" font-size="48" font-weight="800" fill="url(#accent)" text-anchor="middle">Own Every Layer.</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="440" font-family="Inter, -apple-system, sans-serif" font-size="20" fill="#a1a1aa" text-anchor="middle">30+ Open-Source Services  |  Kubernetes-Native  |  AI-Native  |  Zero Licensing Costs</text>
+
+  <!-- Tags -->
+  <g transform="translate(200, 490)">
+    <rect x="0" y="0" width="100" height="30" rx="6" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.25)" stroke-width="1"/>
+    <text x="50" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8b7dff" text-anchor="middle">Iceberg</text>
+
+    <rect x="115" y="0" width="80" height="30" rx="6" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.25)" stroke-width="1"/>
+    <text x="155" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8b7dff" text-anchor="middle">Trino</text>
+
+    <rect x="210" y="0" width="80" height="30" rx="6" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.25)" stroke-width="1"/>
+    <text x="250" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8b7dff" text-anchor="middle">Spark</text>
+
+    <rect x="305" y="0" width="100" height="30" rx="6" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.25)" stroke-width="1"/>
+    <text x="355" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8b7dff" text-anchor="middle">Keycloak</text>
+
+    <rect x="420" y="0" width="80" height="30" rx="6" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.25)" stroke-width="1"/>
+    <text x="460" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8b7dff" text-anchor="middle">Ollama</text>
+
+    <rect x="515" y="0" width="90" height="30" rx="6" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.25)" stroke-width="1"/>
+    <text x="560" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8b7dff" text-anchor="middle">MLflow</text>
+
+    <rect x="620" y="0" width="80" height="30" rx="6" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.25)" stroke-width="1"/>
+    <text x="660" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8b7dff" text-anchor="middle">OPA</text>
+  </g>
+
+  <!-- URL -->
+  <text x="600" y="580" font-family="Inter, -apple-system, sans-serif" font-size="16" fill="#71717a" text-anchor="middle">github.com/AKKO-p/AKKO</text>
+
+  <!-- Border accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent)"/>
+</svg>

@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AKKO — Socle analytique souverain open source</title>
-  <meta name="description" content="AKKO est le socle analytique souverain qui unifie IA, ingenierie des donnees et analytique. 30+ services open source, zero dependance cloud, deploiement on-premise ou Kubernetes. L'independance technologique pour les industries reglementees.">
+  <title>AKKO — Open-Source Sovereign Data Platform | Own Every Layer</title>
+  <meta name="description" content="AKKO is the open-source sovereign data platform that unifies AI, data engineering, and analytics. 30+ integrated services, Kubernetes-native deployment, zero licensing costs. Built for regulated industries: banking, government, defense, healthcare.">
+  <meta name="keywords" content="sovereign data platform, open source, Kubernetes, Apache Iceberg, data governance, AI-native, RBAC, on-premise, data sovereignty, open lakehouse, Helm, air-gapped, DORA, NIS2, RGPD">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='8' y='8' width='64' height='64' rx='6' stroke='%236c63ff' stroke-width='4' fill='none'/%3E%3Crect x='28' y='28' width='24' height='24' rx='3' fill='%236c63ff'/%3E%3C/svg%3E">
+  <link rel="canonical" href="https://akko-p.github.io/akko-site/">
+  <link rel="alternate" hreflang="en" href="https://akko-p.github.io/akko-site/">
+  <link rel="alternate" hreflang="fr" href="https://akko-p.github.io/akko-site/">
+  <link rel="alternate" hreflang="x-default" href="https://akko-p.github.io/akko-site/">
   <meta name="theme-color" content="#09090b">
+  <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AKKO — Socle analytique souverain open source">
-  <meta property="og:description" content="Socle analytique souverain open source. 30+ services integres. IA souveraine. Zero cout de licence. Deploiement on-premise ou Kubernetes.">
+  <meta property="og:title" content="AKKO — Open-Source Sovereign Data Platform | Own Every Layer">
+  <meta property="og:description" content="Open-source sovereign data platform. 30+ integrated services. AI-native. Kubernetes-first. Zero licensing costs. Built for regulated industries.">
   <meta property="og:url" content="https://akko-p.github.io/akko-site/">
   <meta property="og:site_name" content="AKKO">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="AKKO — Socle analytique souverain">
-  <meta name="twitter:description" content="30+ services open source. IA souveraine. Zero vendor lock-in. Industries reglementees.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:image" content="https://akko-p.github.io/akko-site/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AKKO — Open-Source Sovereign Data Platform">
+  <meta name="twitter:description" content="30+ open-source services. Sovereign AI. Kubernetes-native. Zero vendor lock-in. Built for banking, government, defense, healthcare.">
+  <meta name="twitter:image" content="https://akko-p.github.io/akko-site/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AKKO",
+    "alternateName": "Analytics Kernel, Keep Ownership",
+    "description": "Open-source sovereign data platform that unifies AI, data engineering, and analytics into one Kubernetes-native deployment. 30+ integrated services for regulated industries.",
+    "url": "https://akko-p.github.io/akko-site/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Kubernetes, Linux",
+    "softwareRequirements": "Kubernetes 1.27+, Helm 3, 16 GB RAM",
+    "license": "https://github.com/AKKO-p/AKKO",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "sourceOrganization": {
+      "@type": "Organization",
+      "name": "AKKO",
+      "url": "https://github.com/AKKO-p"
+    },
+    "codeRepository": "https://github.com/AKKO-p/AKKO",
+    "featureList": [
+      "30+ integrated open-source services",
+      "Kubernetes-native Helm deployment",
+      "Sovereign AI with local LLMs (Ollama, LiteLLM)",
+      "Apache Iceberg open lakehouse",
+      "Keycloak SSO with 14 OAuth clients",
+      "OPA fine-grained RBAC with row-level filtering and column masking",
+      "OpenMetadata data governance",
+      "MLflow experiment tracking and model registry",
+      "Air-gapped deployment support",
+      "Full observability (Prometheus, Grafana, Loki)"
+    ],
+    "keywords": "sovereign data platform, open source, Kubernetes, Apache Iceberg, data governance, AI-native, RBAC, on-premise"
+  }
+  </script>
 </head>
 <body>
 
@@ -51,6 +102,8 @@
       <a href="#comparison" data-lang="fr">Comparer</a>
       <a href="#deploy" data-lang="en" class="active">Deploy</a>
       <a href="#deploy" data-lang="fr">D&eacute;ployer</a>
+      <a href="#faq" data-lang="en" class="active">FAQ</a>
+      <a href="#faq" data-lang="fr">FAQ</a>
       <a href="https://github.com/AKKO-p/AKKO#readme" class="nav-doc" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
         Docs
@@ -73,18 +126,18 @@
   <div class="hero-content">
     <div class="hero-badge" data-lang="en">
       <span class="badge-dot"></span>
-      Open Source &middot; Apache 2.0 / MIT Licensed &middot; Zero Vendor Lock-in
+      AKKO: Analytics Kernel, Keep Ownership &middot; 100% Open Source &middot; Zero Licensing Costs
     </div>
     <div class="hero-badge active" data-lang="fr">
       <span class="badge-dot"></span>
-      Open Source &middot; Licences Apache 2.0 / MIT &middot; Z&eacute;ro verrouillage fournisseur
+      AKKO : Analytics Kernel, Keep Ownership &middot; 100% Open Source &middot; Z&eacute;ro co&ucirc;t de licence
     </div>
 
-    <h1 data-lang="en">The Sovereign<br><span class="gradient-text">Analytics Stack.</span></h1>
-    <h1 data-lang="fr" class="active">Le socle analytique<br><span class="gradient-text">souverain.</span></h1>
+    <h1 data-lang="en">The Sovereign Data Platform.<br><span class="gradient-text">Own Every Layer.</span></h1>
+    <h1 data-lang="fr" class="active">La plateforme de donn&eacute;es souveraine.<br><span class="gradient-text">Ma&icirc;trisez chaque couche.</span></h1>
 
-    <p class="hero-sub" data-lang="en">AKKO unifies AI, data engineering, and analytics into one sovereign stack &mdash; 30+ integrated open-source services, zero licensing costs, deployable on-premise or in any cloud. Your data. Your infrastructure. Your rules.</p>
-    <p class="hero-sub active" data-lang="fr">AKKO unifie l'IA, l'ing&eacute;nierie des donn&eacute;es et l'analytique au sein d'un socle souverain &mdash; plus de 30 services open source int&eacute;gr&eacute;s, z&eacute;ro co&ucirc;t de licence, d&eacute;ployable on-premise ou dans n'importe quel cloud. Vos donn&eacute;es. Votre infrastructure. Votre ind&eacute;pendance.</p>
+    <p class="hero-sub" data-lang="en">AKKO unifies AI, data engineering, and analytics into one Kubernetes-native platform &mdash; 30+ integrated open-source services, zero licensing costs, deployable on-premise or in any cloud. Your data. Your infrastructure. Your rules.</p>
+    <p class="hero-sub active" data-lang="fr">AKKO unifie l'IA, l'ing&eacute;nierie des donn&eacute;es et l'analytique au sein d'une plateforme Kubernetes-native &mdash; plus de 30 services open source int&eacute;gr&eacute;s, z&eacute;ro co&ucirc;t de licence, d&eacute;ployable on-premise ou dans n'importe quel cloud. Vos donn&eacute;es. Votre infrastructure. Votre ind&eacute;pendance.</p>
 
     <div class="hero-actions" data-lang="en">
       <a href="mailto:contact@akko.dev?subject=Demo%20Request" class="btn-primary">
@@ -161,7 +214,7 @@
     <div class="stat-divider"></div>
     <div class="stat">
       <span class="stat-num">100%</span>
-      <span class="stat-label">Open Source (Apache/MIT)</span>
+      <span class="stat-label">Open Source</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
@@ -187,7 +240,7 @@
     <div class="stat-divider"></div>
     <div class="stat">
       <span class="stat-num">100%</span>
-      <span class="stat-label">Open source (Apache/MIT)</span>
+      <span class="stat-label">100% Open Source</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
@@ -208,11 +261,11 @@
     <span class="section-label" data-lang="en">Why AKKO</span>
     <span class="section-label active" data-lang="fr">Pourquoi AKKO</span>
 
-    <h2 class="section-title" data-lang="en">Technological independence<br>is not optional.</h2>
-    <h2 class="section-title active" data-lang="fr">L'ind&eacute;pendance technologique<br>n'est pas une option.</h2>
+    <h2 class="section-title" data-lang="en">Data sovereignty and technological<br>independence are not optional.</h2>
+    <h2 class="section-title active" data-lang="fr">Souverainet&eacute; des donn&eacute;es et ind&eacute;pendance<br>technologique ne sont pas optionnelles.</h2>
 
-    <p class="section-sub" data-lang="en">Every year, organizations spend hundreds of thousands on proprietary analytics licenses &mdash; while their data, their models, and their processes become increasingly locked inside closed ecosystems. AKKO reverses this equation.</p>
-    <p class="section-sub active" data-lang="fr">Chaque ann&eacute;e, les organisations d&eacute;pensent des centaines de milliers d'euros en licences propri&eacute;taires &mdash; pendant que leurs donn&eacute;es, leurs mod&egrave;les et leurs processus s'enferment toujours plus dans des &eacute;cosyst&egrave;mes ferm&eacute;s. AKKO inverse cette &eacute;quation.</p>
+    <p class="section-sub" data-lang="en">Every year, organizations spend hundreds of thousands on proprietary analytics licenses &mdash; while their data, their models, and their processes become increasingly locked inside closed ecosystems. AKKO reverses this equation with an open-source, Kubernetes-native data platform you fully own.</p>
+    <p class="section-sub active" data-lang="fr">Chaque ann&eacute;e, les organisations d&eacute;pensent des centaines de milliers d'euros en licences propri&eacute;taires &mdash; pendant que leurs donn&eacute;es, leurs mod&egrave;les et leurs processus s'enferment toujours plus dans des &eacute;cosyst&egrave;mes ferm&eacute;s. AKKO inverse cette &eacute;quation avec une plateforme de donn&eacute;es open source, Kubernetes-native, que vous poss&eacute;dez enti&egrave;rement.</p>
 
     <div class="value-props" data-lang="en">
       <div class="value-card">
@@ -227,7 +280,7 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg>
         </div>
         <h3>Cost Control</h3>
-        <p>Zero licensing costs. Every component is open source under Apache 2.0 or MIT. Deploy on your existing hardware, any cloud VM, or on-premise servers. You pay only for compute, never for software.</p>
+        <p>Zero licensing costs. Built entirely on open-source components. Deploy on your existing hardware, any cloud VM, or on-premise servers. You pay only for compute, never for software.</p>
       </div>
       <div class="value-card">
         <div class="value-icon" style="--icon-color: #8b5cf6;">
@@ -257,7 +310,7 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg>
         </div>
         <h3>Ma&icirc;trise des co&ucirc;ts</h3>
-        <p>Z&eacute;ro co&ucirc;t de licence. Chaque composant est open source sous licence Apache 2.0 ou MIT. D&eacute;ployez sur votre mat&eacute;riel existant, n'importe quelle VM cloud ou vos serveurs on-premise. Vous ne payez que le calcul, jamais le logiciel.</p>
+        <p>Z&eacute;ro co&ucirc;t de licence. Construit enti&egrave;rement avec des composants open source. D&eacute;ployez sur votre mat&eacute;riel existant, n'importe quelle VM cloud ou vos serveurs on-premise. Vous ne payez que le calcul, jamais le logiciel.</p>
       </div>
       <div class="value-card">
         <div class="value-icon" style="--icon-color: #8b5cf6;">
@@ -283,11 +336,11 @@
     <span class="section-label" data-lang="en">Platform</span>
     <span class="section-label active" data-lang="fr">Plateforme</span>
 
-    <h2 class="section-title" data-lang="en">30+ services. 8 layers.<br>One unified platform.</h2>
-    <h2 class="section-title active" data-lang="fr">Plus de 30 services. 8 couches.<br>Une plateforme unifi&eacute;e.</h2>
+    <h2 class="section-title" data-lang="en">30+ open-source services. 8 layers.<br>One Kubernetes-native platform.</h2>
+    <h2 class="section-title active" data-lang="fr">Plus de 30 services open source. 8 couches.<br>Une plateforme Kubernetes-native.</h2>
 
-    <p class="section-sub" data-lang="en">Every service is a best-of-breed open source project from the Apache, CNCF, or open source ecosystems. Deeply integrated via SSO, shared storage, and unified governance. Replace any layer without touching the others.</p>
-    <p class="section-sub active" data-lang="fr">Chaque service est un projet open source de r&eacute;f&eacute;rence issu des &eacute;cosyst&egrave;mes Apache, CNCF ou communautaires. Profond&eacute;ment int&eacute;gr&eacute;s via SSO, stockage partag&eacute; et gouvernance unifi&eacute;e. Remplacez n'importe quelle couche sans toucher aux autres.</p>
+    <p class="section-sub" data-lang="en">Every service is a best-of-breed open-source project from the Apache, CNCF, or community ecosystems &mdash; Apache Iceberg, Trino, Spark, Airflow, Keycloak, and more. Deeply integrated via SSO, shared storage, and unified data governance. Replace any layer without touching the others.</p>
+    <p class="section-sub active" data-lang="fr">Chaque service est un projet open source de r&eacute;f&eacute;rence issu des &eacute;cosyst&egrave;mes Apache, CNCF ou communautaires &mdash; Apache Iceberg, Trino, Spark, Airflow, Keycloak, et plus encore. Profond&eacute;ment int&eacute;gr&eacute;s via SSO, stockage partag&eacute; et gouvernance des donn&eacute;es unifi&eacute;e. Remplacez n'importe quelle couche sans toucher aux autres.</p>
 
     <div class="features-grid" data-lang="en">
       <div class="feature-card">
@@ -345,6 +398,13 @@
         </div>
         <h3>Self-Provisioning Dashboards</h3>
         <p>Apache Superset with auto-provisioned datasets, charts, and dashboards. SQL Lab for ad-hoc queries. Connected to Iceberg and PostgreSQL through Trino federation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #10b981;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </div>
+        <h3>ML Experiment Tracking</h3>
+        <p>MLflow tracks experiments, registers models, and manages the full ML lifecycle. Integrated with JupyterHub notebooks, MinIO for artifact storage, and PostgreSQL for metadata. From prototype to production.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #a855f7;">
@@ -413,6 +473,13 @@
         <p>Apache Superset avec jeux de donn&eacute;es, graphiques et tableaux de bord autoprovisionnés. SQL Lab pour les requ&ecirc;tes ad hoc. Connect&eacute; &agrave; Iceberg et PostgreSQL via la f&eacute;d&eacute;ration Trino.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #10b981;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </div>
+        <h3>Suivi d'exp&eacute;riences ML</h3>
+        <p>MLflow suit les exp&eacute;riences, enregistre les mod&egrave;les et g&egrave;re le cycle de vie ML complet. Int&eacute;gr&eacute; avec les notebooks JupyterHub, MinIO pour le stockage d'artefacts et PostgreSQL pour les m&eacute;tadonn&eacute;es. Du prototype &agrave; la production.</p>
+      </div>
+      <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #a855f7;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
         </div>
@@ -429,8 +496,8 @@
     <span class="section-label" data-lang="en">AI-Native</span>
     <span class="section-label active" data-lang="fr">IA-Native</span>
 
-    <h2 class="section-title" data-lang="en">Enterprise AI without<br>cloud API dependency.</h2>
-    <h2 class="section-title active" data-lang="fr">L'IA d'entreprise sans<br>d&eacute;pendance aux API cloud.</h2>
+    <h2 class="section-title" data-lang="en">Sovereign AI: enterprise-grade,<br>zero cloud API dependency.</h2>
+    <h2 class="section-title active" data-lang="fr">IA souveraine : grade entreprise,<br>z&eacute;ro d&eacute;pendance aux API cloud.</h2>
 
     <p class="section-sub" data-lang="en">While competitors charge per token and route your data through third-party APIs, AKKO runs LLMs entirely on your infrastructure. Zero data exfiltration. Predictable costs. Full control.</p>
     <p class="section-sub active" data-lang="fr">L&agrave; o&ugrave; les concurrents facturent au token et font transiter vos donn&eacute;es par des API tierces, AKKO fait tourner les LLM enti&egrave;rement sur votre infrastructure. Z&eacute;ro exfiltration de donn&eacute;es. Co&ucirc;ts pr&eacute;visibles. Contr&ocirc;le total.</p>
@@ -488,11 +555,11 @@
     <span class="section-label" data-lang="en">Security &amp; Compliance</span>
     <span class="section-label active" data-lang="fr">S&eacute;curit&eacute; &amp; Conformit&eacute;</span>
 
-    <h2 class="section-title" data-lang="en">Built for regulated industries.<br>Compliant by architecture.</h2>
-    <h2 class="section-title active" data-lang="fr">Con&ccedil;u pour les industries r&eacute;glement&eacute;es.<br>Conforme par architecture.</h2>
+    <h2 class="section-title" data-lang="en">Built for regulated industries.<br>RGPD, DORA, NIS2 compliant by design.</h2>
+    <h2 class="section-title active" data-lang="fr">Con&ccedil;u pour les industries r&eacute;glement&eacute;es.<br>Conforme RGPD, DORA, NIS2 par conception.</h2>
 
-    <p class="section-sub" data-lang="en">AKKO's architecture is designed to meet the requirements of RGPD, DORA, NIS2, and air-gapped environments. Not through add-ons &mdash; through fundamental design choices.</p>
-    <p class="section-sub active" data-lang="fr">L'architecture d'AKKO est con&ccedil;ue pour r&eacute;pondre aux exigences du RGPD, de DORA, de NIS2 et des environnements d&eacute;connect&eacute;s. Non pas par des ajouts &mdash; mais par des choix de conception fondamentaux.</p>
+    <p class="section-sub" data-lang="en">AKKO's architecture meets the requirements of RGPD, DORA, NIS2, and air-gapped environments by design. Fine-grained RBAC, data lineage, PII classification, and full audit trails are built into the platform &mdash; not bolted on as afterthoughts.</p>
+    <p class="section-sub active" data-lang="fr">L'architecture d'AKKO r&eacute;pond aux exigences du RGPD, de DORA, de NIS2 et des environnements d&eacute;connect&eacute;s par conception. RBAC granulaire, lignage des donn&eacute;es, classification PII et pistes d'audit compl&egrave;tes sont int&eacute;gr&eacute;s dans la plateforme &mdash; pas ajout&eacute;s apr&egrave;s coup.</p>
 
     <div class="compliance-grid" data-lang="en">
       <div class="compliance-card">
@@ -555,6 +622,127 @@
       </div>
     </div>
 
+    <!-- RBAC SHOWCASE: Row-Level Filtering & Column Masking -->
+    <div class="rbac-showcase" data-lang="en">
+      <div class="rbac-showcase-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h4>Fine-Grained Security in Action</h4>
+        <p>Same SQL query, different results per role. AKKO enforces security at the data layer &mdash; not the application layer.</p>
+      </div>
+      <div class="rbac-demo-grid">
+        <div class="rbac-demo-card">
+          <div class="rbac-demo-label">
+            <span class="rbac-role rbac-role-admin">Admin</span>
+            <span class="rbac-query">SELECT * FROM customers</span>
+          </div>
+          <table class="rbac-table">
+            <thead><tr><th>name</th><th>email</th><th>segment</th><th>credit_score</th><th>ssn</th></tr></thead>
+            <tbody>
+              <tr><td>Alice Martin</td><td>alice@bank.com</td><td>Premium</td><td>785</td><td>123-45-6789</td></tr>
+              <tr><td>Bob Dupont</td><td>bob@corp.fr</td><td>Business</td><td>720</td><td>987-65-4321</td></tr>
+              <tr><td>Carol Ndiaye</td><td>carol@gov.sn</td><td>Retail</td><td>650</td><td>456-78-9012</td></tr>
+            </tbody>
+          </table>
+          <span class="rbac-note">Full access &mdash; all rows, all columns visible</span>
+        </div>
+        <div class="rbac-demo-card">
+          <div class="rbac-demo-label">
+            <span class="rbac-role rbac-role-viewer">Viewer</span>
+            <span class="rbac-query">SELECT * FROM customers</span>
+          </div>
+          <table class="rbac-table">
+            <thead><tr><th>name</th><th>email</th><th>segment</th><th>credit_score</th><th>ssn</th></tr></thead>
+            <tbody>
+              <tr><td>Alice Martin</td><td class="masked">a****@****.com</td><td>Premium</td><td>785</td><td class="masked">***-**-****</td></tr>
+              <tr class="filtered"><td>Bob Dupont</td><td class="masked">b****@****.fr</td><td>Business</td><td>720</td><td class="masked">***-**-****</td></tr>
+            </tbody>
+          </table>
+          <span class="rbac-note">Row filter: active accounts only &middot; Column masking: email &amp; SSN hidden</span>
+        </div>
+      </div>
+      <div class="rbac-layers">
+        <div class="rbac-layer-item">
+          <span class="rbac-layer-badge" style="--layer-c: #6c63ff;">Keycloak</span>
+          <span>5 RBAC roles &middot; SSO propagation</span>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="rbac-layer-item">
+          <span class="rbac-layer-badge" style="--layer-c: #22c55e;">OPA</span>
+          <span>Policy-as-code &middot; Row filter &middot; Column mask</span>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="rbac-layer-item">
+          <span class="rbac-layer-badge" style="--layer-c: #3b82f6;">Trino</span>
+          <span>SQL-level enforcement</span>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="rbac-layer-item">
+          <span class="rbac-layer-badge" style="--layer-c: #f59e0b;">Superset</span>
+          <span>Dashboard RBAC &middot; RLS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rbac-showcase active" data-lang="fr">
+      <div class="rbac-showcase-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h4>S&eacute;curit&eacute; granulaire en action</h4>
+        <p>M&ecirc;me requ&ecirc;te SQL, r&eacute;sultats diff&eacute;rents selon le r&ocirc;le. AKKO applique la s&eacute;curit&eacute; au niveau des donn&eacute;es &mdash; pas de l'application.</p>
+      </div>
+      <div class="rbac-demo-grid">
+        <div class="rbac-demo-card">
+          <div class="rbac-demo-label">
+            <span class="rbac-role rbac-role-admin">Admin</span>
+            <span class="rbac-query">SELECT * FROM customers</span>
+          </div>
+          <table class="rbac-table">
+            <thead><tr><th>nom</th><th>email</th><th>segment</th><th>score</th><th>nss</th></tr></thead>
+            <tbody>
+              <tr><td>Alice Martin</td><td>alice@bank.com</td><td>Premium</td><td>785</td><td>123-45-6789</td></tr>
+              <tr><td>Bob Dupont</td><td>bob@corp.fr</td><td>Business</td><td>720</td><td>987-65-4321</td></tr>
+              <tr><td>Carol Ndiaye</td><td>carol@gov.sn</td><td>Retail</td><td>650</td><td>456-78-9012</td></tr>
+            </tbody>
+          </table>
+          <span class="rbac-note">Acc&egrave;s complet &mdash; toutes les lignes, toutes les colonnes</span>
+        </div>
+        <div class="rbac-demo-card">
+          <div class="rbac-demo-label">
+            <span class="rbac-role rbac-role-viewer">Viewer</span>
+            <span class="rbac-query">SELECT * FROM customers</span>
+          </div>
+          <table class="rbac-table">
+            <thead><tr><th>nom</th><th>email</th><th>segment</th><th>score</th><th>nss</th></tr></thead>
+            <tbody>
+              <tr><td>Alice Martin</td><td class="masked">a****@****.com</td><td>Premium</td><td>785</td><td class="masked">***-**-****</td></tr>
+              <tr class="filtered"><td>Bob Dupont</td><td class="masked">b****@****.fr</td><td>Business</td><td>720</td><td class="masked">***-**-****</td></tr>
+            </tbody>
+          </table>
+          <span class="rbac-note">Filtre par ligne : comptes actifs &middot; Masquage : email &amp; NSS masqu&eacute;s</span>
+        </div>
+      </div>
+      <div class="rbac-layers">
+        <div class="rbac-layer-item">
+          <span class="rbac-layer-badge" style="--layer-c: #6c63ff;">Keycloak</span>
+          <span>5 r&ocirc;les RBAC &middot; Propagation SSO</span>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="rbac-layer-item">
+          <span class="rbac-layer-badge" style="--layer-c: #22c55e;">OPA</span>
+          <span>Policy-as-code &middot; Filtre ligne &middot; Masquage colonne</span>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="rbac-layer-item">
+          <span class="rbac-layer-badge" style="--layer-c: #3b82f6;">Trino</span>
+          <span>Application niveau SQL</span>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="rbac-layer-item">
+          <span class="rbac-layer-badge" style="--layer-c: #f59e0b;">Superset</span>
+          <span>RBAC dashboards &middot; RLS</span>
+        </div>
+      </div>
+    </div>
+
     <div class="regulation-badges" data-lang="en">
       <span class="reg-badge">RGPD</span>
       <span class="reg-badge">DORA</span>
@@ -580,8 +768,8 @@
     <span class="section-label" data-lang="en">Regulated Industries</span>
     <span class="section-label active" data-lang="fr">Industries r&eacute;glement&eacute;es</span>
 
-    <h2 class="section-title" data-lang="en">Designed for organizations<br>where data sovereignty is mandatory.</h2>
-    <h2 class="section-title active" data-lang="fr">Con&ccedil;u pour les organisations<br>o&ugrave; la souverainet&eacute; des donn&eacute;es est obligatoire.</h2>
+    <h2 class="section-title" data-lang="en">Built for banking, government, defense,<br>and healthcare data sovereignty.</h2>
+    <h2 class="section-title active" data-lang="fr">Con&ccedil;u pour la souverainet&eacute; des donn&eacute;es<br>dans la banque, le public, la d&eacute;fense et la sant&eacute;.</h2>
 
     <div class="industries-grid" data-lang="en">
       <div class="industry-card">
@@ -644,11 +832,11 @@
     <span class="section-label" data-lang="en">Comparison</span>
     <span class="section-label active" data-lang="fr">Comparaison</span>
 
-    <h2 class="section-title" data-lang="en">AKKO vs. proprietary solutions.</h2>
-    <h2 class="section-title active" data-lang="fr">AKKO face aux solutions propri&eacute;taires.</h2>
+    <h2 class="section-title" data-lang="en">Open source vs. proprietary<br>data platforms.</h2>
+    <h2 class="section-title active" data-lang="fr">Open source vs. plateformes<br>de donn&eacute;es propri&eacute;taires.</h2>
 
-    <p class="section-sub" data-lang="en">A factual comparison. AKKO is production-grade, built on the same engines that power enterprise data infrastructure worldwide &mdash; without the licensing costs or vendor lock-in.</p>
-    <p class="section-sub active" data-lang="fr">Une comparaison factuelle. AKKO est production-grade, b&acirc;ti sur les m&ecirc;mes moteurs qui propulsent l'infrastructure data d'entreprise dans le monde entier &mdash; sans les co&ucirc;ts de licence ni le verrouillage fournisseur.</p>
+    <p class="section-sub" data-lang="en">A factual comparison. AKKO is production-grade, built on the same open-source engines that power enterprise data infrastructure worldwide &mdash; Apache Iceberg, Trino, Spark, Airflow &mdash; without the licensing costs or vendor lock-in.</p>
+    <p class="section-sub active" data-lang="fr">Une comparaison factuelle. AKKO est production-grade, b&acirc;ti sur les m&ecirc;mes moteurs open source qui propulsent l'infrastructure data d'entreprise dans le monde entier &mdash; Apache Iceberg, Trino, Spark, Airflow &mdash; sans les co&ucirc;ts de licence ni le verrouillage fournisseur.</p>
 
     <div class="comparison-table-wrap">
       <table class="comparison-table">
@@ -667,11 +855,11 @@
         <tbody>
           <tr>
             <td data-lang="en">Licensing</td>
-            <td data-lang="en" class="col-akko"><span class="check-yes">Open source (Apache/MIT)</span></td>
+            <td data-lang="en" class="col-akko"><span class="check-yes">100% Open Source</span></td>
             <td data-lang="en"><span class="check-no">Proprietary</span></td>
             <td data-lang="en"><span class="check-partial">Partially open</span></td>
             <td data-lang="fr" class="active">Licence</td>
-            <td data-lang="fr" class="col-akko active"><span class="check-yes">Open source (Apache/MIT)</span></td>
+            <td data-lang="fr" class="col-akko active"><span class="check-yes">100% Open Source</span></td>
             <td data-lang="fr" class="active"><span class="check-no">Propri&eacute;taire</span></td>
             <td data-lang="fr" class="active"><span class="check-partial">Partiellement ouvert</span></td>
           </tr>
@@ -757,11 +945,11 @@
     <span class="section-label" data-lang="en">Architecture</span>
     <span class="section-label active" data-lang="fr">Architecture</span>
 
-    <h2 class="section-title" data-lang="en">8 layers. Zero black boxes.<br>Replace any piece.</h2>
-    <h2 class="section-title active" data-lang="fr">8 couches. Z&eacute;ro bo&icirc;te noire.<br>Remplacez n'importe quelle brique.</h2>
+    <h2 class="section-title" data-lang="en">Composable open-source architecture.<br>8 layers. Zero vendor lock-in.</h2>
+    <h2 class="section-title active" data-lang="fr">Architecture open source composable.<br>8 couches. Z&eacute;ro verrouillage fournisseur.</h2>
 
-    <p class="section-sub" data-lang="en">Pure upstream open source projects. No proprietary dependency. No exit barrier. Every layer independently swappable.</p>
-    <p class="section-sub active" data-lang="fr">Des projets open source upstream purs. Aucune d&eacute;pendance propri&eacute;taire. Aucune barri&egrave;re de sortie. Chaque couche est ind&eacute;pendamment rempla&ccedil;able.</p>
+    <p class="section-sub" data-lang="en">Pure upstream open-source projects from the Apache and CNCF ecosystems. No proprietary dependency. No exit barrier. Every layer is independently swappable &mdash; replace Trino with DuckDB, Superset with Metabase, or Ollama with vLLM.</p>
+    <p class="section-sub active" data-lang="fr">Des projets open source upstream purs issus des &eacute;cosyst&egrave;mes Apache et CNCF. Aucune d&eacute;pendance propri&eacute;taire. Aucune barri&egrave;re de sortie. Chaque couche est ind&eacute;pendamment rempla&ccedil;able &mdash; substituez Trino par DuckDB, Superset par Metabase, ou Ollama par vLLM.</p>
 
     <div class="arch-stack" data-lang="en">
       <div class="arch-layer" style="--layer-color: #64748b;"><span class="arch-name">Infrastructure</span><div class="arch-items"><span>Traefik</span><span>PostgreSQL</span><span>PostGIS</span><span>Nginx</span></div></div>
@@ -769,7 +957,7 @@
       <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">Compute</span><div class="arch-items"><span>Spark</span><span>Trino</span><span>Airflow</span></div></div>
       <div class="arch-layer" style="--layer-color: #6c63ff;"><span class="arch-name">Data Lake</span><div class="arch-items"><span>Apache Iceberg</span><span>Apache Polaris</span><span>MinIO</span></div></div>
       <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Governance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span></div></div>
-      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">AI</span><div class="arch-items"><span>Ollama</span><span>LiteLLM</span><span>pgvector</span><span>jupyter-ai</span><span>MCP Servers</span></div></div>
+      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">AI</span><div class="arch-items"><span>Ollama</span><span>LiteLLM</span><span>MLflow</span><span>pgvector</span><span>jupyter-ai</span><span>MCP Servers</span></div></div>
       <div class="arch-layer" style="--layer-color: #ef4444;"><span class="arch-name">Security</span><div class="arch-items"><span>Keycloak</span><span>OPA</span><span>OAuth2 Proxy</span><span>LLDAP</span></div></div>
       <div class="arch-layer" style="--layer-color: #06b6d4;"><span class="arch-name">Monitoring</span><div class="arch-items"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span></div></div>
     </div>
@@ -779,7 +967,7 @@
       <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">Calcul</span><div class="arch-items"><span>Spark</span><span>Trino</span><span>Airflow</span></div></div>
       <div class="arch-layer" style="--layer-color: #6c63ff;"><span class="arch-name">Data Lake</span><div class="arch-items"><span>Apache Iceberg</span><span>Apache Polaris</span><span>MinIO</span></div></div>
       <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Gouvernance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span></div></div>
-      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">IA</span><div class="arch-items"><span>Ollama</span><span>LiteLLM</span><span>pgvector</span><span>jupyter-ai</span><span>Serveurs MCP</span></div></div>
+      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">IA</span><div class="arch-items"><span>Ollama</span><span>LiteLLM</span><span>MLflow</span><span>pgvector</span><span>jupyter-ai</span><span>Serveurs MCP</span></div></div>
       <div class="arch-layer" style="--layer-color: #ef4444;"><span class="arch-name">S&eacute;curit&eacute;</span><div class="arch-items"><span>Keycloak</span><span>OPA</span><span>OAuth2 Proxy</span><span>LLDAP</span></div></div>
       <div class="arch-layer" style="--layer-color: #06b6d4;"><span class="arch-name">Monitoring</span><div class="arch-items"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span></div></div>
     </div>
@@ -792,8 +980,8 @@
     <span class="section-label" data-lang="en">Deployment</span>
     <span class="section-label active" data-lang="fr">D&eacute;ploiement</span>
 
-    <h2 class="section-title" data-lang="en">Kubernetes-first deployment.<br>From laptop to production.</h2>
-    <h2 class="section-title active" data-lang="fr">D&eacute;ploiement Kubernetes-first.<br>Du portable &agrave; la production.</h2>
+    <h2 class="section-title" data-lang="en">One Helm command. Any Kubernetes cluster.<br>From laptop to production in minutes.</h2>
+    <h2 class="section-title active" data-lang="fr">Une commande Helm. N'importe quel cluster Kubernetes.<br>Du portable &agrave; la production en quelques minutes.</h2>
 
     <div class="deploy-grid" data-lang="en">
       <div class="deploy-card deploy-card-prod">
@@ -811,16 +999,16 @@
         </div>
       </div>
       <div class="deploy-card">
-        <div class="deploy-badge">Development only</div>
-        <h3>Docker Compose (legacy)</h3>
-        <p>Quick-start for local evaluation only. Not recommended for production. The Helm/Kubernetes path is the primary and supported deployment method.</p>
+        <div class="deploy-badge">Local Development</div>
+        <h3>k3d (Local Kubernetes)</h3>
+        <p>Spin up a lightweight Kubernetes cluster on your laptop with k3d, then deploy the full platform with Helm. Same chart, same experience, same architecture as production. Ideal for evaluation and development.</p>
         <div class="deploy-code">
-          <code><span class="t-prompt">$</span> git clone https://github.com/AKKO-p/AKKO</code>
-          <code><span class="t-prompt">$</span> cd AKKO && ./scripts/start.sh</code>
+          <code><span class="t-prompt">$</span> k3d cluster create akko --port 443:443@loadbalancer</code>
+          <code><span class="t-prompt">$</span> helm install akko helm/akko/ -f values-dev.yaml</code>
         </div>
         <div class="deploy-reqs">
-          <span>Docker Desktop</span>
-          <span>8 GB RAM</span>
+          <span>k3d + Docker</span>
+          <span>16 GB RAM</span>
           <span>20 GB disk</span>
         </div>
       </div>
@@ -841,16 +1029,16 @@
         </div>
       </div>
       <div class="deploy-card">
-        <div class="deploy-badge">D&eacute;veloppement uniquement</div>
-        <h3>Docker Compose (legacy)</h3>
-        <p>D&eacute;marrage rapide pour &eacute;valuation locale uniquement. Non recommand&eacute; pour la production. Le d&eacute;ploiement Helm/Kubernetes est la m&eacute;thode principale et support&eacute;e.</p>
+        <div class="deploy-badge">D&eacute;veloppement local</div>
+        <h3>k3d (Kubernetes local)</h3>
+        <p>Cr&eacute;ez un cluster Kubernetes l&eacute;ger sur votre portable avec k3d, puis d&eacute;ployez la plateforme compl&egrave;te avec Helm. M&ecirc;me chart, m&ecirc;me exp&eacute;rience, m&ecirc;me architecture qu'en production. Id&eacute;al pour l'&eacute;valuation et le d&eacute;veloppement.</p>
         <div class="deploy-code">
-          <code><span class="t-prompt">$</span> git clone https://github.com/AKKO-p/AKKO</code>
-          <code><span class="t-prompt">$</span> cd AKKO && ./scripts/start.sh</code>
+          <code><span class="t-prompt">$</span> k3d cluster create akko --port 443:443@loadbalancer</code>
+          <code><span class="t-prompt">$</span> helm install akko helm/akko/ -f values-dev.yaml</code>
         </div>
         <div class="deploy-reqs">
-          <span>Docker Desktop</span>
-          <span>8 Go de RAM</span>
+          <span>k3d + Docker</span>
+          <span>16 Go de RAM</span>
           <span>20 Go de disque</span>
         </div>
       </div>
@@ -861,11 +1049,11 @@
 <!-- TECH STACK -->
 <section class="tech-stack" id="tech-stack">
   <div class="container">
-    <span class="section-label" data-lang="en">Tech Stack</span>
-    <span class="section-label active" data-lang="fr">Stack technique</span>
+    <span class="section-label" data-lang="en">Technology</span>
+    <span class="section-label active" data-lang="fr">Technologies</span>
 
-    <h2 class="section-title" data-lang="en">Pinned versions.<br>No surprises.</h2>
-    <h2 class="section-title active" data-lang="fr">Versions &eacute;pingl&eacute;es.<br>Z&eacute;ro surprise.</h2>
+    <h2 class="section-title" data-lang="en">Production-grade versions.<br>Pinned. Tested. No surprises.</h2>
+    <h2 class="section-title active" data-lang="fr">Versions production-grade.<br>&Eacute;pingl&eacute;es. Test&eacute;es. Z&eacute;ro surprise.</h2>
 
     <p class="section-sub" data-lang="en">Every image uses an explicit version tag. Zero <code>latest</code> in production. Upgrade on your terms.</p>
     <p class="section-sub active" data-lang="fr">Chaque image utilise un tag de version explicite. Z&eacute;ro <code>latest</code> en production. Mettez &agrave; jour &agrave; votre rythme.</p>
@@ -888,6 +1076,7 @@
       <div class="stack-item"><span class="stack-name">Grafana</span><span class="stack-ver">12.x</span></div>
       <div class="stack-item"><span class="stack-name">Prometheus</span><span class="stack-ver">3.x</span></div>
       <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">1.4.2</span></div>
+      <div class="stack-item"><span class="stack-name">MLflow</span><span class="stack-ver">2.x</span></div>
       <div class="stack-item"><span class="stack-name">OpenMetadata</span><span class="stack-ver">1.6</span></div>
     </div>
     <div class="stack-grid active" data-lang="fr">
@@ -908,19 +1097,142 @@
       <div class="stack-item"><span class="stack-name">Grafana</span><span class="stack-ver">12.x</span></div>
       <div class="stack-item"><span class="stack-name">Prometheus</span><span class="stack-ver">3.x</span></div>
       <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">1.4.2</span></div>
+      <div class="stack-item"><span class="stack-name">MLflow</span><span class="stack-ver">2.x</span></div>
       <div class="stack-item"><span class="stack-name">OpenMetadata</span><span class="stack-ver">1.6</span></div>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <span class="section-label" data-lang="en">FAQ</span>
+    <span class="section-label active" data-lang="fr">Questions fr&eacute;quentes</span>
+
+    <h2 class="section-title" data-lang="en">Frequently asked questions<br>about AKKO.</h2>
+    <h2 class="section-title active" data-lang="fr">Questions fr&eacute;quentes<br>sur AKKO.</h2>
+
+    <div class="faq-grid" data-lang="en">
+      <details class="faq-item">
+        <summary>Is AKKO truly free and open source?</summary>
+        <p>Yes. AKKO is built entirely on open-source components. There are zero licensing costs, zero per-seat fees, and zero usage-based billing. You pay only for your own infrastructure (servers, cloud VMs, or on-premise hardware).</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does AKKO compare to proprietary data platforms?</summary>
+        <p>AKKO provides equivalent capabilities &mdash; open lakehouse (Apache Iceberg), federated SQL (Trino), distributed compute (Spark), ML tracking (MLflow), data governance (OpenMetadata), and AI &mdash; but as an open-source platform you deploy on your own infrastructure. No vendor lock-in, no per-query pricing, full data sovereignty.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can AKKO run in air-gapped (disconnected) environments?</summary>
+        <p>Absolutely. AKKO is designed for air-gapped deployment from day one. All container images, AI models, and configurations can be pre-loaded. Zero internet dependency at runtime. This makes AKKO ideal for defense, classified, and high-security environments.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What Kubernetes distributions are supported?</summary>
+        <p>AKKO deploys to any conformant Kubernetes cluster: k3d and k3s for local development, Amazon EKS, Google GKE, Azure AKS, Red Hat OpenShift, and bare-metal Kubernetes. The same Helm chart works everywhere.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long does it take to deploy AKKO?</summary>
+        <p>About 5 minutes from git clone to a fully running platform with 30+ pods, SSO configured, monitoring active, and AI models ready. One Helm command handles everything.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does AKKO include AI capabilities?</summary>
+        <p>Yes. AKKO includes sovereign AI out of the box: local LLMs via Ollama, an OpenAI-compatible API gateway via LiteLLM, MCP protocol for tool calling, and RAG pipelines with pgvector. All AI processing happens on your infrastructure &mdash; zero data sent to external APIs.</p>
+      </details>
+    </div>
+    <div class="faq-grid active" data-lang="fr">
+      <details class="faq-item">
+        <summary>AKKO est-il vraiment gratuit et open source ?</summary>
+        <p>Oui. AKKO est construit enti&egrave;rement avec des composants open source. Z&eacute;ro co&ucirc;t de licence, z&eacute;ro tarification par utilisateur, z&eacute;ro facturation &agrave; l'usage. Vous ne payez que votre propre infrastructure (serveurs, VM cloud ou mat&eacute;riel on-premise).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Comment AKKO se compare-t-il aux plateformes de donn&eacute;es propri&eacute;taires ?</summary>
+        <p>AKKO offre des capacit&eacute;s &eacute;quivalentes &mdash; lakehouse ouvert (Apache Iceberg), SQL f&eacute;d&eacute;r&eacute; (Trino), calcul distribu&eacute; (Spark), suivi ML (MLflow), gouvernance des donn&eacute;es (OpenMetadata), et IA &mdash; mais en tant que plateforme open source d&eacute;ploy&eacute;e sur votre propre infrastructure. Aucun verrouillage fournisseur, aucune tarification par requ&ecirc;te, souverainet&eacute; totale des donn&eacute;es.</p>
+      </details>
+      <details class="faq-item">
+        <summary>AKKO peut-il fonctionner en environnement d&eacute;connect&eacute; (air-gapped) ?</summary>
+        <p>Absolument. AKKO est con&ccedil;u pour le d&eacute;ploiement d&eacute;connect&eacute; d&egrave;s le premier jour. Toutes les images de conteneurs, mod&egrave;les d'IA et configurations peuvent &ecirc;tre pr&eacute;charg&eacute;s. Z&eacute;ro d&eacute;pendance internet &agrave; l'ex&eacute;cution. Id&eacute;al pour les environnements de d&eacute;fense, classifi&eacute;s et haute s&eacute;curit&eacute;.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quelles distributions Kubernetes sont support&eacute;es ?</summary>
+        <p>AKKO se d&eacute;ploie sur tout cluster Kubernetes conforme : k3d et k3s pour le d&eacute;veloppement local, Amazon EKS, Google GKE, Azure AKS, Red Hat OpenShift et Kubernetes bare-metal. Le m&ecirc;me chart Helm fonctionne partout.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Combien de temps faut-il pour d&eacute;ployer AKKO ?</summary>
+        <p>Environ 5 minutes du git clone &agrave; une plateforme compl&egrave;tement op&eacute;rationnelle avec plus de 30 pods, SSO configur&eacute;, monitoring actif et mod&egrave;les d'IA pr&ecirc;ts. Une seule commande Helm g&egrave;re tout.</p>
+      </details>
+      <details class="faq-item">
+        <summary>AKKO inclut-il des capacit&eacute;s d'IA ?</summary>
+        <p>Oui. AKKO inclut l'IA souveraine cl&eacute; en main : LLM locaux via Ollama, passerelle API compatible OpenAI via LiteLLM, protocole MCP pour l'appel d'outils et pipelines RAG avec pgvector. Tout le traitement IA s'effectue sur votre infrastructure &mdash; z&eacute;ro donn&eacute;e envoy&eacute;e vers des API externes.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is AKKO truly free and open source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. AKKO is built entirely on open-source components. There are zero licensing costs, zero per-seat fees, and zero usage-based billing. You pay only for your own infrastructure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AKKO compare to proprietary data platforms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AKKO provides equivalent capabilities — open lakehouse (Apache Iceberg), federated SQL (Trino), distributed compute (Spark), ML tracking (MLflow), data governance (OpenMetadata), and AI — but as an open-source platform you deploy on your own infrastructure. No vendor lock-in, no per-query pricing, full data sovereignty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AKKO run in air-gapped (disconnected) environments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. AKKO is designed for air-gapped deployment from day one. All container images, AI models, and configurations can be pre-loaded. Zero internet dependency at runtime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Kubernetes distributions are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AKKO deploys to any conformant Kubernetes cluster: k3d and k3s for local development, Amazon EKS, Google GKE, Azure AKS, Red Hat OpenShift, and bare-metal Kubernetes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to deploy AKKO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 5 minutes from git clone to a fully running platform with 30+ pods, SSO configured, monitoring active, and AI models ready. One Helm command handles everything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does AKKO include AI capabilities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. AKKO includes sovereign AI out of the box: local LLMs via Ollama, an OpenAI-compatible API gateway via LiteLLM, MCP protocol for tool calling, and RAG pipelines with pgvector. All AI processing happens on your infrastructure."
+      }
+    }
+  ]
+}
+</script>
+
 <!-- CTA -->
 <section class="cta" id="contact">
   <div class="container">
-    <h2 data-lang="en"><span class="gradient-text">Your data. Your infrastructure.</span><br>Your rules.</h2>
-    <h2 data-lang="fr" class="active"><span class="gradient-text">Vos donn&eacute;es. Votre infrastructure.</span><br>Votre ind&eacute;pendance.</h2>
+    <h2 data-lang="en"><span class="gradient-text">Own Every Layer.</span><br>Deploy in minutes. Scale without limits.</h2>
+    <h2 data-lang="fr" class="active"><span class="gradient-text">Ma&icirc;trisez chaque couche.</span><br>D&eacute;ployez en minutes. Passez &agrave; l'&eacute;chelle sans limites.</h2>
 
-    <p data-lang="en">Open source. Cloud-agnostic. Sovereign by design. Stop paying for software you could own.</p>
-    <p data-lang="fr" class="active">Open source. Cloud-agnostique. Souverain par conception. Cessez de payer pour du logiciel que vous pourriez poss&eacute;der.</p>
+    <p data-lang="en">Open source. Kubernetes-native. Sovereign by design. Stop paying for software you could own &mdash; start building your independent data infrastructure today.</p>
+    <p data-lang="fr" class="active">Open source. Kubernetes-native. Souverain par conception. Cessez de payer pour du logiciel que vous pourriez poss&eacute;der &mdash; construisez votre infrastructure de donn&eacute;es ind&eacute;pendante d&egrave;s aujourd'hui.</p>
 
     <div class="cta-actions" data-lang="en">
       <a href="mailto:contact@akko.dev?subject=Demo%20Request" class="btn-primary">
@@ -949,19 +1261,56 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <svg viewBox="0 0 80 80" width="20" height="20" fill="none"><rect x="4" y="4" width="72" height="72" rx="6" stroke="#6c63ff" stroke-width="3" fill="none"/><rect x="18" y="18" width="44" height="44" rx="4" stroke="#6c63ff" stroke-width="2.5" fill="none"/><rect x="30" y="30" width="20" height="20" rx="3" fill="#6c63ff"/></svg>
-      <span>AKKO</span>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand">
+        <svg viewBox="0 0 80 80" width="20" height="20" fill="none"><rect x="4" y="4" width="72" height="72" rx="6" stroke="#6c63ff" stroke-width="3" fill="none"/><rect x="18" y="18" width="44" height="44" rx="4" stroke="#6c63ff" stroke-width="2.5" fill="none"/><rect x="30" y="30" width="20" height="20" rx="3" fill="#6c63ff"/></svg>
+        <span>AKKO</span>
+      </div>
+      <p class="footer-tagline" data-lang="en">Analytics Kernel, Keep Ownership.<br>Own Every Layer.</p>
+      <p class="footer-tagline active" data-lang="fr">Analytics Kernel, Keep Ownership.<br>Ma&icirc;trisez chaque couche.</p>
+      <div class="footer-social">
+        <a href="https://github.com/AKKO-p" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="#" class="social-coming-soon" aria-label="X (Twitter)" title="X (Twitter) &mdash; Coming soon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="social-coming-soon" aria-label="LinkedIn" title="LinkedIn &mdash; Coming soon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#" class="social-coming-soon" aria-label="Discord" title="Discord &mdash; Coming soon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="footer-links">
+    <div class="footer-col">
+      <h4 data-lang="en">Platform</h4>
+      <h4 data-lang="fr" class="active">Plateforme</h4>
+      <a href="#platform">Features</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#tech-stack" data-lang="en">Tech Stack</a>
+      <a href="#tech-stack" data-lang="fr" class="active">Technologies</a>
+      <a href="#deploy" data-lang="en">Deployment</a>
+      <a href="#deploy" data-lang="fr" class="active">D&eacute;ploiement</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
       <a href="https://github.com/AKKO-p/AKKO#readme" target="_blank" rel="noopener">Documentation</a>
+      <a href="#faq">FAQ</a>
       <a href="https://github.com/AKKO-p/AKKO" target="_blank" rel="noopener">GitHub</a>
       <a href="https://github.com/AKKO-p/AKKO/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
-      <a href="mailto:contact@akko.dev">Contact</a>
     </div>
-    <p class="footer-copy" data-lang="en">Own Every Layer.</p>
-    <p class="footer-copy active" data-lang="fr">Vos donn&eacute;es, votre infrastructure, votre ind&eacute;pendance.</p>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:contact@akko.dev">contact@akko.dev</a>
+      <a href="https://github.com/AKKO-p/AKKO/issues" target="_blank" rel="noopener" data-lang="en">Report an Issue</a>
+      <a href="https://github.com/AKKO-p/AKKO/issues" target="_blank" rel="noopener" data-lang="fr" class="active">Signaler un probl&egrave;me</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy" data-lang="en">AKKO &mdash; Own Every Layer. The open-source sovereign data platform.</p>
+    <p class="footer-copy active" data-lang="fr">AKKO &mdash; Own Every Layer. La plateforme de donn&eacute;es souveraine open source.</p>
   </div>
 </footer>
 
@@ -976,6 +1325,9 @@
       btn.classList.toggle('active', btn.dataset.setLang === lang);
     });
     document.documentElement.lang = lang;
+    document.title = lang === 'fr'
+      ? 'AKKO — Plateforme de donn\u00e9es souveraine open source | Own Every Layer'
+      : 'AKKO — Open-Source Sovereign Data Platform | Own Every Layer';
     try { localStorage.setItem(LANG_KEY, lang); } catch {}
   }
 
