@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AKKO — Open-Source Sovereign Data Platform | Own Every Layer</title>
   <meta name="description" content="AKKO is the open-source sovereign data platform that unifies AI, data engineering, and analytics. 30+ integrated services, Kubernetes-native deployment, zero licensing costs. Built for regulated industries: banking, government, defense, healthcare.">
-  <meta name="keywords" content="sovereign data platform, open source, Kubernetes, Apache Iceberg, data governance, AI-native, RBAC, on-premise, data sovereignty, open lakehouse, Helm, air-gapped, DORA, NIS2, RGPD">
+  <meta name="keywords" content="sovereign data platform, open source, Kubernetes, Apache Iceberg, data governance, AI-native, RBAC, on-premise, data sovereignty, open lakehouse, Helm, air-gapped, DORA, NIS2, RGPD, banking fraud detection, health data pipeline, ML credit scoring, NIS2 compliance, sovereign AI, data engineering use cases, open-source data lakehouse, regulated industries data platform, air-gapped AI, MLflow experiment tracking, OPA policy-as-code, Trino federated SQL, PostGIS geospatial, epidemiological surveillance, CISO compliance audit">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='8' y='8' width='64' height='64' rx='6' stroke='%236c63ff' stroke-width='4' fill='none'/%3E%3Crect x='28' y='28' width='24' height='24' rx='3' fill='%236c63ff'/%3E%3C/svg%3E">
   <link rel="canonical" href="https://akko-p.github.io/akko-site/">
   <link rel="alternate" hreflang="en" href="https://akko-p.github.io/akko-site/">
@@ -102,6 +102,8 @@
       <a href="#comparison" data-lang="fr">Comparer</a>
       <a href="#deploy" data-lang="en" class="active">Deploy</a>
       <a href="#deploy" data-lang="fr">D&eacute;ployer</a>
+      <a href="#use-cases" data-lang="en" class="active">Use Cases</a>
+      <a href="#use-cases" data-lang="fr">Cas d'usage</a>
       <a href="#faq" data-lang="en" class="active">FAQ</a>
       <a href="#faq" data-lang="fr">FAQ</a>
       <a href="https://github.com/AKKO-p/AKKO#readme" class="nav-doc" target="_blank" rel="noopener">
@@ -1137,6 +1139,18 @@
         <summary>Does AKKO include AI capabilities?</summary>
         <p>Yes. AKKO includes sovereign AI out of the box: local LLMs via Ollama, an OpenAI-compatible API gateway via LiteLLM, MCP protocol for tool calling, and RAG pipelines with pgvector. All AI processing happens on your infrastructure &mdash; zero data sent to external APIs.</p>
       </details>
+      <details class="faq-item">
+        <summary>Can AKKO detect banking fraud in real time?</summary>
+        <p>Yes. AKKO combines Spark for real-time transaction processing, Apache Iceberg for historical analysis, Trino for federated SQL across all data sources, and MLflow for ML model versioning. OPA policies enforce row-level filtering so each team sees only their authorized data. A complete banking fraud pipeline deploys in minutes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is AKKO compliant with RGPD and NIS2?</summary>
+        <p>AKKO is designed for regulated environments. Data never leaves your infrastructure (RGPD data residency). Keycloak SSO with 4 RBAC roles, OPA column masking for PII, full audit trails via OpenMetadata, and encrypted communications between all services. NIS2 incident reporting is supported via Grafana alerting and Prometheus monitoring.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can AKKO handle health data and epidemiological surveillance?</summary>
+        <p>Absolutely. AKKO supports air-gapped deployment for health ministries and hospitals. Spark processes large epidemiological datasets, PostGIS enables geospatial analysis, Superset creates interactive dashboards, and Airflow orchestrates automated pipelines. All processing stays on-premise &mdash; critical for patient data sovereignty.</p>
+      </details>
     </div>
     <div class="faq-grid active" data-lang="fr">
       <details class="faq-item">
@@ -1162,6 +1176,18 @@
       <details class="faq-item">
         <summary>AKKO inclut-il des capacit&eacute;s d'IA ?</summary>
         <p>Oui. AKKO inclut l'IA souveraine cl&eacute; en main : LLM locaux via Ollama, passerelle API compatible OpenAI via LiteLLM, protocole MCP pour l'appel d'outils et pipelines RAG avec pgvector. Tout le traitement IA s'effectue sur votre infrastructure &mdash; z&eacute;ro donn&eacute;e envoy&eacute;e vers des API externes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>AKKO peut-il d&eacute;tecter la fraude bancaire en temps r&eacute;el ?</summary>
+        <p>Oui. AKKO combine Spark pour le traitement transactionnel en temps r&eacute;el, Apache Iceberg pour l'analyse historique, Trino pour le SQL f&eacute;d&eacute;r&eacute; sur toutes les sources, et MLflow pour le versioning des mod&egrave;les ML. Les politiques OPA appliquent le filtrage par ligne pour que chaque &eacute;quipe ne voie que ses donn&eacute;es autoris&eacute;es. Un pipeline complet de d&eacute;tection de fraude se d&eacute;ploie en quelques minutes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>AKKO est-il conforme au RGPD et &agrave; NIS2 ?</summary>
+        <p>AKKO est con&ccedil;u pour les environnements r&eacute;glement&eacute;s. Les donn&eacute;es ne quittent jamais votre infrastructure (r&eacute;sidence des donn&eacute;es RGPD). SSO Keycloak avec 4 r&ocirc;les RBAC, masquage de colonnes OPA pour les donn&eacute;es personnelles, tra&ccedil;abilit&eacute; compl&egrave;te via OpenMetadata, et communications chiffr&eacute;es entre tous les services. Le signalement d'incidents NIS2 est support&eacute; via les alertes Grafana et le monitoring Prometheus.</p>
+      </details>
+      <details class="faq-item">
+        <summary>AKKO peut-il g&eacute;rer des donn&eacute;es de sant&eacute; et la surveillance &eacute;pid&eacute;miologique ?</summary>
+        <p>Absolument. AKKO supporte le d&eacute;ploiement air-gapped pour les minist&egrave;res de la sant&eacute; et h&ocirc;pitaux. Spark traite les grands jeux de donn&eacute;es &eacute;pid&eacute;miologiques, PostGIS permet l'analyse g&eacute;ospatiale, Superset cr&eacute;e des tableaux de bord interactifs, et Airflow orchestre les pipelines automatis&eacute;s. Tout le traitement reste sur site &mdash; critique pour la souverainet&eacute; des donn&eacute;es patient.</p>
       </details>
     </div>
   </div>
@@ -1219,6 +1245,430 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. AKKO includes sovereign AI out of the box: local LLMs via Ollama, an OpenAI-compatible API gateway via LiteLLM, MCP protocol for tool calling, and RAG pipelines with pgvector. All AI processing happens on your infrastructure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AKKO detect banking fraud in real time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. AKKO combines Spark for real-time transaction processing, Apache Iceberg for historical analysis, Trino for federated SQL, and MLflow for ML model versioning. OPA policies enforce row-level filtering so each team sees only authorized data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is AKKO compliant with RGPD and NIS2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AKKO is designed for regulated environments. Data never leaves your infrastructure. Keycloak SSO with RBAC, OPA column masking for PII, full audit trails via OpenMetadata, and encrypted communications. NIS2 incident reporting supported via Grafana alerting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AKKO handle health data and epidemiological surveillance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. AKKO supports air-gapped deployment for health ministries. Spark processes epidemiological datasets, PostGIS enables geospatial analysis, Superset creates dashboards, and Airflow orchestrates automated pipelines. All on-premise."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- USE CASES -->
+<section class="use-cases" id="use-cases">
+  <div class="container">
+    <span class="section-label" data-lang="en">Use Cases</span>
+    <span class="section-label active" data-lang="fr">Cas d'usage</span>
+
+    <h2 class="section-title" data-lang="en">Real stories. Real data.<br>Real sovereignty.</h2>
+    <h2 class="section-title active" data-lang="fr">Des histoires r&eacute;elles. Des donn&eacute;es r&eacute;elles.<br>Une souverainet&eacute; r&eacute;elle.</h2>
+
+    <div class="stories-grid" data-lang="en">
+
+      <!-- Karim — Banking CDO, Tunis -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #6c63ff, #8b5cf6);">K</div>
+          <div>
+            <h3>Karim &mdash; CDO, Central Bank of Tunis</h3>
+            <p>DORA compliance &amp; fraud detection</p>
+          </div>
+        </div>
+        <div class="story-timeline">
+          <div class="story-step">
+            <span class="story-step-time">8:00 AM</span>
+            <p>Karim deploys AKKO on an air-gapped cluster. <code>helm install</code> &mdash; 33 pods running in 5 minutes. The regulator wants DORA-compliant data lineage by end of quarter. No cloud. No vendor.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">10:00 AM</span>
+            <p>Spark ingests 2.4M transactions from the core banking CSV into <code>iceberg.banking.transactions</code>. Trino federates it with PostgreSQL customer data &mdash; one SQL query across two engines. Karim sees anomalies in real time.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">2:00 PM</span>
+            <p>OPA policies activate: <code>akko-analyst</code> sees aggregated risk scores only. <code>akko-viewer</code> gets <code>account_number</code> masked as <code>****</code>. Row-level filtering hides accounts above &euro;500K from junior analysts. The CISO signs off.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">5:00 PM</span>
+            <p>OpenMetadata shows full lineage: CSV &rarr; MinIO &rarr; Iceberg &rarr; Trino &rarr; Superset dashboard. Karim exports the lineage report for the regulator. DORA Article 15 &mdash; checked.</p>
+          </div>
+        </div>
+        <div class="story-chain">
+          <span class="story-chain-badge">Spark</span>
+          <span class="story-chain-badge">Iceberg</span>
+          <span class="story-chain-badge">Trino</span>
+          <span class="story-chain-badge">OPA</span>
+          <span class="story-chain-badge">Superset</span>
+          <span class="story-chain-badge">OpenMetadata</span>
+        </div>
+        <div class="story-tags">
+          <span>#banking</span><span>#DORA</span><span>#fraud-detection</span><span>#air-gapped</span>
+        </div>
+        <blockquote class="story-quote">&ldquo;The regulator asked for full data lineage. I showed them the OpenMetadata graph &mdash; ingestion to dashboard, every transformation traced. They had no further questions.&rdquo;</blockquote>
+      </div>
+
+      <!-- Leila — Data Engineer, Health Ministry Dakar -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">L</div>
+          <div>
+            <h3>Leila &mdash; Data Engineer, Health Ministry, Dakar</h3>
+            <p>Epidemiological surveillance pipeline</p>
+          </div>
+        </div>
+        <div class="story-timeline">
+          <div class="story-step">
+            <span class="story-step-time">8:00 AM</span>
+            <p>Leila receives 14 regional CSV files &mdash; malaria case reports from district hospitals. She uploads them to MinIO via JupyterHub. The ministry runs AKKO on a disconnected server. No internet. No cloud dependency.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">10:00 AM</span>
+            <p>Spark cleans and normalizes the data into <code>iceberg.health.malaria_cases</code>. PostGIS geocodes each hospital. Airflow orchestrates the full pipeline &mdash; extraction, transformation, spatial join, quality checks &mdash; all automated.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">2:00 PM</span>
+            <p>Trino joins Iceberg case data with PostGIS hospital coordinates. Superset renders an interactive map: infection density by region, weekly trends, age-group breakdowns. The epidemiologist spots a cluster forming in Kolda.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">5:00 PM</span>
+            <p>The minister opens the Superset dashboard from her tablet. Kolda gets flagged as alert zone. Medical supplies are dispatched. The pipeline runs every Monday automatically via Airflow. Zero manual intervention.</p>
+          </div>
+        </div>
+        <div class="story-chain">
+          <span class="story-chain-badge">MinIO</span>
+          <span class="story-chain-badge">Spark</span>
+          <span class="story-chain-badge">Iceberg</span>
+          <span class="story-chain-badge">PostGIS</span>
+          <span class="story-chain-badge">Airflow</span>
+          <span class="story-chain-badge">Superset</span>
+        </div>
+        <div class="story-tags">
+          <span>#healthcare</span><span>#epidemiology</span><span>#geospatial</span><span>#air-gapped</span>
+        </div>
+        <blockquote class="story-quote">&ldquo;Before AKKO, consolidating 14 regional reports took our team two weeks. Now the pipeline runs every Monday morning &mdash; automatically. We focus on saving lives, not cleaning spreadsheets.&rdquo;</blockquote>
+      </div>
+
+      <!-- Youssef — Data Scientist, Insurance Casablanca -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">Y</div>
+          <div>
+            <h3>Youssef &mdash; Data Scientist, Insurance, Casablanca</h3>
+            <p>ML credit scoring with full traceability</p>
+          </div>
+        </div>
+        <div class="story-timeline">
+          <div class="story-step">
+            <span class="story-step-time">8:00 AM</span>
+            <p>Youssef opens JupyterHub &mdash; Python, R, Julia all pre-installed with code-server as IDE. He queries Trino for historical claims data federated across Iceberg and PostgreSQL. One connection string, two data sources.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">10:00 AM</span>
+            <p>He trains a gradient boosting model for credit risk scoring. MLflow logs every experiment: hyperparameters, metrics (AUC 0.89, precision 0.82), feature importance. 23 runs tracked, 3 promoted to staging. Full reproducibility.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">2:00 PM</span>
+            <p>Ollama runs locally &mdash; Youssef uses jupyter-ai to explain model predictions in natural language. The compliance team asks why client #4721 was flagged. The LLM reads SHAP values and generates a plain-language explanation. All on-premise.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">5:00 PM</span>
+            <p>Airflow schedules the scoring pipeline: daily retrain, model validation, Superset dashboard update. The production model is tagged in MLflow Model Registry. The auditor gets a complete trail: data &rarr; training &rarr; inference &rarr; decision.</p>
+          </div>
+        </div>
+        <div class="story-chain">
+          <span class="story-chain-badge">JupyterHub</span>
+          <span class="story-chain-badge">Trino</span>
+          <span class="story-chain-badge">MLflow</span>
+          <span class="story-chain-badge">Ollama</span>
+          <span class="story-chain-badge">Airflow</span>
+          <span class="story-chain-badge">Superset</span>
+        </div>
+        <div class="story-tags">
+          <span>#insurance</span><span>#ML</span><span>#credit-scoring</span><span>#explainability</span>
+        </div>
+        <blockquote class="story-quote">&ldquo;23 experiments, 3 models promoted, full audit trail from raw data to production prediction. The compliance team didn&rsquo;t ask a single follow-up question.&rdquo;</blockquote>
+      </div>
+
+      <!-- Sana — CISO, Industrial Group Lyon -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #ef4444, #f87171);">S</div>
+          <div>
+            <h3>Sana &mdash; CISO, Industrial Group, Lyon</h3>
+            <p>NIS2 &amp; RGPD compliance audit</p>
+          </div>
+        </div>
+        <div class="story-timeline">
+          <div class="story-step">
+            <span class="story-step-time">8:00 AM</span>
+            <p>Sana&rsquo;s company faces NIS2 deadline. She deploys AKKO on bare-metal Kubernetes &mdash; data must never leave French soil. Keycloak configures SSO with 4 roles: admin, engineer, analyst, viewer. 14 OAuth clients, one login for everything.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">10:00 AM</span>
+            <p>OPA Rego policies enforce column masking on PII: <code>email</code>, <code>phone</code>, <code>national_id</code> are invisible to <code>akko-viewer</code>. Row-level filtering restricts data by department. Sana tests every role in Trino &mdash; zero data leakage.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">2:00 PM</span>
+            <p>Prometheus + Grafana monitor every service. AlertManager pings on anomalies. Loki aggregates all logs centrally. OpenMetadata catalogs every table, column, and transformation. The NIS2 auditor can trace any data point from source to dashboard.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">5:00 PM</span>
+            <p>Sana presents to the board: RBAC matrix, access logs, data lineage graph, encryption status. All from AKKO&rsquo;s built-in tools. The audit passes. NIS2 Article 21 &mdash; access control, monitoring, incident detection &mdash; all covered by one platform.</p>
+          </div>
+        </div>
+        <div class="story-chain">
+          <span class="story-chain-badge">Keycloak</span>
+          <span class="story-chain-badge">OPA</span>
+          <span class="story-chain-badge">Prometheus</span>
+          <span class="story-chain-badge">Grafana</span>
+          <span class="story-chain-badge">Loki</span>
+          <span class="story-chain-badge">OpenMetadata</span>
+        </div>
+        <div class="story-tags">
+          <span>#NIS2</span><span>#RGPD</span><span>#compliance</span><span>#security</span>
+        </div>
+        <blockquote class="story-quote">&ldquo;The auditor asked for proof of access control, monitoring, and data lineage. I opened three AKKO dashboards. The audit was over in forty minutes.&rdquo;</blockquote>
+      </div>
+
+    </div>
+
+    <div class="stories-grid active" data-lang="fr">
+
+      <!-- Karim — CDO Banque, Tunis -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #6c63ff, #8b5cf6);">K</div>
+          <div>
+            <h3>Karim &mdash; CDO, Banque Centrale de Tunis</h3>
+            <p>Conformit&eacute; DORA &amp; d&eacute;tection de fraude</p>
+          </div>
+        </div>
+        <div class="story-timeline">
+          <div class="story-step">
+            <span class="story-step-time">8h00</span>
+            <p>Karim d&eacute;ploie AKKO sur un cluster air-gapped. <code>helm install</code> &mdash; 33 pods en 5 minutes. Le r&eacute;gulateur exige la tra&ccedil;abilit&eacute; des donn&eacute;es conforme DORA avant la fin du trimestre. Pas de cloud. Pas de fournisseur.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">10h00</span>
+            <p>Spark ing&egrave;re 2,4M de transactions bancaires dans <code>iceberg.banking.transactions</code>. Trino f&eacute;d&egrave;re avec les donn&eacute;es clients PostgreSQL &mdash; une seule requ&ecirc;te SQL sur deux moteurs. Karim voit les anomalies en temps r&eacute;el.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">14h00</span>
+            <p>Les politiques OPA s'activent : <code>akko-analyst</code> ne voit que les scores de risque agr&eacute;g&eacute;s. <code>akko-viewer</code> voit <code>account_number</code> masqu&eacute; en <code>****</code>. Le filtrage par ligne cache les comptes &gt; 500K&euro; aux analystes juniors. Le RSSI valide.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">17h00</span>
+            <p>OpenMetadata affiche la lin&eacute;age compl&egrave;te : CSV &rarr; MinIO &rarr; Iceberg &rarr; Trino &rarr; tableau de bord Superset. Karim exporte le rapport de lin&eacute;age pour le r&eacute;gulateur. Article 15 DORA &mdash; valid&eacute;.</p>
+          </div>
+        </div>
+        <div class="story-chain">
+          <span class="story-chain-badge">Spark</span>
+          <span class="story-chain-badge">Iceberg</span>
+          <span class="story-chain-badge">Trino</span>
+          <span class="story-chain-badge">OPA</span>
+          <span class="story-chain-badge">Superset</span>
+          <span class="story-chain-badge">OpenMetadata</span>
+        </div>
+        <div class="story-tags">
+          <span>#banque</span><span>#DORA</span><span>#fraude</span><span>#air-gapped</span>
+        </div>
+        <blockquote class="story-quote">&laquo; Le r&eacute;gulateur a demand&eacute; la tra&ccedil;abilit&eacute; compl&egrave;te. Je lui ai montr&eacute; le graphe OpenMetadata &mdash; de l'ingestion au tableau de bord, chaque transformation trac&eacute;e. Il n'a pas eu d'autres questions. &raquo;</blockquote>
+      </div>
+
+      <!-- Leila — Data Engineer, Minist&egrave;re Sant&eacute; Dakar -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">L</div>
+          <div>
+            <h3>Leila &mdash; Data Engineer, Minist&egrave;re de la Sant&eacute;, Dakar</h3>
+            <p>Pipeline de surveillance &eacute;pid&eacute;miologique</p>
+          </div>
+        </div>
+        <div class="story-timeline">
+          <div class="story-step">
+            <span class="story-step-time">8h00</span>
+            <p>Leila re&ccedil;oit 14 fichiers CSV r&eacute;gionaux &mdash; rapports de cas de paludisme des h&ocirc;pitaux de district. Elle les charge dans MinIO via JupyterHub. Le minist&egrave;re ex&eacute;cute AKKO sur un serveur d&eacute;connect&eacute;. Pas d'internet. Pas de d&eacute;pendance cloud.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">10h00</span>
+            <p>Spark nettoie et normalise les donn&eacute;es dans <code>iceberg.health.malaria_cases</code>. PostGIS g&eacute;ocode chaque h&ocirc;pital. Airflow orchestre le pipeline complet &mdash; extraction, transformation, jointure spatiale, contr&ocirc;les qualit&eacute; &mdash; enti&egrave;rement automatis&eacute;.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">14h00</span>
+            <p>Trino joint les donn&eacute;es Iceberg avec les coordonn&eacute;es PostGIS. Superset affiche une carte interactive : densit&eacute; d'infection par r&eacute;gion, tendances hebdomadaires, ventilation par tranche d'&acirc;ge. L'&eacute;pid&eacute;miologiste rep&egrave;re un cluster en formation &agrave; Kolda.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">17h00</span>
+            <p>La ministre ouvre le tableau de bord Superset depuis sa tablette. Kolda est signal&eacute; en zone d'alerte. Les fournitures m&eacute;dicales sont envoy&eacute;es. Le pipeline tourne chaque lundi automatiquement via Airflow. Z&eacute;ro intervention manuelle.</p>
+          </div>
+        </div>
+        <div class="story-chain">
+          <span class="story-chain-badge">MinIO</span>
+          <span class="story-chain-badge">Spark</span>
+          <span class="story-chain-badge">Iceberg</span>
+          <span class="story-chain-badge">PostGIS</span>
+          <span class="story-chain-badge">Airflow</span>
+          <span class="story-chain-badge">Superset</span>
+        </div>
+        <div class="story-tags">
+          <span>#sant&eacute;</span><span>#&eacute;pid&eacute;miologie</span><span>#g&eacute;ospatial</span><span>#air-gapped</span>
+        </div>
+        <blockquote class="story-quote">&laquo; Avant AKKO, consolider 14 rapports r&eacute;gionaux prenait deux semaines. Maintenant le pipeline tourne chaque lundi matin &mdash; automatiquement. On se concentre sur sauver des vies, pas sur nettoyer des tableurs. &raquo;</blockquote>
+      </div>
+
+      <!-- Youssef — Data Scientist, Assurance Casablanca -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">Y</div>
+          <div>
+            <h3>Youssef &mdash; Data Scientist, Assurance, Casablanca</h3>
+            <p>Scoring cr&eacute;dit ML avec tra&ccedil;abilit&eacute; compl&egrave;te</p>
+          </div>
+        </div>
+        <div class="story-timeline">
+          <div class="story-step">
+            <span class="story-step-time">8h00</span>
+            <p>Youssef ouvre JupyterHub &mdash; Python, R, Julia pr&eacute;install&eacute;s avec code-server comme IDE. Il interroge Trino pour les donn&eacute;es historiques de sinistres, f&eacute;d&eacute;r&eacute;es entre Iceberg et PostgreSQL. Une seule connexion, deux sources de donn&eacute;es.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">10h00</span>
+            <p>Il entra&icirc;ne un mod&egrave;le gradient boosting pour le scoring de risque cr&eacute;dit. MLflow trace chaque exp&eacute;rience : hyperparam&egrave;tres, m&eacute;triques (AUC 0.89, pr&eacute;cision 0.82), importance des features. 23 runs trac&eacute;s, 3 promus en staging. Reproductibilit&eacute; totale.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">14h00</span>
+            <p>Ollama tourne localement &mdash; Youssef utilise jupyter-ai pour expliquer les pr&eacute;dictions en langage naturel. L'&eacute;quipe conformit&eacute; demande pourquoi le client #4721 a &eacute;t&eacute; signal&eacute;. Le LLM lit les valeurs SHAP et g&eacute;n&egrave;re une explication compr&eacute;hensible. Tout sur site.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">17h00</span>
+            <p>Airflow planifie le pipeline de scoring : r&eacute;entra&icirc;nement quotidien, validation du mod&egrave;le, mise &agrave; jour du tableau de bord Superset. Le mod&egrave;le de production est tag&eacute; dans MLflow Model Registry. L'auditeur obtient une tra&ccedil;abilit&eacute; compl&egrave;te : donn&eacute;es &rarr; entra&icirc;nement &rarr; inf&eacute;rence &rarr; d&eacute;cision.</p>
+          </div>
+        </div>
+        <div class="story-chain">
+          <span class="story-chain-badge">JupyterHub</span>
+          <span class="story-chain-badge">Trino</span>
+          <span class="story-chain-badge">MLflow</span>
+          <span class="story-chain-badge">Ollama</span>
+          <span class="story-chain-badge">Airflow</span>
+          <span class="story-chain-badge">Superset</span>
+        </div>
+        <div class="story-tags">
+          <span>#assurance</span><span>#ML</span><span>#scoring-cr&eacute;dit</span><span>#explicabilit&eacute;</span>
+        </div>
+        <blockquote class="story-quote">&laquo; 23 exp&eacute;riences, 3 mod&egrave;les promus, tra&ccedil;abilit&eacute; compl&egrave;te des donn&eacute;es brutes &agrave; la pr&eacute;diction en production. L'&eacute;quipe conformit&eacute; n'a pos&eacute; aucune question suppl&eacute;mentaire. &raquo;</blockquote>
+      </div>
+
+      <!-- Sana — RSSI, Groupe Industriel Lyon -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #ef4444, #f87171);">S</div>
+          <div>
+            <h3>Sana &mdash; RSSI, Groupe Industriel, Lyon</h3>
+            <p>Audit de conformit&eacute; NIS2 &amp; RGPD</p>
+          </div>
+        </div>
+        <div class="story-timeline">
+          <div class="story-step">
+            <span class="story-step-time">8h00</span>
+            <p>L'entreprise de Sana fait face &agrave; l'&eacute;ch&eacute;ance NIS2. Elle d&eacute;ploie AKKO sur Kubernetes bare-metal &mdash; les donn&eacute;es ne doivent jamais quitter le sol fran&ccedil;ais. Keycloak configure le SSO avec 4 r&ocirc;les : admin, engineer, analyst, viewer. 14 clients OAuth, un seul login pour tout.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">10h00</span>
+            <p>Les politiques OPA Rego imposent le masquage de colonnes sur les donn&eacute;es personnelles : <code>email</code>, <code>phone</code>, <code>national_id</code> sont invisibles pour <code>akko-viewer</code>. Le filtrage par ligne restreint les donn&eacute;es par d&eacute;partement. Sana teste chaque r&ocirc;le dans Trino &mdash; z&eacute;ro fuite de donn&eacute;es.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">14h00</span>
+            <p>Prometheus + Grafana supervisent chaque service. AlertManager alerte sur les anomalies. Loki agr&egrave;ge tous les logs centralement. OpenMetadata catalogue chaque table, colonne et transformation. L'auditeur NIS2 peut tracer chaque donn&eacute;e de la source au tableau de bord.</p>
+          </div>
+          <div class="story-step">
+            <span class="story-step-time">17h00</span>
+            <p>Sana pr&eacute;sente au conseil : matrice RBAC, logs d'acc&egrave;s, graphe de lin&eacute;age, &eacute;tat du chiffrement. Tout depuis les outils int&eacute;gr&eacute;s d'AKKO. L'audit passe. Article 21 NIS2 &mdash; contr&ocirc;le d'acc&egrave;s, monitoring, d&eacute;tection d'incidents &mdash; tout couvert par une seule plateforme.</p>
+          </div>
+        </div>
+        <div class="story-chain">
+          <span class="story-chain-badge">Keycloak</span>
+          <span class="story-chain-badge">OPA</span>
+          <span class="story-chain-badge">Prometheus</span>
+          <span class="story-chain-badge">Grafana</span>
+          <span class="story-chain-badge">Loki</span>
+          <span class="story-chain-badge">OpenMetadata</span>
+        </div>
+        <div class="story-tags">
+          <span>#NIS2</span><span>#RGPD</span><span>#conformit&eacute;</span><span>#s&eacute;curit&eacute;</span>
+        </div>
+        <blockquote class="story-quote">&laquo; L'auditeur a demand&eacute; les preuves de contr&ocirc;le d'acc&egrave;s, de monitoring et de lin&eacute;age. J'ai ouvert trois tableaux de bord AKKO. L'audit &eacute;tait termin&eacute; en quarante minutes. &raquo;</blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "AKKO Platform Use Cases",
+  "description": "Real-world use cases demonstrating AKKO sovereign data platform capabilities across banking, healthcare, insurance, and industrial sectors.",
+  "numberOfItems": 4,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Article",
+        "name": "Banking Fraud Detection & DORA Compliance",
+        "description": "How a Central Bank CDO deploys AKKO air-gapped to process 2.4M transactions with Spark, Iceberg, Trino, and OPA row-level filtering for DORA compliance.",
+        "keywords": "banking, fraud detection, DORA, air-gapped, data lineage, OPA RBAC"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Article",
+        "name": "Epidemiological Surveillance Pipeline",
+        "description": "How a Health Ministry data engineer builds an automated malaria surveillance pipeline with Spark, PostGIS, Airflow, and Superset on a disconnected server.",
+        "keywords": "healthcare, epidemiology, geospatial, PostGIS, air-gapped, Airflow"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Article",
+        "name": "ML Credit Scoring with Full Traceability",
+        "description": "How an insurance data scientist trains and deploys credit scoring models with MLflow experiment tracking, Ollama AI explainability, and complete audit trail.",
+        "keywords": "insurance, ML, credit scoring, MLflow, explainability, Ollama"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Article",
+        "name": "NIS2 & RGPD Compliance Audit",
+        "description": "How a CISO passes a NIS2 compliance audit using Keycloak SSO, OPA column masking, Prometheus monitoring, and OpenMetadata data lineage — all from one platform.",
+        "keywords": "NIS2, RGPD, compliance, security, RBAC, monitoring"
       }
     }
   ]
@@ -1297,6 +1747,8 @@
     <div class="footer-col">
       <h4>Resources</h4>
       <a href="https://github.com/AKKO-p/AKKO#readme" target="_blank" rel="noopener">Documentation</a>
+      <a href="#use-cases" data-lang="en">Use Cases</a>
+      <a href="#use-cases" data-lang="fr" class="active">Cas d'usage</a>
       <a href="#faq">FAQ</a>
       <a href="https://github.com/AKKO-p/AKKO" target="_blank" rel="noopener">GitHub</a>
       <a href="https://github.com/AKKO-p/AKKO/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
