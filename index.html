@@ -1281,341 +1281,265 @@
     <span class="section-label" data-lang="en">Use Cases</span>
     <span class="section-label active" data-lang="fr">Cas d'usage</span>
 
-    <h2 class="section-title" data-lang="en">Real stories. Real data.<br>Real sovereignty.</h2>
-    <h2 class="section-title active" data-lang="fr">Des histoires r&eacute;elles. Des donn&eacute;es r&eacute;elles.<br>Une souverainet&eacute; r&eacute;elle.</h2>
+    <h2 class="section-title" data-lang="en">One need. One platform.<br>Every tool already integrated.</h2>
+    <h2 class="section-title active" data-lang="fr">Un besoin. Une plateforme.<br>Chaque outil d&eacute;j&agrave; int&eacute;gr&eacute;.</h2>
 
     <div class="stories-grid" data-lang="en">
 
-      <!-- Karim — Banking CDO, Tunis -->
+      <!-- I need to develop -->
       <div class="story-card">
         <div class="story-header">
-          <div class="story-avatar" style="background: linear-gradient(135deg, #6c63ff, #8b5cf6);">K</div>
+          <div class="story-avatar" style="background: linear-gradient(135deg, #6c63ff, #8b5cf6);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
           <div>
-            <h3>Karim &mdash; CDO, Central Bank of Tunis</h3>
-            <p>DORA compliance &amp; fraud detection</p>
+            <h3>&ldquo;I need a dev environment&rdquo;</h3>
+            <p>JupyterHub with code-server, multi-language, AI-assisted</p>
           </div>
         </div>
-        <div class="story-timeline">
-          <div class="story-step">
-            <span class="story-step-time">8:00 AM</span>
-            <p>Karim deploys AKKO on an air-gapped cluster. <code>helm install</code> &mdash; 33 pods running in 5 minutes. The regulator wants DORA-compliant data lineage by end of quarter. No cloud. No vendor.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">10:00 AM</span>
-            <p>Spark ingests 2.4M transactions from the core banking CSV into <code>iceberg.banking.transactions</code>. Trino federates it with PostgreSQL customer data &mdash; one SQL query across two engines. Karim sees anomalies in real time.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">2:00 PM</span>
-            <p>OPA policies activate: <code>akko-analyst</code> sees aggregated risk scores only. <code>akko-viewer</code> gets <code>account_number</code> masked as <code>****</code>. Row-level filtering hides accounts above &euro;500K from junior analysts. The CISO signs off.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">5:00 PM</span>
-            <p>OpenMetadata shows full lineage: CSV &rarr; MinIO &rarr; Iceberg &rarr; Trino &rarr; Superset dashboard. Karim exports the lineage report for the regulator. DORA Article 15 &mdash; checked.</p>
-          </div>
-        </div>
-        <div class="story-chain">
-          <span class="story-chain-badge">Spark</span>
-          <span class="story-chain-badge">Iceberg</span>
-          <span class="story-chain-badge">Trino</span>
-          <span class="story-chain-badge">OPA</span>
-          <span class="story-chain-badge">Superset</span>
-          <span class="story-chain-badge">OpenMetadata</span>
-        </div>
-        <div class="story-tags">
-          <span>#banking</span><span>#DORA</span><span>#fraud-detection</span><span>#air-gapped</span>
-        </div>
-        <blockquote class="story-quote">&ldquo;The regulator asked for full data lineage. I showed them the OpenMetadata graph &mdash; ingestion to dashboard, every transformation traced. They had no further questions.&rdquo;</blockquote>
-      </div>
-
-      <!-- Leila — Data Engineer, Health Ministry Dakar -->
-      <div class="story-card">
-        <div class="story-header">
-          <div class="story-avatar" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">L</div>
-          <div>
-            <h3>Leila &mdash; Data Engineer, Health Ministry, Dakar</h3>
-            <p>Epidemiological surveillance pipeline</p>
-          </div>
-        </div>
-        <div class="story-timeline">
-          <div class="story-step">
-            <span class="story-step-time">8:00 AM</span>
-            <p>Leila receives 14 regional CSV files &mdash; malaria case reports from district hospitals. She uploads them to MinIO via JupyterHub. The ministry runs AKKO on a disconnected server. No internet. No cloud dependency.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">10:00 AM</span>
-            <p>Spark cleans and normalizes the data into <code>iceberg.health.malaria_cases</code>. PostGIS geocodes each hospital. Airflow orchestrates the full pipeline &mdash; extraction, transformation, spatial join, quality checks &mdash; all automated.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">2:00 PM</span>
-            <p>Trino joins Iceberg case data with PostGIS hospital coordinates. Superset renders an interactive map: infection density by region, weekly trends, age-group breakdowns. The epidemiologist spots a cluster forming in Kolda.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">5:00 PM</span>
-            <p>The minister opens the Superset dashboard from her tablet. Kolda gets flagged as alert zone. Medical supplies are dispatched. The pipeline runs every Monday automatically via Airflow. Zero manual intervention.</p>
-          </div>
-        </div>
-        <div class="story-chain">
-          <span class="story-chain-badge">MinIO</span>
-          <span class="story-chain-badge">Spark</span>
-          <span class="story-chain-badge">Iceberg</span>
-          <span class="story-chain-badge">PostGIS</span>
-          <span class="story-chain-badge">Airflow</span>
-          <span class="story-chain-badge">Superset</span>
-        </div>
-        <div class="story-tags">
-          <span>#healthcare</span><span>#epidemiology</span><span>#geospatial</span><span>#air-gapped</span>
-        </div>
-        <blockquote class="story-quote">&ldquo;Before AKKO, consolidating 14 regional reports took our team two weeks. Now the pipeline runs every Monday morning &mdash; automatically. We focus on saving lives, not cleaning spreadsheets.&rdquo;</blockquote>
-      </div>
-
-      <!-- Youssef — Data Scientist, Insurance Casablanca -->
-      <div class="story-card">
-        <div class="story-header">
-          <div class="story-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">Y</div>
-          <div>
-            <h3>Youssef &mdash; Data Scientist, Insurance, Casablanca</h3>
-            <p>ML credit scoring with full traceability</p>
-          </div>
-        </div>
-        <div class="story-timeline">
-          <div class="story-step">
-            <span class="story-step-time">8:00 AM</span>
-            <p>Youssef opens JupyterHub &mdash; Python, R, Julia all pre-installed with code-server as IDE. He queries Trino for historical claims data federated across Iceberg and PostgreSQL. One connection string, two data sources.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">10:00 AM</span>
-            <p>He trains a gradient boosting model for credit risk scoring. MLflow logs every experiment: hyperparameters, metrics (AUC 0.89, precision 0.82), feature importance. 23 runs tracked, 3 promoted to staging. Full reproducibility.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">2:00 PM</span>
-            <p>Ollama runs locally &mdash; Youssef uses jupyter-ai to explain model predictions in natural language. The compliance team asks why client #4721 was flagged. The LLM reads SHAP values and generates a plain-language explanation. All on-premise.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">5:00 PM</span>
-            <p>Airflow schedules the scoring pipeline: daily retrain, model validation, Superset dashboard update. The production model is tagged in MLflow Model Registry. The auditor gets a complete trail: data &rarr; training &rarr; inference &rarr; decision.</p>
-          </div>
-        </div>
+        <p class="story-desc">Open JupyterHub &mdash; Python, R, Julia pre-installed. code-server gives you a full VS Code IDE in the browser. jupyter-ai connects to local Ollama for code generation and explanation. Shared notebooks, Quarto reports, Git integration. One login via Keycloak SSO.</p>
         <div class="story-chain">
           <span class="story-chain-badge">JupyterHub</span>
-          <span class="story-chain-badge">Trino</span>
-          <span class="story-chain-badge">MLflow</span>
+          <span class="story-chain-badge">code-server</span>
           <span class="story-chain-badge">Ollama</span>
-          <span class="story-chain-badge">Airflow</span>
-          <span class="story-chain-badge">Superset</span>
+          <span class="story-chain-badge">jupyter-ai</span>
+          <span class="story-chain-badge">Quarto</span>
         </div>
-        <div class="story-tags">
-          <span>#insurance</span><span>#ML</span><span>#credit-scoring</span><span>#explainability</span>
-        </div>
-        <blockquote class="story-quote">&ldquo;23 experiments, 3 models promoted, full audit trail from raw data to production prediction. The compliance team didn&rsquo;t ask a single follow-up question.&rdquo;</blockquote>
       </div>
 
-      <!-- Sana — CISO, Industrial Group Lyon -->
+      <!-- I need dashboards -->
       <div class="story-card">
         <div class="story-header">
-          <div class="story-avatar" style="background: linear-gradient(135deg, #ef4444, #f87171);">S</div>
+          <div class="story-avatar" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
           <div>
-            <h3>Sana &mdash; CISO, Industrial Group, Lyon</h3>
-            <p>NIS2 &amp; RGPD compliance audit</p>
+            <h3>&ldquo;I need dashboards and SQL&rdquo;</h3>
+            <p>Superset + Trino with federated queries across all sources</p>
           </div>
         </div>
-        <div class="story-timeline">
-          <div class="story-step">
-            <span class="story-step-time">8:00 AM</span>
-            <p>Sana&rsquo;s company faces NIS2 deadline. She deploys AKKO on bare-metal Kubernetes &mdash; data must never leave French soil. Keycloak configures SSO with 4 roles: admin, engineer, analyst, viewer. 14 OAuth clients, one login for everything.</p>
+        <p class="story-desc">Write one SQL query that joins Iceberg lakehouse data with PostgreSQL, MinIO files, and any JDBC source &mdash; Trino federates everything. Superset turns results into interactive dashboards with filters, drill-downs, and scheduled reports. No data movement needed.</p>
+        <div class="story-chain">
+          <span class="story-chain-badge">Trino</span>
+          <span class="story-chain-badge">Superset</span>
+          <span class="story-chain-badge">Iceberg</span>
+          <span class="story-chain-badge">PostgreSQL</span>
+          <span class="story-chain-badge">MinIO</span>
+        </div>
+      </div>
+
+      <!-- I need data pipelines -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #10b981, #34d399);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <div class="story-step">
-            <span class="story-step-time">10:00 AM</span>
-            <p>OPA Rego policies enforce column masking on PII: <code>email</code>, <code>phone</code>, <code>national_id</code> are invisible to <code>akko-viewer</code>. Row-level filtering restricts data by department. Sana tests every role in Trino &mdash; zero data leakage.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">2:00 PM</span>
-            <p>Prometheus + Grafana monitor every service. AlertManager pings on anomalies. Loki aggregates all logs centrally. OpenMetadata catalogs every table, column, and transformation. The NIS2 auditor can trace any data point from source to dashboard.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">5:00 PM</span>
-            <p>Sana presents to the board: RBAC matrix, access logs, data lineage graph, encryption status. All from AKKO&rsquo;s built-in tools. The audit passes. NIS2 Article 21 &mdash; access control, monitoring, incident detection &mdash; all covered by one platform.</p>
+          <div>
+            <h3>&ldquo;I need automated data pipelines&rdquo;</h3>
+            <p>Spark + Iceberg + Airflow &mdash; ingest, transform, schedule</p>
           </div>
         </div>
+        <p class="story-desc">Spark processes millions of rows into Apache Iceberg tables with time-travel and schema evolution. Airflow orchestrates the full pipeline: ingestion, transformation, quality checks, alerts. MinIO stores raw files. Everything runs on schedule &mdash; zero manual intervention.</p>
+        <div class="story-chain">
+          <span class="story-chain-badge">Spark</span>
+          <span class="story-chain-badge">Iceberg</span>
+          <span class="story-chain-badge">Airflow</span>
+          <span class="story-chain-badge">MinIO</span>
+          <span class="story-chain-badge">OpenMetadata</span>
+        </div>
+      </div>
+
+      <!-- I need ML -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.58-3.25 3.93L12 22l-.75-12.07A4.001 4.001 0 0112 2z"/></svg>
+          </div>
+          <div>
+            <h3>&ldquo;I need ML experiment tracking&rdquo;</h3>
+            <p>MLflow + Ollama &mdash; train, track, deploy, explain</p>
+          </div>
+        </div>
+        <p class="story-desc">MLflow tracks every experiment: hyperparameters, metrics, artifacts, model versions. Promote models from staging to production with one click. Ollama runs local LLMs for AI-assisted analysis and model explainability. Full audit trail from raw data to prediction. All on your infrastructure.</p>
+        <div class="story-chain">
+          <span class="story-chain-badge">MLflow</span>
+          <span class="story-chain-badge">Ollama</span>
+          <span class="story-chain-badge">LiteLLM</span>
+          <span class="story-chain-badge">JupyterHub</span>
+          <span class="story-chain-badge">Airflow</span>
+        </div>
+      </div>
+
+      <!-- I need security -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3>&ldquo;I need security and compliance&rdquo;</h3>
+            <p>Keycloak SSO + OPA row-level &amp; column masking</p>
+          </div>
+        </div>
+        <p class="story-desc">One login for 30+ services via Keycloak SSO. OPA enforces fine-grained access: row-level filtering and column masking per role. PII fields invisible to unauthorized users. Full audit logs, data lineage, and monitoring for DORA, NIS2, RGPD. Deploy air-gapped &mdash; data never leaves your infrastructure.</p>
         <div class="story-chain">
           <span class="story-chain-badge">Keycloak</span>
           <span class="story-chain-badge">OPA</span>
           <span class="story-chain-badge">Prometheus</span>
           <span class="story-chain-badge">Grafana</span>
-          <span class="story-chain-badge">Loki</span>
           <span class="story-chain-badge">OpenMetadata</span>
         </div>
-        <div class="story-tags">
-          <span>#NIS2</span><span>#RGPD</span><span>#compliance</span><span>#security</span>
+      </div>
+
+      <!-- I need data governance -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <h3>&ldquo;I need data governance&rdquo;</h3>
+            <p>OpenMetadata &mdash; catalog, lineage, quality, discovery</p>
+          </div>
         </div>
-        <blockquote class="story-quote">&ldquo;The auditor asked for proof of access control, monitoring, and data lineage. I opened three AKKO dashboards. The audit was over in forty minutes.&rdquo;</blockquote>
+        <p class="story-desc">OpenMetadata catalogs every table, column, and pipeline automatically. Full data lineage from source to dashboard. Data quality rules with automated checks. Search and discover datasets across the entire platform. Glossaries, tags, and ownership for every asset.</p>
+        <div class="story-chain">
+          <span class="story-chain-badge">OpenMetadata</span>
+          <span class="story-chain-badge">Trino</span>
+          <span class="story-chain-badge">Airflow</span>
+          <span class="story-chain-badge">Superset</span>
+          <span class="story-chain-badge">PostgreSQL</span>
+        </div>
       </div>
 
     </div>
 
     <div class="stories-grid active" data-lang="fr">
 
-      <!-- Karim — CDO Banque, Tunis -->
+      <!-- J'ai besoin de d&eacute;velopper -->
       <div class="story-card">
         <div class="story-header">
-          <div class="story-avatar" style="background: linear-gradient(135deg, #6c63ff, #8b5cf6);">K</div>
+          <div class="story-avatar" style="background: linear-gradient(135deg, #6c63ff, #8b5cf6);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
           <div>
-            <h3>Karim &mdash; CDO, Banque Centrale de Tunis</h3>
-            <p>Conformit&eacute; DORA &amp; d&eacute;tection de fraude</p>
+            <h3>&laquo; J'ai besoin d'un environnement de dev &raquo;</h3>
+            <p>JupyterHub avec code-server, multi-langages, assist&eacute; par IA</p>
           </div>
         </div>
-        <div class="story-timeline">
-          <div class="story-step">
-            <span class="story-step-time">8h00</span>
-            <p>Karim d&eacute;ploie AKKO sur un cluster air-gapped. <code>helm install</code> &mdash; 33 pods en 5 minutes. Le r&eacute;gulateur exige la tra&ccedil;abilit&eacute; des donn&eacute;es conforme DORA avant la fin du trimestre. Pas de cloud. Pas de fournisseur.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">10h00</span>
-            <p>Spark ing&egrave;re 2,4M de transactions bancaires dans <code>iceberg.banking.transactions</code>. Trino f&eacute;d&egrave;re avec les donn&eacute;es clients PostgreSQL &mdash; une seule requ&ecirc;te SQL sur deux moteurs. Karim voit les anomalies en temps r&eacute;el.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">14h00</span>
-            <p>Les politiques OPA s'activent : <code>akko-analyst</code> ne voit que les scores de risque agr&eacute;g&eacute;s. <code>akko-viewer</code> voit <code>account_number</code> masqu&eacute; en <code>****</code>. Le filtrage par ligne cache les comptes &gt; 500K&euro; aux analystes juniors. Le RSSI valide.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">17h00</span>
-            <p>OpenMetadata affiche la lin&eacute;age compl&egrave;te : CSV &rarr; MinIO &rarr; Iceberg &rarr; Trino &rarr; tableau de bord Superset. Karim exporte le rapport de lin&eacute;age pour le r&eacute;gulateur. Article 15 DORA &mdash; valid&eacute;.</p>
-          </div>
-        </div>
-        <div class="story-chain">
-          <span class="story-chain-badge">Spark</span>
-          <span class="story-chain-badge">Iceberg</span>
-          <span class="story-chain-badge">Trino</span>
-          <span class="story-chain-badge">OPA</span>
-          <span class="story-chain-badge">Superset</span>
-          <span class="story-chain-badge">OpenMetadata</span>
-        </div>
-        <div class="story-tags">
-          <span>#banque</span><span>#DORA</span><span>#fraude</span><span>#air-gapped</span>
-        </div>
-        <blockquote class="story-quote">&laquo; Le r&eacute;gulateur a demand&eacute; la tra&ccedil;abilit&eacute; compl&egrave;te. Je lui ai montr&eacute; le graphe OpenMetadata &mdash; de l'ingestion au tableau de bord, chaque transformation trac&eacute;e. Il n'a pas eu d'autres questions. &raquo;</blockquote>
-      </div>
-
-      <!-- Leila — Data Engineer, Minist&egrave;re Sant&eacute; Dakar -->
-      <div class="story-card">
-        <div class="story-header">
-          <div class="story-avatar" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">L</div>
-          <div>
-            <h3>Leila &mdash; Data Engineer, Minist&egrave;re de la Sant&eacute;, Dakar</h3>
-            <p>Pipeline de surveillance &eacute;pid&eacute;miologique</p>
-          </div>
-        </div>
-        <div class="story-timeline">
-          <div class="story-step">
-            <span class="story-step-time">8h00</span>
-            <p>Leila re&ccedil;oit 14 fichiers CSV r&eacute;gionaux &mdash; rapports de cas de paludisme des h&ocirc;pitaux de district. Elle les charge dans MinIO via JupyterHub. Le minist&egrave;re ex&eacute;cute AKKO sur un serveur d&eacute;connect&eacute;. Pas d'internet. Pas de d&eacute;pendance cloud.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">10h00</span>
-            <p>Spark nettoie et normalise les donn&eacute;es dans <code>iceberg.health.malaria_cases</code>. PostGIS g&eacute;ocode chaque h&ocirc;pital. Airflow orchestre le pipeline complet &mdash; extraction, transformation, jointure spatiale, contr&ocirc;les qualit&eacute; &mdash; enti&egrave;rement automatis&eacute;.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">14h00</span>
-            <p>Trino joint les donn&eacute;es Iceberg avec les coordonn&eacute;es PostGIS. Superset affiche une carte interactive : densit&eacute; d'infection par r&eacute;gion, tendances hebdomadaires, ventilation par tranche d'&acirc;ge. L'&eacute;pid&eacute;miologiste rep&egrave;re un cluster en formation &agrave; Kolda.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">17h00</span>
-            <p>La ministre ouvre le tableau de bord Superset depuis sa tablette. Kolda est signal&eacute; en zone d'alerte. Les fournitures m&eacute;dicales sont envoy&eacute;es. Le pipeline tourne chaque lundi automatiquement via Airflow. Z&eacute;ro intervention manuelle.</p>
-          </div>
-        </div>
-        <div class="story-chain">
-          <span class="story-chain-badge">MinIO</span>
-          <span class="story-chain-badge">Spark</span>
-          <span class="story-chain-badge">Iceberg</span>
-          <span class="story-chain-badge">PostGIS</span>
-          <span class="story-chain-badge">Airflow</span>
-          <span class="story-chain-badge">Superset</span>
-        </div>
-        <div class="story-tags">
-          <span>#sant&eacute;</span><span>#&eacute;pid&eacute;miologie</span><span>#g&eacute;ospatial</span><span>#air-gapped</span>
-        </div>
-        <blockquote class="story-quote">&laquo; Avant AKKO, consolider 14 rapports r&eacute;gionaux prenait deux semaines. Maintenant le pipeline tourne chaque lundi matin &mdash; automatiquement. On se concentre sur sauver des vies, pas sur nettoyer des tableurs. &raquo;</blockquote>
-      </div>
-
-      <!-- Youssef — Data Scientist, Assurance Casablanca -->
-      <div class="story-card">
-        <div class="story-header">
-          <div class="story-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">Y</div>
-          <div>
-            <h3>Youssef &mdash; Data Scientist, Assurance, Casablanca</h3>
-            <p>Scoring cr&eacute;dit ML avec tra&ccedil;abilit&eacute; compl&egrave;te</p>
-          </div>
-        </div>
-        <div class="story-timeline">
-          <div class="story-step">
-            <span class="story-step-time">8h00</span>
-            <p>Youssef ouvre JupyterHub &mdash; Python, R, Julia pr&eacute;install&eacute;s avec code-server comme IDE. Il interroge Trino pour les donn&eacute;es historiques de sinistres, f&eacute;d&eacute;r&eacute;es entre Iceberg et PostgreSQL. Une seule connexion, deux sources de donn&eacute;es.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">10h00</span>
-            <p>Il entra&icirc;ne un mod&egrave;le gradient boosting pour le scoring de risque cr&eacute;dit. MLflow trace chaque exp&eacute;rience : hyperparam&egrave;tres, m&eacute;triques (AUC 0.89, pr&eacute;cision 0.82), importance des features. 23 runs trac&eacute;s, 3 promus en staging. Reproductibilit&eacute; totale.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">14h00</span>
-            <p>Ollama tourne localement &mdash; Youssef utilise jupyter-ai pour expliquer les pr&eacute;dictions en langage naturel. L'&eacute;quipe conformit&eacute; demande pourquoi le client #4721 a &eacute;t&eacute; signal&eacute;. Le LLM lit les valeurs SHAP et g&eacute;n&egrave;re une explication compr&eacute;hensible. Tout sur site.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">17h00</span>
-            <p>Airflow planifie le pipeline de scoring : r&eacute;entra&icirc;nement quotidien, validation du mod&egrave;le, mise &agrave; jour du tableau de bord Superset. Le mod&egrave;le de production est tag&eacute; dans MLflow Model Registry. L'auditeur obtient une tra&ccedil;abilit&eacute; compl&egrave;te : donn&eacute;es &rarr; entra&icirc;nement &rarr; inf&eacute;rence &rarr; d&eacute;cision.</p>
-          </div>
-        </div>
+        <p class="story-desc">Ouvrez JupyterHub &mdash; Python, R, Julia pr&eacute;install&eacute;s. code-server offre un IDE VS Code complet dans le navigateur. jupyter-ai se connecte &agrave; Ollama local pour la g&eacute;n&eacute;ration et l'explication de code. Notebooks partag&eacute;s, rapports Quarto, int&eacute;gration Git. Un seul login via Keycloak SSO.</p>
         <div class="story-chain">
           <span class="story-chain-badge">JupyterHub</span>
-          <span class="story-chain-badge">Trino</span>
-          <span class="story-chain-badge">MLflow</span>
+          <span class="story-chain-badge">code-server</span>
           <span class="story-chain-badge">Ollama</span>
-          <span class="story-chain-badge">Airflow</span>
-          <span class="story-chain-badge">Superset</span>
+          <span class="story-chain-badge">jupyter-ai</span>
+          <span class="story-chain-badge">Quarto</span>
         </div>
-        <div class="story-tags">
-          <span>#assurance</span><span>#ML</span><span>#scoring-cr&eacute;dit</span><span>#explicabilit&eacute;</span>
-        </div>
-        <blockquote class="story-quote">&laquo; 23 exp&eacute;riences, 3 mod&egrave;les promus, tra&ccedil;abilit&eacute; compl&egrave;te des donn&eacute;es brutes &agrave; la pr&eacute;diction en production. L'&eacute;quipe conformit&eacute; n'a pos&eacute; aucune question suppl&eacute;mentaire. &raquo;</blockquote>
       </div>
 
-      <!-- Sana — RSSI, Groupe Industriel Lyon -->
+      <!-- J'ai besoin de dashboards -->
       <div class="story-card">
         <div class="story-header">
-          <div class="story-avatar" style="background: linear-gradient(135deg, #ef4444, #f87171);">S</div>
+          <div class="story-avatar" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
           <div>
-            <h3>Sana &mdash; RSSI, Groupe Industriel, Lyon</h3>
-            <p>Audit de conformit&eacute; NIS2 &amp; RGPD</p>
+            <h3>&laquo; J'ai besoin de dashboards et de SQL &raquo;</h3>
+            <p>Superset + Trino avec requ&ecirc;tes f&eacute;d&eacute;r&eacute;es sur toutes les sources</p>
           </div>
         </div>
-        <div class="story-timeline">
-          <div class="story-step">
-            <span class="story-step-time">8h00</span>
-            <p>L'entreprise de Sana fait face &agrave; l'&eacute;ch&eacute;ance NIS2. Elle d&eacute;ploie AKKO sur Kubernetes bare-metal &mdash; les donn&eacute;es ne doivent jamais quitter le sol fran&ccedil;ais. Keycloak configure le SSO avec 4 r&ocirc;les : admin, engineer, analyst, viewer. 14 clients OAuth, un seul login pour tout.</p>
+        <p class="story-desc">&Eacute;crivez une seule requ&ecirc;te SQL qui joint les donn&eacute;es Iceberg avec PostgreSQL, les fichiers MinIO et toute source JDBC &mdash; Trino f&eacute;d&egrave;re tout. Superset transforme les r&eacute;sultats en tableaux de bord interactifs avec filtres, drill-downs et rapports planifi&eacute;s. Aucun d&eacute;placement de donn&eacute;es n&eacute;cessaire.</p>
+        <div class="story-chain">
+          <span class="story-chain-badge">Trino</span>
+          <span class="story-chain-badge">Superset</span>
+          <span class="story-chain-badge">Iceberg</span>
+          <span class="story-chain-badge">PostgreSQL</span>
+          <span class="story-chain-badge">MinIO</span>
+        </div>
+      </div>
+
+      <!-- J'ai besoin de pipelines -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #10b981, #34d399);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <div class="story-step">
-            <span class="story-step-time">10h00</span>
-            <p>Les politiques OPA Rego imposent le masquage de colonnes sur les donn&eacute;es personnelles : <code>email</code>, <code>phone</code>, <code>national_id</code> sont invisibles pour <code>akko-viewer</code>. Le filtrage par ligne restreint les donn&eacute;es par d&eacute;partement. Sana teste chaque r&ocirc;le dans Trino &mdash; z&eacute;ro fuite de donn&eacute;es.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">14h00</span>
-            <p>Prometheus + Grafana supervisent chaque service. AlertManager alerte sur les anomalies. Loki agr&egrave;ge tous les logs centralement. OpenMetadata catalogue chaque table, colonne et transformation. L'auditeur NIS2 peut tracer chaque donn&eacute;e de la source au tableau de bord.</p>
-          </div>
-          <div class="story-step">
-            <span class="story-step-time">17h00</span>
-            <p>Sana pr&eacute;sente au conseil : matrice RBAC, logs d'acc&egrave;s, graphe de lin&eacute;age, &eacute;tat du chiffrement. Tout depuis les outils int&eacute;gr&eacute;s d'AKKO. L'audit passe. Article 21 NIS2 &mdash; contr&ocirc;le d'acc&egrave;s, monitoring, d&eacute;tection d'incidents &mdash; tout couvert par une seule plateforme.</p>
+          <div>
+            <h3>&laquo; J'ai besoin de pipelines automatis&eacute;s &raquo;</h3>
+            <p>Spark + Iceberg + Airflow &mdash; ing&eacute;rer, transformer, planifier</p>
           </div>
         </div>
+        <p class="story-desc">Spark traite des millions de lignes dans des tables Apache Iceberg avec time-travel et &eacute;volution de sch&eacute;ma. Airflow orchestre le pipeline complet : ingestion, transformation, contr&ocirc;les qualit&eacute;, alertes. MinIO stocke les fichiers bruts. Tout tourne planifi&eacute; &mdash; z&eacute;ro intervention manuelle.</p>
+        <div class="story-chain">
+          <span class="story-chain-badge">Spark</span>
+          <span class="story-chain-badge">Iceberg</span>
+          <span class="story-chain-badge">Airflow</span>
+          <span class="story-chain-badge">MinIO</span>
+          <span class="story-chain-badge">OpenMetadata</span>
+        </div>
+      </div>
+
+      <!-- J'ai besoin de ML -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.58-3.25 3.93L12 22l-.75-12.07A4.001 4.001 0 0112 2z"/></svg>
+          </div>
+          <div>
+            <h3>&laquo; J'ai besoin de suivi d'exp&eacute;riences ML &raquo;</h3>
+            <p>MLflow + Ollama &mdash; entra&icirc;ner, tracer, d&eacute;ployer, expliquer</p>
+          </div>
+        </div>
+        <p class="story-desc">MLflow trace chaque exp&eacute;rience : hyperparam&egrave;tres, m&eacute;triques, artefacts, versions de mod&egrave;les. Promouvoir un mod&egrave;le du staging &agrave; la production en un clic. Ollama ex&eacute;cute des LLM locaux pour l'analyse assist&eacute;e par IA et l'explicabilit&eacute;. Tra&ccedil;abilit&eacute; compl&egrave;te. Tout sur votre infrastructure.</p>
+        <div class="story-chain">
+          <span class="story-chain-badge">MLflow</span>
+          <span class="story-chain-badge">Ollama</span>
+          <span class="story-chain-badge">LiteLLM</span>
+          <span class="story-chain-badge">JupyterHub</span>
+          <span class="story-chain-badge">Airflow</span>
+        </div>
+      </div>
+
+      <!-- J'ai besoin de s&eacute;curit&eacute; -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3>&laquo; J'ai besoin de s&eacute;curit&eacute; et de conformit&eacute; &raquo;</h3>
+            <p>Keycloak SSO + OPA row-level &amp; masquage de colonnes</p>
+          </div>
+        </div>
+        <p class="story-desc">Un seul login pour 30+ services via Keycloak SSO. OPA applique un contr&ocirc;le d'acc&egrave;s fin : filtrage par ligne et masquage de colonnes par r&ocirc;le. Les champs sensibles invisibles aux utilisateurs non autoris&eacute;s. Logs d'audit complets, lin&eacute;age et monitoring pour DORA, NIS2, RGPD. D&eacute;ployez air-gapped &mdash; les donn&eacute;es ne quittent jamais votre infrastructure.</p>
         <div class="story-chain">
           <span class="story-chain-badge">Keycloak</span>
           <span class="story-chain-badge">OPA</span>
           <span class="story-chain-badge">Prometheus</span>
           <span class="story-chain-badge">Grafana</span>
-          <span class="story-chain-badge">Loki</span>
           <span class="story-chain-badge">OpenMetadata</span>
         </div>
-        <div class="story-tags">
-          <span>#NIS2</span><span>#RGPD</span><span>#conformit&eacute;</span><span>#s&eacute;curit&eacute;</span>
+      </div>
+
+      <!-- J'ai besoin de gouvernance -->
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-avatar" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <h3>&laquo; J'ai besoin de gouvernance des donn&eacute;es &raquo;</h3>
+            <p>OpenMetadata &mdash; catalogue, lin&eacute;age, qualit&eacute;, d&eacute;couverte</p>
+          </div>
         </div>
-        <blockquote class="story-quote">&laquo; L'auditeur a demand&eacute; les preuves de contr&ocirc;le d'acc&egrave;s, de monitoring et de lin&eacute;age. J'ai ouvert trois tableaux de bord AKKO. L'audit &eacute;tait termin&eacute; en quarante minutes. &raquo;</blockquote>
+        <p class="story-desc">OpenMetadata catalogue chaque table, colonne et pipeline automatiquement. Lin&eacute;age complet de la source au tableau de bord. R&egrave;gles de qualit&eacute; avec v&eacute;rifications automatis&eacute;es. Recherchez et d&eacute;couvrez les jeux de donn&eacute;es sur toute la plateforme. Glossaires, tags et propri&eacute;t&eacute; pour chaque actif.</p>
+        <div class="story-chain">
+          <span class="story-chain-badge">OpenMetadata</span>
+          <span class="story-chain-badge">Trino</span>
+          <span class="story-chain-badge">Airflow</span>
+          <span class="story-chain-badge">Superset</span>
+          <span class="story-chain-badge">PostgreSQL</span>
+        </div>
       </div>
 
     </div>
@@ -1628,49 +1552,15 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "AKKO Platform Use Cases",
-  "description": "Real-world use cases demonstrating AKKO sovereign data platform capabilities across banking, healthcare, insurance, and industrial sectors.",
-  "numberOfItems": 4,
+  "description": "Core use cases for the AKKO sovereign data platform: development, dashboards, data pipelines, ML, security, and data governance.",
+  "numberOfItems": 6,
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Article",
-        "name": "Banking Fraud Detection & DORA Compliance",
-        "description": "How a Central Bank CDO deploys AKKO air-gapped to process 2.4M transactions with Spark, Iceberg, Trino, and OPA row-level filtering for DORA compliance.",
-        "keywords": "banking, fraud detection, DORA, air-gapped, data lineage, OPA RBAC"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Article",
-        "name": "Epidemiological Surveillance Pipeline",
-        "description": "How a Health Ministry data engineer builds an automated malaria surveillance pipeline with Spark, PostGIS, Airflow, and Superset on a disconnected server.",
-        "keywords": "healthcare, epidemiology, geospatial, PostGIS, air-gapped, Airflow"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Article",
-        "name": "ML Credit Scoring with Full Traceability",
-        "description": "How an insurance data scientist trains and deploys credit scoring models with MLflow experiment tracking, Ollama AI explainability, and complete audit trail.",
-        "keywords": "insurance, ML, credit scoring, MLflow, explainability, Ollama"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "Article",
-        "name": "NIS2 & RGPD Compliance Audit",
-        "description": "How a CISO passes a NIS2 compliance audit using Keycloak SSO, OPA column masking, Prometheus monitoring, and OpenMetadata data lineage — all from one platform.",
-        "keywords": "NIS2, RGPD, compliance, security, RBAC, monitoring"
-      }
-    }
+    {"@type": "ListItem", "position": 1, "item": {"@type": "Article", "name": "Development Environment", "description": "JupyterHub with code-server, multi-language support, AI-assisted coding via Ollama and jupyter-ai."}},
+    {"@type": "ListItem", "position": 2, "item": {"@type": "Article", "name": "Dashboards & Federated SQL", "description": "Superset interactive dashboards with Trino federated queries across Iceberg, PostgreSQL, and MinIO."}},
+    {"@type": "ListItem", "position": 3, "item": {"@type": "Article", "name": "Automated Data Pipelines", "description": "Spark processing into Apache Iceberg tables, orchestrated by Airflow with quality checks and alerts."}},
+    {"@type": "ListItem", "position": 4, "item": {"@type": "Article", "name": "ML Experiment Tracking", "description": "MLflow experiment tracking and model registry with Ollama local LLMs for AI-assisted analysis."}},
+    {"@type": "ListItem", "position": 5, "item": {"@type": "Article", "name": "Security & Compliance", "description": "Keycloak SSO with OPA row-level filtering and column masking for DORA, NIS2, RGPD compliance."}},
+    {"@type": "ListItem", "position": 6, "item": {"@type": "Article", "name": "Data Governance", "description": "OpenMetadata automatic cataloging, data lineage, quality rules, and dataset discovery."}}
   ]
 }
 </script>

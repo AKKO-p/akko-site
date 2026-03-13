@@ -1633,7 +1633,7 @@ footer {
 /* ---- Stories Grid ---- */
 .stories-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
@@ -1796,6 +1796,13 @@ footer {
   line-height: 1.5;
 }
 
+.story-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+}
+
 .story-step p {
   flex: 1;
   min-width: 0;
@@ -1916,6 +1923,11 @@ footer {
 .stories-grid[data-lang].active { display: grid; }
 
 /* ---- Responsive: Use Cases ---- */
+@media (max-width: 1024px) {
+  .stories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media (max-width: 768px) {
   .stories-grid {
     grid-template-columns: 1fr;
