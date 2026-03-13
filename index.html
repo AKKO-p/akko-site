@@ -130,19 +130,16 @@
         </div>
         <div class="terminal-line">
           <span class="t-prompt">$</span>
-          <span class="t-cmd">./scripts/start.sh</span>
+          <span class="t-cmd">helm install akko helm/akko/ -f helm/examples/values-dev.yaml</span>
         </div>
         <div class="terminal-line t-output">
-          <span class="t-muted">Generating secrets...</span> <span class="t-ok">done</span>
+          <span class="t-muted">Deploying 24 sub-charts to Kubernetes...</span> <span class="t-ok">done</span>
         </div>
         <div class="terminal-line t-output">
-          <span class="t-muted">Generating TLS certificates...</span> <span class="t-ok">done</span>
-        </div>
-        <div class="terminal-line t-output">
-          <span class="t-muted">Starting 30+ services...</span> <span class="t-ok">done</span>
+          <span class="t-muted">30+ pods running, SSO configured...</span> <span class="t-ok">done</span>
         </div>
         <div class="terminal-line t-output" style="margin-top:0.5rem;">
-          <span class="t-accent">AKKO is ready at https://localhost</span>
+          <span class="t-accent">AKKO is ready at https://akko.localhost</span>
         </div>
       </div>
     </div>
@@ -795,14 +792,28 @@
     <span class="section-label" data-lang="en">Deployment</span>
     <span class="section-label active" data-lang="fr">D&eacute;ploiement</span>
 
-    <h2 class="section-title" data-lang="en">From laptop to production.<br>Two deployment paths.</h2>
-    <h2 class="section-title active" data-lang="fr">Du portable &agrave; la production.<br>Deux modes de d&eacute;ploiement.</h2>
+    <h2 class="section-title" data-lang="en">Kubernetes-first deployment.<br>From laptop to production.</h2>
+    <h2 class="section-title active" data-lang="fr">D&eacute;ploiement Kubernetes-first.<br>Du portable &agrave; la production.</h2>
 
     <div class="deploy-grid" data-lang="en">
+      <div class="deploy-card deploy-card-prod">
+        <div class="deploy-badge deploy-badge-prod">Production</div>
+        <h3>Helm / Kubernetes</h3>
+        <p>Full umbrella Helm chart with 24 sub-charts. Deploy to k3d (local dev), k3s, EKS, GKE, AKS, OpenShift, or any conformant Kubernetes cluster. One-command install with automated health verification.</p>
+        <div class="deploy-code">
+          <code><span class="t-prompt">$</span> helm install akko helm/akko/ -f values-dev.yaml</code>
+          <code class="t-muted"># 30+ pods, SSO, monitoring, AI &mdash; all configured</code>
+        </div>
+        <div class="deploy-reqs">
+          <span>Kubernetes 1.27+</span>
+          <span>Helm 3</span>
+          <span>16 GB RAM</span>
+        </div>
+      </div>
       <div class="deploy-card">
-        <div class="deploy-badge">Development</div>
-        <h3>Docker Compose</h3>
-        <p>Clone, run one script, get 30+ services running in 5 minutes. Self-signed TLS, auto-generated secrets, SSO pre-configured. Ideal for evaluation, PoC, and development.</p>
+        <div class="deploy-badge">Development only</div>
+        <h3>Docker Compose (legacy)</h3>
+        <p>Quick-start for local evaluation only. Not recommended for production. The Helm/Kubernetes path is the primary and supported deployment method.</p>
         <div class="deploy-code">
           <code><span class="t-prompt">$</span> git clone https://github.com/AKKO-p/AKKO</code>
           <code><span class="t-prompt">$</span> cd AKKO && ./scripts/start.sh</code>
@@ -813,26 +824,26 @@
           <span>20 GB disk</span>
         </div>
       </div>
+    </div>
+    <div class="deploy-grid active" data-lang="fr">
       <div class="deploy-card deploy-card-prod">
         <div class="deploy-badge deploy-badge-prod">Production</div>
         <h3>Helm / Kubernetes</h3>
-        <p>Full Helm chart with 25+ sub-charts. Deploy to k3d (local), k3s, EKS, GKE, AKS, or any conformant Kubernetes cluster. Two-phase deploy script with automated health verification.</p>
+        <p>Chart Helm umbrella complet avec 24 sous-charts. D&eacute;ployez sur k3d (dev local), k3s, EKS, GKE, AKS, OpenShift ou tout cluster Kubernetes conforme. Installation en une commande avec v&eacute;rification automatique de sant&eacute;.</p>
         <div class="deploy-code">
-          <code><span class="t-prompt">$</span> ./deploy.sh install</code>
-          <code class="t-muted"># k3d cluster + 38 pods, auto-configured</code>
+          <code><span class="t-prompt">$</span> helm install akko helm/akko/ -f values-dev.yaml</code>
+          <code class="t-muted"># 30+ pods, SSO, monitoring, IA &mdash; tout configur&eacute;</code>
         </div>
         <div class="deploy-reqs">
           <span>Kubernetes 1.27+</span>
           <span>Helm 3</span>
-          <span>16 GB RAM</span>
+          <span>16 Go de RAM</span>
         </div>
       </div>
-    </div>
-    <div class="deploy-grid active" data-lang="fr">
       <div class="deploy-card">
-        <div class="deploy-badge">D&eacute;veloppement</div>
-        <h3>Docker Compose</h3>
-        <p>Clonez, lancez un script, obtenez plus de 30 services en 5 minutes. TLS autosign&eacute;, secrets g&eacute;n&eacute;r&eacute;s automatiquement, SSO pr&eacute;configur&eacute;. Id&eacute;al pour l'&eacute;valuation, le PoC et le d&eacute;veloppement.</p>
+        <div class="deploy-badge">D&eacute;veloppement uniquement</div>
+        <h3>Docker Compose (legacy)</h3>
+        <p>D&eacute;marrage rapide pour &eacute;valuation locale uniquement. Non recommand&eacute; pour la production. Le d&eacute;ploiement Helm/Kubernetes est la m&eacute;thode principale et support&eacute;e.</p>
         <div class="deploy-code">
           <code><span class="t-prompt">$</span> git clone https://github.com/AKKO-p/AKKO</code>
           <code><span class="t-prompt">$</span> cd AKKO && ./scripts/start.sh</code>
@@ -841,20 +852,6 @@
           <span>Docker Desktop</span>
           <span>8 Go de RAM</span>
           <span>20 Go de disque</span>
-        </div>
-      </div>
-      <div class="deploy-card deploy-card-prod">
-        <div class="deploy-badge deploy-badge-prod">Production</div>
-        <h3>Helm / Kubernetes</h3>
-        <p>Chart Helm complet avec plus de 25 sous-charts. D&eacute;ployez sur k3d (local), k3s, EKS, GKE, AKS ou tout cluster Kubernetes conforme. Script de d&eacute;ploiement en deux phases avec v&eacute;rification automatique de sant&eacute;.</p>
-        <div class="deploy-code">
-          <code><span class="t-prompt">$</span> ./deploy.sh install</code>
-          <code class="t-muted"># Cluster k3d + 38 pods, configur&eacute; automatiquement</code>
-        </div>
-        <div class="deploy-reqs">
-          <span>Kubernetes 1.27+</span>
-          <span>Helm 3</span>
-          <span>16 Go de RAM</span>
         </div>
       </div>
     </div>
@@ -885,12 +882,12 @@
       <div class="stack-item"><span class="stack-name">Trino</span><span class="stack-ver">479</span></div>
       <div class="stack-item"><span class="stack-name">Spark</span><span class="stack-ver">3.5</span></div>
       <div class="stack-item"><span class="stack-name">Polaris</span><span class="stack-ver">1.3</span></div>
-      <div class="stack-item"><span class="stack-name">MinIO</span><span class="stack-ver">latest</span></div>
+      <div class="stack-item"><span class="stack-name">MinIO</span><span class="stack-ver">RELEASE.2025-09-07T16-13-09Z</span></div>
       <div class="stack-item"><span class="stack-name">Ollama</span><span class="stack-ver">0.17</span></div>
       <div class="stack-item"><span class="stack-name">LiteLLM</span><span class="stack-ver">1.67</span></div>
       <div class="stack-item"><span class="stack-name">Grafana</span><span class="stack-ver">12.x</span></div>
       <div class="stack-item"><span class="stack-name">Prometheus</span><span class="stack-ver">3.x</span></div>
-      <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">latest</span></div>
+      <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">1.4.2</span></div>
       <div class="stack-item"><span class="stack-name">OpenMetadata</span><span class="stack-ver">1.6</span></div>
     </div>
     <div class="stack-grid active" data-lang="fr">
@@ -905,12 +902,12 @@
       <div class="stack-item"><span class="stack-name">Trino</span><span class="stack-ver">479</span></div>
       <div class="stack-item"><span class="stack-name">Spark</span><span class="stack-ver">3.5</span></div>
       <div class="stack-item"><span class="stack-name">Polaris</span><span class="stack-ver">1.3</span></div>
-      <div class="stack-item"><span class="stack-name">MinIO</span><span class="stack-ver">latest</span></div>
+      <div class="stack-item"><span class="stack-name">MinIO</span><span class="stack-ver">RELEASE.2025-09-07T16-13-09Z</span></div>
       <div class="stack-item"><span class="stack-name">Ollama</span><span class="stack-ver">0.17</span></div>
       <div class="stack-item"><span class="stack-name">LiteLLM</span><span class="stack-ver">1.67</span></div>
       <div class="stack-item"><span class="stack-name">Grafana</span><span class="stack-ver">12.x</span></div>
       <div class="stack-item"><span class="stack-name">Prometheus</span><span class="stack-ver">3.x</span></div>
-      <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">latest</span></div>
+      <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">1.4.2</span></div>
       <div class="stack-item"><span class="stack-name">OpenMetadata</span><span class="stack-ver">1.6</span></div>
     </div>
   </div>
