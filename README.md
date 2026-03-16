@@ -1,6 +1,6 @@
 # AKKO Website
 
-Landing page for [AKKO](https://github.com/AKKO-p/AKKO) — the open source data platform.
+Landing page for [AKKO](https://github.com/AKKO-p/AKKO) — the open source sovereign analytics stack.
 
 ## Local preview
 
