@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AKKO — Open-Source Sovereign Analytics Stack | Own Every Layer</title>
-  <meta name="description" content="AKKO is the open-source sovereign analytics stack that unifies AI, data engineering, and analytics. 30+ integrated services, Kubernetes-native deployment, zero licensing costs. Built for regulated industries: banking, government, defense, healthcare.">
+  <meta name="description" content="AKKO is the open-source sovereign analytics stack that unifies AI, data engineering, and analytics. 33+ integrated services, Kubernetes-native deployment, zero licensing costs. Built for regulated industries: banking, government, defense, healthcare. Sovereign AI agents (MCP), dbt semantic layer, audit trail, 15 AI SQL functions.">
   <meta name="keywords" content="sovereign analytics stack, open source, Kubernetes, Apache Iceberg, data governance, AI-native, RBAC, on-premise, data sovereignty, open lakehouse, Helm, air-gapped, DORA, NIS2, RGPD, banking fraud detection, health data pipeline, ML credit scoring, NIS2 compliance, sovereign AI, data engineering use cases, open-source data lakehouse, regulated industries analytics stack, air-gapped AI, MLflow experiment tracking, OPA policy-as-code, Trino federated SQL, PostGIS geospatial, epidemiological surveillance, CISO compliance audit">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='8' y='8' width='64' height='64' rx='6' stroke='%236c63ff' stroke-width='4' fill='none'/%3E%3Crect x='28' y='28' width='24' height='24' rx='3' fill='%236c63ff'/%3E%3C/svg%3E">
   <link rel="canonical" href="https://akko-p.github.io/akko-site/">
@@ -15,7 +15,7 @@
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="AKKO — Open-Source Sovereign Analytics Stack | Own Every Layer">
-  <meta property="og:description" content="Open-source sovereign analytics stack. 30+ integrated services. AI-native. Kubernetes-first. Zero licensing costs. Built for regulated industries.">
+  <meta property="og:description" content="Open-source sovereign analytics stack. 33+ integrated services. AI-native. Kubernetes-first. Zero licensing costs. Sovereign AI agents (MCP), dbt semantic layer, audit trail. Built for regulated industries.">
   <meta property="og:url" content="https://akko-p.github.io/akko-site/">
   <meta property="og:site_name" content="AKKO">
   <meta property="og:locale" content="en_US">
@@ -23,7 +23,7 @@
   <meta property="og:image" content="https://akko-p.github.io/akko-site/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AKKO — Open-Source Sovereign Analytics Stack">
-  <meta name="twitter:description" content="30+ open-source services. Sovereign AI. Kubernetes-native. Zero vendor lock-in. Built for banking, government, defense, healthcare.">
+  <meta name="twitter:description" content="33+ open-source services. Sovereign AI agents (MCP). dbt semantic layer. Audit trail. Kubernetes-native. Zero vendor lock-in. Built for banking, government, defense, healthcare.">
   <meta name="twitter:image" content="https://akko-p.github.io/akko-site/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
     "@type": "SoftwareApplication",
     "name": "AKKO",
     "alternateName": "Analytics Kernel, Keep Ownership",
-    "description": "Open-source sovereign analytics stack that unifies AI, data engineering, and analytics into one Kubernetes-native deployment. 30+ integrated services for regulated industries.",
+    "description": "Open-source sovereign analytics stack that unifies AI, data engineering, and analytics into one Kubernetes-native deployment. 33+ integrated services for regulated industries. Sovereign AI agents (MCP), dbt semantic layer, audit trail, 15 AI SQL functions.",
     "url": "https://akko-p.github.io/akko-site/",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Kubernetes, Linux",
@@ -56,16 +56,22 @@
     },
     "codeRepository": "https://github.com/AKKO-p/AKKO",
     "featureList": [
-      "30+ integrated open-source services",
+      "33+ integrated open-source services",
       "Kubernetes-native Helm deployment",
-      "Sovereign AI with local LLMs (Ollama, LiteLLM)",
+      "Sovereign AI agents via MCP protocol (Claude, Cursor connected to Trino + OpenMetadata)",
+      "dbt semantic layer with versioned SQL transformations (Apache 2.0)",
+      "Centralized audit trail (6 sources) with Grafana dashboard",
+      "15 AI SQL functions (sentiment, PII, classification, embeddings)",
       "Apache Iceberg open lakehouse",
       "Keycloak SSO with 14 OAuth clients",
       "OPA fine-grained RBAC with row-level filtering and column masking",
       "OpenMetadata data governance",
       "MLflow experiment tracking and model registry",
       "Air-gapped deployment support",
-      "Full observability (Prometheus, Grafana, Loki)"
+      "Full observability (Prometheus, Grafana, Loki)",
+      "Zero-hardcoding: 1-command deployment on any Kubernetes",
+      "Demo framework: Banking + Healthcare scenarios with E2E validation",
+      "11 custom Docker images"
     ],
     "keywords": "sovereign analytics stack, open source, Kubernetes, Apache Iceberg, data governance, AI-native, RBAC, on-premise"
   }
@@ -128,18 +134,18 @@
   <div class="hero-content">
     <div class="hero-badge" data-lang="en">
       <span class="badge-dot"></span>
-      AKKO: Analytics Kernel, Keep Ownership &middot; 100% Open Source &middot; Zero Licensing Costs
+      AKKO: Analytics Kernel, Keep Ownership &middot; 100% Open Source &middot; 33+ Services &middot; Zero Licensing Costs
     </div>
     <div class="hero-badge active" data-lang="fr">
       <span class="badge-dot"></span>
-      AKKO : Analytics Kernel, Keep Ownership &middot; 100% Open Source &middot; Z&eacute;ro co&ucirc;t de licence
+      AKKO : Analytics Kernel, Keep Ownership &middot; 100% Open Source &middot; 33+ Services &middot; Z&eacute;ro co&ucirc;t de licence
     </div>
 
     <h1 data-lang="en">The Sovereign Analytics Stack.<br><span class="gradient-text">Own Every Layer.</span></h1>
     <h1 data-lang="fr" class="active">La stack analytique souveraine.<br><span class="gradient-text">Ma&icirc;trisez chaque couche.</span></h1>
 
-    <p class="hero-sub" data-lang="en">AKKO unifies AI, data engineering, and analytics into one Kubernetes-native stack &mdash; 30+ integrated open-source services, zero licensing costs, deployable on-premise or in any cloud. Your data. Your infrastructure. Your rules.</p>
-    <p class="hero-sub active" data-lang="fr">AKKO unifie l'IA, l'ing&eacute;nierie des donn&eacute;es et l'analytique au sein d'une plateforme Kubernetes-native &mdash; plus de 30 services open source int&eacute;gr&eacute;s, z&eacute;ro co&ucirc;t de licence, d&eacute;ployable on-premise ou dans n'importe quel cloud. Vos donn&eacute;es. Votre infrastructure. Votre ind&eacute;pendance.</p>
+    <p class="hero-sub" data-lang="en">AKKO unifies AI, data engineering, and analytics into one Kubernetes-native stack &mdash; 33+ integrated open-source services, zero licensing costs, deployable on-premise or in any cloud. The only 100% open-source analytics platform with sovereign AI agents (MCP), a semantic layer (dbt), and a regulatory audit trail. Your data. Your infrastructure. Your rules.</p>
+    <p class="hero-sub active" data-lang="fr">AKKO unifie l'IA, l'ing&eacute;nierie des donn&eacute;es et l'analytique au sein d'une plateforme Kubernetes-native &mdash; plus de 33 services open source int&eacute;gr&eacute;s, z&eacute;ro co&ucirc;t de licence, d&eacute;ployable on-premise ou dans n'importe quel cloud. La seule plateforme analytics 100% open source avec agent IA souverain (MCP), couche s&eacute;mantique (dbt) et audit trail r&eacute;glementaire. Vos donn&eacute;es. Votre infrastructure. Votre ind&eacute;pendance.</p>
 
     <div class="hero-actions" data-lang="en">
       <a href="mailto:contact@akko.dev?subject=Demo%20Request" class="btn-primary">
@@ -191,7 +197,7 @@
           <span class="t-muted">Deploying 24 sub-charts to Kubernetes...</span> <span class="t-ok">done</span>
         </div>
         <div class="terminal-line t-output">
-          <span class="t-muted">30+ pods running, SSO configured...</span> <span class="t-ok">done</span>
+          <span class="t-muted">33+ pods running, SSO configured, AI agents ready...</span> <span class="t-ok">done</span>
         </div>
         <div class="terminal-line t-output" style="margin-top:0.5rem;">
           <span class="t-accent">AKKO is ready at https://akko.localhost</span>
@@ -205,7 +211,7 @@
 <section class="stats-bar">
   <div class="stats-inner" data-lang="en">
     <div class="stat">
-      <span class="stat-num">30+</span>
+      <span class="stat-num">33+</span>
       <span class="stat-label">Integrated Services</span>
     </div>
     <div class="stat-divider"></div>
@@ -225,13 +231,18 @@
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
+      <span class="stat-num">11</span>
+      <span class="stat-label">Custom Docker Images</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
       <span class="stat-num">$0</span>
       <span class="stat-label">Licensing Costs</span>
     </div>
   </div>
   <div class="stats-inner active" data-lang="fr">
     <div class="stat">
-      <span class="stat-num">30+</span>
+      <span class="stat-num">33+</span>
       <span class="stat-label">Services int&eacute;gr&eacute;s</span>
     </div>
     <div class="stat-divider"></div>
@@ -248,6 +259,11 @@
     <div class="stat">
       <span class="stat-num">5 min</span>
       <span class="stat-label">Du clone au d&eacute;marrage</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">11</span>
+      <span class="stat-label">Images Docker custom</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
@@ -296,7 +312,7 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </div>
         <h3>Composable by Design</h3>
-        <p>8 independent layers, 30+ services, each replaceable without touching the others. Swap Trino for DuckDB, Superset for Metabase, Ollama for vLLM. The platform adapts to you &mdash; not the reverse.</p>
+        <p>8 independent layers, 33+ services, each replaceable without touching the others. Swap Trino for DuckDB, Superset for Metabase, Ollama for vLLM. The platform adapts to you &mdash; not the reverse.</p>
       </div>
     </div>
     <div class="value-props active" data-lang="fr">
@@ -326,7 +342,7 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </div>
         <h3>Composable par conception</h3>
-        <p>8 couches ind&eacute;pendantes, plus de 30 services, chacun rempla&ccedil;able sans toucher aux autres. Remplacez Trino par DuckDB, Superset par Metabase, Ollama par vLLM. La plateforme s'adapte &agrave; vous &mdash; jamais l'inverse.</p>
+        <p>8 couches ind&eacute;pendantes, plus de 33 services, chacun rempla&ccedil;able sans toucher aux autres. Remplacez Trino par DuckDB, Superset par Metabase, Ollama par vLLM. La plateforme s'adapte &agrave; vous &mdash; jamais l'inverse.</p>
       </div>
     </div>
   </div>
@@ -338,8 +354,8 @@
     <span class="section-label" data-lang="en">Platform</span>
     <span class="section-label active" data-lang="fr">Plateforme</span>
 
-    <h2 class="section-title" data-lang="en">30+ open-source services. 8 layers.<br>One Kubernetes-native platform.</h2>
-    <h2 class="section-title active" data-lang="fr">Plus de 30 services open source. 8 couches.<br>Une plateforme Kubernetes-native.</h2>
+    <h2 class="section-title" data-lang="en">33+ open-source services. 8 layers.<br>One Kubernetes-native platform.</h2>
+    <h2 class="section-title active" data-lang="fr">Plus de 33 services open source. 8 couches.<br>Une plateforme Kubernetes-native.</h2>
 
     <p class="section-sub" data-lang="en">Every service is a best-of-breed open-source project from the Apache, CNCF, or community ecosystems &mdash; Apache Iceberg, Trino, Spark, Airflow, Keycloak, and more. Deeply integrated via SSO, shared storage, and unified data governance. Replace any layer without touching the others.</p>
     <p class="section-sub active" data-lang="fr">Chaque service est un projet open source de r&eacute;f&eacute;rence issu des &eacute;cosyst&egrave;mes Apache, CNCF ou communautaires &mdash; Apache Iceberg, Trino, Spark, Airflow, Keycloak, et plus encore. Profond&eacute;ment int&eacute;gr&eacute;s via SSO, stockage partag&eacute; et gouvernance des donn&eacute;es unifi&eacute;e. Remplacez n'importe quelle couche sans toucher aux autres.</p>
@@ -415,6 +431,41 @@
         <h3>AI-Native Cockpit</h3>
         <p>A control plane with built-in AI chat. Query your data catalog, check service health, interact with your data &mdash; all from a unified interface. Powered by LiteLLM and MCP servers.</p>
       </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #14b8a6;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <h3>Centralized Audit Trail</h3>
+        <p>6 audit sources (Keycloak, OPA, Trino, Airflow, MinIO, Cockpit) centralized in Loki with a pre-built Grafana dashboard. Who accessed what, when, and why &mdash; regulatory compliance out of the box.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #0ea5e9;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>dbt Semantic Layer</h3>
+        <p>Versioned SQL transformations with dbt Core (Apache 2.0). Metrics definitions, data tests, and documentation as code. Orchestrated by Airflow, cataloged by OpenMetadata. Replaces proprietary semantic layers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #d946ef;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.58-3.25 3.93L12 22l-.75-12.07A4.001 4.001 0 0112 2z"/></svg>
+        </div>
+        <h3>MCP Servers</h3>
+        <p>Sovereign AI agents connected to Trino and OpenMetadata via Model Context Protocol. Claude, Cursor, and any MCP-compatible client can query your data, explore your catalog, and run SQL &mdash; all on your infrastructure.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #f43f5e;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3>15 AI SQL Functions</h3>
+        <p>Sentiment analysis, PII detection, text classification, embeddings, and more &mdash; directly in SQL via Trino UDFs powered by local LLMs. No Python needed, no external APIs. AI-augmented analytics for every analyst.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #84cc16;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3>Demo Framework</h3>
+        <p>2 built-in scenarios (Banking fraud detection + Healthcare epidemiology) with end-to-end automated validation. Seed data, pipelines, dashboards, and tests &mdash; prove AKKO works in minutes, not weeks.</p>
+      </div>
     </div>
 
     <div class="features-grid active" data-lang="fr">
@@ -488,6 +539,41 @@
         <h3>Cockpit IA-natif</h3>
         <p>Un panneau de contr&ocirc;le avec chat IA int&eacute;gr&eacute;. Interrogez votre catalogue, v&eacute;rifiez l'&eacute;tat des services, interagissez avec vos donn&eacute;es &mdash; depuis une interface unifi&eacute;e. Propuls&eacute; par LiteLLM et les serveurs MCP.</p>
       </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #14b8a6;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <h3>Audit trail centralis&eacute;</h3>
+        <p>6 sources d'audit (Keycloak, OPA, Trino, Airflow, MinIO, Cockpit) centralis&eacute;es dans Loki avec un dashboard Grafana pr&eacute;configur&eacute;. Qui a acc&eacute;d&eacute; &agrave; quoi, quand et pourquoi &mdash; conformit&eacute; r&eacute;glementaire cl&eacute; en main.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #0ea5e9;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Couche s&eacute;mantique dbt</h3>
+        <p>Transformations SQL versionn&eacute;es avec dbt Core (Apache 2.0). D&eacute;finitions de m&eacute;triques, tests de donn&eacute;es et documentation as code. Orchestr&eacute; par Airflow, catalogu&eacute; par OpenMetadata. Remplace les couches s&eacute;mantiques propri&eacute;taires.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #d946ef;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.58-3.25 3.93L12 22l-.75-12.07A4.001 4.001 0 0112 2z"/></svg>
+        </div>
+        <h3>Serveurs MCP</h3>
+        <p>Agents IA souverains connect&eacute;s &agrave; Trino et OpenMetadata via le protocole Model Context Protocol. Claude, Cursor et tout client MCP-compatible peuvent interroger vos donn&eacute;es, explorer votre catalogue et ex&eacute;cuter du SQL &mdash; le tout sur votre infrastructure.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #f43f5e;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3>15 fonctions IA en SQL</h3>
+        <p>Analyse de sentiment, d&eacute;tection de PII, classification de texte, embeddings et plus encore &mdash; directement en SQL via les UDF Trino propuls&eacute;es par les LLM locaux. Aucun Python requis, z&eacute;ro API externe. Analytics augment&eacute;es par l'IA pour chaque analyste.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="--icon-color: #84cc16;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3>Framework de d&eacute;mo</h3>
+        <p>2 sc&eacute;narios int&eacute;gr&eacute;s (D&eacute;tection de fraude bancaire + &Eacute;pid&eacute;miologie sant&eacute;) avec validation E2E automatis&eacute;e. Donn&eacute;es de test, pipelines, dashboards et tests &mdash; prouvez qu'AKKO fonctionne en minutes, pas en semaines.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -516,9 +602,14 @@
         <div class="ai-tags"><span>LiteLLM</span><span>OpenAI-compatible</span><span>Model routing</span></div>
       </div>
       <div class="ai-card">
-        <h4>MCP Protocol</h4>
-        <p>Model Context Protocol servers enable LLMs to call tools, query databases, and interact with platform services. Text-to-SQL, catalog exploration, pipeline orchestration &mdash; all through natural language.</p>
-        <div class="ai-tags"><span>MCP Servers</span><span>Tool calling</span><span>Text-to-SQL</span></div>
+        <h4>Sovereign MCP Agents</h4>
+        <p>MCP servers connect Claude, Cursor, and any MCP-compatible AI client directly to Trino (SQL) and OpenMetadata (catalog). Your AI agents query your data on your infrastructure &mdash; no data leaves the perimeter.</p>
+        <div class="ai-tags"><span>MCP Servers</span><span>Claude</span><span>Cursor</span><span>Trino</span><span>OpenMetadata</span></div>
+      </div>
+      <div class="ai-card">
+        <h4>15 AI SQL Functions</h4>
+        <p>Sentiment analysis, PII detection, text classification, named entity recognition, embeddings, summarization &mdash; all callable directly in SQL via Trino UDFs. Powered by local LLMs. Zero external API calls.</p>
+        <div class="ai-tags"><span>Trino UDFs</span><span>Sentiment</span><span>PII</span><span>Classification</span><span>Embeddings</span></div>
       </div>
       <div class="ai-card">
         <h4>RAG Pipeline</h4>
@@ -538,9 +629,14 @@
         <div class="ai-tags"><span>LiteLLM</span><span>Compatible OpenAI</span><span>Routage de mod&egrave;les</span></div>
       </div>
       <div class="ai-card">
-        <h4>Protocole MCP</h4>
-        <p>Les serveurs Model Context Protocol permettent aux LLM d'appeler des outils, d'interroger des bases de donn&eacute;es et d'interagir avec les services de la plateforme. Text-to-SQL, exploration du catalogue, orchestration de pipelines &mdash; le tout en langage naturel.</p>
-        <div class="ai-tags"><span>Serveurs MCP</span><span>Appel d'outils</span><span>Text-to-SQL</span></div>
+        <h4>Agents MCP souverains</h4>
+        <p>Les serveurs MCP connectent Claude, Cursor et tout client IA compatible MCP directement &agrave; Trino (SQL) et OpenMetadata (catalogue). Vos agents IA interrogent vos donn&eacute;es sur votre infrastructure &mdash; aucune donn&eacute;e ne quitte le p&eacute;rim&egrave;tre.</p>
+        <div class="ai-tags"><span>Serveurs MCP</span><span>Claude</span><span>Cursor</span><span>Trino</span><span>OpenMetadata</span></div>
+      </div>
+      <div class="ai-card">
+        <h4>15 fonctions IA en SQL</h4>
+        <p>Analyse de sentiment, d&eacute;tection de PII, classification de texte, reconnaissance d'entit&eacute;s, embeddings, r&eacute;sum&eacute; &mdash; appelables directement en SQL via les UDF Trino. Propuls&eacute;es par les LLM locaux. Z&eacute;ro appel API externe.</p>
+        <div class="ai-tags"><span>UDF Trino</span><span>Sentiment</span><span>PII</span><span>Classification</span><span>Embeddings</span></div>
       </div>
       <div class="ai-card">
         <h4>Pipeline RAG</h4>
@@ -955,6 +1051,36 @@
             <td data-lang="fr" class="active"><span class="check-partial">Variable</span></td>
           </tr>
           <tr>
+            <td data-lang="en">AI Agents (MCP)</td>
+            <td data-lang="en" class="col-akko"><span class="check-yes">Built-in (Trino + Catalog)</span></td>
+            <td data-lang="en"><span class="check-no">Not available</span></td>
+            <td data-lang="en"><span class="check-no">Not available</span></td>
+            <td data-lang="fr" class="active">Agents IA (MCP)</td>
+            <td data-lang="fr" class="col-akko active"><span class="check-yes">Int&eacute;gr&eacute; (Trino + Catalogue)</span></td>
+            <td data-lang="fr" class="active"><span class="check-no">Non disponible</span></td>
+            <td data-lang="fr" class="active"><span class="check-no">Non disponible</span></td>
+          </tr>
+          <tr>
+            <td data-lang="en">Semantic layer</td>
+            <td data-lang="en" class="col-akko"><span class="check-yes">dbt Core (Apache 2.0)</span></td>
+            <td data-lang="en"><span class="check-partial">Proprietary (Looker, etc.)</span></td>
+            <td data-lang="en"><span class="check-partial">Varies</span></td>
+            <td data-lang="fr" class="active">Couche s&eacute;mantique</td>
+            <td data-lang="fr" class="col-akko active"><span class="check-yes">dbt Core (Apache 2.0)</span></td>
+            <td data-lang="fr" class="active"><span class="check-partial">Propri&eacute;taire (Looker, etc.)</span></td>
+            <td data-lang="fr" class="active"><span class="check-partial">Variable</span></td>
+          </tr>
+          <tr>
+            <td data-lang="en">Audit trail</td>
+            <td data-lang="en" class="col-akko"><span class="check-yes">6 sources, centralized</span></td>
+            <td data-lang="en"><span class="check-partial">Partial</span></td>
+            <td data-lang="en"><span class="check-partial">Varies</span></td>
+            <td data-lang="fr" class="active">Audit trail</td>
+            <td data-lang="fr" class="col-akko active"><span class="check-yes">6 sources, centralis&eacute;</span></td>
+            <td data-lang="fr" class="active"><span class="check-partial">Partiel</span></td>
+            <td data-lang="fr" class="active"><span class="check-partial">Variable</span></td>
+          </tr>
+          <tr>
             <td data-lang="en">Vendor lock-in risk</td>
             <td data-lang="en" class="col-akko"><span class="check-yes">None</span></td>
             <td data-lang="en"><span class="check-no">High</span></td>
@@ -995,20 +1121,20 @@
     <div class="arch-stack" data-lang="en">
       <div class="arch-layer" style="--layer-color: #64748b;"><span class="arch-name">Infrastructure</span><div class="arch-items"><span>Traefik</span><span>PostgreSQL</span><span>PostGIS</span><span>Nginx</span></div></div>
       <div class="arch-layer" style="--layer-color: #3b82f6;"><span class="arch-name">Analytics</span><div class="arch-items"><span>JupyterHub</span><span>Superset</span><span>Quarto</span><span>code-server</span></div></div>
-      <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">Compute</span><div class="arch-items"><span>Spark</span><span>Trino</span><span>Airflow</span></div></div>
+      <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">Compute</span><div class="arch-items"><span>Spark</span><span>Trino</span><span>Airflow</span><span>dbt</span></div></div>
       <div class="arch-layer" style="--layer-color: #6c63ff;"><span class="arch-name">Data Lake</span><div class="arch-items"><span>Apache Iceberg</span><span>Apache Polaris</span><span>MinIO</span></div></div>
-      <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Governance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span></div></div>
-      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">AI</span><div class="arch-items"><span>Ollama</span><span>LiteLLM</span><span>MLflow</span><span>pgvector</span><span>jupyter-ai</span><span>MCP Servers</span></div></div>
+      <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Governance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span><span>Audit Trail</span></div></div>
+      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">AI</span><div class="arch-items"><span>Ollama</span><span>LiteLLM</span><span>MLflow</span><span>pgvector</span><span>jupyter-ai</span><span>MCP Servers</span><span>15 AI UDFs</span></div></div>
       <div class="arch-layer" style="--layer-color: #ef4444;"><span class="arch-name">Security</span><div class="arch-items"><span>Keycloak</span><span>OPA</span><span>OAuth2 Proxy</span><span>LLDAP</span></div></div>
       <div class="arch-layer" style="--layer-color: #06b6d4;"><span class="arch-name">Monitoring</span><div class="arch-items"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span></div></div>
     </div>
     <div class="arch-stack active" data-lang="fr">
       <div class="arch-layer" style="--layer-color: #64748b;"><span class="arch-name">Infrastructure</span><div class="arch-items"><span>Traefik</span><span>PostgreSQL</span><span>PostGIS</span><span>Nginx</span></div></div>
       <div class="arch-layer" style="--layer-color: #3b82f6;"><span class="arch-name">Analytique</span><div class="arch-items"><span>JupyterHub</span><span>Superset</span><span>Quarto</span><span>code-server</span></div></div>
-      <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">Calcul</span><div class="arch-items"><span>Spark</span><span>Trino</span><span>Airflow</span></div></div>
+      <div class="arch-layer" style="--layer-color: #f59e0b;"><span class="arch-name">Calcul</span><div class="arch-items"><span>Spark</span><span>Trino</span><span>Airflow</span><span>dbt</span></div></div>
       <div class="arch-layer" style="--layer-color: #6c63ff;"><span class="arch-name">Data Lake</span><div class="arch-items"><span>Apache Iceberg</span><span>Apache Polaris</span><span>MinIO</span></div></div>
-      <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Gouvernance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span></div></div>
-      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">IA</span><div class="arch-items"><span>Ollama</span><span>LiteLLM</span><span>MLflow</span><span>pgvector</span><span>jupyter-ai</span><span>Serveurs MCP</span></div></div>
+      <div class="arch-layer" style="--layer-color: #22c55e;"><span class="arch-name">Gouvernance</span><div class="arch-items"><span>OpenMetadata</span><span>OpenSearch</span><span>OpenLineage</span><span>Audit Trail</span></div></div>
+      <div class="arch-layer" style="--layer-color: #8b5cf6;"><span class="arch-name">IA</span><div class="arch-items"><span>Ollama</span><span>LiteLLM</span><span>MLflow</span><span>pgvector</span><span>jupyter-ai</span><span>Serveurs MCP</span><span>15 UDF IA</span></div></div>
       <div class="arch-layer" style="--layer-color: #ef4444;"><span class="arch-name">S&eacute;curit&eacute;</span><div class="arch-items"><span>Keycloak</span><span>OPA</span><span>OAuth2 Proxy</span><span>LLDAP</span></div></div>
       <div class="arch-layer" style="--layer-color: #06b6d4;"><span class="arch-name">Monitoring</span><div class="arch-items"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>AlertManager</span></div></div>
     </div>
@@ -1031,7 +1157,7 @@
         <p>Full umbrella Helm chart with 24 sub-charts. Deploy to k3d (local dev), k3s, EKS, GKE, AKS, OpenShift, or any conformant Kubernetes cluster. One-command install with automated health verification.</p>
         <div class="deploy-code">
           <code><span class="t-prompt">$</span> helm install akko helm/akko/ -f values-dev.yaml</code>
-          <code class="t-muted"># 30+ pods, SSO, monitoring, AI &mdash; all configured</code>
+          <code class="t-muted"># 33+ pods, SSO, monitoring, AI agents &mdash; all configured</code>
         </div>
         <div class="deploy-reqs">
           <span>Kubernetes 1.27+</span>
@@ -1061,7 +1187,7 @@
         <p>Chart Helm umbrella complet avec 24 sous-charts. D&eacute;ployez sur k3d (dev local), k3s, EKS, GKE, AKS, OpenShift ou tout cluster Kubernetes conforme. Installation en une commande avec v&eacute;rification automatique de sant&eacute;.</p>
         <div class="deploy-code">
           <code><span class="t-prompt">$</span> helm install akko helm/akko/ -f values-dev.yaml</code>
-          <code class="t-muted"># 30+ pods, SSO, monitoring, IA &mdash; tout configur&eacute;</code>
+          <code class="t-muted"># 33+ pods, SSO, monitoring, agents IA &mdash; tout configur&eacute;</code>
         </div>
         <div class="deploy-reqs">
           <span>Kubernetes 1.27+</span>
@@ -1119,6 +1245,8 @@
       <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">1.4.2</span></div>
       <div class="stack-item"><span class="stack-name">MLflow</span><span class="stack-ver">2.x</span></div>
       <div class="stack-item"><span class="stack-name">OpenMetadata</span><span class="stack-ver">1.6</span></div>
+      <div class="stack-item"><span class="stack-name">dbt Core</span><span class="stack-ver">1.x</span></div>
+      <div class="stack-item"><span class="stack-name">MCP Trino</span><span class="stack-ver">2026.04</span></div>
     </div>
     <div class="stack-grid active" data-lang="fr">
       <div class="stack-item"><span class="stack-name">Traefik</span><span class="stack-ver">3.6</span></div>
@@ -1140,6 +1268,8 @@
       <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">1.4.2</span></div>
       <div class="stack-item"><span class="stack-name">MLflow</span><span class="stack-ver">2.x</span></div>
       <div class="stack-item"><span class="stack-name">OpenMetadata</span><span class="stack-ver">1.6</span></div>
+      <div class="stack-item"><span class="stack-name">dbt Core</span><span class="stack-ver">1.x</span></div>
+      <div class="stack-item"><span class="stack-name">MCP Trino</span><span class="stack-ver">2026.04</span></div>
     </div>
   </div>
 </section>
@@ -1172,11 +1302,19 @@
       </details>
       <details class="faq-item">
         <summary>How long does it take to deploy AKKO?</summary>
-        <p>About 5 minutes from git clone to a fully running platform with 30+ pods, SSO configured, monitoring active, and AI models ready. One Helm command handles everything.</p>
+        <p>About 5 minutes from git clone to a fully running platform with 33+ pods, SSO configured, monitoring active, and AI agents ready. One Helm command handles everything.</p>
       </details>
       <details class="faq-item">
         <summary>Does AKKO include AI capabilities?</summary>
-        <p>Yes. AKKO includes sovereign AI out of the box: local LLMs via Ollama, an OpenAI-compatible API gateway via LiteLLM, MCP protocol for tool calling, and RAG pipelines with pgvector. All AI processing happens on your infrastructure &mdash; zero data sent to external APIs.</p>
+        <p>Yes. AKKO includes sovereign AI out of the box: local LLMs via Ollama, an OpenAI-compatible API gateway via LiteLLM, MCP servers for sovereign AI agents (Claude, Cursor), 15 AI SQL functions (sentiment, PII, classification, embeddings), and RAG pipelines with pgvector. All AI processing happens on your infrastructure &mdash; zero data sent to external APIs.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What are MCP Servers and how do they work?</summary>
+        <p>MCP (Model Context Protocol) servers let AI agents like Claude and Cursor connect directly to your AKKO platform. They can query Trino via SQL, explore your OpenMetadata catalog, and interact with your data &mdash; all on your infrastructure. No data leaves the perimeter. It turns AKKO into an AI-native analytics platform where AI assistants understand your data context.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is the dbt semantic layer?</summary>
+        <p>AKKO includes dbt Core (Apache 2.0 license) for versioned SQL transformations. Define metrics, data tests, and documentation as code. dbt replaces proprietary semantic layers like Cube.dev or Looker. Orchestrated by Airflow and cataloged by OpenMetadata for full lineage visibility.</p>
       </details>
       <details class="faq-item">
         <summary>Can AKKO detect banking fraud in real time?</summary>
@@ -1210,11 +1348,19 @@
       </details>
       <details class="faq-item">
         <summary>Combien de temps faut-il pour d&eacute;ployer AKKO ?</summary>
-        <p>Environ 5 minutes du git clone &agrave; une plateforme compl&egrave;tement op&eacute;rationnelle avec plus de 30 pods, SSO configur&eacute;, monitoring actif et mod&egrave;les d'IA pr&ecirc;ts. Une seule commande Helm g&egrave;re tout.</p>
+        <p>Environ 5 minutes du git clone &agrave; une plateforme compl&egrave;tement op&eacute;rationnelle avec plus de 33 pods, SSO configur&eacute;, monitoring actif et agents IA pr&ecirc;ts. Une seule commande Helm g&egrave;re tout.</p>
       </details>
       <details class="faq-item">
         <summary>AKKO inclut-il des capacit&eacute;s d'IA ?</summary>
-        <p>Oui. AKKO inclut l'IA souveraine cl&eacute; en main : LLM locaux via Ollama, passerelle API compatible OpenAI via LiteLLM, protocole MCP pour l'appel d'outils et pipelines RAG avec pgvector. Tout le traitement IA s'effectue sur votre infrastructure &mdash; z&eacute;ro donn&eacute;e envoy&eacute;e vers des API externes.</p>
+        <p>Oui. AKKO inclut l'IA souveraine cl&eacute; en main : LLM locaux via Ollama, passerelle API compatible OpenAI via LiteLLM, serveurs MCP pour agents IA souverains (Claude, Cursor), 15 fonctions IA en SQL (sentiment, PII, classification, embeddings) et pipelines RAG avec pgvector. Tout le traitement IA s'effectue sur votre infrastructure &mdash; z&eacute;ro donn&eacute;e envoy&eacute;e vers des API externes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Que sont les serveurs MCP et comment fonctionnent-ils ?</summary>
+        <p>Les serveurs MCP (Model Context Protocol) permettent aux agents IA comme Claude et Cursor de se connecter directement &agrave; votre plateforme AKKO. Ils peuvent interroger Trino en SQL, explorer votre catalogue OpenMetadata et interagir avec vos donn&eacute;es &mdash; le tout sur votre infrastructure. Aucune donn&eacute;e ne quitte le p&eacute;rim&egrave;tre. AKKO devient une plateforme analytics IA-native o&ugrave; les assistants IA comprennent le contexte de vos donn&eacute;es.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Qu'est-ce que la couche s&eacute;mantique dbt ?</summary>
+        <p>AKKO inclut dbt Core (licence Apache 2.0) pour les transformations SQL versionn&eacute;es. D&eacute;finissez les m&eacute;triques, tests de donn&eacute;es et documentation as code. dbt remplace les couches s&eacute;mantiques propri&eacute;taires comme Cube.dev ou Looker. Orchestr&eacute; par Airflow et catalogu&eacute; par OpenMetadata pour une visibilit&eacute; compl&egrave;te du lin&eacute;age.</p>
       </details>
       <details class="faq-item">
         <summary>AKKO peut-il d&eacute;tecter la fraude bancaire en temps r&eacute;el ?</summary>
@@ -1275,7 +1421,7 @@
       "name": "How long does it take to deploy AKKO?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "About 5 minutes from git clone to a fully running platform with 30+ pods, SSO configured, monitoring active, and AI models ready. One Helm command handles everything."
+        "text": "About 5 minutes from git clone to a fully running platform with 33+ pods, SSO configured, monitoring active, and AI agents ready. One Helm command handles everything."
       }
     },
     {
@@ -1283,7 +1429,23 @@
       "name": "Does AKKO include AI capabilities?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. AKKO includes sovereign AI out of the box: local LLMs via Ollama, an OpenAI-compatible API gateway via LiteLLM, MCP protocol for tool calling, and RAG pipelines with pgvector. All AI processing happens on your infrastructure."
+        "text": "Yes. AKKO includes sovereign AI out of the box: local LLMs via Ollama, an OpenAI-compatible API gateway via LiteLLM, MCP servers for sovereign AI agents (Claude, Cursor), 15 AI SQL functions, and RAG pipelines with pgvector. All AI processing happens on your infrastructure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are MCP Servers and how do they work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP (Model Context Protocol) servers let AI agents like Claude and Cursor connect directly to your AKKO platform. They can query Trino via SQL, explore your OpenMetadata catalog, and interact with your data — all on your infrastructure. No data leaves the perimeter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the dbt semantic layer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AKKO includes dbt Core (Apache 2.0 license) for versioned SQL transformations. Define metrics, data tests, and documentation as code. dbt replaces proprietary semantic layers like Cube.dev or Looker. Orchestrated by Airflow and cataloged by OpenMetadata."
       }
     },
     {
@@ -1420,7 +1582,7 @@
             <p>Keycloak SSO + OPA row-level &amp; column masking</p>
           </div>
         </div>
-        <p class="story-desc">One login for 30+ services via Keycloak SSO. OPA enforces fine-grained access: row-level filtering and column masking per role. PII fields invisible to unauthorized users. Full audit logs, data lineage, and monitoring for DORA, NIS2, RGPD. Deploy air-gapped &mdash; data never leaves your infrastructure.</p>
+        <p class="story-desc">One login for 33+ services via Keycloak SSO. OPA enforces fine-grained access: row-level filtering and column masking per role. PII fields invisible to unauthorized users. Centralized audit trail (6 sources in Loki), data lineage, and monitoring for DORA, NIS2, RGPD. Deploy air-gapped &mdash; data never leaves your infrastructure.</p>
         <div class="story-chain">
           <span class="story-chain-badge">Keycloak</span>
           <span class="story-chain-badge">OPA</span>
@@ -1550,7 +1712,7 @@
             <p>Keycloak SSO + OPA row-level &amp; masquage de colonnes</p>
           </div>
         </div>
-        <p class="story-desc">Un seul login pour 30+ services via Keycloak SSO. OPA applique un contr&ocirc;le d'acc&egrave;s fin : filtrage par ligne et masquage de colonnes par r&ocirc;le. Les champs sensibles invisibles aux utilisateurs non autoris&eacute;s. Logs d'audit complets, lin&eacute;age et monitoring pour DORA, NIS2, RGPD. D&eacute;ployez air-gapped &mdash; les donn&eacute;es ne quittent jamais votre infrastructure.</p>
+        <p class="story-desc">Un seul login pour 33+ services via Keycloak SSO. OPA applique un contr&ocirc;le d'acc&egrave;s fin : filtrage par ligne et masquage de colonnes par r&ocirc;le. Les champs sensibles invisibles aux utilisateurs non autoris&eacute;s. Audit trail centralis&eacute; (6 sources dans Loki), lin&eacute;age et monitoring pour DORA, NIS2, RGPD. D&eacute;ployez air-gapped &mdash; les donn&eacute;es ne quittent jamais votre infrastructure.</p>
         <div class="story-chain">
           <span class="story-chain-badge">Keycloak</span>
           <span class="story-chain-badge">OPA</span>
