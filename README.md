@@ -1,6 +1,6 @@
 # AKKO Website
 
-Landing page for [AKKO](https://github.com/AKKO-p/AKKO) — the open source sovereign analytics stack.
+Landing page for [AKKO](https://github.com/AKKO-p/AKKO) — the AI-native sovereign data platform. Own Your Data. Own Your AI. Own Your Platform.
 
 ## Local preview
 
