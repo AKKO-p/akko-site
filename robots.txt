@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://akko-p.github.io/akko-site/sitemap.xml
+Sitemap: https://akko-ai.com/sitemap.xml
