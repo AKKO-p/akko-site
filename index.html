@@ -1387,12 +1387,12 @@
 
     <div class="faq-grid" data-lang="en">
       <details class="faq-item">
-        <summary>Is AKKO truly free and open source?</summary>
-        <p>Yes. AKKO is built entirely on open-source components. There are zero licensing costs, zero per-seat fees, and zero usage-based billing. You pay only for your own infrastructure (servers, cloud VMs, or on-premise hardware).</p>
+        <summary>How is AKKO licensed and priced?</summary>
+        <p>AKKO is built on open-source components (Apache 2.0, MIT, BSD). The core platform is available for self-hosted evaluation and community use. Enterprise engagements &mdash; 24&times;7 support, SLA, hardening, compliance attestations, managed SaaS &mdash; are commercial offerings. <a href="mailto:hello@akko-ai.com">Talk to us</a> to scope a pilot or a production contract.</p>
       </details>
       <details class="faq-item">
         <summary>How does AKKO compare to proprietary analytics platforms?</summary>
-        <p>AKKO provides equivalent capabilities &mdash; open lakehouse (Apache Iceberg), federated SQL (Trino), distributed compute (Spark), ML tracking (MLflow), data governance (OpenMetadata), and AI &mdash; but as an open-source platform you deploy on your own infrastructure. No vendor lock-in, no per-query pricing, full data sovereignty.</p>
+        <p>AKKO provides equivalent capabilities &mdash; open lakehouse (Apache Iceberg), federated SQL (Trino), distributed compute (Spark), ML tracking (MLflow), data governance (OpenMetadata), and AI &mdash; deployed on infrastructure you control (on-premise, sovereign cloud, or managed by us). No per-query or per-seat billing locked to a vendor console &mdash; you keep control of the deployment and the data.</p>
       </details>
       <details class="faq-item">
         <summary>Can AKKO run in air-gapped (disconnected) environments?</summary>
@@ -1423,8 +1423,8 @@
         <p>Yes. AKKO combines Spark for real-time transaction processing, Apache Iceberg for historical analysis, Trino for federated SQL across all data sources, and MLflow for ML model versioning. OPA policies enforce row-level filtering so each team sees only their authorized data. A complete banking fraud pipeline deploys in minutes.</p>
       </details>
       <details class="faq-item">
-        <summary>Is AKKO compliant with RGPD and NIS2?</summary>
-        <p>AKKO is designed for regulated environments. Data never leaves your infrastructure (RGPD data residency). Keycloak SSO with 5 RBAC roles, OPA column masking for PII, full audit trails via OpenMetadata, and encrypted communications between all services. NIS2 incident reporting is supported via Grafana alerting and Prometheus monitoring.</p>
+        <summary>Does AKKO help meet RGPD and NIS2 obligations?</summary>
+        <p>AKKO ships the technical controls a regulated deployment needs: data stays on your infrastructure (RGPD data residency), Keycloak SSO with 5 RBAC roles, OPA column masking for PII, audit trails via OpenMetadata, encrypted service-to-service communications, Grafana/Prometheus alerting for NIS2 incident reporting. Compliance itself is a property of the deployment plus your internal processes plus the auditor &mdash; AKKO gives you the foundation; the certification is earned by your organisation.</p>
       </details>
       <details class="faq-item">
         <summary>Can AKKO handle health data and epidemiological surveillance?</summary>
@@ -1433,12 +1433,12 @@
     </div>
     <div class="faq-grid active" data-lang="fr">
       <details class="faq-item">
-        <summary>AKKO est-il vraiment gratuit et open source ?</summary>
-        <p>Oui. AKKO est construit enti&egrave;rement avec des composants open source. Z&eacute;ro co&ucirc;t de licence, z&eacute;ro tarification par utilisateur, z&eacute;ro facturation &agrave; l'usage. Vous ne payez que votre propre infrastructure (serveurs, VM cloud ou mat&eacute;riel on-premise).</p>
+        <summary>Comment AKKO est-il licenci&eacute; et factur&eacute; ?</summary>
+        <p>AKKO est construit sur des composants open source (Apache 2.0, MIT, BSD). Le c&oelig;ur de la plateforme est disponible en auto-h&eacute;bergement pour &eacute;valuation et usage communautaire. Les engagements entreprise &mdash; support 24&times;7, SLA, durcissement, attestations de conformit&eacute;, SaaS manag&eacute; &mdash; sont des offres commerciales. <a href="mailto:hello@akko-ai.com">Parlons</a> pour cadrer un pilote ou un contrat de production.</p>
       </details>
       <details class="faq-item">
         <summary>Comment AKKO se compare-t-il aux plateformes analytiques propri&eacute;taires ?</summary>
-        <p>AKKO offre des capacit&eacute;s &eacute;quivalentes &mdash; lakehouse ouvert (Apache Iceberg), SQL f&eacute;d&eacute;r&eacute; (Trino), calcul distribu&eacute; (Spark), suivi ML (MLflow), gouvernance des donn&eacute;es (OpenMetadata), et IA &mdash; mais en tant que plateforme open source d&eacute;ploy&eacute;e sur votre propre infrastructure. Aucun verrouillage fournisseur, aucune tarification par requ&ecirc;te, souverainet&eacute; totale des donn&eacute;es.</p>
+        <p>AKKO offre des capacit&eacute;s &eacute;quivalentes &mdash; lakehouse ouvert (Apache Iceberg), SQL f&eacute;d&eacute;r&eacute; (Trino), calcul distribu&eacute; (Spark), suivi ML (MLflow), gouvernance des donn&eacute;es (OpenMetadata), et IA &mdash; d&eacute;ploy&eacute;e sur une infrastructure que vous contr&ocirc;lez (on-premise, cloud souverain, ou manag&eacute;e par nous). Pas de facturation par requ&ecirc;te ou par si&egrave;ge verrouill&eacute;e &agrave; une console fournisseur &mdash; vous gardez le contr&ocirc;le du d&eacute;ploiement et des donn&eacute;es.</p>
       </details>
       <details class="faq-item">
         <summary>AKKO peut-il fonctionner en environnement d&eacute;connect&eacute; (air-gapped) ?</summary>
@@ -1469,8 +1469,8 @@
         <p>Oui. AKKO combine Spark pour le traitement transactionnel en temps r&eacute;el, Apache Iceberg pour l'analyse historique, Trino pour le SQL f&eacute;d&eacute;r&eacute; sur toutes les sources, et MLflow pour le versioning des mod&egrave;les ML. Les politiques OPA appliquent le filtrage par ligne pour que chaque &eacute;quipe ne voie que ses donn&eacute;es autoris&eacute;es. Un pipeline complet de d&eacute;tection de fraude se d&eacute;ploie en quelques minutes.</p>
       </details>
       <details class="faq-item">
-        <summary>AKKO est-il conforme au RGPD et &agrave; NIS2 ?</summary>
-        <p>AKKO est con&ccedil;u pour les environnements r&eacute;glement&eacute;s. Les donn&eacute;es ne quittent jamais votre infrastructure (r&eacute;sidence des donn&eacute;es RGPD). SSO Keycloak avec 5 r&ocirc;les RBAC, masquage de colonnes OPA pour les donn&eacute;es personnelles, tra&ccedil;abilit&eacute; compl&egrave;te via OpenMetadata, et communications chiffr&eacute;es entre tous les services. Le signalement d'incidents NIS2 est support&eacute; via les alertes Grafana et le monitoring Prometheus.</p>
+        <summary>AKKO aide-t-il &agrave; r&eacute;pondre aux obligations RGPD et NIS2 ?</summary>
+        <p>AKKO fournit les contr&ocirc;les techniques dont un d&eacute;ploiement r&eacute;gul&eacute; a besoin&nbsp;: les donn&eacute;es restent sur votre infrastructure (r&eacute;sidence des donn&eacute;es RGPD), SSO Keycloak avec 5 r&ocirc;les RBAC, masquage de colonnes OPA pour les donn&eacute;es personnelles, pistes d'audit via OpenMetadata, communications chiffr&eacute;es de service &agrave; service, alertes Grafana/Prometheus pour le signalement d'incidents NIS2. La conformit&eacute; elle-m&ecirc;me est une propri&eacute;t&eacute; du d&eacute;ploiement, de vos processus internes et de l'auditeur &mdash; AKKO vous donne la fondation&nbsp;; la certification est obtenue par votre organisation.</p>
       </details>
       <details class="faq-item">
         <summary>AKKO peut-il g&eacute;rer des donn&eacute;es de sant&eacute; et la surveillance &eacute;pid&eacute;miologique ?</summary>
