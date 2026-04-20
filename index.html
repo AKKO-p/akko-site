@@ -57,20 +57,19 @@
     "featureList": [
       "33+ integrated open-source services",
       "Kubernetes-native Helm deployment",
-      "Sovereign AI agents via MCP protocol (Claude, Cursor connected to Trino + OpenMetadata)",
-      "dbt semantic layer with versioned SQL transformations (Apache 2.0)",
-      "Centralized audit trail (6 sources) with Grafana dashboard",
-      "17 AI SQL functions (sentiment, PII, classification, embeddings)",
-      "Apache Iceberg open lakehouse",
-      "Keycloak SSO with 13 OAuth clients",
-      "OPA fine-grained RBAC with row-level filtering and column masking",
-      "OpenMetadata data governance",
-      "MLflow experiment tracking and model registry",
+      "Sovereign AI agents via MCP protocol",
+      "Versioned SQL transformations and semantic layer",
+      "Centralised audit trail",
+      "AI SQL functions on any data source",
+      "Open lakehouse on object storage",
+      "SSO wired across every layer",
+      "Fine-grained RBAC with row-level filtering and column masking",
+      "Data governance and lineage",
+      "ML experiment tracking and model registry",
       "Air-gapped deployment support",
-      "Full observability (Prometheus, Grafana, Loki)",
-      "Zero-hardcoding: 1-command deployment on any Kubernetes",
-      "Demo framework: Banking + Healthcare scenarios with E2E validation",
-      "11 custom Docker images"
+      "Full observability",
+      "One-command Kubernetes deployment",
+      "Banking, healthcare and retail demo scenarios"
     ],
     "keywords": "sovereign analytics platform, open source, Kubernetes, Apache Iceberg, data governance, AI-native, RBAC, on-premise"
   }
@@ -137,18 +136,18 @@
   <div class="hero-content">
     <div class="hero-badge" data-lang="en">
       <span class="badge-dot"></span>
-      AI-Native Sovereign Data Platform &middot; 33+ Services &middot; Own Every Layer
+      AI-Native Sovereign Data Platform &middot; Own Every Layer
     </div>
     <div class="hero-badge active" data-lang="fr">
       <span class="badge-dot"></span>
-      Plateforme data souveraine IA-native &middot; Plus de 33 services &middot; Ma&icirc;trisez chaque couche
+      Plateforme data souveraine IA-native &middot; Ma&icirc;trisez chaque couche
     </div>
 
     <h1 data-lang="en">Own Your Data. Own Your AI.<br><span class="gradient-text">Own Your Platform.</span></h1>
     <h1 data-lang="fr" class="active">Vos donn&eacute;es. Votre IA.<br><span class="gradient-text">Votre plateforme.</span></h1>
 
-    <p class="hero-sub" data-lang="en">AKKO is the AI-native, sovereign data platform. 33+ best-in-class services &mdash; Trino 480, Iceberg, Spark, Airflow, Ollama, Keycloak &mdash; deployed in one Helm command from Harbor. On-prem, air-gapped, or any cloud (k3d, OpenShift, OVHcloud, Outscale, EKS, AKS, GKE). Zero vendor lock-in. The sovereign alternative to Databricks and Snowflake for regulated industries.</p>
-    <p class="hero-sub active" data-lang="fr">AKKO est la plateforme data souveraine et IA-native. Plus de 33 services de r&eacute;f&eacute;rence &mdash; Trino 480, Iceberg, Spark, Airflow, Ollama, Keycloak &mdash; d&eacute;ploy&eacute;s en une seule commande Helm depuis Harbor. On-prem, air-gapped ou n'importe quel cloud (k3d, OpenShift, OVHcloud, Outscale, EKS, AKS, GKE). Z&eacute;ro verrouillage fournisseur. L'alternative souveraine &agrave; Databricks et Snowflake pour les industries r&eacute;gul&eacute;es.</p>
+    <p class="hero-sub" data-lang="en">The sovereign data platform for regulated industries. Ingest, store, compute, govern and serve AI &mdash; deployed in one Helm command on any Kubernetes cluster. On-prem, air-gapped, or your own cloud. You keep the deployment, the keys and the data.</p>
+    <p class="hero-sub active" data-lang="fr">La plateforme data souveraine pour les industries r&eacute;gul&eacute;es. Ing&eacute;rez, stockez, calculez, gouvernez et servez l'IA &mdash; d&eacute;ploy&eacute;e en une seule commande Helm sur n'importe quel cluster Kubernetes. On-prem, air-gapped ou votre propre cloud. Vous gardez le d&eacute;ploiement, les cl&eacute;s et les donn&eacute;es.</p>
 
     <div class="hero-actions" data-lang="en">
       <a href="#deploy" class="btn-primary">
@@ -197,10 +196,10 @@
           <span class="t-cmd">helm install akko helm/akko/ -f helm/examples/values-dev.yaml</span>
         </div>
         <div class="terminal-line t-output">
-          <span class="t-muted">Deploying 29 sub-charts to Kubernetes...</span> <span class="t-ok">done</span>
+          <span class="t-muted">Deploying platform to Kubernetes...</span> <span class="t-ok">done</span>
         </div>
         <div class="terminal-line t-output">
-          <span class="t-muted">33+ pods running, SSO configured, AI agents ready...</span> <span class="t-ok">done</span>
+          <span class="t-muted">All pods running, SSO configured, AI agents ready...</span> <span class="t-ok">done</span>
         </div>
         <div class="terminal-line t-output" style="margin-top:0.5rem;">
           <span class="t-accent">AKKO is ready at https://akko.local</span>
@@ -315,7 +314,7 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </div>
         <h3>Composable by Design</h3>
-        <p>8 independent layers, 33+ services, each replaceable without touching the others. Swap Trino for DuckDB, Superset for Metabase, Ollama for vLLM. The platform adapts to you &mdash; not the reverse.</p>
+        <p>Every layer is replaceable without touching the others. Swap the SQL engine, the dashboards, the LLM. The platform adapts to you &mdash; not the reverse.</p>
       </div>
     </div>
     <div class="value-props active" data-lang="fr">
@@ -345,7 +344,7 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </div>
         <h3>Composable par conception</h3>
-        <p>8 couches ind&eacute;pendantes, plus de 33 services, chacun rempla&ccedil;able sans toucher aux autres. Remplacez Trino par DuckDB, Superset par Metabase, Ollama par vLLM. La plateforme s'adapte &agrave; vous &mdash; jamais l'inverse.</p>
+        <p>Chaque couche est rempla&ccedil;able sans toucher aux autres. Changez le moteur SQL, les dashboards, le LLM. La plateforme s'adapte &agrave; vous &mdash; jamais l'inverse.</p>
       </div>
     </div>
   </div>
@@ -357,8 +356,8 @@
     <span class="section-label" data-lang="en">Platform</span>
     <span class="section-label active" data-lang="fr">Plateforme</span>
 
-    <h2 class="section-title" data-lang="en">33+ open-source services. 8 layers.<br>One Kubernetes-native platform.</h2>
-    <h2 class="section-title active" data-lang="fr">Plus de 33 services open source. 8 couches.<br>Une plateforme Kubernetes-native.</h2>
+    <h2 class="section-title" data-lang="en">One Kubernetes-native platform.<br>Every layer under your control.</h2>
+    <h2 class="section-title active" data-lang="fr">Une plateforme Kubernetes-native.<br>Chaque couche sous votre contr&ocirc;le.</h2>
 
     <p class="section-sub" data-lang="en">Every service is a best-of-breed open-source project from the Apache, CNCF, or community ecosystems &mdash; Apache Iceberg, Trino, Spark, Airflow, Keycloak, and more. Deeply integrated via SSO, shared storage, and unified data governance. Replace any layer without touching the others.</p>
     <p class="section-sub active" data-lang="fr">Chaque service est un projet open source de r&eacute;f&eacute;rence issu des &eacute;cosyst&egrave;mes Apache, CNCF ou communautaires &mdash; Apache Iceberg, Trino, Spark, Airflow, Keycloak, et plus encore. Profond&eacute;ment int&eacute;gr&eacute;s via SSO, stockage partag&eacute; et gouvernance des donn&eacute;es unifi&eacute;e. Remplacez n'importe quelle couche sans toucher aux autres.</p>
@@ -397,7 +396,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
         </div>
         <h3>Enterprise Security</h3>
-        <p>Keycloak SSO with 13 pre-configured OAuth clients. OPA (Open Policy Agent) for fine-grained authorization &mdash; row-level security, column masking, policy-as-code RBAC. Authenticate once, access everything.</p>
+        <p>SSO wired across the whole platform. Fine-grained authorisation as policy-as-code &mdash; row-level filtering, column masking, RBAC propagated to every service. Authenticate once, access everything.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #06b6d4;">
@@ -505,7 +504,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
         </div>
         <h3>S&eacute;curit&eacute; entreprise</h3>
-        <p>SSO Keycloak avec 13 clients OAuth pr&eacute;configur&eacute;s. OPA (Open Policy Agent) pour l'autorisation fine &mdash; s&eacute;curit&eacute; par ligne, masquage de colonnes, RBAC policy-as-code. Connectez-vous une fois, acc&eacute;dez &agrave; tout.</p>
+        <p>SSO pr&eacute;c&acirc;bl&eacute; sur toute la plateforme. Autorisation fine en politique-as-code &mdash; filtrage par ligne, masquage de colonnes, RBAC propag&eacute;. Connectez-vous une fois, acc&eacute;dez &agrave; tout.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="--icon-color: #06b6d4;">
@@ -675,7 +674,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h4>SSO &amp; Identity Federation</h4>
-        <p>Keycloak with 13 pre-configured OAuth2/OIDC clients. LDAP/Active Directory integration ready. RBAC roles propagate across every service in the platform.</p>
+        <p>SSO wired across the whole platform. LDAP/Active Directory integration ready. RBAC roles propagate to every service.</p>
       </div>
       <div class="compliance-card">
         <div class="compliance-icon">
@@ -705,7 +704,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h4>SSO &amp; f&eacute;d&eacute;ration d'identit&eacute;</h4>
-        <p>Keycloak avec 13 clients OAuth2/OIDC pr&eacute;configur&eacute;s. Int&eacute;gration LDAP/Active Directory pr&ecirc;te &agrave; l'emploi. Les r&ocirc;les RBAC se propagent &agrave; chaque service de la plateforme.</p>
+        <p>SSO pr&eacute;c&acirc;bl&eacute; sur toute la plateforme. Int&eacute;gration LDAP/Active Directory pr&ecirc;te &agrave; l'emploi. Les r&ocirc;les RBAC se propagent &agrave; chaque service.</p>
       </div>
       <div class="compliance-card">
         <div class="compliance-icon">
@@ -1049,14 +1048,14 @@
           </tr>
           <tr>
             <td data-lang="en">SQL Engine</td>
-            <td data-lang="en" class="col-akko"><span class="check-yes">Trino 479 + 17 ai_* functions</span></td>
+            <td data-lang="en" class="col-akko"><span class="check-yes">Federated SQL + AI UDFs</span></td>
             <td data-lang="en"><span class="check-yes">Spark SQL + Photon</span></td>
             <td data-lang="en"><span class="check-yes">Proprietary (optimized)</span></td>
             <td data-lang="en"><span class="check-yes">Sonar (Arrow-based)</span></td>
             <td data-lang="en"><span class="check-yes">Trino (Starburst distro)</span></td>
             <td data-lang="en"><span class="check-partial">Impala / Hive</span></td>
             <td data-lang="fr" class="active">Moteur SQL</td>
-            <td data-lang="fr" class="col-akko active"><span class="check-yes">Trino 479 + 17 fonctions ai_*</span></td>
+            <td data-lang="fr" class="col-akko active"><span class="check-yes">SQL f&eacute;d&eacute;r&eacute; + UDFs IA</span></td>
             <td data-lang="fr" class="active"><span class="check-yes">Spark SQL + Photon</span></td>
             <td data-lang="fr" class="active"><span class="check-yes">Propri&eacute;taire (optimis&eacute;)</span></td>
             <td data-lang="fr" class="active"><span class="check-yes">Sonar (base Arrow)</span></td>
@@ -1065,14 +1064,14 @@
           </tr>
           <tr>
             <td data-lang="en">AI / ML native</td>
-            <td data-lang="en" class="col-akko"><span class="check-yes">17 ai_* + ADEN + RAG + MCP</span></td>
+            <td data-lang="en" class="col-akko"><span class="check-yes">AI UDFs + ADEN + RAG + MCP</span></td>
             <td data-lang="en"><span class="check-yes">MLflow + AI/BI + Mosaic</span></td>
             <td data-lang="en"><span class="check-yes">Cortex + Snowpark ML</span></td>
             <td data-lang="en"><span class="check-no">Basic</span></td>
             <td data-lang="en"><span class="check-no">Basic</span></td>
             <td data-lang="en"><span class="check-no">Basic (CML)</span></td>
             <td data-lang="fr" class="active">IA / ML natif</td>
-            <td data-lang="fr" class="col-akko active"><span class="check-yes">17 ai_* + ADEN + RAG + MCP</span></td>
+            <td data-lang="fr" class="col-akko active"><span class="check-yes">UDFs IA + ADEN + RAG + MCP</span></td>
             <td data-lang="fr" class="active"><span class="check-yes">MLflow + AI/BI + Mosaic</span></td>
             <td data-lang="fr" class="active"><span class="check-yes">Cortex + Snowpark ML</span></td>
             <td data-lang="fr" class="active"><span class="check-no">Basique</span></td>
@@ -1258,10 +1257,10 @@
       <div class="deploy-card deploy-card-prod">
         <div class="deploy-badge deploy-badge-prod">Production</div>
         <h3>Helm / Kubernetes</h3>
-        <p>Full umbrella Helm chart with 29 sub-charts. Deploy to k3d (local dev), k3s, EKS, GKE, AKS, OpenShift, or any conformant Kubernetes cluster. One-command install with automated health verification.</p>
+        <p>One Helm umbrella chart. Deploy to your Kubernetes cluster &mdash; local (k3d, k3s), sovereign cloud (OVH, Outscale, Scaleway) or any conformant cluster. One command, automated health checks, ready.</p>
         <div class="deploy-code">
-          <code><span class="t-prompt">$</span> helm install akko helm/akko/ -f values-dev.yaml</code>
-          <code class="t-muted"># 33+ pods, SSO, monitoring, AI agents &mdash; all configured</code>
+          <code><span class="t-prompt">$</span> helm install akko helm/akko/ -f values-prod.yaml</code>
+          <code class="t-muted"># SSO, monitoring, AI agents &mdash; all configured</code>
         </div>
         <div class="deploy-reqs">
           <span>Kubernetes 1.27+</span>
@@ -1317,63 +1316,33 @@
   </div>
 </section>
 
-<!-- TECH STACK -->
+<!-- LAYERS -->
 <section class="tech-stack" id="tech-stack">
   <div class="container">
-    <span class="section-label" data-lang="en">Technology</span>
-    <span class="section-label active" data-lang="fr">Technologies</span>
+    <span class="section-label" data-lang="en">Layers</span>
+    <span class="section-label active" data-lang="fr">Couches</span>
 
-    <h2 class="section-title" data-lang="en">Production-grade versions.<br>Pinned. Tested. No surprises.</h2>
-    <h2 class="section-title active" data-lang="fr">Versions production-grade.<br>&Eacute;pingl&eacute;es. Test&eacute;es. Z&eacute;ro surprise.</h2>
+    <h2 class="section-title" data-lang="en">Six layers.<br>Assembled, integrated, SSO'd.</h2>
+    <h2 class="section-title active" data-lang="fr">Six couches.<br>Assembl&eacute;es, int&eacute;gr&eacute;es, SSO.</h2>
 
-    <p class="section-sub" data-lang="en">Every image uses an explicit version tag. Zero <code>latest</code> in production. Upgrade on your terms.</p>
-    <p class="section-sub active" data-lang="fr">Chaque image utilise un tag de version explicite. Z&eacute;ro <code>latest</code> en production. Mettez &agrave; jour &agrave; votre rythme.</p>
+    <p class="section-sub" data-lang="en">AKKO picks the best-in-class open-source component for each layer, wires the SSO through, governs the data once, and pins every version for production. The technical stack is in the <a href="https://docs.akko-ai.com">documentation</a>.</p>
+    <p class="section-sub active" data-lang="fr">AKKO choisit le meilleur composant open source par couche, propage le SSO bout en bout, gouverne les donn&eacute;es une fois, et &eacute;pingle chaque version pour la production. La pile technique se trouve dans la <a href="https://docs.akko-ai.com">documentation</a>.</p>
 
-    <div class="stack-grid" data-lang="en">
-      <div class="stack-item"><span class="stack-name">Traefik</span><span class="stack-ver">3.6</span></div>
-      <div class="stack-item"><span class="stack-name">PostgreSQL</span><span class="stack-ver">16</span></div>
-      <div class="stack-item"><span class="stack-name">Keycloak</span><span class="stack-ver">26.x</span></div>
-      <div class="stack-item"><span class="stack-name">JupyterHub</span><span class="stack-ver">5.x</span></div>
-      <div class="stack-item"><span class="stack-name">JupyterLab</span><span class="stack-ver">4.x</span></div>
-      <div class="stack-item"><span class="stack-name">code-server</span><span class="stack-ver">4.x</span></div>
-      <div class="stack-item"><span class="stack-name">Superset</span><span class="stack-ver">4.x</span></div>
-      <div class="stack-item"><span class="stack-name">Airflow</span><span class="stack-ver">3.x</span></div>
-      <div class="stack-item"><span class="stack-name">Trino</span><span class="stack-ver">480</span></div>
-      <div class="stack-item"><span class="stack-name">Spark</span><span class="stack-ver">3.5</span></div>
-      <div class="stack-item"><span class="stack-name">Polaris</span><span class="stack-ver">1.3</span></div>
-      <div class="stack-item"><span class="stack-name">MinIO</span><span class="stack-ver">RELEASE.2025-09-07T16-13-09Z</span></div>
-      <div class="stack-item"><span class="stack-name">Ollama</span><span class="stack-ver">0.17</span></div>
-      <div class="stack-item"><span class="stack-name">LiteLLM</span><span class="stack-ver">1.67</span></div>
-      <div class="stack-item"><span class="stack-name">Grafana</span><span class="stack-ver">12.x</span></div>
-      <div class="stack-item"><span class="stack-name">Prometheus</span><span class="stack-ver">3.x</span></div>
-      <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">1.4.2</span></div>
-      <div class="stack-item"><span class="stack-name">MLflow</span><span class="stack-ver">2.x</span></div>
-      <div class="stack-item"><span class="stack-name">OpenMetadata</span><span class="stack-ver">1.12.1</span></div>
-      <div class="stack-item"><span class="stack-name">dbt Core</span><span class="stack-ver">1.x</span></div>
-      <div class="stack-item"><span class="stack-name">MCP Trino</span><span class="stack-ver">2026.04</span></div>
+    <div class="stack-grid" data-lang="en" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem">
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Ingestion &amp; orchestration</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">schedule, retry, observe</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Storage &amp; catalog</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">object store + open table format</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Compute &amp; query</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">federated SQL, distributed jobs</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">AI &amp; ML</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">sovereign LLM, vectors, lineage</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Governance &amp; security</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">SSO, RBAC, audit, masking</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Observability</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">metrics, logs, traces, alerts</span></div>
     </div>
-    <div class="stack-grid active" data-lang="fr">
-      <div class="stack-item"><span class="stack-name">Traefik</span><span class="stack-ver">3.6</span></div>
-      <div class="stack-item"><span class="stack-name">PostgreSQL</span><span class="stack-ver">16</span></div>
-      <div class="stack-item"><span class="stack-name">Keycloak</span><span class="stack-ver">26.x</span></div>
-      <div class="stack-item"><span class="stack-name">JupyterHub</span><span class="stack-ver">5.x</span></div>
-      <div class="stack-item"><span class="stack-name">JupyterLab</span><span class="stack-ver">4.x</span></div>
-      <div class="stack-item"><span class="stack-name">code-server</span><span class="stack-ver">4.x</span></div>
-      <div class="stack-item"><span class="stack-name">Superset</span><span class="stack-ver">4.x</span></div>
-      <div class="stack-item"><span class="stack-name">Airflow</span><span class="stack-ver">3.x</span></div>
-      <div class="stack-item"><span class="stack-name">Trino</span><span class="stack-ver">480</span></div>
-      <div class="stack-item"><span class="stack-name">Spark</span><span class="stack-ver">3.5</span></div>
-      <div class="stack-item"><span class="stack-name">Polaris</span><span class="stack-ver">1.3</span></div>
-      <div class="stack-item"><span class="stack-name">MinIO</span><span class="stack-ver">RELEASE.2025-09-07T16-13-09Z</span></div>
-      <div class="stack-item"><span class="stack-name">Ollama</span><span class="stack-ver">0.17</span></div>
-      <div class="stack-item"><span class="stack-name">LiteLLM</span><span class="stack-ver">1.67</span></div>
-      <div class="stack-item"><span class="stack-name">Grafana</span><span class="stack-ver">12.x</span></div>
-      <div class="stack-item"><span class="stack-name">Prometheus</span><span class="stack-ver">3.x</span></div>
-      <div class="stack-item"><span class="stack-name">OPA</span><span class="stack-ver">1.4.2</span></div>
-      <div class="stack-item"><span class="stack-name">MLflow</span><span class="stack-ver">2.x</span></div>
-      <div class="stack-item"><span class="stack-name">OpenMetadata</span><span class="stack-ver">1.12.1</span></div>
-      <div class="stack-item"><span class="stack-name">dbt Core</span><span class="stack-ver">1.x</span></div>
-      <div class="stack-item"><span class="stack-name">MCP Trino</span><span class="stack-ver">2026.04</span></div>
+    <div class="stack-grid active" data-lang="fr" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem">
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Ingestion et orchestration</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">planifier, relancer, superviser</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Stockage et catalogue</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">object store + format de table ouvert</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Calcul et requ&ecirc;te</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">SQL f&eacute;d&eacute;r&eacute;, jobs distribu&eacute;s</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">IA et ML</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">LLM souverain, vecteurs, lignage</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Gouvernance et s&eacute;curit&eacute;</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">SSO, RBAC, audit, masquage</span></div>
+      <div class="stack-item" style="padding:1.25rem"><span class="stack-name" style="font-size:1rem">Observabilit&eacute;</span><span class="stack-ver" style="font-size:0.75rem;color:var(--fg-muted)">m&eacute;triques, logs, traces, alertes</span></div>
     </div>
   </div>
 </section>
@@ -1398,13 +1367,13 @@
         <p style="color:var(--fg-muted);font-size:0.9rem" data-lang="fr" class="active">Pour les &eacute;quipes qui &eacute;valuent AKKO ou l'op&egrave;rent sur leur propre cluster sans SLA. Code source sur GitHub, support communautaire via les issues.</p>
         <ul style="padding-left:1.2rem;color:var(--fg);font-size:0.85rem;margin:1rem 0" data-lang="en">
           <li>Full platform, no feature gate</li>
-          <li>Helm chart, 33+ services</li>
+          <li>Full Helm chart, all layers</li>
           <li>Community issues &amp; discussions</li>
           <li>No SLA, best-effort</li>
         </ul>
         <ul style="padding-left:1.2rem;color:var(--fg);font-size:0.85rem;margin:1rem 0" data-lang="fr" class="active">
           <li>Plateforme compl&egrave;te, aucune feature bloqu&eacute;e</li>
-          <li>Chart Helm, 33+ services</li>
+          <li>Chart Helm complet, toutes les couches</li>
           <li>Issues et discussions GitHub</li>
           <li>Pas de SLA, best-effort</li>
         </ul>
@@ -1775,7 +1744,7 @@
             <p>Keycloak SSO + OPA row-level &amp; column masking</p>
           </div>
         </div>
-        <p class="story-desc">One login for 33+ services via Keycloak SSO. OPA enforces fine-grained access: row-level filtering and column masking per role. PII fields invisible to unauthorized users. Centralized audit trail (6 sources in Loki), data lineage, and monitoring for DORA, NIS2, RGPD. Deploy air-gapped &mdash; data never leaves your infrastructure.</p>
+        <p class="story-desc">One login for the whole platform. Fine-grained access: row-level filtering and column masking per role. PII fields invisible to unauthorised users. Centralised audit trail, data lineage, and monitoring for DORA, NIS2, RGPD. Deploy air-gapped &mdash; data never leaves your infrastructure.</p>
         <div class="story-chain">
           <span class="story-chain-badge">Keycloak</span>
           <span class="story-chain-badge">OPA</span>
@@ -1905,7 +1874,7 @@
             <p>Keycloak SSO + OPA row-level &amp; masquage de colonnes</p>
           </div>
         </div>
-        <p class="story-desc">Un seul login pour 33+ services via Keycloak SSO. OPA applique un contr&ocirc;le d'acc&egrave;s fin : filtrage par ligne et masquage de colonnes par r&ocirc;le. Les champs sensibles invisibles aux utilisateurs non autoris&eacute;s. Audit trail centralis&eacute; (6 sources dans Loki), lin&eacute;age et monitoring pour DORA, NIS2, RGPD. D&eacute;ployez air-gapped &mdash; les donn&eacute;es ne quittent jamais votre infrastructure.</p>
+        <p class="story-desc">Un seul login pour toute la plateforme. Contr&ocirc;le d'acc&egrave;s fin : filtrage par ligne et masquage de colonnes par r&ocirc;le. Les champs sensibles invisibles aux utilisateurs non autoris&eacute;s. Audit trail centralis&eacute;, lin&eacute;age et monitoring pour DORA, NIS2, RGPD. D&eacute;ployez air-gapped &mdash; les donn&eacute;es ne quittent jamais votre infrastructure.</p>
         <div class="story-chain">
           <span class="story-chain-badge">Keycloak</span>
           <span class="story-chain-badge">OPA</span>
@@ -2048,8 +2017,8 @@
     <h2 data-lang="en"><span class="gradient-text">Own Your Data. Own Your AI.</span><br>Own Your Platform &mdash; starting today.</h2>
     <h2 data-lang="fr" class="active"><span class="gradient-text">Vos donn&eacute;es. Votre IA.</span><br>Votre plateforme &mdash; d&egrave;s aujourd'hui.</h2>
 
-    <p data-lang="en">Open-source components, AI-native, sovereign by design. One Helm command deploys 33+ best-in-class services on your infrastructure. No SaaS trap. No vendor lock-in. You keep the deployment, the keys and the data &mdash; start building your independent data + AI platform today.</p>
-    <p data-lang="fr" class="active">Composants open source, IA-native, souveraine par conception. Une seule commande Helm d&eacute;ploie plus de 33 services de r&eacute;f&eacute;rence sur votre infrastructure. Pas de pi&egrave;ge SaaS. Pas de verrouillage fournisseur. Vous gardez le d&eacute;ploiement, les cl&eacute;s et les donn&eacute;es &mdash; construisez votre plateforme data + IA ind&eacute;pendante d&egrave;s aujourd'hui.</p>
+    <p data-lang="en">Open-source components, AI-native, sovereign by design. One Helm command deploys the full platform on your infrastructure. No SaaS trap. No vendor lock-in. You keep the deployment, the keys and the data.</p>
+    <p data-lang="fr" class="active">Composants open source, IA-native, souveraine par conception. Une seule commande Helm d&eacute;ploie toute la plateforme sur votre infrastructure. Pas de pi&egrave;ge SaaS. Pas de verrouillage fournisseur. Vous gardez le d&eacute;ploiement, les cl&eacute;s et les donn&eacute;es.</p>
 
     <div class="cta-actions" data-lang="en">
       <a href="mailto:contact@akko-ai.com?subject=Demo%20Request" class="btn-primary">
