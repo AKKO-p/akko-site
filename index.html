@@ -127,8 +127,8 @@
       </div>
       <div class="stat">
         <div class="stat-num" data-count-to="100" data-suffix="%">0%</div>
-        <div class="stat-label active" data-lang="en">open source &amp; portable</div>
-        <div class="stat-label" data-lang="fr">open source &amp; portable</div>
+        <div class="stat-label active" data-lang="en">your data, your keys</div>
+        <div class="stat-label" data-lang="fr">vos données, vos clés</div>
       </div>
       <div class="stat">
         <div class="stat-num" data-count-to="0">0</div>
@@ -791,7 +791,7 @@
       ? 'AKKO — Plateforme data et IA souveraine | Maîtrisez chaque couche'
       : 'AKKO — The Sovereign Data & AI Platform | Own Every Layer';
     try { localStorage.setItem(LANG_KEY, lang); } catch {}
-    runAdenTyping();
+    if (typeof runAdenTyping === "function") runAdenTyping();
   }
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.setLang));
