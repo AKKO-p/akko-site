@@ -52,8 +52,14 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ---- LANG TOGGLE (data-lang) ---- */
-[data-lang] { display: none; }
-[data-lang].active { display: revert; }
+/* `!important` is mandatory here : per-element display rules below
+   (e.g. `.hero-badge { display: inline-flex }`, `.hero-actions { display: flex }`)
+   have the same specificity as `[data-lang]` but come later in the
+   stylesheet, so they would otherwise override `display: none` and
+   show BOTH language variants simultaneously (live bug observed
+   2026-05-01). */
+[data-lang] { display: none !important; }
+[data-lang].active { display: revert !important; }
 
 /* ---- ANIMATED BACKGROUND ---- */
 .bg-effects {
