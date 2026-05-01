@@ -26,7 +26,7 @@
   <meta name="twitter:image" content="https://akko-ai.com/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,14 +46,16 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links">
-      <a href="#layers" data-lang="en" class="active">Layers</a>
-      <a href="#layers" data-lang="fr">Couches</a>
-      <a href="#why" data-lang="en" class="active">Why AKKO</a>
-      <a href="#why" data-lang="fr">Pourquoi AKKO</a>
+      <a href="#layers" data-lang="en" class="active">Platform</a>
+      <a href="#layers" data-lang="fr">Plateforme</a>
+      <a href="#aden" data-lang="en" class="active">ADEN AI</a>
+      <a href="#aden" data-lang="fr">ADEN IA</a>
+      <a href="#gallery" data-lang="en" class="active">Live demo</a>
+      <a href="#gallery" data-lang="fr">D&eacute;mo live</a>
       <a href="#use-cases" data-lang="en" class="active">Use cases</a>
       <a href="#use-cases" data-lang="fr">Cas d&rsquo;usage</a>
       <a href="https://docs.akko-ai.com" class="nav-doc" target="_blank" rel="noopener">Docs</a>
-      <a href="#demo" class="nav-cta active" data-lang="en" class="active">Request a demo</a>
+      <a href="#demo" class="nav-cta active" data-lang="en">Request a demo</a>
       <a href="#demo" class="nav-cta" data-lang="fr">Demander une d&eacute;mo</a>
       <div class="lang-switch">
         <button class="lang-btn" data-set-lang="en">EN</button>
@@ -67,11 +69,10 @@
 
 <!-- ===========================================================
      SECTION 1 — HERO
-     Promise in one line + one primary CTA.
      =========================================================== -->
 <section class="hero">
   <div class="container hero-content">
-    <div class="hero-badge active" data-lang="en" class="active">
+    <div class="hero-badge active" data-lang="en">
       <span class="badge-dot"></span>
       Sovereign Data &amp; AI Platform &middot; Own Every Layer
     </div>
@@ -89,7 +90,7 @@
       <span class="gradient-text">Chaque couche sous votre contr&ocirc;le.</span>
     </h1>
 
-    <p class="hero-sub active" data-lang="en" class="active">
+    <p class="hero-sub active" data-lang="en">
       AKKO unifies your data and your AI on infrastructure you own.
       Cloud, on-prem, or air-gapped. No vendor lock-in. No data leakage. No exceptions.
     </p>
@@ -98,13 +99,13 @@
       Cloud, on-prem ou air-gapped. Aucun verrouillage. Aucune fuite. Aucune exception.
     </p>
 
-    <div class="hero-actions active" data-lang="en" class="active">
+    <div class="hero-actions active" data-lang="en">
       <a href="#demo" class="btn-primary">
         Request a demo
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="#layers" class="btn-secondary">
-        See the layers
+      <a href="#aden" class="btn-secondary">
+        See ADEN in action
       </a>
     </div>
     <div class="hero-actions" data-lang="fr">
@@ -112,185 +113,377 @@
         Demander une d&eacute;mo
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="#layers" class="btn-secondary">
-        Voir les couches
+      <a href="#aden" class="btn-secondary">
+        Voir ADEN en action
       </a>
     </div>
+
+    <!-- Stat strip -->
+    <div class="hero-stats" aria-label="Key facts">
+      <div class="stat">
+        <div class="stat-num" data-count-to="8">0</div>
+        <div class="stat-label active" data-lang="en">layers, one platform</div>
+        <div class="stat-label" data-lang="fr">couches, une plateforme</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count-to="100" data-suffix="%">0%</div>
+        <div class="stat-label active" data-lang="en">open source &amp; portable</div>
+        <div class="stat-label" data-lang="fr">open source &amp; portable</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count-to="0">0</div>
+        <div class="stat-label active" data-lang="en">vendor lock-in</div>
+        <div class="stat-label" data-lang="fr">verrouillage fournisseur</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="infin">&infin;</span></div>
+        <div class="stat-label active" data-lang="en">your keys, your data</div>
+        <div class="stat-label" data-lang="fr">vos cl&eacute;s, vos donn&eacute;es</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===========================================================
-     SECTION 2 — LAYERS (8 cards)
-     Business framing only. No tech names.
+     SECTION 2 — LAYERS (interactive)
      =========================================================== -->
-<section class="layers" id="layers">
+<section class="layers reveal" id="layers">
   <div class="container">
-    <span class="section-label active" data-lang="en" class="active">The platform</span>
+    <span class="section-label active" data-lang="en">The platform</span>
     <span class="section-label" data-lang="fr">La plateforme</span>
 
-    <h2 class="section-title active" data-lang="en" class="active">Eight layers. One platform.<br>You choose what stays, what swaps.</h2>
+    <h2 class="section-title active" data-lang="en">Eight layers. One platform.<br>You choose what stays, what swaps.</h2>
     <h2 class="section-title" data-lang="fr">Huit couches. Une plateforme.<br>Vous choisissez ce qui reste, ce qui change.</h2>
 
-    <p class="section-sub active" data-lang="en" class="active">
-      Each layer is independent and replaceable. Keep what works for you, swap the rest.
-      AKKO ties them together so you get one experience, not eight tools.
+    <p class="section-sub active" data-lang="en">
+      Each layer is independent and replaceable. Hover or click any card to see what it does for you in production.
     </p>
     <p class="section-sub" data-lang="fr">
-      Chaque couche est ind&eacute;pendante et rempla&ccedil;able. Gardez ce qui vous convient, changez le reste.
-      AKKO les relie pour vous offrir une exp&eacute;rience unique, pas huit outils s&eacute;par&eacute;s.
+      Chaque couche est ind&eacute;pendante et rempla&ccedil;able. Survolez ou cliquez une carte pour voir ce qu&rsquo;elle fait en production.
     </p>
 
-    <div class="layers-grid active" data-lang="en" class="active">
+    <!-- EN grid -->
+    <div class="layers-grid active" data-lang="en">
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#3b82f6" type="button">
+        <span class="layer-step">01</span>
         <div class="layer-icon" style="--icon-color:#3b82f6;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>
         </div>
         <h3>Storage</h3>
-        <p>Your raw and curated data, in open formats, on your hardware. Portable, durable, yours.</p>
-      </div>
+        <p class="layer-tag">Raw &amp; curated &middot; open formats</p>
+        <p class="layer-detail">Object store on your hardware. Open table formats. Portable, durable, yours. Move it tomorrow if you decide to.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#22c55e" type="button">
+        <span class="layer-step">02</span>
         <div class="layer-icon" style="--icon-color:#22c55e;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h16"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h16"/></svg>
         </div>
         <h3>Catalog</h3>
-        <p>One source of truth for every dataset, owner, and lineage path. Find anything, trust everything.</p>
-      </div>
+        <p class="layer-tag">One source of truth</p>
+        <p class="layer-detail">Every dataset, every owner, every lineage path. Search any column. Trust any number. Data products, native.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#f59e0b" type="button">
+        <span class="layer-step">03</span>
         <div class="layer-icon" style="--icon-color:#f59e0b;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <h3>Compute</h3>
-        <p>Distributed processing for batches, transformations and pipelines. Scales with your workloads, not your bills.</p>
-      </div>
+        <p class="layer-tag">Batch &middot; pipelines &middot; ML</p>
+        <p class="layer-detail">Distributed compute that scales with workloads, not your bills. Run notebooks, jobs, transformations &mdash; one engine.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#06b6d4" type="button">
+        <span class="layer-step">04</span>
         <div class="layer-icon" style="--icon-color:#06b6d4;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         </div>
         <h3>Query &amp; BI</h3>
-        <p>Federated SQL across every source, dashboards, ad-hoc analytics. Answers for analysts and executives alike.</p>
-      </div>
+        <p class="layer-tag">Federated SQL &middot; dashboards</p>
+        <p class="layer-detail">One SQL engine across every source &mdash; warehouses, files, databases. Dashboards that share the same governance.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card layer-highlight" data-layer-color="#8b5cf6" type="button">
+        <span class="layer-step">05</span>
         <div class="layer-icon" style="--icon-color:#8b5cf6;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         </div>
         <h3>AI &amp; Agents</h3>
-        <p>Natural-language analytics, knowledge assistants on your own corpus, and autonomous agents &mdash; all on your private models.</p>
-      </div>
+        <p class="layer-tag">ADEN &middot; private models</p>
+        <p class="layer-detail">Talk to your data in natural language. Knowledge assistants on your corpus. Autonomous agents on your private models.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#ef4444" type="button">
+        <span class="layer-step">06</span>
         <div class="layer-icon" style="--icon-color:#ef4444;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>Governance</h3>
-        <p>Fine-grained access, row-level filtering, column masking, full audit trail. Compliance, by design.</p>
-      </div>
+        <p class="layer-tag">RBAC &middot; row + column policy</p>
+        <p class="layer-detail">Fine-grained access, row-level filtering, column masking, full audit trail. Compliance, by design &mdash; not by ticket.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#0ea5e9" type="button">
+        <span class="layer-step">07</span>
         <div class="layer-icon" style="--icon-color:#0ea5e9;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
         <h3>Observability</h3>
-        <p>Metrics, logs and alerts unified across every layer. Know what runs, what fails, what costs.</p>
-      </div>
+        <p class="layer-tag">Metrics &middot; logs &middot; alerts</p>
+        <p class="layer-detail">Unified telemetry across every layer. Know what runs, what fails, what costs &mdash; before anyone else does.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#ec4899" type="button">
+        <span class="layer-step">08</span>
         <div class="layer-icon" style="--icon-color:#ec4899;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6M19 8v6"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6M19 8v6"/></svg>
         </div>
         <h3>Identity &amp; Access</h3>
-        <p>Single sign-on for every user, every layer. One identity, one rulebook, every tool aligned.</p>
-      </div>
+        <p class="layer-tag">SSO &middot; one rulebook</p>
+        <p class="layer-detail">Single sign-on across every tool. One identity, one rulebook, every layer aligned &mdash; from notebook to dashboard.</p>
+      </button>
 
     </div>
 
+    <!-- FR grid -->
     <div class="layers-grid" data-lang="fr">
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#3b82f6" type="button">
+        <span class="layer-step">01</span>
         <div class="layer-icon" style="--icon-color:#3b82f6;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>
         </div>
         <h3>Stockage</h3>
-        <p>Vos donn&eacute;es brutes et raffin&eacute;es, en formats ouverts, sur votre mat&eacute;riel. Portables, durables, &agrave; vous.</p>
-      </div>
+        <p class="layer-tag">Brut &amp; raffin&eacute; &middot; formats ouverts</p>
+        <p class="layer-detail">Object store sur votre mat&eacute;riel. Formats de tables ouverts. Portable, durable, &agrave; vous. D&eacute;m&eacute;nageable demain si vous le d&eacute;cidez.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#22c55e" type="button">
+        <span class="layer-step">02</span>
         <div class="layer-icon" style="--icon-color:#22c55e;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h16"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h16"/></svg>
         </div>
         <h3>Catalogue</h3>
-        <p>Une source de v&eacute;rit&eacute; unique pour chaque jeu de donn&eacute;es, propri&eacute;taire et lignage. Trouvez tout, faites confiance &agrave; tout.</p>
-      </div>
+        <p class="layer-tag">Une source de v&eacute;rit&eacute;</p>
+        <p class="layer-detail">Chaque dataset, chaque propri&eacute;taire, chaque lignage. Cherchez n&rsquo;importe quelle colonne. Faites confiance &agrave; chaque chiffre.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#f59e0b" type="button">
+        <span class="layer-step">03</span>
         <div class="layer-icon" style="--icon-color:#f59e0b;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <h3>Calcul</h3>
-        <p>Traitement distribu&eacute; pour les lots, transformations et pipelines. Scale avec vos charges, pas avec vos factures.</p>
-      </div>
+        <p class="layer-tag">Batch &middot; pipelines &middot; ML</p>
+        <p class="layer-detail">Calcul distribu&eacute; qui scale avec vos charges, pas avec vos factures. Notebooks, jobs, transformations &mdash; un seul moteur.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#06b6d4" type="button">
+        <span class="layer-step">04</span>
         <div class="layer-icon" style="--icon-color:#06b6d4;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         </div>
         <h3>Requ&ecirc;te &amp; BI</h3>
-        <p>SQL f&eacute;d&eacute;r&eacute; sur toutes vos sources, tableaux de bord, analyse ad-hoc. Des r&eacute;ponses pour les analystes comme pour la direction.</p>
-      </div>
+        <p class="layer-tag">SQL f&eacute;d&eacute;r&eacute; &middot; dashboards</p>
+        <p class="layer-detail">Un seul moteur SQL sur toutes vos sources &mdash; entrep&ocirc;ts, fichiers, bases. Dashboards qui partagent la m&ecirc;me gouvernance.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card layer-highlight" data-layer-color="#8b5cf6" type="button">
+        <span class="layer-step">05</span>
         <div class="layer-icon" style="--icon-color:#8b5cf6;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         </div>
         <h3>IA &amp; agents</h3>
-        <p>Analyse en langage naturel, assistants connaissant votre corpus, agents autonomes &mdash; tous sur vos propres mod&egrave;les priv&eacute;s.</p>
-      </div>
+        <p class="layer-tag">ADEN &middot; mod&egrave;les priv&eacute;s</p>
+        <p class="layer-detail">Parlez &agrave; vos donn&eacute;es en langage naturel. Assistants connaissant votre corpus. Agents autonomes sur vos mod&egrave;les priv&eacute;s.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#ef4444" type="button">
+        <span class="layer-step">06</span>
         <div class="layer-icon" style="--icon-color:#ef4444;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>Gouvernance</h3>
-        <p>Acc&egrave;s fin, filtrage ligne &agrave; ligne, masquage de colonnes, journal d&rsquo;audit complet. La conformit&eacute;, par conception.</p>
-      </div>
+        <p class="layer-tag">RBAC &middot; ligne + colonne</p>
+        <p class="layer-detail">Acc&egrave;s fin, filtrage ligne &agrave; ligne, masquage de colonnes, journal d&rsquo;audit complet. La conformit&eacute; par conception, pas par ticket.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#0ea5e9" type="button">
+        <span class="layer-step">07</span>
         <div class="layer-icon" style="--icon-color:#0ea5e9;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
         <h3>Observabilit&eacute;</h3>
-        <p>M&eacute;triques, logs et alertes unifi&eacute;s sur toutes les couches. Sachez ce qui tourne, ce qui tombe, ce qui co&ucirc;te.</p>
-      </div>
+        <p class="layer-tag">M&eacute;triques &middot; logs &middot; alertes</p>
+        <p class="layer-detail">T&eacute;l&eacute;m&eacute;trie unifi&eacute;e sur toutes les couches. Sachez ce qui tourne, ce qui tombe, ce qui co&ucirc;te &mdash; avant tout le monde.</p>
+      </button>
 
-      <div class="layer-card">
+      <button class="layer-card" data-layer-color="#ec4899" type="button">
+        <span class="layer-step">08</span>
         <div class="layer-icon" style="--icon-color:#ec4899;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6M19 8v6"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6M19 8v6"/></svg>
         </div>
         <h3>Identit&eacute; &amp; acc&egrave;s</h3>
-        <p>Authentification unique pour chaque utilisateur, chaque couche. Une identit&eacute;, une r&egrave;gle, tous les outils align&eacute;s.</p>
-      </div>
+        <p class="layer-tag">SSO &middot; une r&egrave;gle</p>
+        <p class="layer-detail">Authentification unique pour chaque outil. Une identit&eacute;, une r&egrave;gle, toutes les couches align&eacute;es &mdash; du notebook au dashboard.</p>
+      </button>
 
     </div>
   </div>
 </section>
 
 <!-- ===========================================================
-     SECTION 3 — WHY AKKO (3 angles)
-     Sovereignty / Unified data + AI / Independence (Lego).
+     SECTION 3 — ADEN AI showcase
      =========================================================== -->
-<section class="why" id="why">
+<section class="aden reveal" id="aden">
   <div class="container">
-    <span class="section-label active" data-lang="en" class="active">Why AKKO</span>
+    <div class="aden-head">
+      <span class="section-label active" data-lang="en">Agentic AI &middot; ADEN</span>
+      <span class="section-label" data-lang="fr">IA agentique &middot; ADEN</span>
+
+      <h2 class="section-title active" data-lang="en">Talk to your data.<br>Get a governed answer.</h2>
+      <h2 class="section-title" data-lang="fr">Parlez &agrave; vos donn&eacute;es.<br>Obtenez une r&eacute;ponse gouvern&eacute;e.</h2>
+
+      <p class="section-sub active" data-lang="en">
+        ADEN turns natural language into governed SQL, runs it on your federated catalog,
+        returns a chart you can share. RBAC at every step. No data leaves your perimeter.
+        No foreign API. No surprises.
+      </p>
+      <p class="section-sub" data-lang="fr">
+        ADEN traduit le langage naturel en SQL gouvern&eacute;, l&rsquo;ex&eacute;cute sur votre catalogue f&eacute;d&eacute;r&eacute;,
+        renvoie un graphe que vous pouvez partager. RBAC &agrave; chaque &eacute;tape. Aucune donn&eacute;e ne sort de votre p&eacute;rim&egrave;tre.
+      </p>
+    </div>
+
+    <div class="aden-demo">
+      <!-- Mock console -->
+      <div class="aden-console">
+        <div class="console-bar">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+          <span class="console-title">demo.akko-ai.com / ADEN</span>
+        </div>
+
+        <div class="console-body">
+          <div class="aden-step aden-q">
+            <span class="step-label active" data-lang="en">You</span>
+            <span class="step-label" data-lang="fr">Vous</span>
+            <div class="step-bubble">
+              <span class="aden-typed" id="aden-typed-en" data-lang="en"></span>
+              <span class="aden-typed" id="aden-typed-fr" data-lang="fr"></span>
+              <span class="aden-caret">|</span>
+            </div>
+          </div>
+
+          <div class="aden-step aden-plan">
+            <span class="step-label">ADEN</span>
+            <div class="step-row">
+              <span class="aden-chip">RBAC check</span>
+              <span class="aden-chip">Catalog scope</span>
+              <span class="aden-chip">SQL plan</span>
+              <span class="aden-chip">Mask PII</span>
+            </div>
+          </div>
+
+          <div class="aden-step aden-sql">
+            <span class="step-label">SQL</span>
+            <pre class="aden-code"><code><span class="kw">SELECT</span> account_id_masked,
+       <span class="fn">SUM</span>(amount) <span class="kw">AS</span> total_eur,
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> txns
+<span class="kw">FROM</span>   banking.fact_txn
+<span class="kw">WHERE</span>  fraud_score &gt; 0.85
+  <span class="kw">AND</span>  ts &gt; <span class="fn">now</span>() - <span class="kw">INTERVAL</span> <span class="str">'7 days'</span>
+<span class="kw">GROUP BY</span> account_id_masked
+<span class="kw">ORDER BY</span> total_eur <span class="kw">DESC</span>
+<span class="kw">LIMIT</span> 10;</code></pre>
+          </div>
+
+          <div class="aden-step aden-chart">
+            <span class="step-label active" data-lang="en">Result</span>
+            <span class="step-label" data-lang="fr">R&eacute;sultat</span>
+            <div class="aden-bars" aria-hidden="true">
+              <div class="aden-bar" style="--h:92%; --d:0.05s;"><span>EUR 184k</span></div>
+              <div class="aden-bar" style="--h:78%; --d:0.10s;"><span>EUR 156k</span></div>
+              <div class="aden-bar" style="--h:65%; --d:0.15s;"><span>EUR 131k</span></div>
+              <div class="aden-bar" style="--h:54%; --d:0.20s;"><span>EUR 109k</span></div>
+              <div class="aden-bar" style="--h:48%; --d:0.25s;"><span>EUR 96k</span></div>
+              <div class="aden-bar" style="--h:42%; --d:0.30s;"><span>EUR 84k</span></div>
+              <div class="aden-bar" style="--h:36%; --d:0.35s;"><span>EUR 72k</span></div>
+              <div class="aden-bar" style="--h:30%; --d:0.40s;"><span>EUR 59k</span></div>
+              <div class="aden-bar" style="--h:26%; --d:0.45s;"><span>EUR 51k</span></div>
+              <div class="aden-bar" style="--h:22%; --d:0.50s;"><span>EUR 43k</span></div>
+            </div>
+            <p class="aden-receipt active" data-lang="en">Audit receipt: query #f9a3d &middot; user alice@akko-admin &middot; row policy banking.fraud applied &middot; 0.8s</p>
+            <p class="aden-receipt" data-lang="fr">Re&ccedil;u d&rsquo;audit&nbsp;: requ&ecirc;te #f9a3d &middot; alice@akko-admin &middot; politique banking.fraud appliqu&eacute;e &middot; 0.8s</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side caption -->
+      <div class="aden-side">
+        <div class="aden-feature">
+          <div class="ft-icon" style="--c:#22c55e;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <div>
+            <h4 data-lang="en" class="active">Governed by default</h4>
+            <h4 data-lang="fr">Gouvern&eacute; par d&eacute;faut</h4>
+            <p data-lang="en" class="active">Every prompt routes through RBAC, row policy, column masking. The AI cannot show what the user cannot see.</p>
+            <p data-lang="fr">Chaque prompt passe par RBAC, politique de lignes, masquage de colonnes. L&rsquo;IA ne peut pas montrer ce que l&rsquo;utilisateur n&rsquo;a pas le droit de voir.</p>
+          </div>
+        </div>
+
+        <div class="aden-feature">
+          <div class="ft-icon" style="--c:#8b5cf6;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <div>
+            <h4 data-lang="en" class="active">Your models, your keys</h4>
+            <h4 data-lang="fr">Vos mod&egrave;les, vos cl&eacute;s</h4>
+            <p data-lang="en" class="active">Private LLMs run on your infrastructure. No prompt, no schema, no answer ever leaves your perimeter.</p>
+            <p data-lang="fr">LLMs priv&eacute;s sur votre infrastructure. Aucun prompt, sch&eacute;ma ou r&eacute;ponse ne sort de votre p&eacute;rim&egrave;tre.</p>
+          </div>
+        </div>
+
+        <div class="aden-feature">
+          <div class="ft-icon" style="--c:#06b6d4;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div>
+            <h4 data-lang="en" class="active">Reasoning you can audit</h4>
+            <h4 data-lang="fr">Un raisonnement auditable</h4>
+            <p data-lang="en" class="active">Every answer carries a receipt: scope, plan, SQL, policies applied, latency. Replayable, exportable, signable.</p>
+            <p data-lang="fr">Chaque r&eacute;ponse porte un re&ccedil;u&nbsp;: scope, plan, SQL, politiques, latence. Rejouable, exportable, signable.</p>
+          </div>
+        </div>
+
+        <div class="aden-cta">
+          <a href="https://demo.akko-ai.com/#aden" class="btn-primary" target="_blank" rel="noopener">
+            <span data-lang="en" class="active">Try the live ADEN</span>
+            <span data-lang="fr">Tester ADEN en live</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     SECTION 4 — WHY AKKO
+     =========================================================== -->
+<section class="why reveal" id="why">
+  <div class="container">
+    <span class="section-label active" data-lang="en">Why AKKO</span>
     <span class="section-label" data-lang="fr">Pourquoi AKKO</span>
 
-    <h2 class="section-title active" data-lang="en" class="active">Three promises. No compromise.</h2>
+    <h2 class="section-title active" data-lang="en">Three promises. No compromise.</h2>
     <h2 class="section-title" data-lang="fr">Trois promesses. Sans compromis.</h2>
 
-    <div class="why-grid active" data-lang="en" class="active">
+    <div class="why-grid active" data-lang="en">
       <article class="why-card">
         <div class="why-num">01</div>
         <h3>Sovereign by design</h3>
@@ -304,7 +497,7 @@
         <div class="why-num">02</div>
         <h3>Data and AI, unified</h3>
         <p>
-          One platform for the full lifecycle &mdash; ingest, store, transform, query, model, and serve.
+          One platform for the full lifecycle &mdash; ingest, store, transform, query, model, serve.
           Analytics and AI share the same governance, the same identity, the same lineage.
         </p>
       </article>
@@ -349,17 +542,120 @@
 </section>
 
 <!-- ===========================================================
-     SECTION 4 — USE CASES (proof, no tech names)
+     SECTION 5 — LIVE DEMO GALLERY
      =========================================================== -->
-<section class="use-cases" id="use-cases">
+<section class="gallery reveal" id="gallery">
   <div class="container">
-    <span class="section-label active" data-lang="en" class="active">In production</span>
+    <span class="section-label active" data-lang="en">See it in action</span>
+    <span class="section-label" data-lang="fr">Voir en action</span>
+
+    <h2 class="section-title active" data-lang="en">Real screens. Live demo. Yours to try.</h2>
+    <h2 class="section-title" data-lang="fr">Vrais &eacute;crans. D&eacute;mo live. &Agrave; vous d&rsquo;essayer.</h2>
+
+    <p class="section-sub active" data-lang="en">
+      Captured from <a href="https://demo.akko-ai.com" target="_blank" rel="noopener">demo.akko-ai.com</a> &mdash; the same platform we ship.
+      Click any screen to enlarge.
+    </p>
+    <p class="section-sub" data-lang="fr">
+      Captur&eacute;s sur <a href="https://demo.akko-ai.com" target="_blank" rel="noopener">demo.akko-ai.com</a> &mdash; la plateforme que nous livrons.
+      Cliquez pour agrandir.
+    </p>
+
+    <div class="gallery-grid">
+      <figure class="shot" data-shot="screenshots/cockpit-home.png">
+        <img src="screenshots/cockpit-home.png" alt="AKKO cockpit home" loading="lazy" onerror="this.parentNode.classList.add('shot-fallback')">
+        <div class="shot-fallback-art" aria-hidden="true">
+          <div class="art-bar"></div><div class="art-grid"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <figcaption>
+          <span data-lang="en" class="active"><strong>Cockpit</strong> &middot; one home for every layer</span>
+          <span data-lang="fr"><strong>Cockpit</strong> &middot; un acc&egrave;s unique &agrave; chaque couche</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot" data-shot="screenshots/aden.png">
+        <img src="screenshots/aden.png" alt="ADEN natural-language analytics" loading="lazy" onerror="this.parentNode.classList.add('shot-fallback')">
+        <div class="shot-fallback-art" aria-hidden="true">
+          <div class="art-prompt"></div><div class="art-bars"><i style="--h:80%"></i><i style="--h:60%"></i><i style="--h:45%"></i><i style="--h:30%"></i></div>
+        </div>
+        <figcaption>
+          <span data-lang="en" class="active"><strong>ADEN</strong> &middot; natural language &rarr; governed SQL</span>
+          <span data-lang="fr"><strong>ADEN</strong> &middot; langage naturel &rarr; SQL gouvern&eacute;</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot" data-shot="screenshots/catalogs.png">
+        <img src="screenshots/catalogs.png" alt="Federated catalog" loading="lazy" onerror="this.parentNode.classList.add('shot-fallback')">
+        <div class="shot-fallback-art" aria-hidden="true">
+          <div class="art-row"></div><div class="art-row"></div><div class="art-row"></div><div class="art-row"></div>
+        </div>
+        <figcaption>
+          <span data-lang="en" class="active"><strong>Catalogs</strong> &middot; every source, one inventory</span>
+          <span data-lang="fr"><strong>Catalogues</strong> &middot; toutes vos sources, un seul inventaire</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot" data-shot="screenshots/reports.png">
+        <img src="screenshots/reports.png" alt="Reports and dashboards" loading="lazy" onerror="this.parentNode.classList.add('shot-fallback')">
+        <div class="shot-fallback-art" aria-hidden="true">
+          <div class="art-chart"><i></i><i></i><i></i></div>
+        </div>
+        <figcaption>
+          <span data-lang="en" class="active"><strong>Reports</strong> &middot; dashboards on the same governance</span>
+          <span data-lang="fr"><strong>Rapports</strong> &middot; dashboards sur la m&ecirc;me gouvernance</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot" data-shot="screenshots/architecture.png">
+        <img src="screenshots/architecture.png" alt="Platform architecture" loading="lazy" onerror="this.parentNode.classList.add('shot-fallback')">
+        <div class="shot-fallback-art" aria-hidden="true">
+          <div class="art-stack"><b></b><b></b><b></b><b></b><b></b></div>
+        </div>
+        <figcaption>
+          <span data-lang="en" class="active"><strong>Architecture</strong> &middot; the eight layers, alive</span>
+          <span data-lang="fr"><strong>Architecture</strong> &middot; les huit couches, en vrai</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot" data-shot="screenshots/monitoring.png">
+        <img src="screenshots/monitoring.png" alt="Monitoring" loading="lazy" onerror="this.parentNode.classList.add('shot-fallback')">
+        <div class="shot-fallback-art" aria-hidden="true">
+          <div class="art-spark"></div>
+        </div>
+        <figcaption>
+          <span data-lang="en" class="active"><strong>Monitoring</strong> &middot; metrics, logs, alerts unified</span>
+          <span data-lang="fr"><strong>Monitoring</strong> &middot; m&eacute;triques, logs, alertes unifi&eacute;s</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="gallery-foot active" data-lang="en">
+      Want a guided tour? <a href="#demo">Request a demo</a> &middot; we walk you through with your own data.
+    </p>
+    <p class="gallery-foot" data-lang="fr">
+      Envie d&rsquo;une visite guid&eacute;e&nbsp;? <a href="#demo">Demandez une d&eacute;mo</a> &middot; on vous guide avec vos propres donn&eacute;es.
+    </p>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img alt="" id="lightbox-img">
+</div>
+
+<!-- ===========================================================
+     SECTION 6 — USE CASES
+     =========================================================== -->
+<section class="use-cases reveal" id="use-cases">
+  <div class="container">
+    <span class="section-label active" data-lang="en">In production</span>
     <span class="section-label" data-lang="fr">En production</span>
 
-    <h2 class="section-title active" data-lang="en" class="active">Built for the work that matters.</h2>
+    <h2 class="section-title active" data-lang="en">Built for the work that matters.</h2>
     <h2 class="section-title" data-lang="fr">Con&ccedil;ue pour ce qui compte vraiment.</h2>
 
-    <div class="use-grid active" data-lang="en" class="active">
+    <div class="use-grid active" data-lang="en">
       <article class="use-card">
         <span class="use-tag">Banking</span>
         <h3>Fraud, risk, regulatory reporting</h3>
@@ -398,14 +694,14 @@
 </section>
 
 <!-- ===========================================================
-     SECTION 5 — FINAL CTA
+     SECTION 7 — FINAL CTA
      =========================================================== -->
 <section class="cta-final" id="demo">
   <div class="container cta-inner">
     <h2 data-lang="en" class="active">Ready to own every layer?</h2>
     <h2 data-lang="fr">Pr&ecirc;t &agrave; ma&icirc;triser chaque couche&nbsp;?</h2>
 
-    <p class="cta-sub active" data-lang="en" class="active">
+    <p class="cta-sub active" data-lang="en">
       Get a guided demo on your data, in your environment.
       We bring the platform; you keep the deployment, the keys and the data.
     </p>
@@ -414,20 +710,20 @@
       Nous apportons la plateforme&nbsp;; vous gardez le d&eacute;ploiement, les cl&eacute;s et les donn&eacute;es.
     </p>
 
-    <div class="cta-actions active" data-lang="en" class="active">
+    <div class="cta-actions active" data-lang="en">
       <a href="mailto:contact@akko-ai.com?subject=AKKO%20Demo%20Request" class="btn-primary btn-large">
         Request a demo
       </a>
-      <a href="https://docs.akko-ai.com" class="btn-secondary btn-large" target="_blank" rel="noopener">
-        Read the docs
+      <a href="https://demo.akko-ai.com" class="btn-secondary btn-large" target="_blank" rel="noopener">
+        Visit the live demo
       </a>
     </div>
     <div class="cta-actions" data-lang="fr">
       <a href="mailto:contact@akko-ai.com?subject=Demande%20de%20d%C3%A9mo%20AKKO" class="btn-primary btn-large">
         Demander une d&eacute;mo
       </a>
-      <a href="https://docs.akko-ai.com" class="btn-secondary btn-large" target="_blank" rel="noopener">
-        Lire la documentation
+      <a href="https://demo.akko-ai.com" class="btn-secondary btn-large" target="_blank" rel="noopener">
+        Voir la d&eacute;mo live
       </a>
     </div>
   </div>
@@ -443,7 +739,7 @@
         <svg viewBox="0 0 80 80" width="20" height="20" fill="none"><rect x="4" y="4" width="72" height="72" rx="6" stroke="#6c63ff" stroke-width="3" fill="none"/><rect x="18" y="18" width="44" height="44" rx="4" stroke="#6c63ff" stroke-width="2.5" fill="none"/><rect x="30" y="30" width="20" height="20" rx="3" fill="#6c63ff"/></svg>
         <span>AKKO</span>
       </div>
-      <p class="footer-tagline active" data-lang="en" class="active">The sovereign data and AI platform.<br>Own every layer.</p>
+      <p class="footer-tagline active" data-lang="en">The sovereign data and AI platform.<br>Own every layer.</p>
       <p class="footer-tagline" data-lang="fr">La plateforme data et IA souveraine.<br>Ma&icirc;trisez chaque couche.</p>
     </div>
 
@@ -452,8 +748,8 @@
       <h4 data-lang="fr">Plateforme</h4>
       <a href="#layers" data-lang="en" class="active">Layers</a>
       <a href="#layers" data-lang="fr">Couches</a>
-      <a href="#why" data-lang="en" class="active">Why AKKO</a>
-      <a href="#why" data-lang="fr">Pourquoi AKKO</a>
+      <a href="#aden" data-lang="en" class="active">ADEN AI</a>
+      <a href="#aden" data-lang="fr">ADEN IA</a>
       <a href="#use-cases" data-lang="en" class="active">Use cases</a>
       <a href="#use-cases" data-lang="fr">Cas d&rsquo;usage</a>
     </div>
@@ -462,6 +758,7 @@
       <h4 data-lang="en" class="active">Resources</h4>
       <h4 data-lang="fr">Ressources</h4>
       <a href="https://docs.akko-ai.com" target="_blank" rel="noopener">Documentation</a>
+      <a href="https://demo.akko-ai.com" target="_blank" rel="noopener">Live demo</a>
       <a href="https://github.com/AKKO-p" target="_blank" rel="noopener">GitHub</a>
     </div>
 
@@ -474,14 +771,14 @@
   </div>
 
   <div class="footer-bottom container">
-    <p class="footer-copy active" data-lang="en" class="active">AKKO &mdash; The sovereign data and AI platform. Own every layer.</p>
+    <p class="footer-copy active" data-lang="en">AKKO &mdash; The sovereign data and AI platform. Own every layer.</p>
     <p class="footer-copy" data-lang="fr">AKKO &mdash; La plateforme data et IA souveraine. Ma&icirc;trisez chaque couche.</p>
   </div>
 </footer>
 
 <script>
+  /* ---------- i18n ---------- */
   const LANG_KEY = 'akko_site_lang';
-
   function setLang(lang) {
     document.querySelectorAll('[data-lang]').forEach(el => {
       el.classList.toggle('active', el.dataset.lang === lang);
@@ -494,18 +791,17 @@
       ? 'AKKO — Plateforme data et IA souveraine | Maîtrisez chaque couche'
       : 'AKKO — The Sovereign Data & AI Platform | Own Every Layer';
     try { localStorage.setItem(LANG_KEY, lang); } catch {}
+    runAdenTyping();
   }
-
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.setLang));
   });
+  const saved = (() => { try { return localStorage.getItem(LANG_KEY); } catch { return null; } })();
+  if (saved) setLang(saved);
+  else if (navigator.language && navigator.language.startsWith('fr')) setLang('fr');
+  else setLang('en');
 
-  const saved = localStorage.getItem(LANG_KEY);
-  if (saved) { setLang(saved); }
-  else if (navigator.language && navigator.language.startsWith('fr')) { setLang('fr'); }
-  else { setLang('en'); }
-
-  // Hamburger menu
+  /* ---------- Hamburger ---------- */
   const hamburger = document.querySelector('.nav-hamburger');
   const navLinks = document.querySelector('.nav-links');
   if (hamburger && navLinks) {
@@ -514,28 +810,91 @@
       hamburger.classList.toggle('open', open);
       hamburger.setAttribute('aria-expanded', open);
     });
-    navLinks.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
+    navLinks.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open'); hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }));
   }
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      if (id.length > 1) {
-        const target = document.querySelector(id);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+  /* ---------- Smooth scroll ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      const t = document.querySelector(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    }
+  }));
+
+  /* ---------- Reveal on scroll ---------- */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- Stat counters ---------- */
+  const counterIO = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target; const target = +el.dataset.countTo; const suffix = el.dataset.suffix || '';
+      const dur = 1100; const start = performance.now();
+      function tick(now) {
+        const p = Math.min(1, (now - start) / dur);
+        const v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        el.textContent = v + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick); counterIO.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count-to]').forEach(el => counterIO.observe(el));
+
+  /* ---------- Layer card expand ---------- */
+  document.querySelectorAll('.layer-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const open = card.classList.toggle('open');
+      // close siblings
+      if (open) {
+        card.parentNode.querySelectorAll('.layer-card.open').forEach(s => { if (s !== card) s.classList.remove('open'); });
       }
     });
   });
+
+  /* ---------- ADEN typing ---------- */
+  const adenPrompts = {
+    en: 'Top 10 fraud transactions this week, masked account, total in EUR',
+    fr: 'Top 10 transactions frauduleuses cette semaine, compte masqué, total en EUR',
+  };
+  let adenTimer = null;
+  function runAdenTyping() {
+    if (adenTimer) { clearInterval(adenTimer); adenTimer = null; }
+    ['en', 'fr'].forEach(lng => {
+      const el = document.getElementById('aden-typed-' + lng); if (!el) return; el.textContent = '';
+    });
+    const lng = document.documentElement.lang === 'fr' ? 'fr' : 'en';
+    const target = document.getElementById('aden-typed-' + lng); if (!target) return;
+    const txt = adenPrompts[lng]; let i = 0;
+    adenTimer = setInterval(() => {
+      target.textContent = txt.slice(0, ++i);
+      if (i >= txt.length) { clearInterval(adenTimer); adenTimer = null; }
+    }, 38);
+  }
+  // Trigger typing once ADEN section is in view
+  const adenIO = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { runAdenTyping(); adenIO.unobserve(en.target); } });
+  }, { threshold: 0.35 });
+  const adenSec = document.getElementById('aden'); if (adenSec) adenIO.observe(adenSec);
+
+  /* ---------- Lightbox ---------- */
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.shot').forEach(s => s.addEventListener('click', () => {
+    if (s.classList.contains('shot-fallback')) return; // mock previews can't enlarge
+    const src = s.dataset.shot; if (!src) return;
+    lbImg.src = src; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+  }));
+  function closeLb() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); lbImg.src = ''; }
+  lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lightbox-close')) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 </script>
 
 </body>
