@@ -796,10 +796,12 @@
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.setLang));
   });
-  const saved = (() => { try { return localStorage.getItem(LANG_KEY); } catch { return null; } })();
-  if (saved) setLang(saved);
-  else if (navigator.language && navigator.language.startsWith('fr')) setLang('fr');
-  else setLang('en');
+  /* NOTE : initial setLang() call is moved to the BOTTOM of this script,
+     after every `let`/`const` declaration that setLang() depends on
+     (adenTimer, adenPrompts) is initialised. Calling setLang here
+     would hit a Temporal Dead Zone on `adenTimer` and abort the
+     rest of the script — leaving counters at 0 and the reveal-on-scroll
+     observers never attached. */
 
   /* ---------- Hamburger ---------- */
   const hamburger = document.querySelector('.nav-hamburger');
@@ -895,6 +897,19 @@
   function closeLb() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); lbImg.src = ''; }
   lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lightbox-close')) closeLb(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+  /* ---------- Initial i18n setup ----------
+     Run AFTER every let/const declaration above so setLang() can safely
+     call runAdenTyping() which references `adenTimer` (a `let`). Calling
+     this earlier hits the Temporal Dead Zone and aborts the rest of
+     the script — which is exactly what bricked counters + reveal-on-scroll
+     in the previous build. */
+  (function initLang() {
+    const saved = (() => { try { return localStorage.getItem(LANG_KEY); } catch { return null; } })();
+    if (saved) setLang(saved);
+    else if (navigator.language && navigator.language.startsWith('fr')) setLang('fr');
+    else setLang('en');
+  })();
 </script>
 
 </body>
