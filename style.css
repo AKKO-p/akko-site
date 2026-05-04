@@ -690,28 +690,64 @@ section { padding: 5.5rem 0; position: relative; }
   object-position: center;
   display: block;
   background: #0d0d11;
-  transform: none;
-  transition: opacity 0.25s ease;
+  transform: translateX(0);
+  transition: opacity 0.32s ease, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.slide-image img.swapping { opacity: 0; }
-/* slide-thumbs : data source only (sub-image sequence), hidden from view */
-.slide-thumbs { display: none !important; }
+.slide-image img.swapping {
+  opacity: 0;
+  transform: translateX(-12px);    /* slight slide-out cue */
+}
 
-/* Sub-frame indicator next to .slide-step */
+/* slide-thumbs reborn as a thin Stories/Apple TV+ tracker bar at the
+   bottom of the screenshot. Cliquable but discreet. */
+.slide-thumbs {
+  position: absolute;
+  left: 0.75rem; right: 0.75rem; bottom: 0.65rem;
+  z-index: 4;
+  display: flex !important;
+  gap: 4px;
+  pointer-events: auto;
+}
+.thumb-mini {
+  flex: 1 1 0;
+  position: relative;
+  height: 4px;
+  background: rgba(255,255,255,0.16);
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  transition: height 0.18s ease, background 0.18s ease;
+}
+.thumb-mini::after {
+  /* progress fill on the active segment */
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--c, var(--accent));
+  width: 0%;
+  border-radius: 3px;
+  transition: width 0s linear;
+}
+.thumb-mini.active::after { width: 100%; transition: width var(--sub-period, 1800ms) linear; }
+.thumb-mini.done::after   { width: 100%; transition: none; }
+.thumb-mini:hover { height: 6px; background: rgba(255,255,255,0.28); }
+.thumb-mini > img { display: none; }   /* the <img> inside is data-only */
+
+/* Frame counter next to .slide-step  e.g.  "07 / 09 · vue 2 / 7" */
 .slide-frames {
-  display: inline-flex; align-items: center; gap: 0.35rem;
-  margin-left: 0.6rem;
+  display: inline-flex; align-items: center;
+  margin-left: 0.55rem; padding-left: 0.55rem;
+  border-left: 1px solid rgba(255,255,255,0.15);
+  font-family: var(--code-font);
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--c, var(--accent-light));
   vertical-align: middle;
+  white-space: nowrap;
 }
-.slide-frames .frame-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: rgba(255,255,255,0.18);
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-.slide-frames .frame-dot.active {
-  background: var(--c, var(--accent-light));
-  transform: scale(1.4);
-}
+.slide-frames::before { content: 'vue '; opacity: 0.7; }
+.slide-frames-sep { margin: 0 0.18em; opacity: 0.5; }
 .showcase-slide.active .slide-image img {
   transform: scale(1.06);          /* Ken Burns slow zoom while slide is active */
 }

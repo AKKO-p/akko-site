@@ -1259,25 +1259,30 @@
     const SLIDE_PERIOD = 4500;
     const SUB_PERIOD = 1800;
 
-    /* Build per-slide sub-screen sequences + frame indicators. */
+    /* Build per-slide sub-screen sequences + visible frame counter +
+       Apple TV+ / Stories style tracker bar at the bottom of the screenshot. */
     const seqs = slides.map(slide => {
       const mainImg = slide.querySelector('.slide-image > img');
-      const fromThumbs = [...slide.querySelectorAll('.slide-thumbs [data-img]')]
-        .map(b => b.dataset.img);
-      const list = fromThumbs.length > 0 ? fromThumbs : [mainImg.getAttribute('src')];
+      const thumbBtns = [...slide.querySelectorAll('.slide-thumbs .thumb-mini')];
+      const list = thumbBtns.length > 0
+        ? thumbBtns.map(b => b.dataset.img)
+        : [mainImg.getAttribute('src')];
       const stepEl = slide.querySelector('.slide-step');
-      let frames = null;
+      let counter = null;
       if (stepEl && list.length > 1) {
-        frames = document.createElement('span');
-        frames.className = 'slide-frames';
-        list.forEach(() => {
-          const d = document.createElement('span');
-          d.className = 'frame-dot';
-          frames.appendChild(d);
-        });
-        stepEl.appendChild(frames);
+        counter = document.createElement('span');
+        counter.className = 'slide-frames';
+        counter.innerHTML =
+          '<span class="cur">1</span>' +
+          '<span class="slide-frames-sep">/</span>' +
+          '<span class="tot">' + list.length + '</span>';
+        stepEl.appendChild(counter);
       }
-      return { mainImg, list, frames, period: list.length > 1 ? list.length * SUB_PERIOD : SLIDE_PERIOD };
+      thumbBtns.forEach(b => b.style.setProperty('--sub-period', SUB_PERIOD + 'ms'));
+      return {
+        mainImg, list, counter, thumbs: thumbBtns,
+        period: list.length > 1 ? list.length * SUB_PERIOD : SLIDE_PERIOD,
+      };
     });
 
     let slideIdx = 0;
@@ -1294,8 +1299,15 @@
     }
     function paintFrames() {
       const seq = seqs[slideIdx];
-      if (!seq.frames) return;
-      [...seq.frames.children].forEach((d, i) => d.classList.toggle('active', i === subIdx));
+      if (seq.counter) {
+        const cur = seq.counter.querySelector('.cur');
+        if (cur) cur.textContent = subIdx + 1;
+      }
+      // tracker bar : mark earlier as done, current as active, rest neutral
+      seq.thumbs.forEach((b, i) => {
+        b.classList.toggle('active', i === subIdx);
+        b.classList.toggle('done', i < subIdx);
+      });
     }
     function paintImage() {
       const seq = seqs[slideIdx];
@@ -1306,7 +1318,7 @@
       setTimeout(() => {
         seq.mainImg.setAttribute('src', wanted);
         seq.mainImg.classList.remove('swapping');
-      }, 220);
+      }, 240);
     }
     function setSlide(n, fromUser) {
       const newIdx = ((n % N) + N) % N;
@@ -1371,6 +1383,20 @@
     dots.forEach((d, i) => d.addEventListener('click', () => setSlide(i, true)));
     if (prev) prev.addEventListener('click', () => setSlide(slideIdx - 1, true));
     if (next) next.addEventListener('click', () => setSlide(slideIdx + 1, true));
+
+    /* Click on a tracker segment : jump straight to that sub-image */
+    seqs.forEach((seq, sIdx) => {
+      seq.thumbs.forEach((btn, i) => btn.addEventListener('click', e => {
+        e.stopPropagation();
+        if (sIdx !== slideIdx) {
+          setSlide(sIdx);
+        }
+        subIdx = i;
+        paintImage();
+        paintFrames();
+        restart();
+      }));
+    });
 
     stage.addEventListener('mouseenter', () => {
       paused = true; stage.classList.add('paused'); stopProgress();
