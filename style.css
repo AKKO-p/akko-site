@@ -52,9 +52,16 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---- LANG TOGGLE (data-lang) ---- */
 /* `!important` is mandatory: per-element display rules below have the same
-   specificity as `[data-lang]` and would otherwise show both languages. */
+   specificity as `[data-lang]` and would otherwise show both languages.
+   Grid containers must override `display: revert` (which falls back to
+   `block` and breaks the layout) — explicit overrides below. */
 [data-lang] { display: none !important; }
 [data-lang].active { display: revert !important; }
+.layers-grid[data-lang].active,
+.why-grid[data-lang].active,
+.use-grid[data-lang].active { display: grid !important; }
+.hero-actions[data-lang].active,
+.cta-actions[data-lang].active { display: flex !important; }
 
 /* ---- ANIMATED BACKGROUND ---- */
 .bg-effects {
@@ -106,10 +113,17 @@ nav {
   justify-content: space-between; gap: 1.5rem;
 }
 .nav-logo {
-  display: flex; align-items: center; gap: 0.5rem;
+  display: flex; align-items: center; gap: 0.55rem;
   font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
 }
 .nav-logo span { color: var(--text); }
+.nav-brand-stack { display: flex; flex-direction: column; line-height: 1.05; }
+.nav-brand-name { font-weight: 800; font-size: 1.05rem; letter-spacing: 0.01em; }
+.nav-brand-full {
+  font-size: 0.62rem; font-weight: 600; color: var(--text-muted);
+  letter-spacing: 0.04em; text-transform: uppercase; margin-top: 1px;
+}
+@media (max-width: 768px) { .nav-brand-full { display: none; } }
 
 .nav-links {
   display: flex; align-items: center; gap: 1.4rem;
@@ -239,6 +253,7 @@ section { padding: 5.5rem 0; position: relative; }
   font-feature-settings: 'tnum' 1;
 }
 .stat-num .infin { font-family: var(--code-font); }
+.stat-num .static-eu { font-family: var(--code-font); letter-spacing: 0.02em; }
 .stat-label {
   font-size: 0.78rem; color: var(--text-muted);
   margin-top: 0.3rem; letter-spacing: 0.02em;
@@ -272,65 +287,69 @@ section { padding: 5.5rem 0; position: relative; }
 .btn-large { padding: 1rem 1.7rem; font-size: 1rem; }
 
 /* ============================================================
-   LAYERS — interactive cards
+   LAYERS — unified 3×3 grid, always-expanded cards
    ============================================================ */
 .layers {
   background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.015), transparent);
 }
 .layers-grid {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;            /* uniform card height across the grid */
+  gap: 1rem;
 }
 .layer-card {
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem 1.3rem 1.6rem;
-  text-align: left; cursor: pointer;
+  padding: 1.5rem 1.35rem 1.6rem;
+  text-align: left;
   color: var(--text); font-family: inherit;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
+  display: flex; flex-direction: column;
+  min-height: 220px;
 }
 .layer-card::before {
   content: ''; position: absolute; inset: -1px; border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, transparent, var(--layer-color, var(--accent)), transparent);
+  background: linear-gradient(135deg, transparent, var(--c, var(--accent)), transparent);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
           mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude;
   opacity: 0; transition: opacity 0.25s ease; pointer-events: none;
 }
-.layer-card[data-layer-color] { --layer-color: attr(data-layer-color color); }
 .layer-card:hover {
   transform: translateY(-3px);
   border-color: var(--border-hover); background: var(--bg-card-hover);
   box-shadow: 0 18px 40px -22px rgba(0,0,0,0.7);
 }
-.layer-card:hover::before { opacity: 0.55; }
+.layer-card:hover::before { opacity: 0.6; }
 .layer-card.layer-highlight {
-  background: linear-gradient(180deg, rgba(139, 92, 246, 0.06), var(--bg-card));
-  border-color: rgba(139, 92, 246, 0.25);
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.07), var(--bg-card));
+  border-color: rgba(139, 92, 246, 0.30);
 }
 .layer-card.layer-highlight::after {
   content: 'AI'; position: absolute; top: 0.85rem; right: 0.85rem;
   font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
   padding: 0.18rem 0.45rem; border-radius: 999px;
-  background: rgba(139, 92, 246, 0.18); color: #c4b5fd;
+  background: rgba(139, 92, 246, 0.20); color: #c4b5fd;
 }
 .layer-step {
   display: inline-block; font-size: 0.7rem; font-weight: 700;
   letter-spacing: 0.18em; color: var(--text-muted);
-  margin-bottom: 0.8rem; font-family: var(--code-font);
+  margin-bottom: 0.7rem; font-family: var(--code-font);
 }
 .layer-icon {
   width: 40px; height: 40px; border-radius: 9px;
   display: flex; align-items: center; justify-content: center;
-  background: color-mix(in srgb, var(--icon-color) 14%, transparent);
-  color: var(--icon-color);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  color: var(--c);
   margin-bottom: 0.95rem;
 }
 .layer-card h3 {
-  font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em;
+  font-size: 1.06rem; font-weight: 700; letter-spacing: -0.01em;
   margin-bottom: 0.35rem;
 }
 .layer-tag {
@@ -339,14 +358,8 @@ section { padding: 5.5rem 0; position: relative; }
   letter-spacing: 0.01em;
 }
 .layer-detail {
-  font-size: 0.92rem; color: var(--text-secondary); line-height: 1.55;
-  max-height: 0; overflow: hidden; opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease;
-  margin-top: 0;
-}
-.layer-card.open .layer-detail,
-.layer-card:hover .layer-detail {
-  max-height: 200px; opacity: 1; margin-top: 0.25rem;
+  font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;
+  margin-top: auto;             /* push detail to the bottom for visual rhythm */
 }
 
 /* ---- WHY (3 cards) ---- */
@@ -693,6 +706,15 @@ section { padding: 5.5rem 0; position: relative; }
 .cta-actions {
   display: flex; justify-content: center; gap: 0.85rem; flex-wrap: wrap;
 }
+.cta-contact {
+  margin-top: 1.6rem; font-size: 0.92rem; color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+.cta-contact a {
+  color: var(--accent-light); font-weight: 600;
+  border-bottom: 1px dashed rgba(139,125,255,0.45);
+}
+.cta-contact a:hover { color: var(--text); }
 
 /* ---- FOOTER ---- */
 footer {
@@ -707,6 +729,11 @@ footer {
 .footer-brand {
   display: flex; align-items: center; gap: 0.5rem;
   font-weight: 700; font-size: 1rem; margin-bottom: 0.7rem;
+}
+.footer-fullname {
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--accent-light);
+  margin-bottom: 0.7rem;
 }
 .footer-tagline { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.55; }
 .footer-col h4 {
@@ -752,6 +779,7 @@ footer {
   .why-grid, .use-grid, .layers-grid, .gallery-grid {
     grid-template-columns: 1fr;
   }
+  .layer-card { min-height: 0; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.8rem; }
   .cta-inner { padding: 2.2rem 1.4rem; }
   .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
