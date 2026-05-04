@@ -1164,8 +1164,20 @@ footer {
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .aden-demo { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
-  .showcase-track { min-height: auto; }
-  .showcase-slide { grid-template-columns: 1fr; }
+
+  /* Carousel : the active slide must dictate the track height on mobile.
+     Leaving every slide in `position: absolute` collapses the container
+     to zero and hides both the screenshot and the slide-text. */
+  .showcase-track { min-height: auto; height: auto; display: block; }
+  .showcase-slide {
+    position: absolute; left: 0; right: 0; top: 0;
+    grid-template-columns: 1fr;
+    transform: translateX(24px);
+  }
+  .showcase-slide.active {
+    position: relative;
+    transform: translateX(0);
+  }
   .slide-image { aspect-ratio: 16/10; }
   .slide-text { border-left: 0; border-top: 1px solid var(--border); padding: 1.6rem 1.4rem; }
 }
