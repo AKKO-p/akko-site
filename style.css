@@ -217,11 +217,26 @@ section { padding: 5.5rem 0; position: relative; }
   50%      { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.05); }
 }
 
+.hero-eyebrow {
+  display: block;
+  font-size: clamp(0.78rem, 1.2vw, 0.92rem);
+  font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 1rem;
+  opacity: 0; transform: translateY(8px);
+  animation: hero-eyebrow-in 0.7s 0.15s ease-out forwards;
+}
+@keyframes hero-eyebrow-in {
+  to { opacity: 1; transform: translateY(0); }
+}
 .hero h1 {
   font-size: clamp(2.5rem, 5.6vw, 4.2rem);
   font-weight: 800; letter-spacing: -0.03em;
   line-height: 1.05; margin-bottom: 1.4rem;
 }
+.hero h1 .gradient-text { display: inline-block; }
+.hero-sub strong { color: var(--text); font-weight: 700; }
+.hero-badge strong { color: var(--text); font-weight: 700; }
 .gradient-text {
   background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 50%, #3b82f6 100%);
   -webkit-background-clip: text; background-clip: text;
@@ -285,6 +300,72 @@ section { padding: 5.5rem 0; position: relative; }
   background: var(--bg-card); border-color: rgba(255, 255, 255, 0.22);
 }
 .btn-large { padding: 1rem 1.7rem; font-size: 1rem; }
+
+/* ============================================================
+   SOVEREIGNTY — 4 pillars
+   ============================================================ */
+.sovereignty {
+  background:
+    radial-gradient(ellipse 600px 280px at 50% 0%, rgba(108, 99, 255, 0.06), transparent),
+    linear-gradient(180deg, transparent, rgba(255,255,255,0.012), transparent);
+}
+.pillars {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem; margin-top: 2rem; margin-bottom: 2rem;
+}
+.pillar {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.4rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.pillar::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 200px 120px at 0% 0%, color-mix(in srgb, var(--c) 18%, transparent), transparent);
+  opacity: 0.5; pointer-events: none;
+}
+.pillar:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--c) 35%, var(--border));
+  box-shadow: 0 22px 44px -22px color-mix(in srgb, var(--c) 35%, transparent);
+}
+.pillar-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--c) 16%, transparent);
+  color: var(--c); margin-bottom: 1rem;
+}
+.pillar h3 {
+  font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+.pillar p {
+  font-size: 0.92rem; color: var(--text-secondary); line-height: 1.55;
+}
+.sov-strip {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 0.55rem; margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.012);
+}
+.sov-strip > span:first-child,
+.sov-strip > span[data-lang] {
+  font-size: 0.82rem; color: var(--text-muted);
+  font-weight: 500; margin-right: 0.4rem;
+}
+.sov-tag {
+  font-family: var(--code-font);
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
+  padding: 0.3rem 0.7rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent-light);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+}
 
 /* ============================================================
    LAYERS — unified 3×3 grid, always-expanded cards
@@ -528,8 +609,261 @@ section { padding: 5.5rem 0; position: relative; }
 .aden-cta .btn-primary { width: 100%; justify-content: center; }
 
 /* ============================================================
-   GALLERY — live screenshots
+   SHOWCASE — immersive carousel of the 9 layers
    ============================================================ */
+.showcase {
+  padding: 5.5rem 0 6rem;
+  background:
+    radial-gradient(ellipse 900px 400px at 50% 50%, rgba(108, 99, 255, 0.06), transparent),
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.012), transparent);
+  overflow: hidden;
+}
+.showcase-head { margin-bottom: 2rem; }
+.showcase-stage {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.showcase-glow {
+  position: absolute; inset: -40px -10px auto -10px; height: 60%;
+  background: radial-gradient(ellipse 70% 100% at 50% 0%, rgba(108, 99, 255, 0.16), transparent);
+  pointer-events: none;
+  filter: blur(20px);
+  z-index: 0;
+}
+.showcase-track {
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--border-hover);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.4));
+  overflow: hidden;
+  min-height: 520px;
+  box-shadow: 0 40px 80px -40px rgba(0,0,0,0.7);
+}
+.showcase-slide {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(48px) scale(0.985);
+  transition: opacity 0.55s ease, transform 0.55s ease, visibility 0.55s;
+  pointer-events: none;
+}
+.showcase-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+.showcase-slide.leaving {
+  opacity: 0;
+  transform: translateX(-48px) scale(0.985);
+}
+.slide-image {
+  position: relative;
+  background: #0d0d11;
+  overflow: hidden;
+  display: flex; align-items: stretch; justify-content: stretch;
+}
+.slide-image img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top left;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 6s ease-out;
+}
+.showcase-slide.active .slide-image img {
+  transform: scale(1.06);          /* Ken Burns slow zoom while slide is active */
+}
+.slide-glow {
+  position: absolute; inset: auto -20px -20px -20px; height: 60%;
+  background: radial-gradient(ellipse 80% 100% at 50% 100%, color-mix(in srgb, var(--c) 25%, transparent), transparent);
+  pointer-events: none;
+}
+.slide-image::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 70%, color-mix(in srgb, var(--c) 18%, transparent));
+  pointer-events: none;
+}
+.slide-text {
+  padding: 2.5rem 2.2rem 2.2rem;
+  background: linear-gradient(180deg, rgba(20,20,28,0.4), rgba(15,15,20,0.7));
+  border-left: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.slide-text::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--c), transparent);
+  opacity: 0.7;
+}
+.showcase-slide .slide-text > * {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.showcase-slide.active .slide-text > *:nth-child(1) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
+.showcase-slide.active .slide-text > *:nth-child(2) { transition-delay: 0.30s; opacity: 1; transform: translateY(0); }
+.showcase-slide.active .slide-text > *:nth-child(3) { transition-delay: 0.38s; opacity: 1; transform: translateY(0); }
+.showcase-slide.active .slide-text > *:nth-child(4) { transition-delay: 0.46s; opacity: 1; transform: translateY(0); }
+.showcase-slide.active .slide-text > *:nth-child(5) { transition-delay: 0.54s; opacity: 1; transform: translateY(0); }
+.showcase-slide.active .slide-text > *:nth-child(6) { transition-delay: 0.62s; opacity: 1; transform: translateY(0); }
+.showcase-slide.active .slide-text > *:nth-child(7) { transition-delay: 0.70s; opacity: 1; transform: translateY(0); }
+
+.slide-step {
+  display: inline-block;
+  font-family: var(--code-font); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.18em; color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+.slide-tag {
+  display: inline-block; padding: 0.35rem 0.75rem; border-radius: 999px;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  background: color-mix(in srgb, var(--c) 15%, transparent);
+  color: color-mix(in srgb, var(--c) 90%, white);
+  border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+  margin-bottom: 1.2rem;
+  align-self: flex-start;
+}
+.slide-text h3 {
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 800; letter-spacing: -0.02em;
+  line-height: 1.18;
+  background: linear-gradient(135deg, var(--text) 0%, color-mix(in srgb, var(--c) 80%, white) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.85rem;
+}
+.slide-lead {
+  font-size: 1.02rem; color: var(--text-secondary); line-height: 1.6;
+  margin-bottom: 1.1rem;
+}
+.slide-bullets {
+  list-style: none; padding: 0; margin: 0 0 1.2rem;
+  display: flex; flex-direction: column; gap: 0.55rem;
+}
+.slide-bullets li {
+  position: relative; padding-left: 1.5rem;
+  font-size: 0.92rem; color: var(--text-secondary); line-height: 1.5;
+}
+.slide-bullets li::before {
+  content: ''; position: absolute; left: 0; top: 0.5rem;
+  width: 14px; height: 2px; border-radius: 2px;
+  background: var(--c);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--c) 60%, transparent);
+}
+
+/* slide-text data-lang handling — must override generic [data-lang] */
+.slide-text [data-lang] { display: none !important; }
+.slide-text [data-lang].active { display: revert !important; }
+.slide-text ul[data-lang].active { display: flex !important; }
+
+/* Controls */
+.showcase-controls {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+.ctrl-arrow {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--bg-card); border: 1px solid var(--border-hover);
+  color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.ctrl-arrow:hover {
+  background: var(--bg-card-hover); border-color: var(--accent);
+  transform: scale(1.07);
+}
+.ctrl-arrow:active { transform: scale(0.95); }
+.showcase-dots {
+  display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center;
+}
+.dot {
+  width: 36px; height: 28px; border-radius: 7px;
+  background: rgba(255,255,255,0.04); color: var(--text-muted);
+  border: 1px solid var(--border);
+  font-family: var(--code-font); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+.dot:hover {
+  background: rgba(255,255,255,0.08); color: var(--text); transform: translateY(-1px);
+}
+.dot.active {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+  box-shadow: 0 6px 16px -6px var(--accent-glow);
+}
+
+.showcase-progress {
+  margin-top: 1rem;
+  height: 3px; border-radius: 3px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+  max-width: 420px; margin-left: auto; margin-right: auto;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #8b5cf6);
+  width: 0%;
+  border-radius: 3px;
+  transition: width 0.18s linear;
+}
+.showcase-stage.paused .progress-bar { transition: none; opacity: 0.4; }
+
+/* Bonus thumbnails grid */
+.bonus-head {
+  margin-top: 3.5rem; margin-bottom: 1rem;
+  font-size: 0.84rem; letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.bonus-head span {
+  font-weight: 700; color: var(--text); letter-spacing: 0.02em;
+  text-transform: uppercase; font-size: 0.78rem;
+  margin-right: 0.4rem;
+}
+.bonus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+.thumb {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: zoom-in;
+  aspect-ratio: 16 / 10;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.thumb:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+  box-shadow: 0 16px 32px -16px rgba(0,0,0,0.6);
+}
+.thumb img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top;
+  display: block;
+}
+.thumb figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 0.5rem 0.7rem;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.85));
+  font-size: 0.74rem; color: var(--text-secondary); font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+/* Legacy gallery styles kept for other ad-hoc figures (back-compat) */
 .gallery { background: linear-gradient(180deg, transparent, rgba(108, 99, 255, 0.03), transparent); }
 .gallery-grid {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -755,9 +1089,14 @@ footer {
 @media (max-width: 1024px) {
   .layers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .aden-demo { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
+  .showcase-track { min-height: auto; }
+  .showcase-slide { grid-template-columns: 1fr; }
+  .slide-image { aspect-ratio: 16/10; }
+  .slide-text { border-left: 0; border-top: 1px solid var(--border); padding: 1.6rem 1.4rem; }
 }
 
 @media (max-width: 768px) {
@@ -776,10 +1115,16 @@ footer {
 
   section { padding: 3.5rem 0; }
   .hero { padding-top: 6.5rem; padding-bottom: 3rem; }
-  .why-grid, .use-grid, .layers-grid, .gallery-grid {
+  .why-grid, .use-grid, .layers-grid, .gallery-grid, .pillars, .bonus-grid {
     grid-template-columns: 1fr;
   }
   .layer-card { min-height: 0; }
+  .showcase { padding: 3.5rem 0 4rem; }
+  .slide-text { padding: 1.4rem 1.2rem 1.6rem; }
+  .slide-text h3 { font-size: 1.3rem; }
+  .showcase-dots { gap: 0.3rem; }
+  .dot { width: 32px; height: 26px; font-size: 0.65rem; }
+  .sov-strip { padding: 0.85rem 1rem; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.8rem; }
   .cta-inner { padding: 2.2rem 1.4rem; }
   .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
