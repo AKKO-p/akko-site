@@ -1148,21 +1148,86 @@ footer {
   .nav-cta { text-align: center; }
   .lang-switch { align-self: flex-start; }
 
+  .container { padding: 0 1.1rem; }
+
   section { padding: 3.5rem 0; }
-  .hero { padding-top: 6.5rem; padding-bottom: 3rem; }
+  .hero { padding-top: 6rem; padding-bottom: 2.5rem; }
+  .hero h1 {
+    font-size: clamp(1.85rem, 8.5vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  .hero h1 br { display: none; }                /* let lines wrap naturally on mobile */
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.16em; }
+  .hero-sub {
+    font-size: 0.97rem;
+    padding: 0 0.25rem;
+  }
+  .hero-actions { gap: 0.6rem; flex-direction: column; width: 100%; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+  .section-title { font-size: clamp(1.45rem, 5.8vw, 2rem); }
+  .section-sub { font-size: 0.95rem; }
+
   .why-grid, .use-grid, .layers-grid, .gallery-grid, .pillars, .bonus-grid {
     grid-template-columns: 1fr;
   }
   .layer-card { min-height: 0; }
-  .showcase { padding: 3.5rem 0 4rem; }
-  .slide-text { padding: 1.4rem 1.2rem 1.6rem; }
-  .slide-text h3 { font-size: 1.3rem; }
-  .showcase-dots { gap: 0.3rem; }
-  .dot { width: 32px; height: 26px; font-size: 0.65rem; }
-  .sov-strip { padding: 0.85rem 1rem; }
+
+  /* Showcase mobile : taller slide-image, full-width text */
+  .showcase { padding: 3rem 0 3.5rem; }
+  .showcase-stage { padding: 0 1.1rem; }
+  .showcase-track { border-radius: 12px; }
+  .slide-image { aspect-ratio: 4 / 3; }
+  .slide-text { padding: 1.3rem 1.1rem 1.5rem; }
+  .slide-text h3 { font-size: 1.25rem; line-height: 1.2; }
+  .slide-tag { font-size: 0.66rem; }
+  .slide-lead { font-size: 0.93rem; }
+  .slide-bullets li { font-size: 0.86rem; }
+  .showcase-controls { gap: 0.5rem; flex-wrap: wrap; }
+  .showcase-dots { gap: 0.25rem; flex-wrap: wrap; max-width: 240px; justify-content: center; }
+  .dot { width: 28px; height: 24px; font-size: 0.62rem; }
+  .ctrl-arrow { width: 36px; height: 36px; }
+
+  /* Sovereignty strip wraps cleanly */
+  .sov-strip { padding: 0.85rem 0.85rem; gap: 0.4rem; }
+  .sov-tag { font-size: 0.66rem; padding: 0.25rem 0.55rem; }
+  .pillar { padding: 1.2rem 1.1rem; }
+  .pillar h3 { font-size: 1rem; }
+  .pillar p { font-size: 0.88rem; }
+
+  /* ADEN console : prevent horizontal overflow on small screens */
+  .aden-console { font-size: 0.92rem; }
+  .console-body { padding: 0.95rem 1rem 1.15rem; }
+  .aden-code { font-size: 0.74rem; padding: 0.7rem 0.8rem; overflow-x: auto; }
+  .aden-bar span { font-size: 0.55rem; }
+
   .footer-inner { grid-template-columns: 1fr; gap: 1.8rem; }
-  .cta-inner { padding: 2.2rem 1.4rem; }
-  .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-brand-block { text-align: center; }
+  .footer-brand { justify-content: center; }
+  .cta-inner { padding: 2rem 1.2rem; }
+  .cta-actions { flex-direction: column; }
+  .cta-actions .btn-primary,
+  .cta-actions .btn-secondary { width: 100%; justify-content: center; }
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem; padding: 1.2rem 0;
+  }
+  .stat-num { font-size: clamp(1.3rem, 5.5vw, 1.8rem); }
+  .stat-label { font-size: 0.7rem; line-height: 1.3; }
+}
+
+@media (max-width: 420px) {
+  /* Extra-tight phones (iPhone SE, small Android) */
+  .container { padding: 0 0.9rem; }
+  .hero { padding-top: 5.5rem; }
+  .hero h1 { font-size: clamp(1.65rem, 9vw, 2.2rem); }
+  .hero-sub { font-size: 0.92rem; }
+  .nav-inner { padding: 0.7rem 1rem; }
+  .nav-brand-name { font-size: 1rem; }
+  .footer-col { text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
