@@ -130,9 +130,9 @@
         <div class="stat-label" data-lang="fr">standards et formats ouverts</div>
       </div>
       <div class="stat">
-        <div class="stat-num"><span class="static-eu">EU</span></div>
-        <div class="stat-label active" data-lang="en">sovereign &middot; air-gapped ready</div>
-        <div class="stat-label" data-lang="fr">souveraine &middot; air-gap ready</div>
+        <div class="stat-num" data-count-to="0">0</div>
+        <div class="stat-label active" data-lang="en">data leaves your perimeter</div>
+        <div class="stat-label" data-lang="fr">donn&eacute;e hors de votre p&eacute;rim&egrave;tre</div>
       </div>
       <div class="stat">
         <div class="stat-num"><span class="infin">&infin;</span></div>
@@ -222,7 +222,7 @@
       <span class="sov-tag">NIS2</span>
       <span class="sov-tag">RGPD / GDPR</span>
       <span class="sov-tag">ISO 27001 ready</span>
-      <span class="sov-tag">EU sovereign</span>
+      <span class="sov-tag">Sovereign</span>
       <span class="sov-tag">Air-gap ready</span>
     </div>
   </div>
@@ -659,12 +659,10 @@
     <h2 class="section-title" data-lang="fr">AKKO en action.</h2>
 
     <p class="section-sub active" data-lang="en">
-      Live captures from <a href="https://demo.akko-ai.com" target="_blank" rel="noopener">demo.akko-ai.com</a>.
-      The carousel runs on its own. Use the arrows or click a layer to dive in.
+      A few captures from the live platform at <a href="https://demo.akko-ai.com" target="_blank" rel="noopener">demo.akko-ai.com</a>.
     </p>
     <p class="section-sub" data-lang="fr">
-      Captures live de <a href="https://demo.akko-ai.com" target="_blank" rel="noopener">demo.akko-ai.com</a>.
-      Le carrousel tourne seul. Utilisez les fl&egrave;ches ou cliquez une couche pour explorer.
+      Quelques captures de la plateforme live sur <a href="https://demo.akko-ai.com" target="_blank" rel="noopener">demo.akko-ai.com</a>.
     </p>
   </div>
 
@@ -1244,7 +1242,12 @@
   lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lightbox-close')) closeLb(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 
-  /* ---------- Showcase carousel — autoplay 6s + dots + arrows + pause hover ---------- */
+  /* ---------- Showcase carousel ---------- */
+  /* Auto-play that ALSO sequences sub-screenshots inside a slide before
+     moving on. Each slide pulls its sub-screen list from the original
+     .slide-thumbs (now hidden) data-img attributes. Sub-period 1500 ms ;
+     a slide with 1 image lasts SLIDE_PERIOD, a slide with N images lasts
+     N × SUB_PERIOD. Auto starts at DOMContentLoaded ; pauses on hover. */
   const stage = document.getElementById('showcase');
   if (stage) {
     const slides = [...stage.querySelectorAll('.showcase-slide')];
@@ -1253,8 +1256,32 @@
     const prev = stage.querySelector('.ctrl-prev');
     const next = stage.querySelector('.ctrl-next');
     const N = slides.length;
-    const PERIOD = 4000;
-    let idx = 0;
+    const SLIDE_PERIOD = 4500;
+    const SUB_PERIOD = 1800;
+
+    /* Build per-slide sub-screen sequences + frame indicators. */
+    const seqs = slides.map(slide => {
+      const mainImg = slide.querySelector('.slide-image > img');
+      const fromThumbs = [...slide.querySelectorAll('.slide-thumbs [data-img]')]
+        .map(b => b.dataset.img);
+      const list = fromThumbs.length > 0 ? fromThumbs : [mainImg.getAttribute('src')];
+      const stepEl = slide.querySelector('.slide-step');
+      let frames = null;
+      if (stepEl && list.length > 1) {
+        frames = document.createElement('span');
+        frames.className = 'slide-frames';
+        list.forEach(() => {
+          const d = document.createElement('span');
+          d.className = 'frame-dot';
+          frames.appendChild(d);
+        });
+        stepEl.appendChild(frames);
+      }
+      return { mainImg, list, frames, period: list.length > 1 ? list.length * SUB_PERIOD : SLIDE_PERIOD };
+    });
+
+    let slideIdx = 0;
+    let subIdx = 0;
     let progressTimer = null;
     let progressStart = 0;
     let paused = false;
@@ -1265,23 +1292,65 @@
         el.classList.toggle('active', el.dataset.lang === lang);
       });
     }
-    function setActive(n, fromUser) {
+    function paintFrames() {
+      const seq = seqs[slideIdx];
+      if (!seq.frames) return;
+      [...seq.frames.children].forEach((d, i) => d.classList.toggle('active', i === subIdx));
+    }
+    function paintImage() {
+      const seq = seqs[slideIdx];
+      const wanted = seq.list[subIdx];
+      if (!wanted || !seq.mainImg) return;
+      if (seq.mainImg.getAttribute('src') === wanted) return;
+      seq.mainImg.classList.add('swapping');
+      setTimeout(() => {
+        seq.mainImg.setAttribute('src', wanted);
+        seq.mainImg.classList.remove('swapping');
+      }, 220);
+    }
+    function setSlide(n, fromUser) {
       const newIdx = ((n % N) + N) % N;
-      if (newIdx === idx) return;
-      slides[idx].classList.remove('active');
+      if (newIdx === slideIdx) {
+        // same slide: just reset sub
+        subIdx = 0; paintImage(); paintFrames();
+        if (fromUser) restart();
+        return;
+      }
+      slides[slideIdx].classList.remove('active');
       slides[newIdx].classList.add('active');
-      dots[idx].classList.remove('active');
+      dots[slideIdx].classList.remove('active');
       dots[newIdx].classList.add('active');
-      idx = newIdx;
-      applyLangToSlide(slides[newIdx]);
+      slideIdx = newIdx;
+      subIdx = 0;
+      applyLangToSlide(slides[slideIdx]);
+      paintImage();
+      paintFrames();
       if (fromUser) restart();
     }
+    function nextSub() {
+      const seq = seqs[slideIdx];
+      if (subIdx + 1 < seq.list.length) {
+        subIdx += 1;
+        paintImage();
+        paintFrames();
+      } else {
+        setSlide(slideIdx + 1);
+      }
+    }
     function tick() {
+      const seq = seqs[slideIdx];
       const elapsed = performance.now() - progressStart;
-      const pct = Math.min(100, (elapsed / PERIOD) * 100);
+      const total = seq.period;
+      const pct = Math.min(100, (elapsed / total) * 100);
       if (progress) progress.style.width = pct + '%';
-      if (elapsed >= PERIOD) {
-        setActive(idx + 1);
+      // sub-image advance
+      const subElapsed = elapsed - subIdx * SUB_PERIOD;
+      if (seq.list.length > 1 && subElapsed >= SUB_PERIOD && subIdx + 1 < seq.list.length) {
+        subIdx += 1;
+        paintImage();
+        paintFrames();
+      } else if (elapsed >= total) {
+        setSlide(slideIdx + 1);
         progressStart = performance.now();
       }
     }
@@ -1299,9 +1368,9 @@
       startProgress();
     }
 
-    dots.forEach((d, i) => d.addEventListener('click', () => setActive(i, true)));
-    if (prev) prev.addEventListener('click', () => setActive(idx - 1, true));
-    if (next) next.addEventListener('click', () => setActive(idx + 1, true));
+    dots.forEach((d, i) => d.addEventListener('click', () => setSlide(i, true)));
+    if (prev) prev.addEventListener('click', () => setSlide(slideIdx - 1, true));
+    if (next) next.addEventListener('click', () => setSlide(slideIdx + 1, true));
 
     stage.addEventListener('mouseenter', () => {
       paused = true; stage.classList.add('paused'); stopProgress();
@@ -1310,49 +1379,19 @@
       paused = false; stage.classList.remove('paused'); startProgress();
     });
 
-    /* Start as soon as ANY slice of the carousel enters the viewport. */
-    const showIO = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (en.isIntersecting) {
-          applyLangToSlide(slides[idx]);
-          startProgress();
-          showIO.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.05 });
-    showIO.observe(stage);
-    /* Safety net : if for any reason the IO never fires (e.g. carousel
-       already on screen at first paint), kick autoplay after 1s. */
-    setTimeout(() => {
-      if (!progressTimer) { applyLangToSlide(slides[idx]); startProgress(); }
-    }, 1000);
-
     document.addEventListener('keydown', e => {
       const r = stage.getBoundingClientRect();
       const inView = r.top < window.innerHeight && r.bottom > 0;
       if (!inView) return;
-      if (e.key === 'ArrowLeft') setActive(idx - 1, true);
-      else if (e.key === 'ArrowRight') setActive(idx + 1, true);
+      if (e.key === 'ArrowLeft') setSlide(slideIdx - 1, true);
+      else if (e.key === 'ArrowRight') setSlide(slideIdx + 1, true);
     });
 
-    /* slide-thumbs : clicking a mini-thumb swaps the main slide image */
-    stage.querySelectorAll('.slide-thumbs').forEach(group => {
-      const slide = group.closest('.showcase-slide');
-      const mainImg = slide && slide.querySelector('.slide-image > img');
-      const thumbs = [...group.querySelectorAll('.thumb-mini')];
-      thumbs.forEach(btn => btn.addEventListener('click', e => {
-        e.stopPropagation();
-        const src = btn.dataset.img;
-        if (!src || !mainImg) return;
-        if (mainImg.src.endsWith(src)) return;
-        mainImg.classList.add('swapping');
-        setTimeout(() => {
-          mainImg.src = src;
-          mainImg.classList.remove('swapping');
-        }, 180);
-        thumbs.forEach(t => t.classList.toggle('active', t === btn));
-      }));
-    });
+    /* Boot immediately. We do NOT gate on viewport — this guarantees the
+       carousel is already advancing by the time the user scrolls down. */
+    applyLangToSlide(slides[slideIdx]);
+    paintFrames();
+    startProgress();
   }
 
   /* ---------- Initial i18n setup ---------- */
