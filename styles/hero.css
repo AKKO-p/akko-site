@@ -1,0 +1,319 @@
+/* ==========================================================
+   hero.css — Sprint 86-I1
+   Refreshed hero subtitle line + three-tier block
+   (Open Blueprints / Open Lab / Closed Runtime).
+   Vanilla CSS, no framework, no CDN.
+   Companion to /style.css (kept as the global stylesheet).
+   ========================================================== */
+
+/* ---------- Hero context strip (Banking · Healthcare · Public Sector) ---------- */
+
+.hero-context {
+  display: none;
+  margin: 0.4rem 0 1.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-2, #a1a1aa);
+}
+
+.hero-context.active {
+  display: block;
+}
+
+/* ---------- Three-tier section ---------- */
+
+.three-tier {
+  position: relative;
+  padding: 6rem 0 5rem;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(108, 99, 255, 0.10), transparent 70%),
+    transparent;
+}
+
+.three-tier .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.three-tier .section-label {
+  display: none;
+}
+
+.three-tier .section-label.active {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.32rem 0.85rem;
+  border: 1px solid rgba(108, 99, 255, 0.35);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c7c4ff;
+  background: rgba(108, 99, 255, 0.08);
+}
+
+.three-tier .section-title {
+  display: none;
+  margin: 0 0 1.2rem;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-1, #f5f5f7);
+}
+
+.three-tier .section-title.active {
+  display: block;
+}
+
+.three-tier .section-sub {
+  display: none;
+  max-width: 780px;
+  margin: 0 0 3rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--text-2, #a1a1aa);
+}
+
+.three-tier .section-sub.active {
+  display: block;
+}
+
+/* ---------- 3-column grid ---------- */
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 960px) {
+  .tier-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Cards ---------- */
+
+.tier-card {
+  --c: #6c63ff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(8px);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.tier-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--c) 50%, transparent);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.35),
+    0 0 0 1px color-mix(in srgb, var(--c) 25%, transparent);
+}
+
+.tier-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(140% 100% at 0% 0%, color-mix(in srgb, var(--c) 18%, transparent), transparent 55%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.tier-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tier-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+}
+
+.tier-license {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--c) 70%, #ffffff);
+  background: color-mix(in srgb, var(--c) 8%, transparent);
+}
+
+.tier-title {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.2rem 0 0.9rem;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text-1, #f5f5f7);
+}
+
+.tier-emoji {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.tier-lead {
+  display: none;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1rem;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: var(--text-2, #d4d4d8);
+}
+
+.tier-lead.active {
+  display: block;
+}
+
+.tier-bullets {
+  display: none;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin: 0 0 1.4rem;
+  list-style: none;
+}
+
+.tier-bullets.active {
+  display: block;
+}
+
+.tier-bullets li {
+  position: relative;
+  padding: 0.32rem 0 0.32rem 1.3rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-2, #a1a1aa);
+}
+
+.tier-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.78rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 18%, transparent);
+}
+
+.tier-bullets code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.84rem;
+  padding: 0.08rem 0.36rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e4e4e7;
+}
+
+.tier-bullets a {
+  color: color-mix(in srgb, var(--c) 70%, #ffffff);
+  text-decoration: none;
+  border-bottom: 1px dashed color-mix(in srgb, var(--c) 50%, transparent);
+}
+
+.tier-bullets a:hover {
+  border-bottom-style: solid;
+}
+
+.tier-cta {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding: 0.7rem 1.1rem;
+  align-self: flex-start;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.tier-cta:hover {
+  background: color-mix(in srgb, var(--c) 28%, transparent);
+  transform: translateX(2px);
+}
+
+.tier-cta svg {
+  transition: transform 0.15s ease;
+}
+
+.tier-cta:hover svg {
+  transform: translateX(2px);
+}
+
+/* ---------- Variant accents ---------- */
+
+.tier-card.tier-open  { --c: #22c55e; }
+.tier-card.tier-lab   { --c: #eab308; }
+.tier-card.tier-closed { --c: #8b5cf6; }
+
+/* ---------- Footnote (honest positioning) ---------- */
+
+.tier-footnote {
+  display: none;
+  max-width: 880px;
+  margin: 1.4rem auto 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-2, #a1a1aa);
+}
+
+.tier-footnote.active {
+  display: block;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .tier-card,
+  .tier-cta,
+  .tier-cta svg {
+    transition: none;
+  }
+  .tier-card:hover {
+    transform: none;
+  }
+}
