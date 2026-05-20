@@ -1,0 +1,325 @@
+/* ============================================================
+   AKKO — /pricing page styles
+   Sober, enterprise. Inherits design tokens from style.css.
+   No published price ranges. Every tier card CTA = contact form.
+   ============================================================ */
+
+/* Local Inter font (self-hosted — sovereignty: no Google Fonts CDN).
+   Falls back to system stack until /fonts/Inter-* assets ship. */
+@font-face {
+  font-family: 'Inter Local';
+  src: local('Inter'), local('Inter Regular');
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+:root {
+  --pricing-card-bg: var(--bg-card);
+  --pricing-card-hover: var(--bg-card-hover);
+  --pricing-card-border: var(--border);
+  --pricing-card-border-hover: var(--border-hover);
+}
+
+/* Page chrome */
+.pricing-page {
+  font-family: 'Inter Local', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Hero */
+.pricing-hero {
+  padding: 8rem 0 3rem;
+  text-align: center;
+}
+.pricing-hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.pricing-hero h1 .gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.pricing-hero p.lede {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+.pricing-hero .meta {
+  margin-top: 1.75rem;
+  display: inline-flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pricing-hero .meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+.pricing-hero .meta span::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Tier grid */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 3rem 0;
+}
+
+.tier-card {
+  position: relative;
+  background: var(--pricing-card-bg);
+  border: 1px solid var(--pricing-card-border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+}
+.tier-card:hover {
+  border-color: var(--pricing-card-border-hover);
+  background: var(--pricing-card-hover);
+  transform: translateY(-2px);
+}
+.tier-card.is-highlight {
+  border-color: rgba(108, 99, 255, 0.45);
+  box-shadow: 0 0 0 1px rgba(108, 99, 255, 0.18), 0 18px 50px -28px rgba(108, 99, 255, 0.55);
+}
+.tier-card.is-highlight::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, rgba(108, 99, 255, 0.12), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+.tier-card > * { position: relative; z-index: 1; }
+
+.tier-badge {
+  position: absolute;
+  top: -10px;
+  right: 1.25rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+}
+
+.tier-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.tier-audience {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-height: 2.6em;
+}
+.tier-price {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 0.55rem 0;
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
+}
+.tier-price.free { color: var(--accent-light); }
+.tier-summary {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.tier-includes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  flex: 1;
+}
+.tier-includes li {
+  position: relative;
+  padding-left: 1.4rem;
+  line-height: 1.5;
+}
+.tier-includes li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+}
+
+.tier-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1rem;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  background: var(--accent);
+  color: #fff;
+  transition: background 0.15s ease, transform 0.15s ease;
+  text-align: center;
+}
+.tier-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+.tier-cta.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-hover);
+}
+.tier-cta.ghost:hover { background: var(--bg-card-hover); }
+
+/* What's included row */
+.included-row {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin: 3rem 0;
+}
+.included-row h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.included-row p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 780px;
+}
+.included-row .layers {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.included-row .layers span {
+  padding: 0.32rem 0.7rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* FAQ */
+.pricing-faq {
+  margin: 4rem 0;
+}
+.pricing-faq h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.faq-item:hover { border-color: var(--border-hover); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  transition: transform 0.18s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item .answer {
+  padding: 0 1.25rem 1.1rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* Final CTA band */
+.pricing-cta-band {
+  margin: 4rem 0 5rem;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.12), rgba(108, 99, 255, 0.02));
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.pricing-cta-band h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+.pricing-cta-band p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 620px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+.pricing-cta-band .actions {
+  display: inline-flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .pricing-hero { padding-top: 6rem; }
+  .tier-grid { grid-template-columns: 1fr; }
+  .tier-card { padding: 1.5rem 1.25rem 1.25rem; }
+  .pricing-cta-band { padding: 2rem 1.25rem; }
+}

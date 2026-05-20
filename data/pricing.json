@@ -1,0 +1,177 @@
+{
+  "_comment": "AKKO pricing tiers — public surface. No prices published. Every CTA leads to /#contact lead form. Source: sprint-86-master-strategy-2026-05-20.md §4.",
+  "updated": "2026-05-20",
+  "policy": {
+    "public_pricing": false,
+    "cta": "Contact us for a quote",
+    "cta_fr": "Contactez-nous pour un devis",
+    "rationale": "AKKO targets regulated EU workloads. Sovereignty, deployment perimeter and audit constraints drive each engagement; a published list price would mis-anchor every conversation."
+  },
+  "tiers": [
+    {
+      "id": "sandbox",
+      "name": "Sandbox",
+      "name_fr": "Sandbox",
+      "audience": "Anyone evaluating the platform",
+      "audience_fr": "Toute personne qui évalue la plateforme",
+      "summary": "30-minute hosted session. Read-only. Synthetic data only.",
+      "summary_fr": "Session hébergée de 30 minutes. Lecture seule. Données synthétiques.",
+      "includes": [
+        "try.akko-ai.com hosted environment",
+        "Read-only cockpit, AI Lab, BI dashboards",
+        "ADEN natural-language queries on demo dataset",
+        "No installation, no signup"
+      ],
+      "includes_fr": [
+        "Environnement hébergé sur try.akko-ai.com",
+        "Cockpit, AI Lab, BI dashboards en lecture seule",
+        "Requêtes ADEN en langage naturel sur le jeu de démo",
+        "Aucune installation, aucune inscription"
+      ],
+      "cta": "Open the sandbox",
+      "cta_fr": "Ouvrir la sandbox",
+      "cta_href": "https://try.akko-ai.com",
+      "highlight": false,
+      "price_label": "Free",
+      "price_label_fr": "Gratuit"
+    },
+    {
+      "id": "sovereign-starter",
+      "name": "Sovereign Starter",
+      "name_fr": "Sovereign Starter",
+      "audience": "Mid-market teams under 500 users running on their own Kubernetes",
+      "audience_fr": "Équipes mid-market jusqu'à 500 utilisateurs sur leur propre Kubernetes",
+      "summary": "Self-installed Helm chart. One vertical blueprint. Email support.",
+      "summary_fr": "Chart Helm en self-install. Un blueprint vertical. Support email.",
+      "includes": [
+        "Full Helm chart, on your cluster",
+        "One vertical blueprint (Banking, Healthcare or Public Sector)",
+        "Compute, Query, Catalog, Storage, BI, Lab, AI layers",
+        "Governance and audit (OCSF logs)",
+        "Email support, business hours"
+      ],
+      "includes_fr": [
+        "Chart Helm complet, sur votre cluster",
+        "Un blueprint vertical (Banking, Santé ou Secteur Public)",
+        "Couches Compute, Query, Catalog, Storage, BI, Lab, IA",
+        "Gouvernance et audit (logs OCSF)",
+        "Support email, heures ouvrées"
+      ],
+      "highlight": false
+    },
+    {
+      "id": "sovereign-enterprise",
+      "name": "Sovereign Enterprise",
+      "name_fr": "Sovereign Enterprise",
+      "audience": "Banks, hospitals, government bodies, regulated industries",
+      "audience_fr": "Banques, hôpitaux, administrations, industries régulées",
+      "summary": "Full platform. All verticals. AI Operations. Governance Graph. 99.9% SLA.",
+      "summary_fr": "Plateforme complète. Tous les verticaux. AI Operations. Governance Graph. SLA 99,9 %.",
+      "includes": [
+        "All vertical blueprints included",
+        "AI Operations dashboard (cost, drift, hallucination, cache)",
+        "AI Governance Graph (lineage data → embedding → model → decision)",
+        "Compliance evidence packs (DORA, NIS2, GDPR, ACPR)",
+        "Dedicated solution architect",
+        "99.9% production SLA, 24/7 escalation"
+      ],
+      "includes_fr": [
+        "Tous les blueprints verticaux inclus",
+        "Tableau AI Operations (coût, drift, hallucination, cache)",
+        "AI Governance Graph (lignage data → embedding → modèle → décision)",
+        "Dossiers de conformité (DORA, NIS2, RGPD, ACPR)",
+        "Architecte de solution dédié",
+        "SLA production 99,9 %, escalade 24/7"
+      ],
+      "highlight": true,
+      "badge": "Most engagements",
+      "badge_fr": "Choix le plus fréquent"
+    },
+    {
+      "id": "sovereign-cloud-managed",
+      "name": "Sovereign Cloud Managed",
+      "name_fr": "Sovereign Cloud Managed",
+      "audience": "Teams without an in-house Kubernetes practice",
+      "audience_fr": "Équipes sans pratique Kubernetes interne",
+      "summary": "AKKO operated for you on a sovereign EU cloud. Monthly audit. No vendor lock-in.",
+      "summary_fr": "AKKO opéré pour vous sur un cloud souverain européen. Audit mensuel. Pas de lock-in.",
+      "includes": [
+        "Managed on a sovereign EU cloud (OVHcloud, Outscale, Scaleway, Numspot)",
+        "Single-tenant cluster, single-tenant storage",
+        "We operate; you own the data, the catalog, the audit trail",
+        "Monthly compliance and security audit report",
+        "Exit clause: full state export at any time (Helm + Iceberg tables + catalog)"
+      ],
+      "includes_fr": [
+        "Opéré sur un cloud souverain européen (OVHcloud, Outscale, Scaleway, Numspot)",
+        "Cluster single-tenant, stockage single-tenant",
+        "Nous opérons ; vous gardez la donnée, le catalogue, l'audit trail",
+        "Rapport mensuel de conformité et sécurité",
+        "Clause de sortie : export complet de l'état à tout moment (Helm + tables Iceberg + catalogue)"
+      ],
+      "highlight": false
+    },
+    {
+      "id": "sovereign-air-gapped",
+      "name": "Sovereign Air-Gapped",
+      "name_fr": "Sovereign Air-Gapped",
+      "audience": "Defence, intelligence, classified workloads",
+      "audience_fr": "Défense, renseignement, charges classifiées",
+      "summary": "Offline install. Zero outbound traffic. Signed SBOM. Provenance attested.",
+      "summary_fr": "Installation hors-ligne. Zéro trafic sortant. SBOM signé. Provenance attestée.",
+      "includes": [
+        "Offline installation kit (no internet egress required)",
+        "Signed SBOM (CycloneDX) for every container image",
+        "In-toto provenance attestation per release",
+        "Hardened OPA policies for classified data",
+        "On-site enablement and quarterly review"
+      ],
+      "includes_fr": [
+        "Kit d'installation hors-ligne (aucune sortie internet requise)",
+        "SBOM signé (CycloneDX) pour chaque image conteneur",
+        "Attestation de provenance in-toto par release",
+        "Politiques OPA durcies pour données classifiées",
+        "Mise en service sur site et revue trimestrielle"
+      ],
+      "highlight": false
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why don't you publish prices?",
+      "q_fr": "Pourquoi vous ne publiez pas vos prix ?",
+      "a": "Every regulated engagement is shaped by deployment perimeter (sovereign cloud, on-prem, air-gapped), data volume, number of personas, and audit constraints. A published list price would mis-anchor most of the conversations we have. We give a calibrated quote within five business days of a discovery call.",
+      "a_fr": "Chaque engagement régulé est cadré par le périmètre de déploiement (cloud souverain, on-prem, air-gap), le volume de données, le nombre de profils utilisateurs et les contraintes d'audit. Un prix de liste cadrerait mal la plupart des conversations. Nous renvoyons un devis calibré sous cinq jours ouvrés après un appel de découverte."
+    },
+    {
+      "q": "What is included in every engagement?",
+      "q_fr": "Qu'est-ce qui est inclus dans chaque engagement ?",
+      "a": "All AKKO engagements include the full layer stack — Compute, Query, Catalog, Storage, BI, Lab, AI, Governance, Observability — running on infrastructure you control. Open formats, open standards, exit clause in writing.",
+      "a_fr": "Tous les engagements AKKO incluent la pile de couches complète — Compute, Query, Catalog, Storage, BI, Lab, IA, Gouvernance, Observabilité — sur une infrastructure que vous maîtrisez. Formats ouverts, standards ouverts, clause de sortie écrite."
+    },
+    {
+      "q": "How long is a typical contract?",
+      "q_fr": "Quelle est la durée d'un contrat type ?",
+      "a": "Annual minimum. Multi-year commitments include capped uplifts and reserved capacity. Pilot engagements run for 90 days at a fixed scope.",
+      "a_fr": "Engagement annuel minimum. Les contrats pluriannuels incluent des hausses plafonnées et une capacité réservée. Les pilotes durent 90 jours sur un périmètre fixe."
+    },
+    {
+      "q": "Do you offer a free pilot?",
+      "q_fr": "Proposez-vous un pilote gratuit ?",
+      "a": "The sandbox is free and open to anyone. A scoped 90-day production pilot is billable but credited against the first year if you continue.",
+      "a_fr": "La sandbox est gratuite et ouverte à tous. Un pilote production cadré sur 90 jours est facturé mais déduit de la première année si vous continuez."
+    },
+    {
+      "q": "What is your exit clause?",
+      "q_fr": "Quelle est votre clause de sortie ?",
+      "a": "On request, at any time, we export the full platform state — Helm values, Iceberg tables, catalog, audit logs, OPA policies — in open formats. The platform remains operable without us.",
+      "a_fr": "Sur demande, à tout moment, nous exportons l'état complet de la plateforme — values Helm, tables Iceberg, catalogue, logs d'audit, politiques OPA — en formats ouverts. La plateforme reste opérable sans nous."
+    },
+    {
+      "q": "Do you sign DPAs and have a DPIA template?",
+      "q_fr": "Signez-vous des DPA et avez-vous un modèle de DPIA ?",
+      "a": "Yes. DPA template and DPIA scoping document are available under NDA. Sub-processor list is published and updated.",
+      "a_fr": "Oui. Modèle de DPA et document de cadrage DPIA disponibles sous NDA. Liste des sous-traitants publiée et tenue à jour."
+    }
+  ]
+}
