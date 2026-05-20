@@ -1,0 +1,42 @@
+<!--
+  AKKO — shared nav include.
+  Static HTML fragment, no SSR. Pages that ship as standalone (pricing.html,
+  customers/*.html) currently inline this markup so the page works without
+  a build step. This file is the canonical source and the place to edit
+  before propagating to inline copies.
+-->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="AKKO, Analytics Kernel, Keep Ownership">
+      <svg viewBox="0 0 80 80" width="24" height="24" fill="none"><rect x="4" y="4" width="72" height="72" rx="6" stroke="#6c63ff" stroke-width="3" fill="none"/><rect x="18" y="18" width="44" height="44" rx="4" stroke="#6c63ff" stroke-width="2.5" fill="none"/><rect x="30" y="30" width="20" height="20" rx="3" fill="#6c63ff"/></svg>
+      <span class="nav-brand-stack">
+        <span class="nav-brand-name">AKKO</span>
+        <span class="nav-brand-full">Analytics Kernel, Keep Ownership</span>
+      </span>
+    </a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/#layers" data-lang="en" class="active">Platform</a>
+      <a href="/#layers" data-lang="fr">Plateforme</a>
+
+      <a href="/pricing.html" data-lang="en" class="active">Pricing</a>
+      <a href="/pricing.html" data-lang="fr">Tarifs</a>
+
+      <a href="/customers/" data-lang="en" class="active">Customers</a>
+      <a href="/customers/" data-lang="fr">Clients</a>
+
+      <a href="/#aden" data-lang="en" class="active">ADEN AI</a>
+      <a href="/#aden" data-lang="fr">ADEN IA</a>
+
+      <a href="/#contact" class="nav-cta active" data-lang="en">Contact us</a>
+      <a href="/#contact" class="nav-cta" data-lang="fr">Nous contacter</a>
+
+      <div class="lang-switch">
+        <button class="lang-btn" data-set-lang="en">EN</button>
+        <button class="lang-btn active" data-set-lang="fr">FR</button>
+      </div>
+    </div>
+  </div>
+</nav>
