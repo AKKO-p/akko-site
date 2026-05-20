@@ -30,6 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/hero.css">
 </head>
 <body>
 
@@ -51,16 +52,18 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links">
+      <a href="/runtime.html" data-lang="en" class="active">Runtime</a>
+      <a href="/runtime.html" data-lang="fr">Runtime</a>
+      <a href="#model" data-lang="en" class="active">Model</a>
+      <a href="#model" data-lang="fr">Mod&egrave;le</a>
       <a href="#layers" data-lang="en" class="active">Platform</a>
       <a href="#layers" data-lang="fr">Plateforme</a>
       <a href="#aden" data-lang="en" class="active">ADEN AI</a>
       <a href="#aden" data-lang="fr">ADEN IA</a>
       <a href="#gallery" data-lang="en" class="active">Live screens</a>
       <a href="#gallery" data-lang="fr">&Eacute;crans live</a>
-      <a href="#use-cases" data-lang="en" class="active">Use cases</a>
-      <a href="#use-cases" data-lang="fr">Cas d&rsquo;usage</a>
-      <a href="#demo" class="nav-cta active" data-lang="en">Request a demo</a>
-      <a href="#demo" class="nav-cta" data-lang="fr">Demander une d&eacute;mo</a>
+      <a href="#demo" class="nav-cta active" data-lang="en">Talk to sales</a>
+      <a href="#demo" class="nav-cta" data-lang="fr">Parler aux ventes</a>
       <div class="lang-switch">
         <button class="lang-btn" data-set-lang="en">EN</button>
         <button class="lang-btn active" data-set-lang="fr">FR</button>
@@ -76,46 +79,47 @@
      =========================================================== -->
 <section class="hero">
   <div class="container hero-content">
-    <a href="#gallery" class="hero-h1-link" aria-label="Walk through the platform live screens">
+    <a href="/runtime.html" class="hero-h1-link" aria-label="Discover AKKO AI Runtime">
       <h1 data-lang="en" class="active">
-        <span class="hero-eyebrow">Analytics Kernel, Keep Ownership</span>
-        The sovereign <span class="gradient-text">AI &amp; Data</span><br>
-        platform.
+        <span class="hero-eyebrow">AKKO AI Runtime</span>
+        Orchestrate, govern, audit and optimise <span class="gradient-text">private LLMs</span> on your infrastructure.
       </h1>
       <h1 data-lang="fr">
-        <span class="hero-eyebrow">Analytics Kernel, Keep Ownership</span>
-        La plateforme <span class="gradient-text">IA &amp; Data</span><br>
-        souveraine.
+        <span class="hero-eyebrow">AKKO AI Runtime</span>
+        Orchestrer, gouverner, auditer et optimiser des <span class="gradient-text">LLMs priv&eacute;s</span> sur votre infrastructure.
       </h1>
     </a>
 
     <p class="hero-sub active" data-lang="en">
-      AKKO unifies your <strong>data</strong> and your <strong>AI</strong> on infrastructure you own.
-      Cloud, on-prem, or air-gapped. Open formats, open standards, open exit.
-      Your data never leaves your perimeter.
+      Six proprietary components on top of an open-source Lego foundation.
+      Built for <strong>banking</strong>, <strong>healthcare</strong> and the <strong>public sector</strong>,
+      regulated environments where every prompt, every token and every row must stay inside your perimeter.
     </p>
     <p class="hero-sub" data-lang="fr">
-      AKKO unifie vos <strong>donn&eacute;es</strong> et votre <strong>IA</strong> sur une infrastructure que vous poss&eacute;dez.
-      Cloud, on-prem ou air-gapped. Formats ouverts, standards ouverts, sortie ouverte.
-      Vos donn&eacute;es ne quittent jamais votre p&eacute;rim&egrave;tre.
+      Six composants propri&eacute;taires au-dessus d&rsquo;un socle Lego open-source.
+      Con&ccedil;u pour la <strong>banque</strong>, la <strong>sant&eacute;</strong> et le <strong>secteur public</strong>,
+      les environnements r&eacute;gul&eacute;s o&ugrave; chaque prompt, chaque token et chaque ligne doivent rester dans votre p&eacute;rim&egrave;tre.
     </p>
 
+    <p class="hero-context active" data-lang="en">Banking &middot; Healthcare &middot; Public Sector</p>
+    <p class="hero-context" data-lang="fr">Banque &middot; Sant&eacute; &middot; Secteur public</p>
+
     <div class="hero-actions active" data-lang="en">
-      <a href="#gallery" class="btn-primary">
-        See it in action
+      <a href="https://try.akko-ai.com" class="btn-primary" rel="noopener">
+        Try the sandbox
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="#demo" class="btn-secondary">
-        Request a demo
+        Talk to sales
       </a>
     </div>
     <div class="hero-actions" data-lang="fr">
-      <a href="#gallery" class="btn-primary">
-        Voir en action
+      <a href="https://try.akko-ai.com" class="btn-primary" rel="noopener">
+        Tester la sandbox
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="#demo" class="btn-secondary">
-        Demander une d&eacute;mo
+        Parler aux ventes
       </a>
     </div>
 
@@ -142,6 +146,164 @@
         <div class="stat-label" data-lang="fr">vos cl&eacute;s, vos donn&eacute;es</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     SECTION 1.2 — OPEN BLUEPRINTS + OPEN LAB + CLOSED RUNTIME
+     The product is structured as three layers. Be honest about what
+     is open (blueprints, lab) and what is commercial (runtime).
+     =========================================================== -->
+<section class="three-tier reveal" id="model" aria-labelledby="three-tier-title">
+  <div class="container three-tier-container">
+    <span class="section-label active" data-lang="en">The AKKO model</span>
+    <span class="section-label" data-lang="fr">Le mod&egrave;le AKKO</span>
+
+    <h2 class="section-title active" data-lang="en" id="three-tier-title">
+      Open Blueprints, Open Lab, Closed Runtime.
+    </h2>
+    <h2 class="section-title" data-lang="fr">
+      Blueprints ouverts, Lab ouvert, Runtime ferm&eacute;.
+    </h2>
+
+    <p class="section-sub active" data-lang="en">
+      AKKO is not a single-license product. The foundation is open, the lab is open,
+      the runtime is commercial. This is the honest model that lets regulated buyers
+      audit what they install, while the proprietary engine keeps your prompts and
+      governance under contract.
+    </p>
+    <p class="section-sub" data-lang="fr">
+      AKKO n&rsquo;est pas un produit mono-licence. Le socle est ouvert, le lab est ouvert,
+      le runtime est commercial. C&rsquo;est le mod&egrave;le honn&ecirc;te qui permet aux acheteurs r&eacute;gul&eacute;s
+      d&rsquo;auditer ce qu&rsquo;ils installent, tout en gardant le moteur propri&eacute;taire et la
+      gouvernance sous contrat.
+    </p>
+
+    <div class="tier-grid">
+
+      <!-- Open Blueprints -->
+      <article class="tier-card tier-open" style="--c:#22c55e;">
+        <div class="tier-head">
+          <span class="tier-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+          </span>
+          <span class="tier-license">Apache 2.0</span>
+        </div>
+        <h3 class="tier-title">
+          <span class="tier-emoji" aria-hidden="true">📦</span>
+          Open Blueprints
+        </h3>
+        <p class="tier-lead active" data-lang="en">
+          Helm charts, Terraform modules, agent templates and integration glue.
+          Everything you need to wire AKKO into your own Kubernetes cluster.
+        </p>
+        <p class="tier-lead" data-lang="fr">
+          Charts Helm, modules Terraform, templates d&rsquo;agents et glue d&rsquo;int&eacute;gration.
+          Tout ce qu&rsquo;il faut pour c&acirc;bler AKKO dans votre propre cluster Kubernetes.
+        </p>
+        <ul class="tier-bullets active" data-lang="en">
+          <li>Public on GitHub, free to fork and audit</li>
+          <li>Repo <code>AKKO-p/sovereign-blueprints</code></li>
+          <li>3 vertical overlays: banking, healthcare, public sector</li>
+        </ul>
+        <ul class="tier-bullets" data-lang="fr">
+          <li>Public sur GitHub, libre &agrave; forker et auditer</li>
+          <li>Repo <code>AKKO-p/sovereign-blueprints</code></li>
+          <li>3 verticales : banque, sant&eacute;, secteur public</li>
+        </ul>
+        <a class="tier-cta" href="https://github.com/AKKO-p/sovereign-blueprints" rel="noopener">
+          <span data-lang="en" class="active">See blueprints</span>
+          <span data-lang="fr">Voir les blueprints</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- Open Lab -->
+      <article class="tier-card tier-lab" style="--c:#eab308;">
+        <div class="tier-head">
+          <span class="tier-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3v6l-5 9a2 2 0 001.73 3h12.54A2 2 0 0020 18l-5-9V3"/><path d="M8 3h8M7 14h10"/></svg>
+          </span>
+          <span class="tier-license">Apache 2.0</span>
+        </div>
+        <h3 class="tier-title">
+          <span class="tier-emoji" aria-hidden="true">🧪</span>
+          Open Lab
+        </h3>
+        <p class="tier-lead active" data-lang="en">
+          30+ notebooks across banking, healthcare and retail.
+          Spark Connect examples, dbt marts, Lab kernels, sample governed pipelines.
+        </p>
+        <p class="tier-lead" data-lang="fr">
+          Plus de 30 notebooks pour la banque, la sant&eacute; et la distribution.
+          Exemples Spark Connect, marts dbt, kernels Lab, pipelines gouvern&eacute;s d&rsquo;exemple.
+        </p>
+        <ul class="tier-bullets active" data-lang="en">
+          <li>Public on GitHub, free to fork and contribute</li>
+          <li>Repo <code>AKKO-p/akko-lab-blueprints</code></li>
+          <li>Drives the <a href="https://try.akko-ai.com" rel="noopener">try.akko-ai.com</a> sandbox</li>
+        </ul>
+        <ul class="tier-bullets" data-lang="fr">
+          <li>Public sur GitHub, libre &agrave; forker et contribuer</li>
+          <li>Repo <code>AKKO-p/akko-lab-blueprints</code></li>
+          <li>Alimente la sandbox <a href="https://try.akko-ai.com" rel="noopener">try.akko-ai.com</a></li>
+        </ul>
+        <a class="tier-cta" href="https://github.com/AKKO-p/akko-lab-blueprints" rel="noopener">
+          <span data-lang="en" class="active">Browse lab</span>
+          <span data-lang="fr">Explorer le lab</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- Closed Runtime -->
+      <article class="tier-card tier-closed" style="--c:#8b5cf6;">
+        <div class="tier-head">
+          <span class="tier-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </span>
+          <span class="tier-license">Commercial license</span>
+        </div>
+        <h3 class="tier-title">
+          <span class="tier-emoji" aria-hidden="true">🔒</span>
+          Closed Runtime
+        </h3>
+        <p class="tier-lead active" data-lang="en">
+          17 SQL AI functions, NL2SQL orchestrator, governance engine, observability layer,
+          catalog manager, control plane. The six proprietary components that make AKKO a product.
+        </p>
+        <p class="tier-lead" data-lang="fr">
+          17 fonctions SQL IA, orchestrateur NL2SQL, moteur de gouvernance, couche d&rsquo;observabilit&eacute;,
+          gestionnaire de catalogue, plan de contr&ocirc;le. Les six composants propri&eacute;taires qui font d&rsquo;AKKO un produit.
+        </p>
+        <ul class="tier-bullets active" data-lang="en">
+          <li>Distributed via Harbor under signed EULA</li>
+          <li>Hardened images, attestations, audit receipts</li>
+          <li>Banking, healthcare and public sector tiers</li>
+        </ul>
+        <ul class="tier-bullets" data-lang="fr">
+          <li>Distribu&eacute; via Harbor sous EULA sign&eacute;e</li>
+          <li>Images durcies, attestations, re&ccedil;us d&rsquo;audit</li>
+          <li>Paliers banque, sant&eacute; et secteur public</li>
+        </ul>
+        <a class="tier-cta" href="/runtime.html">
+          <span data-lang="en" class="active">See the Runtime</span>
+          <span data-lang="fr">Voir le Runtime</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+    </div>
+
+    <p class="tier-footnote active" data-lang="en">
+      Honest positioning: AKKO is not 100&nbsp;% open source. The blueprints and the lab are.
+      The runtime is the product, distributed under a commercial license to organisations
+      that need a signed contract for their AI infrastructure.
+    </p>
+    <p class="tier-footnote" data-lang="fr">
+      Positionnement honn&ecirc;te : AKKO n&rsquo;est pas 100&nbsp;% open source. Les blueprints et le lab le sont.
+      Le runtime est le produit, distribu&eacute; sous licence commerciale pour les organisations
+      qui ont besoin d&rsquo;un contrat sign&eacute; pour leur infrastructure IA.
+    </p>
   </div>
 </section>
 

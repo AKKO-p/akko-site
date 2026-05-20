@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About AKKO | AI Runtime for regulated European workloads</title>
+  <meta name="description" content="AKKO is the AI Runtime for regulated European workloads. Open Blueprints + Open Lab + Closed Runtime. Built for banking, healthcare and the public sector.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='8' y='8' width='64' height='64' rx='6' stroke='%236c63ff' stroke-width='4' fill='none'/%3E%3Crect x='28' y='28' width='24' height='24' rx='3' fill='%236c63ff'/%3E%3C/svg%3E">
+  <link rel="canonical" href="https://akko-ai.com/about.html">
+  <meta name="theme-color" content="#09090b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About AKKO | AI Runtime for regulated European workloads">
+  <meta property="og:description" content="Open Blueprints + Open Lab + Closed Runtime. Built for banking, healthcare and the public sector.">
+  <meta property="og:url" content="https://akko-ai.com/about.html">
+  <meta property="og:site_name" content="AKKO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@akkoplatform">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <style>
+    /* about.html scoped styles */
+    .about-hero {
+      padding: 7rem 0 3rem;
+      background:
+        radial-gradient(900px 500px at 50% 0%, rgba(108, 99, 255, 0.14), transparent 70%),
+        transparent;
+    }
+    .about-hero .eyebrow {
+      display: inline-block;
+      padding: 0.32rem 0.85rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(108, 99, 255, 0.35);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c7c4ff;
+      background: rgba(108, 99, 255, 0.08);
+    }
+    .about-hero h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: #f5f5f7;
+    }
+    .about-hero h1 .grad {
+      background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-hero p.lead {
+      max-width: 760px;
+      margin: 0 0 1.4rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #d4d4d8;
+    }
+    .about-section {
+      padding: 3rem 0;
+    }
+    .about-section h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      color: #f5f5f7;
+    }
+    .about-section p,
+    .about-section li {
+      color: #d4d4d8;
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+    .about-section ul {
+      padding-left: 1.2rem;
+      margin: 0.8rem 0 1.4rem;
+    }
+    .about-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    .pillar-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.6rem;
+    }
+    @media (max-width: 880px) {
+      .pillar-row { grid-template-columns: 1fr; }
+    }
+    .pillar-tile {
+      padding: 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .pillar-tile h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+      color: #f5f5f7;
+    }
+    .pillar-tile p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #a1a1aa;
+    }
+    .about-final-cta {
+      padding: 4rem 0 6rem;
+      text-align: center;
+    }
+    .about-final-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.4rem;
+      margin: 0 0.4rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
+    .about-final-cta a.primary {
+      background: linear-gradient(135deg, #8b5cf6 0%, #6c63ff 100%);
+      color: #ffffff;
+    }
+    .about-final-cta a.secondary {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #f5f5f7;
+    }
+    .about-final-cta a:hover { transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="AKKO, Analytics Kernel, Keep Ownership">
+      <svg viewBox="0 0 80 80" width="24" height="24" fill="none"><rect x="4" y="4" width="72" height="72" rx="6" stroke="#6c63ff" stroke-width="3" fill="none"/><rect x="18" y="18" width="44" height="44" rx="4" stroke="#6c63ff" stroke-width="2.5" fill="none"/><rect x="30" y="30" width="20" height="20" rx="3" fill="#6c63ff"/></svg>
+      <span class="nav-brand-stack">
+        <span class="nav-brand-name">AKKO</span>
+        <span class="nav-brand-full">Analytics Kernel, Keep Ownership</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="/runtime.html">Runtime</a>
+      <a href="/#model">Model</a>
+      <a href="/#layers">Platform</a>
+      <a href="/about.html" class="active">About</a>
+      <a href="/#demo" class="nav-cta">Talk to sales</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <section class="about-hero">
+    <div class="container">
+      <span class="eyebrow">About AKKO</span>
+      <h1>
+        AI Runtime for <span class="grad">regulated European workloads</span>.
+      </h1>
+      <p class="lead">
+        AKKO is the runtime layer that orchestrates, governs, audits and optimises
+        private LLMs on infrastructure you own. Six proprietary components on top of an
+        open-source Lego foundation. Built for banking, healthcare and the public sector,
+        regulated environments where every prompt, every token and every row must stay
+        inside your perimeter.
+      </p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <h2>Our model: Open Blueprints + Open Lab + Closed Runtime</h2>
+      <p>
+        AKKO is not a single-license product. The foundation is open, the lab is open,
+        the runtime is commercial. This is the honest model that lets regulated buyers
+        audit what they install, while the proprietary engine keeps your prompts and
+        governance under a signed contract.
+      </p>
+
+      <div class="pillar-row">
+        <div class="pillar-tile" style="border-color: rgba(34, 197, 94, 0.3);">
+          <h3>📦 Open Blueprints</h3>
+          <p>
+            Apache 2.0. Helm charts, Terraform modules, agent templates and integration
+            glue. Public on GitHub, free to fork and audit.
+          </p>
+        </div>
+        <div class="pillar-tile" style="border-color: rgba(234, 179, 8, 0.3);">
+          <h3>🧪 Open Lab</h3>
+          <p>
+            Apache 2.0. 30+ notebooks across banking, healthcare and retail. Lab kernels,
+            Spark Connect examples, dbt marts, sample governed pipelines.
+          </p>
+        </div>
+        <div class="pillar-tile" style="border-color: rgba(139, 92, 246, 0.3);">
+          <h3>🔒 Closed Runtime</h3>
+          <p>
+            Commercial license. 17 SQL AI functions, NL2SQL orchestrator, governance engine,
+            observability layer, catalog manager, control plane.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <h2>Why we built AKKO</h2>
+      <p>
+        Regulated organisations across Europe were asked to choose between two bad options:
+        send their data to a US hyperscaler to get modern AI, or freeze on legacy on-prem
+        stacks with no AI story at all. AKKO exists because that trade-off is no longer
+        acceptable.
+      </p>
+      <p>
+        We started from a layered platform position (Compute, Query, Catalog, Storage, BI,
+        Lab, AI, Governance, Observability) and built the missing pieces — orchestration,
+        AI governance, audit receipts, SQL AI functions — into a runtime you can install
+        on your own Kubernetes. No phone-home. No foreign API call. Your keys, your data,
+        your perimeter.
+      </p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <h2>Who AKKO is for</h2>
+      <ul>
+        <li><strong>Banking</strong> — fraud detection, AML pipelines, regulatory RAG, SQL AI for fact tables under DORA.</li>
+        <li><strong>Healthcare</strong> — patient cohort analytics, governed knowledge bases for clinical staff, fully on-prem.</li>
+        <li><strong>Public sector</strong> — sovereign analytics, citizen-facing portals, NIS2-aligned audit trail.</li>
+      </ul>
+      <p>
+        Three verticals, one runtime, one governance model. Notebook-friendly for data
+        scientists, SQL-friendly for analysts, contract-friendly for procurement.
+      </p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <h2>What stays open, what stays closed</h2>
+      <p>
+        We will keep the blueprints and the lab open under Apache 2.0 so the community
+        can inspect, fork and contribute. We keep the runtime commercial because that is
+        what funds the engineering work that makes AKKO worth installing in a regulated
+        environment in the first place. We say it out loud so prospects know what they
+        are buying — and what they are not.
+      </p>
+    </div>
+  </section>
+
+  <section class="about-final-cta">
+    <div class="container">
+      <a href="/runtime.html" class="primary">
+        See the Runtime
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="/#demo" class="secondary">Talk to sales</a>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
