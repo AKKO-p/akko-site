@@ -1,0 +1,28 @@
+{
+  "_comment": "AKKO customers — case studies index. Framing is product-led (deployment scenarios), not customer signature.",
+  "updated": "2026-05-20",
+  "cases": [
+    {
+      "slug": "climscore-sovereign-deployment",
+      "title": "Air-gapped sovereign deployment",
+      "title_fr": "Déploiement souverain air-gap",
+      "vertical": "Climate risk",
+      "vertical_fr": "Risque climatique",
+      "scenario_type": "real",
+      "summary": "Four Postgres OLTP sources, two PostGIS sources, 50 users, 10 dashboards, 200 ADEN queries per day. Zero outbound. OCSF audit. SecNumCloud-aligned.",
+      "summary_fr": "Quatre sources Postgres OLTP, deux sources PostGIS, 50 utilisateurs, 10 dashboards, 200 requêtes ADEN par jour. Zéro sortant. Audit OCSF. SecNumCloud-aligned.",
+      "href": "/customers/climscore-sovereign-deployment.html"
+    },
+    {
+      "slug": "banking-tier2-aml",
+      "title": "Fraud detection, AML compliant",
+      "title_fr": "Détection de fraude, conforme AML",
+      "vertical": "Banking, Tier 2",
+      "vertical_fr": "Banque, Tier 2",
+      "scenario_type": "composite",
+      "summary": "50M transactions per month, five federated catalogs, 100 fraud analysts + 20 risk officers. DORA, GDPR, ACPR audit ready.",
+      "summary_fr": "50 M transactions par mois, cinq catalogues fédérés, 100 analystes fraude + 20 risk officers. Prêt pour audit DORA, RGPD, ACPR.",
+      "href": "/customers/banking-tier2-aml.html"
+    }
+  ]
+}
