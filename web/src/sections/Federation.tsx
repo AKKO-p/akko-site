@@ -4,7 +4,7 @@ import type { Variants } from 'framer-motion'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-/** source nodes fanned on the left — all storage role (cyan) */
+/** source nodes fanned on the left, all storage role (cyan) */
 const SOURCES = [
   { name: 'PostgreSQL', sub: 'base', cy: 40 },
   { name: 'Hive · Cloudera', sub: 'Kerberos', cy: 122 },
@@ -52,7 +52,7 @@ export default function Federation() {
             Un seul moteur SQL sur <span className="grad-text">toutes vos sources</span>.
           </h2>
           <p className="fed__body">
-            Trino interroge entrepôts, fichiers et bases — ensemble, sans déplacer la donnée.
+            Trino interroge entrepôts, fichiers et bases ensemble, sans déplacer la donnée.
             Un lakehouse au format ouvert Iceberg, lisible par tous les moteurs. Ajout d'une
             source à chaud, depuis l'interface.
           </p>
@@ -65,7 +65,7 @@ export default function Federation() {
               className="fed__svg"
               viewBox="0 0 460 420"
               role="img"
-              aria-label="Trino, un moteur SQL unique, interroge cinq sources — PostgreSQL, Hive Cloudera, Iceberg Polaris, fichiers et tpch — par une seule porte, sans déplacer la donnée."
+              aria-label="Trino, un moteur SQL unique, interroge cinq sources (PostgreSQL, Hive Cloudera, Iceberg Polaris, fichiers et tpch) par une seule porte, sans déplacer la donnée."
             >
               <defs>
                 <linearGradient id="fed-edge" x1="0" y1="0" x2="460" y2="0" gradientUnits="userSpaceOnUse">
@@ -122,7 +122,7 @@ export default function Federation() {
               <line className="fed-door" x1={402} y1={210} x2={456} y2={210} stroke="#0a0c16" strokeWidth={2} strokeLinecap="round" opacity={reduce ? 0 : 0.5} />
               <path d="M450 204 L458 210 L450 216" fill="none" stroke="url(#fed-trino)" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" />
 
-              {/* Trino central node — the single SQL door */}
+              {/* Trino central node: the single SQL door */}
               <motion.g
                 initial={reduce ? false : { scale: 0.6, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}

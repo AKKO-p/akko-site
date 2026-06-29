@@ -43,7 +43,7 @@ body {
   animation: aurora-drift2 34s var(--ease) infinite alternate;
 }
 
-/* subtle film grain — kills the flat "AI gradient" look */
+/* subtle film grain: kills the flat "AI gradient" look */
 .grain {
   position: fixed;
   inset: 0;

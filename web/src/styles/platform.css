@@ -1,5 +1,5 @@
 /* ============================================================
-   Section B — Plateforme complète (id="produit")
+   Section B : Plateforme complète (id="produit")
    S5 layers stack + S6 "AKKO en action" editorial collage.
    ============================================================ */
 .plat {
@@ -29,7 +29,7 @@
 }
 .plat__body b { color: var(--ink); font-weight: 600; }
 
-/* the layer stack — nested/indented bars that slide in */
+/* the layer stack: nested/indented bars that slide in */
 .plat-stack {
   display: flex;
   flex-direction: column;
@@ -84,7 +84,7 @@
   text-align: right;
 }
 
-/* ---- S6 : AKKO en action — editorial collage ---- */
+/* ---- S6 : AKKO en action, editorial collage ---- */
 .plat-gallery {
   margin-top: 120px;
 }
@@ -110,8 +110,37 @@
 
 .plat-stage {
   position: relative;
-  min-height: 540px;
+  min-height: 580px;
 }
+
+/* per-theme header above each collage */
+.plat-theme {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 40px;
+  padding-left: 2px;
+}
+.plat-theme__rail {
+  align-self: center;
+  flex: none;
+  width: 26px;
+  height: 4px;
+  border-radius: 4px;
+}
+.plat-theme__name {
+  font-weight: 700;
+  font-size: 16.5px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.plat-theme__lead {
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--ink-mute);
+}
+
 .plat-collage {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -122,10 +151,13 @@
 .plat-frame {
   position: relative;
 }
-.plat-frame[data-pos='0'] { --ry: 8deg;  --rz: -1.2deg; grid-column: 1 / 8;  grid-row: 1; }
-.plat-frame[data-pos='1'] { --ry: -7deg; --rz: 1.4deg;  grid-column: 8 / 13; grid-row: 1; margin-top: 58px; }
-.plat-frame[data-pos='2'] { --ry: 7deg;  --rz: 1deg;    grid-column: 1 / 6;  grid-row: 2; margin-top: -26px; }
-.plat-frame[data-pos='3'] { --ry: -8deg; --rz: -1deg;   grid-column: 6 / 13; grid-row: 2; }
+/* two-up editorial pair */
+.plat-collage[data-count='2'] .plat-frame[data-pos='0'] { --ry: 7deg;  --rz: -1deg;  grid-column: 1 / 7;  grid-row: 1; }
+.plat-collage[data-count='2'] .plat-frame[data-pos='1'] { --ry: -7deg; --rz: 1.2deg; grid-column: 7 / 13; grid-row: 1; margin-top: 66px; }
+/* three-up asymmetric collage */
+.plat-collage[data-count='3'] .plat-frame[data-pos='0'] { --ry: 8deg;  --rz: -1.2deg; grid-column: 1 / 7;  grid-row: 1; }
+.plat-collage[data-count='3'] .plat-frame[data-pos='1'] { --ry: -7deg; --rz: 1.2deg;  grid-column: 7 / 13; grid-row: 1; margin-top: 54px; }
+.plat-collage[data-count='3'] .plat-frame[data-pos='2'] { --ry: 6deg;  --rz: 1deg;    grid-column: 3 / 9;  grid-row: 2; margin-top: -4px; }
 
 .plat-frame__inner {
   border-radius: 13px;

@@ -1,4 +1,4 @@
-/* Sections own their decorative bleeds and reveal transforms — clip on the X
+/* Sections own their decorative bleeds and reveal transforms. Clip on the X
    axis so off-canvas motion never creates a horizontal scrollbar. `clip`
    (not `hidden`) keeps position:sticky working for the architecture intro. */
 main > section {

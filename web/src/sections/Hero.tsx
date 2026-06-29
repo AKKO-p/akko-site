@@ -23,22 +23,20 @@ export default function Hero() {
       <div className="shell hero__inner">
         <div className="hero__copy">
           <motion.span className="eyebrow" custom={0} variants={reveal} initial="hidden" animate="show">
-            Plateforme data &amp; IA souveraine
+            Souveraineté par conception
           </motion.span>
 
           <h1 className="hero__title">
             <Line i={1}>La plateforme data &amp; IA</Line>
             <Line i={2}>
-              que vous <span className="grad-text">hébergez</span> et
-            </Line>
-            <Line i={3}>
-              <span className="grad-text">gouvernez</span> vous-même.
+              <span className="grad-text">souveraine</span>.
             </Line>
           </h1>
 
           <motion.p className="hero__sub" custom={4} variants={reveal} initial="hidden" animate="show">
-            Un moteur de fédération unique, un lakehouse ouvert, une IA gouvernée.
-            Auto-hébergée sur votre infrastructure — vos données ne la quittent jamais.
+            Vos données, vos modèles et vos clés ne quittent jamais votre infrastructure.
+            Un moteur de fédération unique interroge toutes vos sources ; l'IA, gouvernée,
+            reste bornée par vos droits d'accès.
           </motion.p>
 
           <motion.div className="hero__cta" custom={5} variants={reveal} initial="hidden" animate="show">
@@ -47,7 +45,8 @@ export default function Hero() {
           </motion.div>
 
           <motion.p className="hero__context" custom={6} variants={reveal} initial="hidden" animate="show">
-            Conçue pour les organisations régulées. Banque · Santé · Secteur public.
+            Contactez-nous pour une démonstration sur votre cas d'usage. Pensée pour les
+            secteurs régulés : banque, santé, secteur public.
           </motion.p>
         </div>
 

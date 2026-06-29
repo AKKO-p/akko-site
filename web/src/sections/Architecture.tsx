@@ -34,7 +34,7 @@ export default function Architecture() {
             Le blason, <span className="grad-text">déplié</span>.
           </h2>
           <p className="arc__lead">
-            Trois carrés imbriqués — la métaphore exacte de la plateforme. Chaque couche
+            Trois carrés imbriqués : la métaphore exacte de la plateforme. Chaque couche
             s'empile sur la précédente et reste <strong>remplaçable</strong>. Les vendors sont
             masqués derrière des couches stables : vous maîtrisez chaque niveau.
           </p>

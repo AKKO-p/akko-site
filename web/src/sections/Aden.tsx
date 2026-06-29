@@ -12,8 +12,8 @@ type Step = {
 // ADEN is not "one LLM call": it is a governed 8-layer pipeline.
 // Source of truth: docker/aden/ (catalog/, llm/, sqlgen/, query_phases/, security/, output/).
 const STEPS: Step[] = [
-  { n: '1', title: 'Question', detail: 'Langage naturel — « Combien de clients allemands à risque ? »', role: 'q' },
-  { n: '2', title: 'Intention + raccourci vérifié', detail: 'Si une requête approuvée par un steward correspond, on la réutilise — zéro LLM.', role: 'science' },
+  { n: '1', title: 'Question', detail: 'Langage naturel : « Combien de clients allemands à risque ? »', role: 'q' },
+  { n: '2', title: 'Intention + raccourci vérifié', detail: 'Si une requête approuvée par un steward correspond, on la réutilise, sans appeler le modèle.', role: 'science' },
   { n: '3', title: 'Grounding sémantique', detail: 'Recherche vecteur, M-Schema, synonymes, relations, profils. Pré-filtré aux tables autorisées.', role: 'ai', feed: 'NORA' },
   { n: '4', title: 'LLM souverain', detail: 'Prompt fondé → modèles on-premises (Ollama) → SQL, avec cache et score de confiance.', role: 'ai' },
   { n: '5', title: 'SQL : génération + validation', detail: 'Parse, whitelist des tables, garde read-only et anti-injection.', role: 'engine' },
@@ -34,7 +34,7 @@ export default function Aden() {
           </h2>
           <p className="ad__lead">
             ADEN traduit une question en langage naturel en SQL gouverné, l'exécute sur le catalogue
-            fédéré et renvoie un graphe — avec un reçu d'audit. NORA enrichit le catalogue
+            fédéré et renvoie un graphe, avec un reçu d'audit. NORA enrichit le catalogue
             (profilage, synonymes, relations) pour <strong>fonder</strong> l'IA. Les modèles tournent
             sur votre infrastructure ; aucune donnée ne sort.
           </p>
@@ -79,7 +79,46 @@ export default function Aden() {
           Une question métier → une réponse <span className="grad-text">gouvernée, tracée, souveraine</span>.
           L'IA n'invente pas : elle est fondée (grounding NORA) et bornée (OPA).
         </p>
+
+        <div className="ad-proof" aria-label="Captures ADEN">
+          {AD_SHOTS.map((s, i) => (
+            <motion.figure
+              className="ad-proof__frame"
+              data-pos={i}
+              key={s.src}
+              initial={reduce ? false : { opacity: 0, y: 30, rotateY: i === 0 ? -10 : 10 }}
+              whileInView={{ opacity: 1, y: 0, rotateY: i === 0 ? -7 : 7 }}
+              viewport={{ once: true, margin: '-70px' }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.08 * i }}
+            >
+              <div className="ad-proof__inner">
+                <div className="ad-proof__bar">
+                  <span /><span /><span />
+                  <em>{s.chrome}</em>
+                </div>
+                <img src={s.src} alt={s.alt} loading="lazy" />
+              </div>
+              <figcaption className="ad-proof__cap">{s.cap}</figcaption>
+            </motion.figure>
+          ))}
+        </div>
       </div>
     </section>
   )
 }
+
+type AdShot = { src: string; chrome: string; cap: string; alt: string }
+const AD_SHOTS: AdShot[] = [
+  {
+    src: '/shots/aden-result.png',
+    chrome: 'cockpit · ADEN',
+    cap: 'Réponse vérifiée, restituée en graphe, avec son score de confiance.',
+    alt: 'Résultat ADEN : répartition des clients par pays, marquée vérifiée.',
+  },
+  {
+    src: '/shots/aden-steps.png',
+    chrome: 'cockpit · reçu d\'audit',
+    cap: 'Reçu d\'audit : chaque étape du raisonnement est tracée et rejouable.',
+    alt: 'Étapes de raisonnement ADEN, du contrôle d\'accès à la requête finale.',
+  },
+]

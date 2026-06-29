@@ -72,7 +72,7 @@ export default function Governance() {
           </motion.h2>
           <motion.p className="gov__body" variants={rise} custom={2}>
             Masquage des colonnes et filtrage des lignes <b>par utilisateur</b>, appliqués au moteur
-            (OPA), pour chaque outil — BI, notebooks, ADEN. La gouvernance suit la donnée, du client à la
+            (OPA), pour chaque outil : BI, notebooks, ADEN. La gouvernance suit la donnée, du client à la
             source.
           </motion.p>
         </motion.div>
@@ -126,10 +126,10 @@ export default function Governance() {
               <span className="gov-opa__badge">OPA</span>
               <span className="gov-opa__rule">
                 {persona === 'admin' ? (
-                  <>Aucune restriction — <code>policy: allow</code>. Toutes les colonnes, tous les pays.</>
+                  <>Aucune restriction : <code>policy: allow</code>. Toutes les colonnes, tous les pays.</>
                 ) : (
                   <>
-                    Politique active — <code>mask(contact, encours)</code> +{' '}
+                    Politique active : <code>mask(contact, encours)</code> +{' '}
                     <code>row_filter(pays = 'France')</code>.
                   </>
                 )}
@@ -158,7 +158,7 @@ export default function Governance() {
                               {ci === 0 ? (
                                 <span className="gov-flag">▪ hors périmètre</span>
                               ) : (
-                                <span style={{ color: 'var(--ink-faint)' }}>—</span>
+                                <span style={{ color: 'var(--ink-faint)' }}>·</span>
                               )}
                             </td>
                           )

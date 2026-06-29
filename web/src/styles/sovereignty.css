@@ -1,6 +1,6 @@
 /* ============================================================
    Sovereignty section (id="plateforme")
-   Asymmetric editorial layout — big title left, animated
+   Asymmetric editorial layout: big title left, animated
    "sovereign perimeter" right. All classes prefixed .sov-
    ============================================================ */
 
@@ -157,7 +157,7 @@
   padding-left: 18px;
 }
 
-/* "seal" — blason sitting on the perimeter top edge, cutting the line */
+/* "seal": blason sitting on the perimeter top edge, cutting the line */
 .sov__seal {
   position: absolute;
   top: -2px;

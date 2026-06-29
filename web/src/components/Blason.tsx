@@ -10,7 +10,7 @@ type Props = {
 }
 
 /**
- * The AKKO blason — three concentric rounded squares = the Lego layers metaphor.
+ * The AKKO blason: three concentric rounded squares = the Lego layers metaphor.
  * Source mark: akko/branding/logo/akko-icon.svg. Here it is alive: the squares
  * draw themselves outside-in, the core pulses, then the whole mark breathes.
  */

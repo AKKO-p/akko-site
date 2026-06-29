@@ -105,9 +105,76 @@
   margin-right: auto;
 }
 
+/* ---- contextual ADEN captures (tilted device cluster) ---- */
+.ad-proof {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 48px;
+  align-items: start;
+  perspective: 1700px;
+}
+.ad-proof__frame { position: relative; }
+.ad-proof__frame[data-pos='1'] { margin-top: 52px; }
+.ad-proof__inner {
+  border-radius: 13px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: #0c1020;
+  transform-origin: center;
+  box-shadow: 0 34px 78px rgba(4, 6, 14, 0.55);
+  transition: transform 0.55s var(--ease), box-shadow 0.55s var(--ease);
+  will-change: transform;
+}
+.ad-proof__frame[data-pos='0'] .ad-proof__inner { transform: perspective(1700px) rotateY(7deg) rotateZ(-1deg); }
+.ad-proof__frame[data-pos='1'] .ad-proof__inner { transform: perspective(1700px) rotateY(-7deg) rotateZ(1deg); }
+.ad-proof__frame:hover .ad-proof__inner {
+  transform: perspective(1700px) rotateY(0) rotateZ(0) translateY(-8px) scale(1.015);
+  box-shadow: 0 26px 70px rgba(4, 6, 14, 0.5), 0 0 70px rgba(124, 92, 255, 0.22);
+  z-index: 3;
+}
+.ad-proof__bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 13px;
+  background: rgba(12, 16, 32, 0.95);
+  border-bottom: 1px solid var(--line);
+}
+.ad-proof__bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.13);
+}
+.ad-proof__bar em {
+  margin-left: 8px;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+.ad-proof__inner img { display: block; width: 100%; height: auto; }
+.ad-proof__cap {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 34ch;
+}
+
 @media (max-width: 600px) {
   .ad__step { gap: 14px; }
   .ad__node { width: 38px; height: 38px; }
   .ad__rail { left: 22px; }
   .ad__pulse { left: 17px; }
+}
+
+@media (max-width: 860px) {
+  .ad-proof { grid-template-columns: 1fr; gap: 36px; }
+  .ad-proof__frame[data-pos='1'] { margin-top: 0; }
+  .ad-proof__frame .ad-proof__inner { transform: none !important; }
+  .ad-proof__frame:hover .ad-proof__inner { transform: translateY(-5px) !important; }
+  .ad-proof__cap { max-width: none; }
 }

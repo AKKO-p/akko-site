@@ -1,5 +1,5 @@
 /* ============================================================
-   Section A — Gouvernance (id="gouvernance")
+   Section A : Gouvernance (id="gouvernance")
    Accent = amber --c-gov. One control plane, two personas.
    ============================================================ */
 .gov {
@@ -181,7 +181,7 @@
   opacity: 0.85;
 }
 
-/* masked cell — the ●●● dots */
+/* masked cell: the ●●● dots */
 .gov-mask {
   display: inline-flex;
   gap: 4px;

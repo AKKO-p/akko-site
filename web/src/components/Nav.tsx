@@ -10,7 +10,7 @@ export default function Nav() {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
     >
       <div className="shell nav__inner">
-        <a className="nav__brand" href="#top" aria-label="AKKO — accueil">
+        <a className="nav__brand" href="#top" aria-label="AKKO, accueil">
           <Blason size={30} mode="static" breathe={false} />
           <span className="nav__word">AKKO</span>
         </a>

@@ -45,14 +45,14 @@ export default function Contact() {
             Parlons-en
           </motion.span>
           <motion.h2 className="cta__title" variants={rise} custom={1}>
-            Parlons de votre <span className="grad-text">plateforme souveraine.</span>
+            Contactez-nous pour une <span className="grad-text">démonstration.</span>
           </motion.h2>
           <motion.p className="cta__sub" variants={rise} custom={2}>
-            Une démo sur votre cas d’usage, ou un échange technique.
+            Une démonstration sur votre cas d’usage, ou un échange technique.
           </motion.p>
           <motion.div className="cta__actions" variants={rise} custom={3}>
             <a className="btn btn-primary" href="mailto:contact@akko-ai.com">
-              Nous contacter
+              Contactez-nous pour une démonstration
             </a>
             <a className="cta__secondary" href="https://demo.akko-ai.com" target="_blank" rel="noreferrer">
               Voir une démo
