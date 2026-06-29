@@ -1,0 +1,202 @@
+/* ============================================================
+   Sovereignty section (id="plateforme")
+   Asymmetric editorial layout — big title left, animated
+   "sovereign perimeter" right. All classes prefixed .sov-
+   ============================================================ */
+
+.sov {
+  position: relative;
+  padding: clamp(96px, 13vh, 168px) 0;
+  overflow: hidden;
+}
+
+/* very discreet brand thread, rotated mono watermark on the far edge */
+.sov__watermark {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: right center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  opacity: 0.28;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sov__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+}
+
+/* ---- copy column ---- */
+.sov__copy {
+  position: relative;
+  max-width: 30em;
+}
+.sov__thread {
+  height: 2px;
+  width: 64px;
+  margin: 18px 0 0;
+  border-radius: 2px;
+  background: var(--grad);
+  transform-origin: left center;
+}
+.sov__title {
+  font-size: clamp(30px, 3.9vw, 52px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  margin: 22px 0 22px;
+}
+.sov__title .grad-text { display: inline; }
+.sov__body {
+  font-size: clamp(15.5px, 1.25vw, 18px);
+  line-height: 1.68;
+  color: var(--ink-soft);
+}
+.sov__caption {
+  margin-top: 26px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.sov__caption::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-science);
+  box-shadow: 0 0 12px var(--c-science);
+}
+
+/* ---- the sovereign perimeter ---- */
+.sov__stage {
+  position: relative;
+  aspect-ratio: 10 / 9;
+  display: grid;
+  place-items: center;
+}
+.sov__glow {
+  position: absolute;
+  inset: 8% 8%;
+  border-radius: 28px;
+  background: radial-gradient(60% 55% at 50% 45%, rgba(124, 92, 255, 0.22), transparent 70%);
+  filter: blur(26px);
+  animation: sov-breathe 7s var(--ease) infinite alternate;
+}
+@keyframes sov-breathe {
+  0% { opacity: 0.55; transform: scale(0.97); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+
+.sov__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* tokens grid sits INSIDE the perimeter */
+.sov__tokens {
+  position: relative;
+  z-index: 2;
+  width: 72%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.sov-token {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px 16px;
+  border-radius: 14px;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 34px rgba(4, 6, 14, 0.5);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.sov-token:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+}
+.sov-token__top {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.sov-token__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  flex: none;
+}
+.sov-token__name {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.sov-token__tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+  padding-left: 18px;
+}
+
+/* "seal" — blason sitting on the perimeter top edge, cutting the line */
+.sov__seal {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: 0 0 0 1px var(--line-strong), var(--glow);
+}
+
+/* "ne sort jamais" tag, anchored on the bottom perimeter line */
+.sov__never {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.sov__never svg { display: block; }
+
+@media (max-width: 920px) {
+  .sov__inner { grid-template-columns: 1fr; gap: 48px; }
+  .sov__stage { order: 1; max-width: 460px; width: 100%; margin: 0 auto; }
+  .sov__watermark { display: none; }
+}

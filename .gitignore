@@ -1,0 +1,6 @@
+# React site build tooling
+web/node_modules/
+web/dist/
+site-dist/
+*.log
+.DS_Store

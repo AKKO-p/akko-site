@@ -1,0 +1,44 @@
+/* AKKO V5 design tokens — ported from cockpit-react/src/styles/tokens.css.
+   Single source of brand truth for the marketing site. */
+:root {
+  /* base */
+  --bg: #080a12;
+  --bg-1: #0b0e1a;
+  --bg-2: #11152400;
+  --surface: #0e1220;
+  --ink: #eef1fb;
+  --ink-soft: #c4cae0;
+  --ink-mute: #8b93b0;
+  --ink-faint: #5c6486;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.14);
+
+  /* brand */
+  --pri: #7c5cff;
+  --pri-soft: #9b86ff;
+  --cyan: #4dd4e5;
+  --grad: linear-gradient(135deg, #7c5cff 0%, #4dd4e5 100%);
+  --grad-soft: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(77, 212, 229, 0.14));
+  --glow: 0 0 60px rgba(124, 92, 255, 0.35);
+  --glow-cyan: 0 0 50px rgba(77, 212, 229, 0.3);
+  --glass: rgba(18, 22, 38, 0.72);
+  --glass-2: rgba(20, 25, 44, 0.55);
+
+  /* role accents (schemas) */
+  --c-engine: #9b86ff; /* moteur / compute */
+  --c-storage: #4dd4e5; /* stockage / lakehouse */
+  --c-gov: #ffb454; /* gouvernance */
+  --c-ai: #b58cff; /* IA (dégradé) */
+  --c-science: #41d693; /* data science */
+  --c-rose: #ff6b81;
+
+  /* type */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* layout */
+  --maxw: 1200px;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

@@ -1,0 +1,172 @@
+/* ============================================================
+   Section C — CTA final (id="contact") + footer
+   ============================================================ */
+.cta {
+  position: relative;
+  padding: 150px 0 0;
+  overflow: hidden;
+}
+.cta__aurora {
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 720px;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(46% 60% at 50% 32%, rgba(124, 92, 255, 0.26), transparent 62%),
+    radial-gradient(40% 50% at 70% 60%, rgba(77, 212, 229, 0.16), transparent 64%);
+  filter: blur(8px);
+}
+.cta__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* big living blason + halo */
+.cta__mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin-bottom: 30px;
+}
+.cta__halo {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.34), transparent 60%);
+  filter: blur(26px);
+  animation: cta-halo 6.5s var(--ease) infinite alternate;
+}
+@keyframes cta-halo {
+  0% { opacity: 0.55; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+.cta__panel {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  padding: 8px 0 0;
+}
+.cta__title {
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  margin: 8px 0 18px;
+}
+.cta__sub {
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 36ch;
+  margin: 0 auto 34px;
+}
+.cta__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cta__secondary {
+  font-size: 14.5px;
+  color: var(--ink-mute);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.2s var(--ease);
+}
+.cta__secondary:hover { color: var(--ink); }
+.cta__secondary svg { transition: transform 0.25s var(--ease); }
+.cta__secondary:hover svg { transform: translateX(3px); }
+
+/* ---- footer ---- */
+.foot {
+  position: relative;
+  z-index: 1;
+  margin-top: 130px;
+  border-top: 1px solid var(--line);
+  background: var(--glass-2);
+  backdrop-filter: blur(10px);
+}
+.foot__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  padding: 56px 0 30px;
+}
+.foot__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 32ch;
+}
+.foot__row {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+.foot__word {
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+.foot__tag {
+  font-size: 13.5px;
+  color: var(--ink-mute);
+  line-height: 1.5;
+}
+.foot__links {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  align-content: start;
+}
+.foot__lh {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 3px;
+}
+.foot__links a {
+  font-size: 14px;
+  color: var(--ink-soft);
+  width: fit-content;
+  transition: color 0.2s var(--ease);
+}
+.foot__links a:hover { color: var(--ink); }
+.foot__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0 30px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.foot__copy {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+.foot__own {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 720px) {
+  .foot__inner { grid-template-columns: 1fr; gap: 36px; }
+  .cta__halo { width: 280px; height: 280px; }
+}
