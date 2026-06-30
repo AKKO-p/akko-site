@@ -29,7 +29,7 @@ export default function Architecture() {
     <section className="arc" id="architecture">
       <div className="shell arc__inner">
         <aside className="arc__intro">
-          <span className="eyebrow">Architecture</span>
+          <span className="eyebrow">Le principe</span>
           <h2 className="arc__title">
             Le blason, <span className="grad-text">déplié</span>.
           </h2>
