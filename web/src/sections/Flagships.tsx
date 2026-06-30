@@ -23,8 +23,8 @@ const FLAGSHIPS: Flagship[] = [
     body: "Vos bases, vos fichiers, vos entrepôts répondent à la même requête, ensemble, sans copie. Plus de pipelines pour rassembler la donnée avant de l'utiliser : un seul point d'accès.",
     change: 'Aucune donnée déplacée, aucune copie à maintenir.',
     shots: [
-      { src: '/shots/catalog-federation.png', chrome: 'Catalogue des sources' },
-      { src: '/shots/cockpit-home.png', chrome: 'Cockpit' },
+      { src: '/shots/new-sources.png', chrome: 'Sources de données' },
+      { src: '/shots/new-source-add.png', chrome: "Ajout d'une source" },
     ],
   },
   {
@@ -34,7 +34,10 @@ const FLAGSHIPS: Flagship[] = [
     title: 'Les droits, définis une fois. Respectés partout.',
     body: "Le masquage des colonnes et le filtrage des lignes suivent chaque personne, du tableau de bord au notebook jusqu'à l'IA. Vous ne reconfigurez plus les droits outil par outil.",
     change: 'Une colonne sensible reste masquée pour tout le monde, partout.',
-    shots: [{ src: '/shots/governance-roles.png', chrome: 'Accès & gouvernance' }],
+    shots: [
+      { src: '/shots/new-access.png', chrome: 'Accès aux données' },
+      { src: '/shots/new-roles.png', chrome: 'Rôles plateforme' },
+    ],
   },
   {
     key: 'lake',
@@ -44,7 +47,7 @@ const FLAGSHIPS: Flagship[] = [
     body: "Vos données vivent dans un format de table ouvert, lisible par n'importe quel moteur, versionné, réversible. Vous changez d'outil sans tout réécrire.",
     change: 'Stockées une fois, lisibles par tout, sans dépendance.',
     shots: [
-      { src: '/shots/catalog-openmetadata.png', chrome: 'Catalogue' },
+      { src: '/shots/new-tables.png', chrome: 'Tables ouvertes' },
       { src: '/shots/lineage.png', chrome: 'Lignage' },
     ],
   },
@@ -56,9 +59,9 @@ const FLAGSHIPS: Flagship[] = [
     body: "ADEN comprend la question métier, écrit la requête, l'exécute, et rend un graphe. La réponse est fondée sur votre catalogue, bornée par vos droits, et l'IA tourne sur votre infrastructure.",
     change: "L'IA ne voit jamais ce que l'utilisateur n'a pas le droit de voir.",
     shots: [
-      { src: '/shots/aden-result.png', chrome: 'ADEN · réponse' },
-      { src: '/shots/aden-steps.png', chrome: "ADEN · reçu d'audit" },
-      { src: '/shots/aden-home.png', chrome: 'ADEN' },
+      { src: '/shots/new-aden-result.png', chrome: 'ADEN · réponse' },
+      { src: '/shots/new-aden-steps.png', chrome: 'ADEN · raisonnement' },
+      { src: '/shots/new-aden-home.png', chrome: 'ADEN' },
     ],
   },
   {
@@ -68,10 +71,7 @@ const FLAGSHIPS: Flagship[] = [
     title: 'Un catalogue qui se documente et se relie tout seul.',
     body: "NORA profile vos données, en déduit descriptions, synonymes et relations, et propose le tout à un référent qui valide. Ce travail nourrit le catalogue et fonde l'IA.",
     change: "Le catalogue reste vivant et l'IA reste fondée, sans service à payer.",
-    shots: [
-      { src: '/shots/catalog-openmetadata.png', chrome: 'Catalogue enrichi' },
-      { src: '/shots/lineage.png', chrome: 'Relations' },
-    ],
+    shots: [{ src: '/shots/new-nora.png', chrome: 'NORA · file de revue' }],
   },
   {
     key: 'lab',
@@ -81,8 +81,7 @@ const FLAGSHIPS: Flagship[] = [
     body: "Un environnement de notebooks et d'édition de code, dans le langage de chacun, branché sur le moteur et le calcul, avec un assistant connecté à vos modèles. Les mêmes droits s'appliquent.",
     change: "La gouvernance ne s'arrête pas à la porte du lab.",
     shots: [
-      { src: '/shots/lab-spawner.png', chrome: 'Lab' },
-      { src: '/shots/lab-jupyter-ai.png', chrome: 'Assistant' },
+      { src: '/shots/new-lab.png', chrome: 'Lab · environnements' },
       { src: '/shots/lab-code-server.png', chrome: 'Éditeur de code' },
     ],
   },

@@ -7,7 +7,7 @@ const STRIP = [
   { src: '/shots/ai-models.png', label: 'Modèles souverains' },
   { src: '/shots/rag.png', label: 'Recherche augmentée' },
   { src: '/shots/mlflow.png', label: 'Suivi des modèles' },
-  { src: '/shots/monitoring-supervision.png', label: 'Supervision' },
+  { src: '/shots/new-supervision.png', label: 'Supervision' },
   { src: '/shots/monitoring-cluster.png', label: 'État du cluster' },
   { src: '/shots/alerts.png', label: 'Alertes' },
 ]

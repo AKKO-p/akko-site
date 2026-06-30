@@ -18,8 +18,8 @@
 .flg__stage {
   --flg-accent: var(--pri);
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 48px;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 44px;
   align-items: stretch;
   transition: --flg-accent 0.5s;
 }
@@ -129,11 +129,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 460px;
+  min-height: 580px;
   border-radius: 20px;
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(14, 18, 32, 0.5), rgba(8, 10, 18, 0.3));
-  padding: 30px 34px;
+  padding: 30px 30px 24px;
   overflow: hidden;
 }
 .flg__halo {
@@ -153,22 +153,22 @@
 .flg__frame {
   position: absolute;
   margin: 0;
-  width: 86%;
+  width: 95%;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--line-strong);
   background: #0c1020;
-  box-shadow: 0 30px 70px rgba(4, 6, 14, 0.55);
+  box-shadow: 0 34px 80px rgba(4, 6, 14, 0.6);
 }
 .flg__frame--0 {
   z-index: 2;
-  transform: rotate(-1deg);
+  transform: rotate(-0.5deg);
 }
 .flg__frame--1 {
   z-index: 1;
-  width: 70%;
-  transform: translate(28%, -34%) scale(0.86) rotate(2deg);
-  opacity: 0.5;
+  width: 62%;
+  transform: translate(40%, -42%) scale(0.74) rotate(2deg);
+  opacity: 0.4;
   filter: saturate(0.85);
 }
 .flg__bar {

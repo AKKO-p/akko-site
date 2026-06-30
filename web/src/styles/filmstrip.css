@@ -29,7 +29,7 @@
 }
 .strip__item {
   margin: 0;
-  width: 340px;
+  width: 440px;
   flex-shrink: 0;
 }
 .strip__frame {
@@ -61,7 +61,7 @@
 .strip__frame img {
   display: block;
   width: 100%;
-  height: 192px;
+  height: 248px;
   object-fit: cover;
   object-position: top left;
 }
