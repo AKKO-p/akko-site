@@ -151,7 +151,7 @@ export const D4 = {
   title: 'Ingestion, catalogue et lignage : Spark et Airflow vers Iceberg, OpenMetadata, OPA',
   lanes: [] as Lane[],
   nodes: [
-    { id: 'src', label: 'Sources', tech: 'CSV · DB · Cloudera', role: 'identity', x: 30, y: 240 },
+    { id: 'src', label: 'Sources', tech: 'CSV · DB · externes', role: 'identity', x: 30, y: 240 },
     { id: 'airflow', label: 'Orchestration', tech: 'Airflow', role: 'engine', x: 30, y: 400 },
     { id: 'spark', label: 'Calcul', tech: 'Spark', role: 'engine', x: 250, y: 240, key: true },
     { id: 's3', label: 'Stockage objet', tech: 'SeaweedFS', role: 'storage', x: 470, y: 150 },

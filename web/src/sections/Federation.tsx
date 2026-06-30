@@ -7,7 +7,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 /** source nodes fanned on the left, all storage role (cyan) */
 const SOURCES = [
   { name: 'PostgreSQL', sub: 'base', cy: 40 },
-  { name: 'Hive · Cloudera', sub: 'Kerberos', cy: 122 },
+  { name: 'Hive · Hadoop', sub: 'Kerberos', cy: 122 },
   { name: 'Iceberg · Polaris', sub: 'lakehouse', cy: 210 },
   { name: 'Fichiers', sub: 'CSV · Parquet', cy: 298 },
   { name: 'tpch', sub: 'benchmark', cy: 380 },
@@ -65,7 +65,7 @@ export default function Federation() {
               className="fed__svg"
               viewBox="0 0 460 420"
               role="img"
-              aria-label="Trino, un moteur SQL unique, interroge cinq sources (PostgreSQL, Hive Cloudera, Iceberg Polaris, fichiers et tpch) par une seule porte, sans déplacer la donnée."
+              aria-label="Trino, un moteur SQL unique, interroge cinq sources (PostgreSQL, Hive Hadoop, Iceberg Polaris, fichiers et tpch) par une seule porte, sans déplacer la donnée."
             >
               <defs>
                 <linearGradient id="fed-edge" x1="0" y1="0" x2="460" y2="0" gradientUnits="userSpaceOnUse">
