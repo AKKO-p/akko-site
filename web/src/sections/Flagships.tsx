@@ -82,6 +82,7 @@ const FLAGSHIPS: Flagship[] = [
     change: "La gouvernance ne s'arrête pas à la porte du lab.",
     shots: [
       { src: '/shots/new-lab.png', chrome: 'Lab · environnements' },
+      { src: '/shots/lab-jupyter-ai.png', chrome: 'JupyterHub · assistant' },
       { src: '/shots/lab-code-server.png', chrome: 'Éditeur de code' },
     ],
   },

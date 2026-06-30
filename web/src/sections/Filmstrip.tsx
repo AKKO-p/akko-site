@@ -2,6 +2,9 @@ import '../styles/filmstrip.css'
 
 // The rest of the chain, function-labeled, scrolling by.
 const STRIP = [
+  { src: '/shots/new-login.png', label: 'Connexion · SSO' },
+  { src: '/shots/cockpit-home.png', label: 'Accueil du cockpit' },
+  { src: '/shots/catalog-openmetadata.png', label: 'Catalogue de données' },
   { src: '/shots/compute-spark.png', label: 'Calcul distribué' },
   { src: '/shots/orchestration-airflow.png', label: 'Orchestration des traitements' },
   { src: '/shots/ai-models.png', label: 'Modèles souverains' },
@@ -20,8 +23,8 @@ export default function Filmstrip() {
       <div className="shell strip__head">
         <span className="eyebrow">Et toute la chaîne</span>
         <p className="strip__lead">
-          Calcul, orchestration, modèles, recherche augmentée, observabilité. Chaque couche est là,
-          gouvernée et remplaçable.
+          Connexion, accueil, catalogue, calcul, orchestration, modèles, recherche augmentée,
+          observabilité. Chaque couche est là, gouvernée et remplaçable.
         </p>
       </div>
       <div className="strip__track-wrap">
