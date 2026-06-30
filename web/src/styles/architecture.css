@@ -7,6 +7,7 @@
   grid-template-columns: 0.82fr 1.18fr;
   gap: 64px;
   align-items: center;
+  perspective: 1700px;
 }
 .arc__intro { align-self: center; }
 .arc__title {
@@ -63,13 +64,23 @@
   line-height: 1.7;
 }
 
-/* the stack */
+/* the stack — a 3D deck of layer panels that floats and assembles */
 .arc__stack {
   position: relative;
   display: flex;
   flex-direction: column-reverse; /* bottom layer at the bottom visually */
-  gap: 14px;
-  perspective: 1200px;
+  gap: 16px;
+  transform-style: preserve-3d;
+  transform: rotateY(-13deg) rotateX(4deg);
+  animation: arc-float 9s var(--ease) infinite alternate;
+  will-change: transform;
+}
+@keyframes arc-float {
+  0% { transform: rotateY(-13deg) rotateX(4deg) translateY(0); }
+  100% { transform: rotateY(-8.5deg) rotateX(5.5deg) translateY(-10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arc__stack { animation: none; }
 }
 .arc__spine {
   position: absolute;
@@ -90,13 +101,13 @@
   border-radius: 14px;
   background: var(--glass);
   border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
+  box-shadow: var(--shadow-md);
+  transform-style: preserve-3d;
+  transition: box-shadow 0.35s var(--ease), border-color 0.3s;
 }
 .arc__layer:hover {
-  transform: translateX(6px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--pri) 45%, var(--line-strong));
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(124, 92, 255, 0.12);
 }
 .arc__layer.is-key {
   background: linear-gradient(135deg, rgba(124, 92, 255, 0.12), rgba(77, 212, 229, 0.06)), var(--glass);
@@ -130,6 +141,17 @@
   color: #0a0c16;
   font-weight: 600;
 }
+/* extruded back-face: gives each panel a physical thickness in 3D */
+.arc__layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: var(--frame-bar);
+  border: 1px solid var(--line);
+  transform: translateZ(-14px);
+  pointer-events: none;
+}
 /* role accent bar on the left of each layer */
 .arc__layer::before {
   content: '';
@@ -139,6 +161,7 @@
   bottom: 14px;
   width: 3px;
   border-radius: 3px;
+  z-index: 1;
 }
 .arc__layer--storage::before { background: var(--c-storage); }
 .arc__layer--engine::before { background: var(--c-engine); }
