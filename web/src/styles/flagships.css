@@ -127,7 +127,7 @@
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--line-strong);
-  background: #0c1020;
+  background: var(--frame-bg);
   box-shadow: 0 40px 90px rgba(4, 6, 14, 0.6);
 }
 .flg__bar {
@@ -135,7 +135,7 @@
   align-items: center;
   gap: 7px;
   padding: 11px 15px;
-  background: rgba(12, 16, 32, 0.96);
+  background: var(--frame-bar);
   border-bottom: 1px solid var(--line);
 }
 .flg__bar span {
@@ -178,7 +178,7 @@
   border-radius: 9px;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: #0c1020;
+  background: var(--frame-bg);
   padding: 0;
   opacity: 0.5;
   transition: opacity 0.25s, border-color 0.25s, transform 0.2s var(--ease);

@@ -16,14 +16,14 @@
   transition: opacity 0.3s var(--ease);
 }
 .dgm__node-box {
-  fill: rgba(16, 20, 36, 0.92);
+  fill: var(--node-bg);
   transition: fill 0.25s var(--ease);
 }
 .dgm__node.is-key .dgm__node-box {
-  fill: rgba(22, 26, 48, 0.96);
+  fill: color-mix(in srgb, var(--node-bg) 90%, var(--pri));
 }
 .dgm__node:hover .dgm__node-box {
-  fill: rgba(24, 29, 52, 0.98);
+  fill: color-mix(in srgb, var(--node-bg) 86%, var(--pri));
 }
 .dgm__node-label {
   fill: var(--ink);
@@ -70,8 +70,8 @@
   }
 }
 .dgm__edge-label rect {
-  fill: rgba(10, 13, 24, 0.95);
-  stroke: rgba(255, 255, 255, 0.1);
+  fill: var(--edge-label-bg);
+  stroke: var(--line);
 }
 .dgm__edge-label text {
   font-family: var(--font-mono);

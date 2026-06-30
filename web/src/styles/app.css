@@ -15,7 +15,7 @@ main > section {
   z-index: 50;
   padding: 16px 0;
   backdrop-filter: blur(14px);
-  background: linear-gradient(to bottom, rgba(8, 10, 18, 0.75), rgba(8, 10, 18, 0));
+  background: linear-gradient(to bottom, var(--nav-fade), transparent);
 }
 .nav__inner {
   display: flex;
@@ -82,6 +82,18 @@ main > section {
   -webkit-text-fill-color: transparent;
   font-weight: 600;
 }
+.nav__theme {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--glass-2);
+  color: var(--ink-mute);
+  transition: color 0.2s, border-color 0.2s, transform 0.2s var(--ease);
+}
+.nav__theme:hover { color: var(--ink); border-color: var(--line-strong); transform: translateY(-1px); }
 .nav__cta { padding: 9px 18px; font-size: 14px; }
 
 /* ============================ HERO ============================ */
@@ -152,6 +164,7 @@ main > section {
   0% { opacity: 0.6; transform: scale(0.95); }
   100% { opacity: 1; transform: scale(1.08); }
 }
+[data-theme='light'] .hero__halo { opacity: 0.6; }
 .hero__own {
   position: absolute;
   bottom: 6px;

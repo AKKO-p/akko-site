@@ -5,6 +5,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#080a12" />
+    <script>
+      // set the theme before first paint to avoid a flash
+      (function () {
+        try {
+          var k = 'akko-theme', s = localStorage.getItem(k);
+          var t = s === 'dark' || s === 'light'
+            ? s
+            : (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.dataset.theme = t;
+          document.documentElement.style.colorScheme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
     <title>AKKO, la plateforme data &amp; IA souveraine</title>
     <meta
       name="description"

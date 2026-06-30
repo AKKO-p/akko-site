@@ -32,6 +32,20 @@
   --c-science: #41d693; /* data science */
   --c-rose: #ff6b81;
 
+  /* semantic surfaces (theme-aware) — dark defaults */
+  --eyebrow: var(--cyan);
+  --node-bg: rgba(16, 20, 36, 0.92);
+  --frame-bg: #0c1020;
+  --frame-bar: rgba(12, 16, 32, 0.96);
+  --edge-label-bg: rgba(10, 13, 24, 0.95);
+  --nav-fade: rgba(8, 10, 18, 0.75);
+  --aurora-1: rgba(124, 92, 255, 0.22);
+  --aurora-2: rgba(77, 212, 229, 0.16);
+  --aurora-3: rgba(124, 92, 255, 0.12);
+  --aurora-4: rgba(77, 212, 229, 0.1);
+  --aurora-5: rgba(181, 140, 255, 0.1);
+  --grain-opacity: 0.04;
+
   /* type */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
@@ -41,4 +55,40 @@
   --radius: 18px;
   --radius-sm: 12px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===== Light theme — cool, modern neutral (not ivory, not purple-washed) ===== */
+:root[data-theme='light'] {
+  --bg: #f4f6fb;
+  --bg-1: #ffffff;
+  --surface: #ffffff;
+  --ink: #0e1626;
+  --ink-soft: #38415a;
+  --ink-mute: #5d6680;
+  --ink-faint: #97a0b5;
+  --line: rgba(18, 24, 44, 0.1);
+  --line-strong: rgba(18, 24, 44, 0.16);
+  --glass: rgba(255, 255, 255, 0.74);
+  --glass-2: rgba(255, 255, 255, 0.62);
+  --glow: 0 0 60px rgba(124, 92, 255, 0.16);
+  --glow-cyan: 0 0 50px rgba(77, 212, 229, 0.16);
+
+  /* semantic surfaces */
+  --eyebrow: #0e93a8;
+  --node-bg: #ffffff;
+  --frame-bg: #ffffff;
+  --frame-bar: #eef1f7;
+  --edge-label-bg: rgba(255, 255, 255, 0.96);
+  --nav-fade: rgba(244, 246, 251, 0.82);
+  --aurora-1: rgba(124, 92, 255, 0.13);
+  --aurora-2: rgba(77, 212, 229, 0.1);
+  --aurora-3: rgba(124, 92, 255, 0.08);
+  --aurora-4: rgba(77, 212, 229, 0.07);
+  --aurora-5: rgba(181, 140, 255, 0.07);
+  --grain-opacity: 0.02;
+
+  /* role accents nudged a touch deeper for contrast on light */
+  --c-storage: #11a3b8;
+  --c-gov: #d68a14;
+  --c-science: #1f9e66;
 }
