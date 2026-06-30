@@ -6,9 +6,9 @@
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
   gap: 64px;
-  align-items: start;
+  align-items: center;
 }
-.arc__intro { position: sticky; top: 120px; }
+.arc__intro { align-self: center; }
 .arc__title {
   font-size: clamp(34px, 4.4vw, 54px);
   letter-spacing: -0.035em;
@@ -90,17 +90,18 @@
   border-radius: 14px;
   background: var(--glass);
   border: 1px solid var(--line);
-  transform-style: preserve-3d;
+  box-shadow: var(--shadow-sm);
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
 }
 .arc__layer:hover {
   transform: translateX(6px);
   border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
 }
 .arc__layer.is-key {
   background: linear-gradient(135deg, rgba(124, 92, 255, 0.12), rgba(77, 212, 229, 0.06)), var(--glass);
   border-color: rgba(124, 92, 255, 0.35);
-  box-shadow: 0 10px 40px rgba(124, 92, 255, 0.16);
+  box-shadow: var(--shadow-sm), 0 10px 40px rgba(124, 92, 255, 0.14);
 }
 .arc__layer-idx {
   font-family: var(--font-mono);

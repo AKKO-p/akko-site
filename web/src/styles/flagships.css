@@ -128,7 +128,7 @@
   overflow: hidden;
   border: 1px solid var(--line-strong);
   background: var(--frame-bg);
-  box-shadow: 0 40px 90px rgba(4, 6, 14, 0.6);
+  box-shadow: var(--shadow-lg);
 }
 .flg__bar {
   display: flex;
@@ -142,7 +142,7 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--line-strong);
 }
 .flg__bar em {
   margin-left: 9px;
@@ -203,7 +203,7 @@
 .flg__thumb.is-active {
   opacity: 1;
   border-color: var(--flg-accent);
-  box-shadow: 0 0 0 1px var(--flg-accent), 0 8px 24px rgba(4, 6, 14, 0.4);
+  box-shadow: 0 0 0 1px var(--flg-accent), var(--shadow-sm);
 }
 .flg__controls {
   display: flex;

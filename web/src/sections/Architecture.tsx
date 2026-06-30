@@ -42,10 +42,10 @@ export default function Architecture() {
               role="listitem"
               className={`arc__layer arc__layer--${l.role}${l.key ? ' is-key' : ''}`}
               key={i}
-              initial={reduce ? false : { opacity: 0, x: 40, rotateX: 12 }}
-              whileInView={{ opacity: 1, x: 0, rotateX: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
+              initial={reduce ? false : { opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.05 }}
             >
               <span className="arc__layer-idx">{String(layers.length - i).padStart(2, '0')}</span>
               <span className="arc__layer-body">
