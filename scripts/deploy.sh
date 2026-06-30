@@ -1,22 +1,31 @@
 #!/usr/bin/env bash
 # =============================================================================
-# Deploy akko-site to Netcup (Caddy serves /opt/akko-site as akko-ai.com)
+# Deploy the AKKO React site to the Netcup Caddy edge.
 # -----------------------------------------------------------------------------
-# Until akko-site moves to GitHub Pages or has a CI webhook, this is the
-# blessed deploy command. Run from the repo root after committing +
-# pushing to main.
+# akko-ai.com is served by the `climscore-caddy-1` container on Netcup, statically
+# from /opt/akko-site (bind-mount), with a SPA fallback (404 -> /index.html).
+# Pushing to GitHub alone does NOT update the live site — you must rsync the build.
+#
+# Usage:  scripts/deploy.sh            (build + back up edge + deploy + verify)
+#         AKKO_SITE_HOST=... scripts/deploy.sh
 # =============================================================================
 set -euo pipefail
 
 HOST="${AKKO_SITE_HOST:-root@159.195.77.208}"
 DEST="${AKKO_SITE_DEST:-/opt/akko-site/}"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
-cd "$(dirname "$0")/.."
+echo "==> Building the site…"
+( cd "$ROOT/web" && npm ci --silent && npm run build )
 
-rsync -avz --delete \
-    index.html CNAME og-image.png og-image.svg README.md style.css robots.txt sitemap.xml \
-    "${HOST}:${DEST}"
+STAMP="$(date +%Y%m%d-%H%M%S)"
+echo "==> Backing up the current edge to /opt/akko-site.bak-$STAMP…"
+ssh "$HOST" "cp -a /opt/akko-site /opt/akko-site.bak-$STAMP"
 
-echo
-echo "Deployed. Verify:"
-echo "  curl -sk https://akko-ai.com/ | head -c 200"
+echo "==> Deploying build to the edge (exact mirror, --delete)…"
+# macOS ships rsync 2.6.9 — keep the flags it understands (no --info).
+rsync -rlptz --delete "$ROOT/site-dist/" "$HOST:$DEST"
+
+echo "==> Verifying https://akko-ai.com/ …"
+curl -sSL https://akko-ai.com/ | grep -o '<title>[^<]*</title>' | head -1
+echo "Done. Revert if needed: restore /opt/akko-site.bak-$STAMP on $HOST."
