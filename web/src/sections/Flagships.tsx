@@ -97,7 +97,7 @@ const FLAGSHIPS: Flagship[] = [
   },
 ]
 
-const AUTOPLAY_MS = 7000
+const PER_IMAGE_MS = 3800
 
 const stageVariants = {
   enter: (d: number) => ({ opacity: 0, x: d > 0 ? 70 : -70 }),
@@ -122,17 +122,23 @@ export default function Flagships() {
     setShot(0)
   }
 
+  // auto-tour: advance through each screen of a layer, then roll to the next layer
   useEffect(() => {
     if (paused || reduce) return
+    const layer = FLAGSHIPS[active]
     timer.current = window.setTimeout(() => {
       setDir(1)
-      setActive((a) => (a + 1) % FLAGSHIPS.length)
-      setShot(0)
-    }, AUTOPLAY_MS)
+      if (shot < layer.shots.length - 1) {
+        setShot(shot + 1)
+      } else {
+        setActive((active + 1) % FLAGSHIPS.length)
+        setShot(0)
+      }
+    }, PER_IMAGE_MS)
     return () => {
       if (timer.current) window.clearTimeout(timer.current)
     }
-  }, [active, paused, reduce])
+  }, [active, shot, paused, reduce])
 
   const view = cur.shots[Math.min(shot, cur.shots.length - 1)]
 
@@ -226,6 +232,15 @@ export default function Flagships() {
                     aria-label={s.chrome}
                   >
                     <img src={s.src} alt="" loading="lazy" />
+                    {j === shot && !reduce && !paused && (
+                      <motion.span
+                        className="flg__thumb-prog"
+                        key={`tp-${active}-${shot}`}
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: PER_IMAGE_MS / 1000, ease: 'linear' }}
+                      />
+                    )}
                   </button>
                 ))}
             </div>
