@@ -4,6 +4,7 @@ import Hero from './sections/Hero'
 import Sovereignty from './sections/Sovereignty'
 import Federation from './sections/Federation'
 import Architecture from './sections/Architecture'
+import ArchitectureDiagram from './sections/ArchitectureDiagram'
 import Aden from './sections/Aden'
 import Governance from './sections/Governance'
 import Platform from './sections/Platform'
@@ -20,6 +21,7 @@ export default function App() {
         <Sovereignty />
         <Federation />
         <Architecture />
+        <ArchitectureDiagram />
         <Aden />
         <Governance />
         <Platform />

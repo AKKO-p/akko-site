@@ -16,7 +16,7 @@ export default function Nav() {
         </a>
         <nav className="nav__links" aria-label="Navigation principale">
           <a href="#plateforme">Plateforme</a>
-          <a href="#architecture">Architecture</a>
+          <a href="#topologie">Architecture</a>
           <a href="#ia">IA gouvernée</a>
           <a href="#produit">En action</a>
         </nav>

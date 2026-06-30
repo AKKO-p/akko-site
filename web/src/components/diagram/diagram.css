@@ -1,0 +1,112 @@
+.dgm {
+  margin: 0;
+  width: 100%;
+}
+.dgm__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  font-family: var(--font-sans);
+}
+
+/* nodes */
+.dgm__node {
+  cursor: default;
+  transition: opacity 0.3s var(--ease);
+}
+.dgm__node-box {
+  fill: rgba(16, 20, 36, 0.92);
+  transition: fill 0.25s var(--ease);
+}
+.dgm__node.is-key .dgm__node-box {
+  fill: rgba(22, 26, 48, 0.96);
+}
+.dgm__node:hover .dgm__node-box {
+  fill: rgba(24, 29, 52, 0.98);
+}
+.dgm__node-label {
+  fill: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.dgm__node-tech {
+  fill: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.01em;
+}
+.dgm__node.is-dim {
+  opacity: 0.28;
+}
+
+/* lanes */
+.dgm__lane-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  opacity: 0.75;
+}
+
+/* edges */
+.dgm__edge {
+  transition: opacity 0.3s var(--ease);
+}
+.dgm__edge.is-dim {
+  opacity: 0.16;
+}
+.dgm__edge-path {
+  transition: stroke-width 0.2s var(--ease), stroke-opacity 0.2s var(--ease);
+}
+/* animated flow along edges (subtle), only when hovered/active to avoid noise */
+.dgm__edge.is-active .dgm__edge-path {
+  stroke-dasharray: 7 7;
+  animation: dgm-flow 0.9s linear infinite;
+}
+@keyframes dgm-flow {
+  to {
+    stroke-dashoffset: -14;
+  }
+}
+.dgm__edge-label rect {
+  fill: rgba(10, 13, 24, 0.95);
+  stroke: rgba(255, 255, 255, 0.1);
+}
+.dgm__edge-label text {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-anchor: middle;
+  letter-spacing: 0.02em;
+}
+
+/* legend */
+.dgm__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.dgm__leg {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+.dgm__leg i {
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dgm__edge.is-active .dgm__edge-path {
+    animation: none;
+  }
+}
