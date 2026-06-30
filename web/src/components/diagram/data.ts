@@ -179,6 +179,97 @@ export const D4 = {
   ] as DiagEdge[],
 }
 
+// English labels for diagram nodes / edges / lanes / titles. Anything not listed
+// falls back to the original (vendor names, acronyms stay identical).
+export const DIAGRAM_EN: Record<string, string> = {
+  // lanes
+  'Restitution & IA': 'Delivery & AI',
+  'Fédération & gouvernance': 'Federation & governance',
+  'Stockage & lakehouse': 'Storage & lakehouse',
+  'Identité': 'Identity',
+  // node labels
+  'Tableaux de bord': 'Dashboards',
+  'Lab polyglotte': 'Polyglot lab',
+  'LLM souverain': 'Sovereign LLM',
+  'Calcul': 'Compute',
+  'Profilage souverain': 'Sovereign profiling',
+  'Fédération SQL': 'SQL federation',
+  'Gouvernance': 'Governance',
+  'Catalogue & lignage': 'Catalog & lineage',
+  'Stockage objet': 'Object storage',
+  'Catalogue de tables': 'Table catalog',
+  'Intent + raccourci': 'Intent + shortcut',
+  'Pré-filtre gouverné': 'Governed pre-filter',
+  'Vecteurs': 'Vectors',
+  'Métadonnées': 'Metadata',
+  'SQL : validation': 'SQL: validation',
+  'Exécution gouvernée': 'Governed execution',
+  'Masques + filtres': 'Masks + filters',
+  'Confiance + reçu': 'Trust + receipt',
+  'Restitution': 'Delivery',
+  'Groupes RBAC': 'RBAC groups',
+  "Garde d'auth": 'Auth guard',
+  'Tags PII': 'PII tags',
+  'Propagation PII': 'PII propagation',
+  'Politiques fines': 'Fine-grained policies',
+  'Sources': 'Sources',
+  'Événements': 'Events',
+  'Politiques': 'Policies',
+  'Catalogue': 'Catalog',
+  // node tech
+  'IA gouvernée': 'governed AI',
+  'Console AKKO': 'AKKO console',
+  'langage naturel': 'natural language',
+  'Trino sous OPA': 'Trino under OPA',
+  'OPA · par user': 'OPA · per user',
+  'audit signé': 'signed audit',
+  'colonnes masquées · lignes filtrées': 'masked columns · filtered rows',
+  'CSV · DB · externes': 'CSV · DB · external',
+  // edge labels
+  'SQL gouverné': 'governed SQL',
+  'génère SQL': 'writes SQL',
+  'métadonnées': 'metadata',
+  'autorise': 'authorizes',
+  'catalogue': 'catalog',
+  'profile': 'profiles',
+  'enrichit': 'enriches',
+  'écrit': 'writes',
+  'écrit Iceberg': 'writes Iceberg',
+  'lignage': 'lineage',
+  'lignage natif': 'native lineage',
+  'lit': 'reads',
+  'intention': 'intent',
+  "n'expose que l'autorisé": 'only the allowed',
+  'prompt fondé': 'grounded prompt',
+  'SQL candidat': 'candidate SQL',
+  'enforce / user': 'enforce / user',
+  'court-circuit vérifié': 'verified shortcut',
+  'mapping rôles': 'role mapping',
+  'sujets ABAC': 'ABAC subjects',
+  'colonnes PII': 'PII columns',
+  'masks auto': 'auto masks',
+  'token user': 'user token',
+  'applique': 'applies',
+  'accès borné': 'bounded access',
+  'sous token': 'under token',
+  'filtre avant LLM': 'filter before LLM',
+  'ingestion': 'ingestion',
+  'orchestre': 'orchestrates',
+  'émet': 'emits',
+  'embeddings': 'embeddings',
+  'tags PII': 'PII tags',
+  'masks colonnes': 'column masks',
+  // diagram titles (aria)
+  'Topologie AKKO : identité, stockage, fédération, gouvernance, restitution, IA':
+    'AKKO topology: identity, storage, federation, governance, delivery, AI',
+  "Flux d'une question IA gouvernée ADEN, de la question au dashboard":
+    'Flow of a governed AI question in ADEN, from question to dashboard',
+  'Plan de contrôle des accès : Keycloak vers OPA, enforce dans Trino pour tous les outils':
+    'Access control plane: Keycloak to OPA, enforced in Trino for every tool',
+  'Ingestion, catalogue et lignage : Spark et Airflow vers Iceberg, OpenMetadata, OPA':
+    'Ingestion, catalog and lineage: Spark and Airflow to Iceberg, OpenMetadata, OPA',
+}
+
 export type DiagramSpec = typeof D1
 export const DIAGRAMS: { key: string; tab: string; spec: DiagramSpec; blurb: string }[] = [
   { key: 'd1', tab: 'Topologie', spec: D1, blurb: 'La porte SQL unique : tout outil interroge la fédération, chaque requête est autorisée au moteur, le catalogue et le lignage suivent.' },

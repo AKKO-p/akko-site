@@ -2,18 +2,15 @@ import '../styles/sovereignty.css'
 import { motion, useReducedMotion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import Blason from '../components/Blason'
+import { useContent } from '../i18n/lang'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-/** the four things that stay inside the perimeter */
-const TOKENS = [
-  { name: 'Données', tag: 'à la source', color: 'var(--c-storage)' },
-  { name: 'Modèles', tag: 'on-premises', color: 'var(--c-engine)' },
-  { name: 'Clés', tag: 'vos secrets', color: 'var(--c-gov)' },
-  { name: 'Sortie', tag: 'vos résultats', color: 'var(--c-science)' },
-]
+/** colours for the four things that stay inside the perimeter */
+const TOKEN_COLORS = ['var(--c-storage)', 'var(--c-engine)', 'var(--c-gov)', 'var(--c-science)']
 
 export default function Sovereignty() {
+  const t = useContent()
   const reduce = useReducedMotion()
 
   const tokensWrap: Variants = {
@@ -37,7 +34,7 @@ export default function Sovereignty() {
   return (
     <section className="sov" id="plateforme">
       <span className="sov__watermark" aria-hidden>
-        Maîtrisez chaque couche
+        {t.sov.watermark}
       </span>
 
       <div className="shell sov__inner">
@@ -49,15 +46,12 @@ export default function Sovereignty() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          <span className="eyebrow">Souveraineté</span>
+          <span className="eyebrow">{t.sov.eyebrow}</span>
           <h2 className="sov__title">
-            La donnée appartient à <span className="grad-text">votre organisation</span>,
-            pas à un fournisseur.
+            {t.sov.titleA}<span className="grad-text">{t.sov.grad}</span>{t.sov.titleB}
           </h2>
           <p className="sov__body">
-            AKKO s'installe sur votre infrastructure Kubernetes. Vous gardez le contrôle
-            des données, des modèles, des clés et de la sortie. Aucune dépendance à un
-            service externe, aucune donnée chez un tiers.
+            {t.sov.body}
           </p>
           <motion.div
             className="sov__thread"
@@ -67,7 +61,7 @@ export default function Sovereignty() {
             transition={{ duration: 0.8, ease: EASE, delay: 0.2 }}
             aria-hidden
           />
-          <p className="sov__caption">Auto-hébergé · vos données ne quittent jamais votre périmètre</p>
+          <p className="sov__caption">{t.sov.caption}</p>
         </motion.div>
 
         {/* ---- the sovereign perimeter ---- */}
@@ -108,15 +102,18 @@ export default function Sovereignty() {
             whileInView="show"
             viewport={{ once: true, margin: '-80px' }}
           >
-            {TOKENS.map((t) => (
-              <motion.div className="sov-token" key={t.name} variants={reduce ? undefined : token}>
-                <span className="sov-token__top">
-                  <span className="sov-token__dot" style={{ background: t.color, boxShadow: `0 0 10px ${t.color}` }} />
-                  <span className="sov-token__name">{t.name}</span>
-                </span>
-                <span className="sov-token__tag">{t.tag}</span>
-              </motion.div>
-            ))}
+            {t.sov.tokens.map((tok, i) => {
+              const color = TOKEN_COLORS[i]
+              return (
+                <motion.div className="sov-token" key={tok.name} variants={reduce ? undefined : token}>
+                  <span className="sov-token__top">
+                    <span className="sov-token__dot" style={{ background: color, boxShadow: `0 0 10px ${color}` }} />
+                    <span className="sov-token__name">{tok.name}</span>
+                  </span>
+                  <span className="sov-token__tag">{tok.tag}</span>
+                </motion.div>
+              )
+            })}
           </motion.div>
 
           {/* the "never leaves" tag on the bottom line */}
@@ -131,7 +128,7 @@ export default function Sovereignty() {
               <rect x="1.5" y="5.5" width="9" height="6.5" rx="1.4" stroke="var(--c-science)" strokeWidth="1.3" />
               <path d="M3.4 5.5V3.7a2.6 2.6 0 0 1 5.2 0v1.8" stroke="var(--c-science)" strokeWidth="1.3" />
             </svg>
-            ne sort jamais
+            {t.sov.never}
           </motion.span>
         </div>
       </div>

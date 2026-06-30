@@ -8,6 +8,8 @@ import {
   EDGE_COLOR,
   ROLE_COLOR,
 } from './types'
+import { DIAGRAM_EN } from './data'
+import type { Lang } from '../../i18n/content'
 
 type Props = {
   title: string
@@ -19,6 +21,7 @@ type Props = {
   /** disable hover-dimming (e.g. inside a slide) */
   interactive?: boolean
   className?: string
+  lang?: Lang
 }
 
 const NODE_W = 168
@@ -90,8 +93,10 @@ export default function Diagram({
   height = 620,
   interactive = true,
   className,
+  lang = 'fr',
 }: Props) {
   const uid = useId().replace(/:/g, '')
+  const tr = (s: string) => (lang === 'en' ? DIAGRAM_EN[s] ?? s : s)
   const [hover, setHover] = useState<string | null>(null)
   const byId = useMemo(() => Object.fromEntries(nodes.map((n) => [n.id, n])), [nodes])
 
@@ -113,10 +118,10 @@ export default function Diagram({
         viewBox={`0 0 ${width} ${height}`}
         className="dgm__svg"
         role="img"
-        aria-label={title}
+        aria-label={tr(title)}
         preserveAspectRatio="xMidYMid meet"
       >
-        <title>{title}</title>
+        <title>{tr(title)}</title>
         <defs>
           <linearGradient id={`${uid}-grad`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#7c5cff" />
@@ -160,7 +165,7 @@ export default function Diagram({
               strokeOpacity="0.16"
             />
             <text x={l.x + 16} y={l.y + 22} className="dgm__lane-label" fill={ROLE_COLOR[l.role]}>
-              {l.label.toUpperCase()}
+              {tr(l.label).toUpperCase()}
             </text>
           </g>
         ))}
@@ -187,7 +192,7 @@ export default function Diagram({
                 className="dgm__edge-path"
               />
               {e.label && active && (
-                <EdgeLabel d={d} text={e.label} color={color} />
+                <EdgeLabel d={d} text={tr(e.label)} color={color} />
               )}
             </g>
           )
@@ -218,11 +223,11 @@ export default function Diagram({
               />
               <rect x="0" y="0" width="3.5" height={h} rx="2" fill={ROLE_COLOR[n.role]} />
               <text x="16" y={n.tech ? 24 : h / 2 + 5} className="dgm__node-label">
-                {n.label}
+                {tr(n.label)}
               </text>
               {n.tech && (
                 <text x="16" y="40" className="dgm__node-tech">
-                  {n.tech}
+                  {tr(n.tech)}
                 </text>
               )}
             </g>

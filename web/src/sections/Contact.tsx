@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import Blason from '../components/Blason'
+import { useContent } from '../i18n/lang'
 import '../styles/contact.css'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
@@ -13,14 +14,8 @@ const rise = {
   }),
 }
 
-const FOOT_LINKS = [
-  { label: 'Plateforme', href: '#produit' },
-  { label: 'Architecture', href: '#architecture' },
-  { label: 'IA gouvernée', href: '#ia' },
-  { label: 'Nous contacter', href: 'mailto:contact@akko-ai.com' },
-]
-
 export default function Contact() {
+  const t = useContent()
   const reduce = useReducedMotion()
   const inView = reduce
     ? {}
@@ -42,20 +37,20 @@ export default function Contact() {
 
         <motion.div className="cta__panel" {...inView} variants={rise}>
           <motion.span className="eyebrow" variants={rise} custom={0} style={{ justifyContent: 'center' }}>
-            Parlons-en
+            {t.contact.eyebrow}
           </motion.span>
           <motion.h2 className="cta__title" variants={rise} custom={1}>
-            Contactez-nous pour une <span className="grad-text">démonstration.</span>
+            {t.contact.titleA}<span className="grad-text">{t.contact.grad}</span>
           </motion.h2>
           <motion.p className="cta__sub" variants={rise} custom={2}>
-            Une démonstration sur votre cas d’usage, ou un échange technique.
+            {t.contact.sub}
           </motion.p>
           <motion.div className="cta__actions" variants={rise} custom={3}>
             <a className="btn btn-primary" href="mailto:contact@akko-ai.com">
-              Contactez-nous pour une démonstration
+              {t.contact.ctaPrimary}
             </a>
             <a className="cta__secondary" href="https://demo.akko-ai.com" target="_blank" rel="noreferrer">
-              Voir une démo
+              {t.contact.secondary}
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden>
                 <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -72,11 +67,11 @@ export default function Contact() {
                 <Blason size={28} mode="static" breathe={false} />
                 <span className="foot__word">AKKO</span>
               </span>
-              <span className="foot__tag">La plateforme data &amp; IA souveraine. Auto-hébergée sur votre infrastructure.</span>
+              <span className="foot__tag">{t.contact.footTag}</span>
             </div>
             <nav className="foot__links" aria-label="Liens de pied de page">
-              <span className="foot__lh">Explorer</span>
-              {FOOT_LINKS.map((l) => (
+              <span className="foot__lh">{t.contact.footHead}</span>
+              {t.contact.footLinks.map((l) => (
                 <a key={l.label} href={l.href}>
                   {l.label}
                 </a>
@@ -84,8 +79,8 @@ export default function Contact() {
             </nav>
           </div>
           <div className="foot__bottom">
-            <span className="foot__copy">© 2026 AKKO</span>
-            <span className="foot__own">Own Every Layer</span>
+            <span className="foot__copy">{t.contact.copy}</span>
+            <span className="foot__own">{t.contact.own}</span>
           </div>
         </div>
       </footer>

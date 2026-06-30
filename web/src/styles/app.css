@@ -55,6 +55,33 @@ main > section {
   transition: width 0.3s var(--ease);
 }
 .nav__links a:hover::after { width: 100%; }
+.nav__lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+.nav__lang button {
+  background: none;
+  border: none;
+  padding: 4px 5px;
+  color: var(--ink-mute);
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav__lang button:hover { color: var(--ink); }
+.nav__lang button.is-active {
+  color: var(--ink);
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
 .nav__cta { padding: 9px 18px; font-size: 14px; }
 
 /* ============================ HERO ============================ */

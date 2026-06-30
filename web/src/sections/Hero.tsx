@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion'
 import Blason from '../components/Blason'
-
-const FACTS = [
-  { k: '100%', v: 'sur votre infrastructure' },
-  { k: 'Ouvert', v: 'formats réversibles' },
-  { k: 'Gouverné', v: 'accès par utilisateur' },
-  { k: 'On-prem', v: 'modèles souverains' },
-]
+import { useContent } from '../i18n/lang'
 
 const reveal = {
   hidden: { opacity: 0, y: 26 },
@@ -18,35 +12,35 @@ const reveal = {
 }
 
 export default function Hero() {
+  const t = useContent()
   return (
     <section className="hero" id="top">
       <div className="shell hero__inner">
         <div className="hero__copy">
           <motion.span className="eyebrow" custom={0} variants={reveal} initial="hidden" animate="show">
-            Souveraineté par conception
+            {t.hero.eyebrow}
           </motion.span>
 
           <h1 className="hero__title">
-            <Line i={1}>La plateforme data &amp; IA</Line>
-            <Line i={2}>
-              <span className="grad-text">souveraine</span>.
+            {t.hero.titleLines.map((line, i) => (
+              <Line i={i + 1} key={line}>{line}</Line>
+            ))}
+            <Line i={t.hero.titleLines.length + 1}>
+              <span className="grad-text">{t.hero.grad}</span>
             </Line>
           </h1>
 
           <motion.p className="hero__sub" custom={4} variants={reveal} initial="hidden" animate="show">
-            Vos données, vos modèles et vos clés ne quittent jamais votre infrastructure.
-            Un moteur de fédération unique interroge toutes vos sources ; l'IA, gouvernée,
-            reste bornée par vos droits d'accès.
+            {t.hero.sub}
           </motion.p>
 
           <motion.div className="hero__cta" custom={5} variants={reveal} initial="hidden" animate="show">
-            <a className="btn btn-primary" href="#contact">Nous contacter</a>
-            <a className="btn btn-ghost" href="#architecture">Voir l'architecture →</a>
+            <a className="btn btn-primary" href="#contact">{t.hero.ctaPrimary}</a>
+            <a className="btn btn-ghost" href="#topologie">{t.hero.ctaSecondary} →</a>
           </motion.div>
 
           <motion.p className="hero__context" custom={6} variants={reveal} initial="hidden" animate="show">
-            Contactez-nous pour une démonstration sur votre cas d'usage. Pensée pour les
-            secteurs régulés : banque, santé, secteur public.
+            {t.hero.context}
           </motion.p>
         </div>
 
@@ -72,7 +66,7 @@ export default function Hero() {
         animate="show"
       >
         <div className="shell hero__facts-row">
-          {FACTS.map((f) => (
+          {t.hero.facts.map((f) => (
             <div className="fact" key={f.k}>
               <span className="fact__k">{f.k}</span>
               <span className="fact__v">{f.v}</span>

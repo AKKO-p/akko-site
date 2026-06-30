@@ -3,27 +3,27 @@ import { AnimatePresence, motion } from 'framer-motion'
 import '../styles/archdiagram.css'
 import Diagram from '../components/diagram/Diagram'
 import { DIAGRAMS } from '../components/diagram/data'
+import { useContent, useLang } from '../i18n/lang'
 
 export default function ArchitectureDiagram() {
+  const t = useContent()
+  const { lang } = useLang()
   const [active, setActive] = useState(0)
   const cur = DIAGRAMS[active]
+  const tab = t.diag.tabs[active]
 
   return (
     <section className="adg" id="topologie">
       <div className="shell">
         <div className="adg__head">
           <div>
-            <span className="eyebrow">Schémas d'architecture</span>
-            <h2 className="adg__title">Comment les couches se parlent.</h2>
+            <span className="eyebrow">{t.diag.eyebrow}</span>
+            <h2 className="adg__title">{t.diag.title}</h2>
           </div>
-          <p className="adg__lead">
-            Quatre schémas, pas des promesses. La topologie, le flux d'une question IA gouvernée, le
-            plan de contrôle des accès, la chaîne d'ingestion. Survolez un composant pour isoler ses
-            liens.
-          </p>
+          <p className="adg__lead">{t.diag.lead}</p>
         </div>
 
-        <div className="adg__tabs" role="tablist" aria-label="Schémas d'architecture">
+        <div className="adg__tabs" role="tablist" aria-label={t.diag.eyebrow}>
           {DIAGRAMS.map((d, i) => (
             <button
               key={d.key}
@@ -33,7 +33,7 @@ export default function ArchitectureDiagram() {
               onClick={() => setActive(i)}
             >
               <span className="adg__tab-n">{String(i + 1).padStart(2, '0')}</span>
-              {d.tab}
+              {t.diag.tabs[i].tab}
             </button>
           ))}
         </div>
@@ -47,13 +47,13 @@ export default function ArchitectureDiagram() {
         >
           <AnimatePresence mode="wait">
             <motion.div
-              key={cur.key}
+              key={cur.key + lang}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="adg__blurb">{cur.blurb}</p>
+              <p className="adg__blurb">{tab.blurb}</p>
               <Diagram
                 title={cur.spec.title}
                 nodes={cur.spec.nodes}
@@ -61,6 +61,7 @@ export default function ArchitectureDiagram() {
                 lanes={cur.spec.lanes}
                 width={cur.spec.width}
                 height={cur.spec.height}
+                lang={lang}
               />
             </motion.div>
           </AnimatePresence>
