@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 import Blason from '../components/Blason'
 
 const FACTS = [
-  { k: '100%', v: 'auto-hébergé · Kubernetes' },
-  { k: 'Iceberg', v: 'formats ouverts' },
-  { k: 'OPA', v: 'accès gouverné' },
-  { k: 'on-prem', v: 'modèles souverains' },
+  { k: '100%', v: 'sur votre infrastructure' },
+  { k: 'Ouvert', v: 'formats réversibles' },
+  { k: 'Gouverné', v: 'accès par utilisateur' },
+  { k: 'On-prem', v: 'modèles souverains' },
 ]
 
 const reveal = {

@@ -40,10 +40,24 @@
   background: transparent;
   border: none;
   border-top: 1px solid var(--line);
-  padding: 20px 4px;
+  padding: 20px 4px 20px 18px;
   color: var(--ink-mute);
-  transition: color 0.25s;
+  transition: color 0.25s, padding 0.3s var(--ease);
 }
+.flg__step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--flg-accent);
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.4s var(--ease);
+}
+.flg__step.is-active::before { transform: scaleY(1); }
 .flg__step:last-child { border-bottom: 1px solid var(--line); }
 .flg__step:hover { color: var(--ink-soft); }
 .flg__step-row {
