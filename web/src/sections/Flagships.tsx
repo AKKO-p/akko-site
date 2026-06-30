@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useContent } from '../i18n/lang'
 import '../styles/flagships.css'
 
-const PER_IMAGE_MS = 3800
+const PER_IMAGE_MS = 2200
 
 const stageVariants = {
   enter: (d: number) => ({ opacity: 0, x: d > 0 ? 70 : -70 }),
@@ -91,7 +91,7 @@ export default function Flagships() {
               initial={reduce ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               exit={reduce ? undefined : { opacity: 0, y: -14 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="flg__meta-l">
                 <span className="flg__tag">{cur.layer}</span>
@@ -119,7 +119,7 @@ export default function Flagships() {
                 initial={reduce ? false : 'enter'}
                 animate="center"
                 exit={reduce ? undefined : 'exit'}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="flg__bar">
                   <span /><span /><span />
