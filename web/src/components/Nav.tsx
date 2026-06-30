@@ -29,19 +29,22 @@ export default function Nav() {
         </nav>
         <div className="nav__lang" role="group" aria-label="Language">
           <button
-            className={lang === 'fr' ? 'is-active' : ''}
+            className={`nav__flag${lang === 'fr' ? ' is-active' : ''}`}
             onClick={() => setLang('fr')}
             aria-pressed={lang === 'fr'}
+            aria-label="Français"
+            title="Français"
           >
-            FR
+            <FlagFR />
           </button>
-          <span aria-hidden>/</span>
           <button
-            className={lang === 'en' ? 'is-active' : ''}
+            className={`nav__flag${lang === 'en' ? ' is-active' : ''}`}
             onClick={() => setLang('en')}
             aria-pressed={lang === 'en'}
+            aria-label="English"
+            title="English"
           >
-            EN
+            <FlagGB />
           </button>
         </div>
         <button
@@ -66,5 +69,41 @@ export default function Nav() {
         </a>
       </div>
     </motion.header>
+  )
+}
+
+function FlagFR() {
+  return (
+    <svg viewBox="0 0 24 16" aria-hidden>
+      <defs>
+        <clipPath id="fr-r">
+          <rect width="24" height="16" rx="3" />
+        </clipPath>
+      </defs>
+      <g clipPath="url(#fr-r)">
+        <rect width="24" height="16" fill="#f4f5f8" />
+        <rect width="8" height="16" fill="#1b3a8c" />
+        <rect x="16" width="8" height="16" fill="#d8232a" />
+      </g>
+    </svg>
+  )
+}
+
+function FlagGB() {
+  return (
+    <svg viewBox="0 0 24 16" aria-hidden>
+      <defs>
+        <clipPath id="gb-r">
+          <rect width="24" height="16" rx="3" />
+        </clipPath>
+      </defs>
+      <g clipPath="url(#gb-r)">
+        <rect width="24" height="16" fill="#012169" />
+        <path d="M0 0 L24 16 M24 0 L0 16" stroke="#fff" strokeWidth="3.2" />
+        <path d="M0 0 L24 16 M24 0 L0 16" stroke="#c8102e" strokeWidth="1.6" />
+        <path d="M12 0 V16 M0 8 H24" stroke="#fff" strokeWidth="5.2" />
+        <path d="M12 0 V16 M0 8 H24" stroke="#c8102e" strokeWidth="3" />
+      </g>
+    </svg>
   )
 }

@@ -58,29 +58,29 @@ main > section {
 .nav__lang {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--ink-faint);
+  gap: 9px;
 }
-.nav__lang button {
+.nav__flag {
   background: none;
   border: none;
-  padding: 4px 5px;
-  color: var(--ink-mute);
-  font-family: inherit;
-  font-size: inherit;
-  letter-spacing: 0.04em;
-  transition: color 0.2s;
+  padding: 0;
+  line-height: 0;
+  border-radius: 4px;
+  opacity: 0.4;
+  filter: grayscale(0.35);
+  transition: opacity 0.2s, filter 0.2s, transform 0.2s var(--ease);
 }
-.nav__lang button:hover { color: var(--ink); }
-.nav__lang button.is-active {
-  color: var(--ink);
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
+.nav__flag:hover { opacity: 0.85; filter: grayscale(0); transform: translateY(-1px); }
+.nav__flag.is-active {
+  opacity: 1;
+  filter: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--pri) 55%, transparent);
+}
+.nav__flag svg {
+  display: block;
+  width: 24px;
+  height: 16px;
+  border-radius: 3px;
 }
 .nav__theme {
   display: inline-grid;
