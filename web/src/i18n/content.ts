@@ -29,6 +29,7 @@ export type SiteContent = {
     ctaPrimary: string
     ctaSecondary: string
     context: string
+    helm: string
     facts: Fact[]
   }
   sov: {
@@ -81,13 +82,14 @@ const fr: SiteContent = {
     cta: 'Nous contacter',
   },
   hero: {
-    eyebrow: 'Souveraineté par conception',
-    titleLines: ['La plateforme data & IA'],
-    grad: 'souveraine.',
-    sub: "Vos données, vos modèles et vos clés ne quittent jamais votre infrastructure. Un seul moteur interroge toutes vos sources, et l'IA reste gouvernée, bornée par vos droits d'accès.",
-    ctaPrimary: 'Nous contacter',
-    ctaSecondary: "Voir l'architecture",
-    context: 'Contactez-nous pour une démonstration sur votre cas d’usage. Pensée pour les secteurs régulés : banque, santé, secteur public.',
+    eyebrow: 'Souveraineté, prouvée',
+    titleLines: ['Votre donnée ne sort jamais.'],
+    grad: "Même quand l'IA la lit.",
+    sub: "AKKO est la plateforme data et IA que vous hébergez sur votre propre cluster Kubernetes. Chaque accès, humain ou agent, franchit une porte de gouvernance. Rien ne s'échappe, et vous pouvez le vérifier vous-même.",
+    ctaPrimary: 'Voir la démo gouvernée en action',
+    ctaSecondary: 'Déployer avec helm',
+    context: 'Pensée pour les secteurs régulés : banque, santé, secteur public. Une installation reproductible, auditable de bout en bout.',
+    helm: 'helm install akko helm/akko -n akko --create-namespace',
     facts: [
       { k: '100%', v: 'sur votre infrastructure' },
       { k: 'Ouvert', v: 'formats réversibles' },
@@ -277,13 +279,14 @@ const en: SiteContent = {
     cta: 'Contact us',
   },
   hero: {
-    eyebrow: 'Sovereign by design',
-    titleLines: ['The data & AI platform'],
-    grad: 'you own.',
-    sub: 'Your data, your models and your keys never leave your infrastructure. One engine queries every source, and the AI stays governed, bounded by your access rights.',
-    ctaPrimary: 'Contact us',
-    ctaSecondary: 'See the architecture',
-    context: 'Talk to us for a demo on your own use case. Built for regulated sectors: banking, healthcare, public sector.',
+    eyebrow: 'Sovereignty, proven',
+    titleLines: ['Your data never leaves.'],
+    grad: 'Even when the AI reads it.',
+    sub: 'AKKO is the data and AI platform you host on your own Kubernetes cluster. Every access, human or agent, passes through a governance gate. Nothing escapes, and you can verify it yourself.',
+    ctaPrimary: 'See the governed demo in action',
+    ctaSecondary: 'Deploy with helm',
+    context: 'Built for regulated sectors: banking, healthcare, public sector. A reproducible install, auditable end to end.',
+    helm: 'helm install akko helm/akko -n akko --create-namespace',
     facts: [
       { k: '100%', v: 'on your infrastructure' },
       { k: 'Open', v: 'reversible formats' },

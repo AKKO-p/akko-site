@@ -1,47 +1,59 @@
 /* ============================================================================
-   AKKO — Design tokens (marketing site, target version)
-   Single source of visual truth. Discipline: quasi-monochrome sovereign base
-   + ONE accent (sovereign indigo). No gradient scaffolding, no glow, no glass.
-   Sections consume the SEMANTIC names below — never hardcode a hex in a section.
+   AKKO — Design tokens (marketing site, distinctive version 2)
+   Single source of visual truth. Discipline: strictly monochrome GRAPHITE base
+   + ONE brand accent (OR HÉRALDIQUE) + 5 CLOISONNÉED layer hues that appear
+   ONLY inside their own layer zone. No brand gradient (the Blason excepted),
+   no glow, no glass, no aurora. Sections consume the SEMANTIC names below.
    ============================================================================ */
 :root {
-  /* ---- accent — the one sovereign colour, used sparingly ---- */
-  --accent: #6e79ff;
-  --accent-hover: #838cff;
-  --accent-press: #5a63e6;
-  --accent-ink: #ffffff; /* text/icon sitting on an accent fill */
-  --accent-line: color-mix(in srgb, var(--accent) 42%, transparent);
+  /* ---- brand accent — OR HÉRALDIQUE, the one sovereign colour ----
+     Chosen because blue/violet/green/red/orange/lime/teal are all taken by
+     Linear/Vercel/Supabase/Databricks/Palantir/Collibra/Grafana/Mistral.
+     Gold on near-black is free, institutional, and reads "coat of arms / seal". */
+  --accent: #c8a24c;
+  --accent-hover: #d8b563;
+  --accent-press: #b4903e;
+  --accent-ink: #14171c; /* dark ink sits on a gold fill (gold is light) */
+  --accent-line: color-mix(in srgb, var(--accent) 46%, transparent);
   --accent-tint: color-mix(in srgb, var(--accent) 12%, transparent);
   --accent-tint-strong: color-mix(in srgb, var(--accent) 20%, transparent);
-  --ring: 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent);
+  --ring: 0 0 0 3px color-mix(in srgb, var(--accent) 48%, transparent);
 
-  /* ---- neutral base (dark, cool near-black) ---- */
-  --bg: #0a0b0f; /* page floor */
-  --bg-alt: #0d0f15; /* alternating section band */
-  --surface: #12151d; /* default card */
-  --surface-raised: #171b24; /* nested cards, inputs, chrome bar */
-  --surface-sunken: #0c0e13; /* wells, code, image mat */
+  /* ---- neutral base — GRAPHITE, dark-first, depth by steps (à la Linear) ---- */
+  --bg: #14171c; /* encre de fond */
+  --bg-alt: #191d24; /* alternating section band, cran 1 */
+  --surface: #1f242d; /* default card, cran 2 */
+  --surface-raised: #262c37; /* nested cards, inputs, chrome bar, cran 3 */
+  --surface-sunken: #16191f; /* wells, code, image mat */
 
   /* ---- ink / text ramp ---- */
-  --text: #f4f5f8; /* primary, near-white (never pure #fff) */
-  --text-secondary: #c2c7d4; /* body copy */
-  --text-muted: #8b91a2; /* captions, meta */
-  --text-faint: #656b7e; /* disabled, fine print */
+  --text: #e7eaf0; /* primary */
+  --text-secondary: #c5ccd8; /* body copy */
+  --text-muted: #8a93a3; /* captions, meta */
+  --text-faint: #646c7b; /* disabled, fine print */
 
-  /* ---- hairlines ---- */
-  --line: rgba(255, 255, 255, 0.09);
-  --line-strong: rgba(255, 255, 255, 0.15);
-  --line-faint: rgba(255, 255, 255, 0.05);
+  /* ---- hairlines — perimeter liset is neutral #333b47 ---- */
+  --line: rgba(230, 236, 246, 0.08);
+  --line-strong: rgba(230, 236, 246, 0.14);
+  --line-faint: rgba(230, 236, 246, 0.045);
+  --perimeter: #333b47; /* the sovereign perimeter liset */
 
-  /* ---- elevation — soft, for product-frame depth (no coloured glow) ---- */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 12px 32px -12px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 30px 64px -20px rgba(0, 0, 0, 0.6);
-  --shadow-frame: 0 28px 64px -28px rgba(0, 0, 0, 0.72), 0 6px 16px -8px rgba(0, 0, 0, 0.5);
+  /* ---- elevation — soft, no coloured glow ---- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 12px 32px -12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 30px 64px -20px rgba(0, 0, 0, 0.66);
+  --shadow-frame: 0 28px 64px -28px rgba(0, 0, 0, 0.75), 0 6px 16px -8px rgba(0, 0, 0, 0.55);
 
-  /* ---- type ---- */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  /* ---- type — three self-hosted roles (sovereign: zero external font) ----
+     display: Inter Tight (condensed, institutional grotesque — NOT plain Inter,
+     NOT Geist); body: Inter (humanist, dense-legible); mono: JetBrains Mono
+     for ALL numbers, helm commands, SQL, proof captions (tabular gravity). */
+  --font-display: 'Inter Tight Variable', 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  /* a discreet serif reserved for eyebrows/citations — the heraldic register.
+     Kept to the system serif so nothing external is loaded. */
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
 
   --text-xs: 12px;
   --text-sm: 13px;
@@ -50,9 +62,9 @@
   --text-lg: 19px;
   --text-xl: clamp(21px, 2.2vw, 25px);
   --text-2xl: clamp(25px, 3vw, 31px);
-  --text-3xl: clamp(30px, 4vw, 42px); /* section titles */
+  --text-3xl: clamp(30px, 4vw, 42px);
   --text-4xl: clamp(38px, 5.4vw, 58px);
-  --text-5xl: clamp(44px, 6.6vw, 78px); /* hero */
+  --text-5xl: clamp(44px, 6.6vw, 78px);
 
   --leading-tight: 1.05;
   --leading-snug: 1.2;
@@ -77,8 +89,8 @@
   --space-9: 96px;
   --space-10: 128px;
 
-  --section-pad: clamp(80px, 10vw, 140px); /* vertical rhythm per section */
-  --gutter: clamp(20px, 4vw, 28px); /* shell horizontal padding */
+  --section-pad: clamp(80px, 10vw, 140px);
+  --gutter: clamp(20px, 4vw, 28px);
 
   /* ---- radii ---- */
   --radius-sm: 8px;
@@ -96,29 +108,48 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur: 0.6s;
 
-  /* ---- component surfaces (theme-aware) ---- */
+  /* ---- component surfaces ---- */
   --eyebrow: var(--accent);
-  --nav-bg: rgba(10, 11, 15, 0.72);
+  --nav-bg: rgba(20, 23, 28, 0.74);
   --frame-bg: var(--surface);
   --frame-bar: var(--surface-raised);
   --frame-mat: var(--surface-sunken);
   --node-bg: var(--surface);
-  --edge-label-bg: rgba(10, 13, 24, 0.95);
+  --edge-label-bg: rgba(20, 23, 28, 0.95);
 
-  /* schema role accents — restrained tints of the neutral+accent language.
-     Sections use these ONLY for the architecture/diagram legends. */
-  --c-storage: #7fb0ff;
-  --c-engine: var(--accent);
-  --c-gov: #d9a441;
-  --c-ai: #9a86ff;
-  --c-science: #4bb894;
+  /* ============================================================================
+     THE 5 LAYER HUES — cloisonnées. A hue appears ONLY in its own zone
+     (blason-chip fill, section rule, capture perimeter, in-page links). Two
+     layer hues NEVER share one decorative element. Outside a layer zone the
+     page is ink + gold only.
+     ============================================================================ */
+  --c-analyse: #5e8bd6; /* Analyse — Superset, dashboards, BI (bleu ardoise) */
+  --c-engineering: #2fa6a0; /* Ingénierie — Spark, dbt, transform (teal vert-de-gris) */
+  --c-catalog: #7e6bd0; /* Catalogue — OpenMetadata, lineage (violet ardoise) */
+  --c-ai: #b8455e; /* IA gouvernée — ADEN, NORA, permission-aware (grenat sceau) */
+  --c-observ: #57a06a; /* Observabilité — Prometheus, Perses, VictoriaLogs (vert signal froid) */
+
+  /* role aliases used by Architecture legend + Flagships tabs.
+     Each site-role maps to exactly one of the 5 hues (none mixed). */
+  --c-engine: var(--c-engineering);
+  --c-gov: var(--c-catalog);
+  --c-science: var(--c-analyse);
+  --c-storage: var(--c-observ);
 }
 
 /* ============================================================================
-   Light theme — cool neutral (not ivory, not purple-washed). White cards lift
-   off a distinctly cool ground; same accent, deeper shadows tuned cool.
+   Light theme — cool neutral. Gold darkens to a readable heraldic bronze so
+   accent-text keeps contrast on white; layer hues carry through.
    ============================================================================ */
 :root[data-theme='light'] {
+  --accent: #8a6d22; /* readable bronze for text/links on white */
+  --accent-hover: #755b18;
+  --accent-press: #5f4a12;
+  --accent-ink: #ffffff;
+  --accent-line: color-mix(in srgb, var(--accent) 40%, transparent);
+  --accent-tint: color-mix(in srgb, var(--accent) 10%, transparent);
+  --accent-tint-strong: color-mix(in srgb, var(--accent) 16%, transparent);
+
   --bg: #f4f6fa;
   --bg-alt: #eef1f7;
   --surface: #ffffff;
@@ -133,25 +164,26 @@
   --line: rgba(15, 22, 45, 0.1);
   --line-strong: rgba(15, 22, 45, 0.16);
   --line-faint: rgba(15, 22, 45, 0.06);
+  --perimeter: #c3ccda;
 
   --shadow-sm: 0 1px 2px rgba(20, 32, 70, 0.06);
   --shadow-md: 0 12px 32px -14px rgba(20, 32, 70, 0.18);
   --shadow-lg: 0 30px 60px -22px rgba(20, 32, 70, 0.2);
   --shadow-frame: 0 30px 60px -26px rgba(20, 32, 70, 0.22), 0 4px 12px -6px rgba(20, 32, 70, 0.1);
 
-  --accent-ink: #ffffff;
-  --nav-bg: rgba(244, 246, 250, 0.78);
+  --nav-bg: rgba(244, 246, 250, 0.8);
   --edge-label-bg: rgba(255, 255, 255, 0.96);
 
-  --c-storage: #2f6fd6;
-  --c-gov: #b9791a;
-  --c-science: #1f9e70;
+  --c-analyse: #2f66c2;
+  --c-engineering: #1f8a84;
+  --c-catalog: #6a55bf;
+  --c-ai: #a83352;
+  --c-observ: #2f8a52;
 }
 
 /* ============================================================================
-   Legacy aliases — old brand vars remap onto the new monochrome+accent system
-   so any not-yet-rewritten section stays on-brand during the migration.
-   New work MUST use the semantic tokens above, never these.
+   Legacy aliases — old brand vars remap onto the gold+graphite system so any
+   not-yet-rewritten section stays on-brand. New work uses the semantic tokens.
    ============================================================================ */
 :root {
   --ink: var(--text);

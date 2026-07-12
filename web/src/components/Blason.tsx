@@ -6,17 +6,22 @@ type Props = {
   mode?: 'draw' | 'static'
   /** continuous breathing once assembled */
   breathe?: boolean
+  /** fill hue of the innermost square; defaults to heraldic gold. Pass a layer
+   *  hue (var(--c-…)) to make a layer-tinted blason. */
+  tint?: string
   className?: string
 }
 
 /**
  * The AKKO blason: three concentric rounded squares = the Lego layers metaphor.
- * Source mark: akko/branding/logo/akko-icon.svg. Here it is alive: the squares
- * draw themselves outside-in, the core pulses, then the whole mark breathes.
+ * Source mark: akko/branding/logo/akko-icon.svg. Rendered in heraldic gold on
+ * ink. The squares draw themselves outside-in, the core settles, then the whole
+ * mark breathes. Pass `tint` to fill the core with a layer hue (blason-chip).
  */
-export default function Blason({ size = 80, mode = 'draw', breathe = true, className }: Props) {
+export default function Blason({ size = 80, mode = 'draw', breathe = true, tint, className }: Props) {
   const reduce = useReducedMotion()
   const animate = mode === 'draw' && !reduce
+  const core = tint ?? 'var(--accent)'
 
   // stroke-dash draw for the two outline squares; the perimeters are ~ 4*(side)
   const drawOuter = animate
@@ -40,24 +45,10 @@ export default function Blason({ size = 80, mode = 'draw', breathe = true, class
       transition={breathe && !reduce ? { duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 } : undefined}
       style={{ overflow: 'visible' }}
     >
-      <defs>
-        <linearGradient id="ak-grad" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#7c5cff" />
-          <stop offset="1" stopColor="#4dd4e5" />
-        </linearGradient>
-        <filter id="ak-glow" x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur stdDeviation="3.2" result="b" />
-          <feMerge>
-            <feMergeNode in="b" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
       {/* outer layer */}
       <motion.rect
         x="4" y="4" width="72" height="72" rx="6"
-        stroke="url(#ak-grad)" strokeWidth="3"
+        stroke="var(--accent)" strokeWidth="3"
         strokeDasharray="304"
         initial={animate ? { strokeDashoffset: 304, opacity: 0 } : false}
         animate={drawOuter}
@@ -66,17 +57,16 @@ export default function Blason({ size = 80, mode = 'draw', breathe = true, class
       {/* middle layer */}
       <motion.rect
         x="18" y="18" width="44" height="44" rx="4"
-        stroke="url(#ak-grad)" strokeWidth="2.5"
+        stroke="var(--accent)" strokeWidth="2.5"
         strokeDasharray="184"
         initial={animate ? { strokeDashoffset: 184, opacity: 0 } : false}
         animate={drawMiddle}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.28 }}
       />
-      {/* core */}
+      {/* core — heraldic gold by default, or a layer hue when tinted */}
       <motion.rect
         x="30" y="30" width="20" height="20" rx="3"
-        fill="url(#ak-grad)"
-        filter="url(#ak-glow)"
+        fill={core}
         initial={animate ? { scale: 0, opacity: 0 } : false}
         animate={
           animate

@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#080a12" />
+    <meta name="theme-color" content="#14171c" />
+    <!-- Sovereign by construction: a strict CSP that admits no third-party host.
+         Fonts, CSS, JS, images are all self-hosted or inline. The site is
+         air-gap in its delivery, an echo of the air-gap product. Inspect the
+         Network tab: nothing leaves. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    />
     <script>
       // set the theme before first paint to avoid a flash
       (function () {
@@ -20,10 +28,10 @@
         }
       })();
     </script>
-    <title>AKKO, la plateforme data &amp; IA souveraine</title>
+    <title>AKKO — Votre donnée ne sort jamais, même quand l'IA la lit</title>
     <meta
       name="description"
-      content="AKKO est une plateforme data et IA souveraine, auto-hébergée sur votre infrastructure Kubernetes. Un moteur de fédération unique, un lakehouse ouvert, une IA gouvernée. Vos données, vos modèles et vos clés ne quittent jamais votre infrastructure."
+      content="AKKO est la plateforme data et IA que vous hébergez sur votre propre cluster Kubernetes. Chaque accès, humain ou agent, franchit une porte de gouvernance. Rien ne s'échappe, et vous pouvez le vérifier vous-même."
     />
     <link rel="canonical" href="https://akko-ai.com/" />
     <!-- Open Graph -->
@@ -45,12 +53,7 @@
       content="Un moteur de fédération unique, un lakehouse ouvert, une IA gouvernée. Auto-hébergée sur votre infrastructure."
     />
     <meta name="twitter:image" content="https://akko-ai.com/og-image.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- No external font host. Typography is self-hosted (see src/main.tsx). -->
   </head>
   <body>
     <div id="root"></div>

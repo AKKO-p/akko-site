@@ -44,6 +44,65 @@
   padding-right: 46px; /* optical balance against the 3 dots */
 }
 
+/* ---- exhibit treatment: layer-tinted perimeter + corner brackets + piece ---- */
+.frame--tinted {
+  border-color: color-mix(in srgb, var(--frame-tint) 55%, var(--line-strong));
+}
+.frame--tinted .frame__bar {
+  border-bottom-color: color-mix(in srgb, var(--frame-tint) 30%, var(--line));
+}
+
+.frame__piece {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 0 0 auto;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--frame-tint, var(--accent));
+}
+/* when a piece seal is present the label centres against it, not the dots */
+.frame__bar:has(.frame__piece) .frame__label {
+  padding-right: 0;
+}
+
+/* corner brackets = the sovereign perimeter, drawn at the four corners */
+/* inset a few px so they read as interior corner accents (frame clips overflow) */
+.frame__bracket {
+  position: absolute;
+  z-index: 4;
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid var(--frame-tint, var(--perimeter));
+  pointer-events: none;
+  opacity: 0.92;
+}
+.frame__bracket--tl {
+  top: 46px;
+  left: 7px;
+  border-right: none;
+  border-bottom: none;
+}
+.frame__bracket--tr {
+  top: 46px;
+  right: 7px;
+  border-left: none;
+  border-bottom: none;
+}
+.frame__bracket--bl {
+  bottom: 7px;
+  left: 7px;
+  border-right: none;
+  border-top: none;
+}
+.frame__bracket--br {
+  bottom: 7px;
+  right: 7px;
+  border-left: none;
+  border-top: none;
+}
+
 .frame__media {
   position: relative;
   width: 100%;

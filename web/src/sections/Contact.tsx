@@ -1,5 +1,6 @@
 import Blason from '../components/Blason'
 import Reveal from '../components/Reveal'
+import SovereignBadge from '../components/SovereignBadge'
 import { useContent, useLang } from '../i18n/lang'
 import '../styles/contact.css'
 
@@ -79,6 +80,10 @@ export default function Contact() {
               </a>
             ))}
           </nav>
+        </div>
+        {/* sovereignty proven in the form: a live, inspectable self-audit */}
+        <div className="shell foot__audit">
+          <SovereignBadge variant="full" />
         </div>
         <div className="shell foot__bottom">
           <span className="foot__copy">{t.contact.copy}</span>

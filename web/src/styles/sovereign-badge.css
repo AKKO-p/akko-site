@@ -1,0 +1,71 @@
+/* ============================================================
+   SovereignBadge — the inspectable proof. Mono numbers, a live
+   zero-count, ink + gold only (no layer hue here: it is a global
+   statement, not a layer zone).
+   ============================================================ */
+.sbadge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+  font-family: var(--font-mono);
+}
+
+.sbadge--compact {
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--perimeter);
+  border-radius: var(--radius);
+  background: var(--surface-sunken);
+}
+
+.sbadge__lead {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-secondary);
+}
+.sbadge__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-observ); /* the "all clear" signal — its own global note */
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-observ) 22%, transparent);
+  flex: 0 0 auto;
+}
+
+.sbadge__stats {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+.sbadge__stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+.sbadge__k {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+}
+.sbadge__v {
+  font-size: var(--text-md);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+.sbadge--compact .sbadge__v {
+  font-size: var(--text-base);
+}
+
+.sbadge__invite {
+  flex-basis: 100%;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-normal);
+  color: var(--text-faint);
+}

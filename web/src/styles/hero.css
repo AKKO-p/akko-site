@@ -8,6 +8,19 @@
   padding-bottom: var(--space-9);
   overflow: visible;
 }
+/* the blason trame, laid faint behind the fold — reads "perimeter" */
+.hero__field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  mask-image: radial-gradient(120% 90% at 70% 0%, #000 30%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 90% at 70% 0%, #000 30%, transparent 78%);
+}
+.hero__grid,
+.hero__facts {
+  position: relative;
+  z-index: 1;
+}
 .hero__grid {
   display: grid;
   grid-template-columns: 1.02fr 0.98fr;
@@ -27,10 +40,11 @@
 }
 
 .hero__title {
+  font-family: var(--font-display);
   font-size: var(--text-5xl);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-hero);
-  font-weight: 700;
+  font-weight: 680;
   margin: var(--space-4) 0 var(--space-5);
   text-wrap: balance;
 }
@@ -52,6 +66,29 @@
   flex-wrap: wrap;
 }
 
+/* the reproducible install, shown as a command — proof, not a promise */
+.hero__helm {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: var(--space-4);
+  padding: 10px var(--space-4);
+  border: 1px solid var(--perimeter);
+  border-radius: var(--radius);
+  background: var(--surface-sunken);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.hero__helm-prompt {
+  color: var(--accent);
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
 .hero__context {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
@@ -61,8 +98,14 @@
   max-width: 42em;
 }
 
-/* ---- product stage: frame is the hero, governed demo floats as proof ---- */
+/* ---- product stage: frame is the hero, governed demo floats as proof,
+       the live self-audit closes it beneath ---- */
 .hero__stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.hero__stage-frame {
   position: relative;
 }
 .hero__frame {
@@ -70,9 +113,9 @@
 }
 .hero__gdemo {
   position: absolute;
-  left: calc(-1 * var(--space-6));
-  bottom: var(--space-5);
-  width: min(340px, 78%);
+  left: calc(-1 * var(--space-5));
+  bottom: var(--space-4);
+  width: min(300px, 66%);
   box-shadow: var(--shadow-lg);
   z-index: 2;
 }
