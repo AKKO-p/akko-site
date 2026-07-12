@@ -1,17 +1,21 @@
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import Blason from './Blason'
 import { useContent, useLang } from '../i18n/lang'
 import { useTheme } from '../theme'
+import '../styles/nav.css'
 
 export default function Nav() {
   const t = useContent()
   const { lang, setLang } = useLang()
   const { theme, toggle } = useTheme()
+  const reduce = useReducedMotion()
+  const scrolled = useScrolled()
 
   return (
     <motion.header
-      className="nav"
-      initial={{ y: -24, opacity: 0 }}
+      className={`nav${scrolled ? ' is-scrolled' : ''}`}
+      initial={reduce ? false : { y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
     >
@@ -70,6 +74,28 @@ export default function Nav() {
       </div>
     </motion.header>
   )
+}
+
+/** True once the page has scrolled past the top; drives the condensed bar. */
+function useScrolled(threshold = 12) {
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    let frame = 0
+    const read = () => {
+      frame = 0
+      setScrolled(window.scrollY > threshold)
+    }
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(read)
+    }
+    read()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
+  }, [threshold])
+  return scrolled
 }
 
 function FlagFR() {

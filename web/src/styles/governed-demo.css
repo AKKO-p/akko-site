@@ -1,0 +1,131 @@
+/* GovernedDemo — the differentiator: a governed ADEN answer where a sensitive
+   column is masked at the engine, so the model never received it. Sober, credible,
+   monochrome + one accent for the governance signal. */
+.gdemo {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  max-width: 520px;
+}
+
+.gdemo__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-raised);
+}
+.gdemo__brand {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  font-weight: 600;
+  color: var(--text);
+}
+.gdemo__badge {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  color: var(--accent);
+  padding: 4px 9px;
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius-full);
+  background: var(--accent-tint);
+}
+
+.gdemo__q {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  align-items: flex-start;
+}
+.gdemo__q-dot {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+}
+.gdemo__q-text {
+  font-size: var(--text-md);
+  line-height: var(--leading-snug);
+  color: var(--text);
+  letter-spacing: var(--tracking-tight);
+}
+
+.gdemo__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+.gdemo__table th,
+.gdemo__table td {
+  text-align: left;
+  padding: 11px var(--space-5);
+  border-top: 1px solid var(--line);
+}
+.gdemo__table th {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.gdemo__table td {
+  color: var(--text-secondary);
+}
+.gdemo__col-locked {
+  color: var(--accent) !important;
+}
+.gdemo__th-locked {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.gdemo__lockcell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+}
+.gdemo__lockcell svg {
+  color: var(--accent);
+}
+
+.gdemo__foot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--line);
+  background: var(--surface-sunken);
+}
+.gdemo__foot svg {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+.gdemo__foot-text {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--text-muted);
+}
+.gdemo__foot-text b {
+  color: var(--text-secondary);
+  font-weight: 600;
+}

@@ -11,8 +11,6 @@ import Contact from './sections/Contact'
 export default function App() {
   return (
     <>
-      <div className="aurora" aria-hidden />
-      <div className="grain" aria-hidden />
       <Nav />
       <main>
         <Hero />

@@ -1,30 +1,38 @@
 import { useContent } from '../i18n/lang'
+import Frame from '../components/Frame'
+import Reveal from '../components/Reveal'
 import '../styles/filmstrip.css'
 
 export default function Filmstrip() {
   const t = useContent()
   const strip = t.strip.items
-  // duplicated once for a seamless marquee loop
-  const items = [...strip, ...strip]
+  // duplicated once for a seamless marquee loop; the copy is decorative
+  const loop = [...strip, ...strip]
   return (
-    <section className="strip" aria-label="Les autres couches de la plateforme">
+    <section className="strip section" aria-label={t.strip.eyebrow}>
       <div className="shell strip__head">
-        <span className="eyebrow">{t.strip.eyebrow}</span>
-        <p className="strip__lead">{t.strip.lead}</p>
+        <Reveal>
+          <span className="eyebrow">{t.strip.eyebrow}</span>
+        </Reveal>
+        <Reveal delay={0.06}>
+          <p className="lead strip__lead">{t.strip.lead}</p>
+        </Reveal>
       </div>
-      <div className="strip__track-wrap">
-        <div className="strip__track">
-          {items.map((it, i) => (
-            <figure className="strip__item" key={i} aria-hidden={i >= strip.length}>
-              <div className="strip__frame">
-                <span className="strip__dots"><i /><i /><i /></span>
-                <img src={it.src} alt={it.label} loading="lazy" />
-              </div>
-              <figcaption>{it.label}</figcaption>
-            </figure>
+
+      <Reveal className="strip__viewport" delay={0.12}>
+        <div className="strip__track" role="list">
+          {loop.map((it, i) => (
+            <div
+              className="strip__cell"
+              key={i}
+              role="listitem"
+              aria-hidden={i >= strip.length}
+            >
+              <Frame src={it.src} label={it.label} className="strip__card" />
+            </div>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

@@ -1,0 +1,60 @@
+/* Product frame — an elegant, restrained browser chrome around a real
+   screenshot. Depth comes from a thin border + a soft shadow, never a glow. */
+.frame {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-frame);
+  background: var(--frame-bg);
+  box-shadow: var(--shadow-frame);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.frame__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 38px;
+  padding: 0 var(--space-4);
+  background: var(--frame-bar);
+  border-bottom: 1px solid var(--line);
+}
+.frame__dots {
+  display: inline-flex;
+  gap: 7px;
+  flex: 0 0 auto;
+}
+.frame__dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.frame__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* centre the label in the chrome, independent of the dots */
+  flex: 1 1 auto;
+  text-align: center;
+  padding-right: 46px; /* optical balance against the 3 dots */
+}
+
+.frame__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--frame-ratio, 16 / 10);
+  background: var(--frame-mat);
+  overflow: hidden;
+}
+.frame__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}

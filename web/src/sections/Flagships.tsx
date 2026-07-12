@@ -1,14 +1,20 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useContent } from '../i18n/lang'
+import Frame from '../components/Frame'
+import Reveal from '../components/Reveal'
 import '../styles/flagships.css'
 
-const PER_IMAGE_MS = 2200
+const EASE = [0.22, 1, 0.36, 1] as const
 
-const stageVariants = {
-  enter: (d: number) => ({ opacity: 0, x: d > 0 ? 70 : -70 }),
-  center: { opacity: 1, x: 0 },
-  exit: (d: number) => ({ opacity: 0, x: d > 0 ? -70 : 70 }),
+/** small lock — the governance signal on each layer's "what changes" line */
+function LockMark() {
+  return (
+    <svg className="flag__lock" width="13" height="14" viewBox="0 0 13 14" fill="none" aria-hidden>
+      <rect x="1.6" y="6" width="9.8" height="7" rx="1.6" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M3.7 6V4a2.8 2.8 0 0 1 5.6 0v2" stroke="currentColor" strokeWidth="1.3" />
+    </svg>
+  )
 }
 
 export default function Flagships() {
@@ -17,150 +23,97 @@ export default function Flagships() {
   const reduce = useReducedMotion()
   const [active, setActive] = useState(0)
   const [shot, setShot] = useState(0)
-  const [dir, setDir] = useState(1)
-  const [paused, setPaused] = useState(false)
-  const timer = useRef<number | null>(null)
 
   const cur = items[active] ?? items[0]
+  const view = cur.shots[Math.min(shot, cur.shots.length - 1)] ?? cur.shots[0]
 
-  const goLayer = (i: number, d?: number) => {
-    const ni = ((i % items.length) + items.length) % items.length
-    setDir(d ?? (ni > active ? 1 : -1))
-    setActive(ni)
+  const selectLayer = (i: number) => {
+    setActive(i)
     setShot(0)
   }
 
-  // auto-tour: advance through each screen of a layer, then roll to the next layer
-  useEffect(() => {
-    if (paused || reduce) return
-    const layer = items[active] ?? items[0]
-    timer.current = window.setTimeout(() => {
-      setDir(1)
-      if (shot < layer.shots.length - 1) {
-        setShot(shot + 1)
-      } else {
-        setActive((active + 1) % items.length)
-        setShot(0)
-      }
-    }, PER_IMAGE_MS)
-    return () => {
-      if (timer.current) window.clearTimeout(timer.current)
-    }
-  }, [active, shot, paused, reduce, items])
-
-  const view = cur.shots[Math.min(shot, cur.shots.length - 1)]
-
   return (
-    <section className={`flg flg--${cur.role}`} id="produit">
+    <section className="section section--alt flag" id="produit">
       <div className="shell">
-        <div className="flg__head">
+        <Reveal className="flag__head">
           <span className="eyebrow">{t.flags.eyebrow}</span>
-          <h2 className="flg__title">
+          <h2 className="heading flag__title">
             {t.flags.titleA}
-            <span className="grad-text">{t.flags.grad}</span>
+            <span className="accent-text">{t.flags.grad}</span>
             {t.flags.titleB}
           </h2>
-        </div>
+        </Reveal>
 
-        {/* layer tabs */}
-        <div className="flg__tabs" role="tablist" aria-label="Couches phares">
+        {/* layer selector */}
+        <Reveal className="flag__tabs" role="tablist" aria-label={t.flags.eyebrow} delay={0.05}>
           {items.map((f, i) => (
             <button
               key={f.key}
               role="tab"
               aria-selected={i === active}
-              className={`flg__tab${i === active ? ' is-active' : ''}`}
-              onClick={() => goLayer(i)}
+              className={`flag__tab${i === active ? ' is-active' : ''}`}
+              onClick={() => selectLayer(i)}
             >
-              <span className="flg__tab-i">{String(i + 1).padStart(2, '0')}</span>
-              {f.tab}
+              <span className="flag__tab-n">{String(i + 1).padStart(2, '0')}</span>
+              <span className="flag__tab-l">{f.tab}</span>
             </button>
           ))}
-        </div>
+        </Reveal>
 
-        <div
-          className="flg__board"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-        >
-          {/* compact meta */}
+        <div className="flag__board">
+          {/* editorial copy for the active layer */}
           <AnimatePresence mode="wait">
             <motion.div
-              className="flg__meta"
+              className="flag__copy"
               key={cur.key}
               initial={reduce ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={reduce ? undefined : { opacity: 0, y: -14 }}
-              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              exit={reduce ? undefined : { opacity: 0, y: -10 }}
+              transition={{ duration: 0.34, ease: EASE }}
             >
-              <div className="flg__meta-l">
-                <span className="flg__tag">{cur.layer}</span>
-                <h3 className="flg__h3">{cur.title}</h3>
-              </div>
-              <div className="flg__meta-r">
-                <p className="flg__body">{cur.body}</p>
-                <p className="flg__change">
-                  <span className="flg__change-dot" aria-hidden />
-                  {cur.change}
-                </p>
-              </div>
+              <span className="flag__tag">{cur.layer}</span>
+              <h3 className="flag__h3">{cur.title}</h3>
+              <p className="flag__body">{cur.body}</p>
+              <p className="flag__change">
+                <span className="flag__change-mark" aria-hidden>
+                  <LockMark />
+                </span>
+                {cur.change}
+              </p>
             </motion.div>
           </AnimatePresence>
 
-          {/* big screen stage */}
-          <div className="flg__stage">
-            <div className="flg__halo" aria-hidden />
-            <AnimatePresence mode="popLayout" custom={dir}>
-              <motion.figure
-                className="flg__frame"
-                key={`${cur.key}-${shot}`}
-                custom={dir}
-                variants={reduce ? undefined : stageVariants}
-                initial={reduce ? false : 'enter'}
-                animate="center"
-                exit={reduce ? undefined : 'exit'}
-                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+          {/* the product — hero of each layer */}
+          <div className="flag__stage">
+            <AnimatePresence mode="wait">
+              <motion.div
+                className="flag__shot"
+                key={view.src}
+                initial={reduce ? false : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reduce ? undefined : { opacity: 0, y: -8 }}
+                transition={{ duration: 0.4, ease: EASE }}
               >
-                <div className="flg__bar">
-                  <span /><span /><span />
-                  <em>{view.chrome}</em>
-                </div>
-                <img src={view.src} alt={`${cur.layer} : ${view.chrome}`} />
-              </motion.figure>
+                <Frame src={view.src} label={view.chrome} ratio="16 / 10" />
+              </motion.div>
             </AnimatePresence>
-          </div>
 
-          {/* footer: thumbnails + controls */}
-          <div className="flg__footer">
-            <div className="flg__thumbs">
-              {cur.shots.length > 1 &&
-                cur.shots.map((s, j) => (
+            {cur.shots.length > 1 && (
+              <div className="flag__views" role="tablist" aria-label={cur.layer}>
+                {cur.shots.map((s, j) => (
                   <button
                     key={s.src + j}
-                    className={`flg__thumb${j === shot ? ' is-active' : ''}`}
+                    role="tab"
+                    aria-selected={j === shot}
+                    className={`flag__view${j === shot ? ' is-active' : ''}`}
                     onClick={() => setShot(j)}
-                    aria-label={s.chrome}
                   >
-                    <img src={s.src} alt="" loading="lazy" />
-                    {j === shot && !reduce && !paused && (
-                      <motion.span
-                        className="flg__thumb-prog"
-                        key={`tp-${active}-${shot}`}
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ duration: PER_IMAGE_MS / 1000, ease: 'linear' }}
-                      />
-                    )}
+                    <img src={s.src} alt="" loading="lazy" decoding="async" />
+                    <span className="flag__view-l">{s.chrome}</span>
                   </button>
                 ))}
-            </div>
-            <div className="flg__controls">
-              <button className="flg__arrow" onClick={() => goLayer(active - 1, -1)} aria-label="Couche précédente">←</button>
-              <span className="flg__count">
-                <b>{String(active + 1).padStart(2, '0')}</b> / {String(items.length).padStart(2, '0')}
-              </span>
-              <button className="flg__arrow" onClick={() => goLayer(active + 1, 1)} aria-label="Couche suivante">→</button>
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -1,105 +1,173 @@
-/* AKKO V5 design tokens, ported from cockpit-react/src/styles/tokens.css.
-   Single source of brand truth for the marketing site. */
+/* ============================================================================
+   AKKO — Design tokens (marketing site, target version)
+   Single source of visual truth. Discipline: quasi-monochrome sovereign base
+   + ONE accent (sovereign indigo). No gradient scaffolding, no glow, no glass.
+   Sections consume the SEMANTIC names below — never hardcode a hex in a section.
+   ============================================================================ */
 :root {
-  /* base */
-  --bg: #080a12;
-  --bg-1: #0b0e1a;
-  --bg-2: #11152400;
-  --surface: #0e1220;
-  --ink: #eef1fb;
-  --ink-soft: #c4cae0;
-  --ink-mute: #8b93b0;
-  --ink-faint: #5c6486;
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.14);
+  /* ---- accent — the one sovereign colour, used sparingly ---- */
+  --accent: #6e79ff;
+  --accent-hover: #838cff;
+  --accent-press: #5a63e6;
+  --accent-ink: #ffffff; /* text/icon sitting on an accent fill */
+  --accent-line: color-mix(in srgb, var(--accent) 42%, transparent);
+  --accent-tint: color-mix(in srgb, var(--accent) 12%, transparent);
+  --accent-tint-strong: color-mix(in srgb, var(--accent) 20%, transparent);
+  --ring: 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent);
 
-  /* brand */
-  --pri: #7c5cff;
-  --pri-soft: #9b86ff;
-  --cyan: #4dd4e5;
-  --grad: linear-gradient(135deg, #7c5cff 0%, #4dd4e5 100%);
-  --grad-soft: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(77, 212, 229, 0.14));
-  --glow: 0 0 60px rgba(124, 92, 255, 0.35);
-  --glow-cyan: 0 0 50px rgba(77, 212, 229, 0.3);
-  --glass: rgba(18, 22, 38, 0.72);
-  --glass-2: rgba(20, 25, 44, 0.55);
+  /* ---- neutral base (dark, cool near-black) ---- */
+  --bg: #0a0b0f; /* page floor */
+  --bg-alt: #0d0f15; /* alternating section band */
+  --surface: #12151d; /* default card */
+  --surface-raised: #171b24; /* nested cards, inputs, chrome bar */
+  --surface-sunken: #0c0e13; /* wells, code, image mat */
 
-  /* role accents (schemas) */
-  --c-engine: #9b86ff; /* moteur / compute */
-  --c-storage: #4dd4e5; /* stockage / lakehouse */
-  --c-gov: #ffb454; /* gouvernance */
-  --c-ai: #b58cff; /* IA (dégradé) */
-  --c-science: #41d693; /* data science */
-  --c-rose: #ff6b81;
+  /* ---- ink / text ramp ---- */
+  --text: #f4f5f8; /* primary, near-white (never pure #fff) */
+  --text-secondary: #c2c7d4; /* body copy */
+  --text-muted: #8b91a2; /* captions, meta */
+  --text-faint: #656b7e; /* disabled, fine print */
 
-  /* semantic surfaces (theme-aware) — dark defaults */
-  --eyebrow: var(--cyan);
-  --node-bg: rgba(16, 20, 36, 0.92);
-  --frame-bg: #0c1020;
-  --frame-bar: rgba(12, 16, 32, 0.96);
-  --edge-label-bg: rgba(10, 13, 24, 0.95);
-  --nav-fade: rgba(8, 10, 18, 0.75);
-  --aurora-1: rgba(124, 92, 255, 0.22);
-  --aurora-2: rgba(77, 212, 229, 0.16);
-  --aurora-3: rgba(124, 92, 255, 0.12);
-  --aurora-4: rgba(77, 212, 229, 0.1);
-  --aurora-5: rgba(181, 140, 255, 0.1);
-  --grain-opacity: 0.04;
+  /* ---- hairlines ---- */
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.15);
+  --line-faint: rgba(255, 255, 255, 0.05);
 
-  /* elevation (theme-aware) — deep on dark */
-  --shadow-sm: 0 8px 24px rgba(4, 6, 14, 0.4);
-  --shadow-md: 0 18px 44px rgba(4, 6, 14, 0.45);
-  --shadow-lg: 0 40px 90px rgba(4, 6, 14, 0.6);
+  /* ---- elevation — soft, for product-frame depth (no coloured glow) ---- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 32px -12px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 30px 64px -20px rgba(0, 0, 0, 0.6);
+  --shadow-frame: 0 28px 64px -28px rgba(0, 0, 0, 0.72), 0 6px 16px -8px rgba(0, 0, 0, 0.5);
 
-  /* type */
+  /* ---- type ---- */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  /* layout */
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-md: 17px;
+  --text-lg: 19px;
+  --text-xl: clamp(21px, 2.2vw, 25px);
+  --text-2xl: clamp(25px, 3vw, 31px);
+  --text-3xl: clamp(30px, 4vw, 42px); /* section titles */
+  --text-4xl: clamp(38px, 5.4vw, 58px);
+  --text-5xl: clamp(44px, 6.6vw, 78px); /* hero */
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-hero: -0.035em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
+  --tracking-eyebrow: 0.16em;
+
+  /* ---- spacing (4 / 8 rhythm) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --section-pad: clamp(80px, 10vw, 140px); /* vertical rhythm per section */
+  --gutter: clamp(20px, 4vw, 28px); /* shell horizontal padding */
+
+  /* ---- radii ---- */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-frame: 14px;
+  --radius-full: 999px;
+
+  /* ---- layout & motion ---- */
   --maxw: 1200px;
-  --radius: 18px;
-  --radius-sm: 12px;
+  --maxw-narrow: 760px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.6s;
+
+  /* ---- component surfaces (theme-aware) ---- */
+  --eyebrow: var(--accent);
+  --nav-bg: rgba(10, 11, 15, 0.72);
+  --frame-bg: var(--surface);
+  --frame-bar: var(--surface-raised);
+  --frame-mat: var(--surface-sunken);
+  --node-bg: var(--surface);
+  --edge-label-bg: rgba(10, 13, 24, 0.95);
+
+  /* schema role accents — restrained tints of the neutral+accent language.
+     Sections use these ONLY for the architecture/diagram legends. */
+  --c-storage: #7fb0ff;
+  --c-engine: var(--accent);
+  --c-gov: #d9a441;
+  --c-ai: #9a86ff;
+  --c-science: #4bb894;
 }
 
-/* ===== Light theme — cool, modern neutral (not ivory, not purple-washed) ===== */
+/* ============================================================================
+   Light theme — cool neutral (not ivory, not purple-washed). White cards lift
+   off a distinctly cool ground; same accent, deeper shadows tuned cool.
+   ============================================================================ */
 :root[data-theme='light'] {
-  /* cool light ground, distinctly tinted so white cards lift off it */
-  --bg: #e8edf6;
-  --bg-1: #ffffff;
+  --bg: #f4f6fa;
+  --bg-alt: #eef1f7;
   --surface: #ffffff;
-  --ink: #0d1730;
-  --ink-soft: #3a445e;
-  --ink-mute: #5f6a85;
-  --ink-faint: #93a0b8;
-  --line: rgba(20, 32, 68, 0.1);
-  --line-strong: rgba(20, 32, 68, 0.17);
-  --glass: rgba(255, 255, 255, 0.92);
-  --glass-2: rgba(255, 255, 255, 0.7);
-  --glow: 0 0 60px rgba(124, 92, 255, 0.14);
-  --glow-cyan: 0 0 50px rgba(77, 212, 229, 0.14);
+  --surface-raised: #ffffff;
+  --surface-sunken: #f0f2f7;
 
-  /* soft, cool elevation — depth without the dark blobs */
-  --shadow-sm: 0 4px 16px rgba(23, 37, 84, 0.07);
-  --shadow-md: 0 14px 36px rgba(23, 37, 84, 0.1);
-  --shadow-lg: 0 30px 70px rgba(23, 37, 84, 0.13);
+  --text: #0e1320;
+  --text-secondary: #3c4457;
+  --text-muted: #5c6579;
+  --text-faint: #8b93a5;
 
-  /* semantic surfaces */
-  --eyebrow: #0e93a8;
-  --node-bg: #ffffff;
-  --frame-bg: #ffffff;
-  --frame-bar: #eef1f7;
+  --line: rgba(15, 22, 45, 0.1);
+  --line-strong: rgba(15, 22, 45, 0.16);
+  --line-faint: rgba(15, 22, 45, 0.06);
+
+  --shadow-sm: 0 1px 2px rgba(20, 32, 70, 0.06);
+  --shadow-md: 0 12px 32px -14px rgba(20, 32, 70, 0.18);
+  --shadow-lg: 0 30px 60px -22px rgba(20, 32, 70, 0.2);
+  --shadow-frame: 0 30px 60px -26px rgba(20, 32, 70, 0.22), 0 4px 12px -6px rgba(20, 32, 70, 0.1);
+
+  --accent-ink: #ffffff;
+  --nav-bg: rgba(244, 246, 250, 0.78);
   --edge-label-bg: rgba(255, 255, 255, 0.96);
-  --nav-fade: rgba(244, 246, 251, 0.82);
-  --aurora-1: rgba(124, 92, 255, 0.13);
-  --aurora-2: rgba(77, 212, 229, 0.1);
-  --aurora-3: rgba(124, 92, 255, 0.08);
-  --aurora-4: rgba(77, 212, 229, 0.07);
-  --aurora-5: rgba(181, 140, 255, 0.07);
-  --grain-opacity: 0.02;
 
-  /* role accents nudged a touch deeper for contrast on light */
-  --c-storage: #11a3b8;
-  --c-gov: #d68a14;
-  --c-science: #1f9e66;
+  --c-storage: #2f6fd6;
+  --c-gov: #b9791a;
+  --c-science: #1f9e70;
+}
+
+/* ============================================================================
+   Legacy aliases — old brand vars remap onto the new monochrome+accent system
+   so any not-yet-rewritten section stays on-brand during the migration.
+   New work MUST use the semantic tokens above, never these.
+   ============================================================================ */
+:root {
+  --ink: var(--text);
+  --ink-soft: var(--text-secondary);
+  --ink-mute: var(--text-muted);
+  --ink-faint: var(--text-faint);
+  --pri: var(--accent);
+  --pri-soft: var(--accent-hover);
+  --cyan: var(--accent);
+  --bg-1: var(--surface);
+  --bg-2: var(--surface);
+  --grad: var(--accent);
+  --grad-soft: var(--accent-tint);
+  --glass: var(--surface);
+  --glass-2: var(--surface-raised);
+  --glow: none;
+  --glow-cyan: none;
+  --radius-frame-legacy: var(--radius-frame);
 }

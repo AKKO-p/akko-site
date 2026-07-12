@@ -5,8 +5,8 @@ import {
   type DiagNode,
   type Lane,
   type Side,
-  EDGE_COLOR,
-  ROLE_COLOR,
+  EDGE_VAR,
+  ROLE_VAR,
 } from './types'
 import { DIAGRAM_EN } from './data'
 import type { Lang } from '../../i18n/content'
@@ -123,48 +123,35 @@ export default function Diagram({
       >
         <title>{tr(title)}</title>
         <defs>
-          <linearGradient id={`${uid}-grad`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#7c5cff" />
-            <stop offset="1" stopColor="#4dd4e5" />
-          </linearGradient>
-          <filter id={`${uid}-glow`} x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="4" result="b" />
-            <feMerge>
-              <feMergeNode in="b" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          {edgeTypes.map((t) => (
-            <marker
-              key={t}
-              id={`${uid}-arrow-${t}`}
-              viewBox="0 0 10 10"
-              refX="8.5"
-              refY="5"
-              markerWidth="7"
-              markerHeight="7"
-              orient="auto-start-reverse"
-            >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill={EDGE_COLOR[t]} />
-            </marker>
-          ))}
+          {/* one arrowhead, inheriting each edge's own stroke colour */}
+          <marker
+            id={`${uid}-arrow`}
+            viewBox="0 0 10 10"
+            refX="8.5"
+            refY="5"
+            markerWidth="7"
+            markerHeight="7"
+            orient="auto-start-reverse"
+          >
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke" />
+          </marker>
         </defs>
 
         {/* lanes */}
         {lanes.map((l, i) => (
-          <g key={`lane-${i}`} className="dgm__lane">
+          <g key={`lane-${i}`} className="dgm__lane" style={{ color: ROLE_VAR[l.role] }}>
             <rect
               x={l.x}
               y={l.y}
               width={l.w}
               height={l.h}
               rx="16"
-              fill={ROLE_COLOR[l.role]}
-              fillOpacity="0.035"
-              stroke={ROLE_COLOR[l.role]}
-              strokeOpacity="0.16"
+              fill="currentColor"
+              fillOpacity="0.05"
+              stroke="currentColor"
+              strokeOpacity="0.2"
             />
-            <text x={l.x + 16} y={l.y + 22} className="dgm__lane-label" fill={ROLE_COLOR[l.role]}>
+            <text x={l.x + 16} y={l.y + 22} className="dgm__lane-label" fill="currentColor">
               {tr(l.label).toUpperCase()}
             </text>
           </g>
@@ -178,22 +165,23 @@ export default function Diagram({
           const dim = connected ? !(connected.has(e.from) && connected.has(e.to)) : false
           const active = hover != null && (e.from === hover || e.to === hover)
           const d = edgePath(from, to, e)
-          const color = EDGE_COLOR[e.type]
           return (
-            <g key={`e-${i}`} className={`dgm__edge${dim ? ' is-dim' : ''}${active ? ' is-active' : ''}`}>
+            <g
+              key={`e-${i}`}
+              className={`dgm__edge${dim ? ' is-dim' : ''}${active ? ' is-active' : ''}`}
+              style={{ color: EDGE_VAR[e.type] }}
+            >
               <path
                 d={d}
                 fill="none"
-                stroke={color}
+                stroke="currentColor"
                 strokeWidth={active ? 2.4 : 1.6}
                 strokeOpacity={active ? 1 : 0.62}
-                markerEnd={`url(#${uid}-arrow-${e.type})`}
+                markerEnd={`url(#${uid}-arrow)`}
                 strokeDasharray={e.dashed ? '5 6' : undefined}
                 className="dgm__edge-path"
               />
-              {e.label && active && (
-                <EdgeLabel d={d} text={tr(e.label)} color={color} />
-              )}
+              {e.label && active && <EdgeLabel d={d} text={tr(e.label)} />}
             </g>
           )
         })}
@@ -203,7 +191,6 @@ export default function Diagram({
           const w = n.w ?? NODE_W
           const h = n.h ?? NODE_H
           const dim = connected ? !connected.has(n.id) : false
-          const stroke = n.key ? `url(#${uid}-grad)` : ROLE_COLOR[n.role]
           return (
             <g
               key={n.id}
@@ -211,17 +198,17 @@ export default function Diagram({
               transform={`translate(${n.x} ${n.y})`}
               onMouseEnter={interactive ? () => setHover(n.id) : undefined}
               onMouseLeave={interactive ? () => setHover(null) : undefined}
-              filter={n.key ? `url(#${uid}-glow)` : undefined}
+              style={{ color: n.key ? 'var(--accent)' : ROLE_VAR[n.role] }}
             >
               <rect
                 width={w}
                 height={h}
                 rx="11"
                 className="dgm__node-box"
-                stroke={stroke}
+                stroke="currentColor"
                 strokeWidth={n.key ? 1.8 : 1.3}
               />
-              <rect x="0" y="0" width="3.5" height={h} rx="2" fill={ROLE_COLOR[n.role]} />
+              <rect x="0" y="0" width="3.5" height={h} rx="2" fill="currentColor" style={{ color: ROLE_VAR[n.role] }} />
               <text x="16" y={n.tech ? 24 : h / 2 + 5} className="dgm__node-label">
                 {tr(n.label)}
               </text>
@@ -239,8 +226,8 @@ export default function Diagram({
       <figcaption className="dgm__legend">
         {edgeTypes.map((t) => (
           <span className="dgm__leg" key={t}>
-            <i style={{ background: EDGE_COLOR[t] }} />
-            {labelFor(t)}
+            <i style={{ background: EDGE_VAR[t] }} />
+            {labelFor(t, lang)}
           </span>
         ))}
       </figcaption>
@@ -248,27 +235,29 @@ export default function Diagram({
   )
 }
 
-function labelFor(t: string): string {
-  const m: Record<string, string> = {
-    data: 'flux de données',
-    query: 'requête fédérée',
-    govern: "décision d'accès",
-    identity: 'identité',
-    ai: 'grounding / inférence',
-    lineage: 'catalogue / lignage',
+function labelFor(t: string, lang: Lang): string {
+  const m: Record<string, [string, string]> = {
+    data: ['flux de données', 'data flow'],
+    query: ['requête fédérée', 'federated query'],
+    govern: ["décision d'accès", 'access decision'],
+    identity: ['identité', 'identity'],
+    ai: ['grounding / inférence', 'grounding / inference'],
+    lineage: ['catalogue / lignage', 'catalog / lineage'],
   }
-  return m[t] ?? t
+  const pair = m[t]
+  if (!pair) return t
+  return lang === 'en' ? pair[1] : pair[0]
 }
 
 // midpoint label chip, placed at the path's parametric center
-function EdgeLabel({ d, text, color }: { d: string; text: string; color: string }) {
+function EdgeLabel({ d, text }: { d: string; text: string }) {
   const mid = useMemo(() => midpointOfCubic(d), [d])
   if (!mid) return null
   const w = text.length * 6.4 + 14
   return (
     <g transform={`translate(${mid.x - w / 2} ${mid.y - 10})`} className="dgm__edge-label">
       <rect width={w} height="20" rx="6" />
-      <text x={w / 2} y="14" fill={color}>
+      <text x={w / 2} y="14" fill="currentColor">
         {text}
       </text>
     </g>

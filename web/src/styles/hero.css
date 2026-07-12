@@ -1,0 +1,139 @@
+/* Hero — the thesis, shown. Copy on the left; the governed-AI proof on the
+   right (the real ADEN product frame with the GovernedDemo floating over it).
+   A full-bleed facts band closes the fold. Quasi-monochrome, one accent. */
+
+.hero {
+  position: relative;
+  padding-top: clamp(116px, 15vh, 164px);
+  padding-bottom: var(--space-9);
+  overflow: visible;
+}
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* ---- copy column ---- */
+.hero__eyebrow-row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+/* the blason is the signature mark — drop the eyebrow's own trait here */
+.hero__eyebrow-row .eyebrow::before {
+  display: none;
+}
+
+.hero__title {
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-hero);
+  font-weight: 700;
+  margin: var(--space-4) 0 var(--space-5);
+  text-wrap: balance;
+}
+.hero__tline {
+  display: block;
+}
+
+.hero__sub {
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  max-width: 34em;
+}
+
+.hero__cta {
+  display: flex;
+  gap: var(--space-3);
+  margin: var(--space-6) 0 var(--space-4);
+  flex-wrap: wrap;
+}
+
+.hero__context {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-normal);
+  color: var(--text-faint);
+  max-width: 42em;
+}
+
+/* ---- product stage: frame is the hero, governed demo floats as proof ---- */
+.hero__stage {
+  position: relative;
+}
+.hero__frame {
+  width: 100%;
+}
+.hero__gdemo {
+  position: absolute;
+  left: calc(-1 * var(--space-6));
+  bottom: var(--space-5);
+  width: min(340px, 78%);
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+
+/* ---- facts band ---- */
+.hero__facts {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: var(--space-9);
+  background: var(--surface);
+}
+.hero__facts-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-5) var(--space-2) var(--space-5) 0;
+}
+.fact + .fact {
+  padding-left: var(--space-6);
+  border-left: 1px solid var(--line);
+}
+.fact__k {
+  font-weight: 700;
+  font-size: var(--text-xl);
+  letter-spacing: var(--tracking-tight);
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+.fact__v {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+/* ---- responsive ---- */
+@media (max-width: 920px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+  /* the demo drops below the frame instead of floating over it */
+  .hero__gdemo {
+    position: static;
+    width: 100%;
+    max-width: 520px;
+    margin-top: var(--space-5);
+    box-shadow: var(--shadow-md);
+  }
+  .hero__facts-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fact {
+    padding-left: 0 !important;
+    border-left: none;
+  }
+  .fact:nth-child(even) {
+    padding-left: var(--space-5) !important;
+    border-left: 1px solid var(--line);
+  }
+}

@@ -1,83 +1,73 @@
+/* Filmstrip — a slow, edge-masked marquee of real product captures. Each card
+   is a full Frame (its own chrome, thin border, soft shadow) so the product
+   stays the hero. No glow, no gradient: depth comes from the frame alone. */
 .strip {
-  padding: 70px 0 90px;
   overflow: hidden;
 }
 .strip__head {
-  margin-bottom: 28px;
-  max-width: 40em;
+  max-width: 46em;
 }
 .strip__lead {
-  margin-top: 12px;
-  color: var(--ink-soft);
-  font-size: 16px;
-  line-height: 1.6;
+  margin-top: var(--space-3);
 }
-.strip__track-wrap {
+
+/* the moving band, masked at both edges so cards fade in/out of view */
+.strip__viewport {
+  margin-top: var(--space-7);
   width: 100%;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
 }
 .strip__track {
   display: flex;
-  gap: 22px;
+  gap: var(--space-5);
   width: max-content;
-  animation: strip-scroll 46s linear infinite;
+  padding-inline: var(--gutter);
+  animation: strip-scroll 64s linear infinite;
 }
-.strip__track:hover { animation-play-state: paused; }
+.strip__track:hover {
+  animation-play-state: paused;
+}
 @keyframes strip-scroll {
-  to { transform: translateX(-50%); }
-}
-.strip__item {
-  margin: 0;
-  width: 440px;
-  flex-shrink: 0;
-}
-.strip__frame {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--frame-bg);
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
-}
-.strip__item:hover .strip__frame {
-  transform: translateY(-4px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-md), 0 0 50px rgba(124, 92, 255, 0.16);
-}
-.strip__dots {
-  display: flex;
-  gap: 6px;
-  padding: 8px 11px;
-  background: var(--frame-bar);
-  border-bottom: 1px solid var(--line);
-}
-.strip__dots i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--line-strong);
-}
-.strip__frame img {
-  display: block;
-  width: 100%;
-  height: 248px;
-  object-fit: cover;
-  object-position: top left;
-}
-.strip__item figcaption {
-  margin-top: 11px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  color: var(--ink-mute);
+  to {
+    transform: translateX(-50%);
+  }
 }
 
+.strip__cell {
+  flex: 0 0 auto;
+  width: clamp(300px, 32vw, 424px);
+}
+/* the Frame itself carries border/shadow/radius — only add the lift here */
+.strip__card {
+  width: 100%;
+  transition:
+    transform 0.35s var(--ease),
+    box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+.strip__cell:hover .strip__card {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+/* reduced motion: freeze the marquee, drop the decorative duplicates, and let
+   the row scroll horizontally instead. */
 @media (prefers-reduced-motion: reduce) {
+  .strip__viewport {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
   .strip__track {
     animation: none;
-    overflow-x: auto;
-    width: 100%;
+    width: max-content;
   }
-  .strip__track-wrap { -webkit-mask-image: none; mask-image: none; }
+  .strip__cell[aria-hidden='true'] {
+    display: none;
+  }
+  .strip__card {
+    transition: none;
+  }
 }

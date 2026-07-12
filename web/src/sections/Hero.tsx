@@ -1,70 +1,75 @@
-import { motion } from 'framer-motion'
+import '../styles/hero.css'
 import Blason from '../components/Blason'
-import { useContent } from '../i18n/lang'
+import Frame from '../components/Frame'
+import Reveal from '../components/Reveal'
+import GovernedDemo from '../components/GovernedDemo'
+import { useContent, useLang } from '../i18n/lang'
 
-const reveal = {
-  hidden: { opacity: 0, y: 26 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.5 + i * 0.12 },
-  }),
-}
+const FRAME_LABEL = {
+  fr: 'ADEN · réponse gouvernée',
+  en: 'ADEN · governed answer',
+} as const
 
 export default function Hero() {
   const t = useContent()
+  const { lang } = useLang()
+
   return (
     <section className="hero" id="top">
-      <div className="shell hero__inner">
+      <div className="shell hero__grid">
         <div className="hero__copy">
-          <motion.span className="eyebrow" custom={0} variants={reveal} initial="hidden" animate="show">
-            {t.hero.eyebrow}
-          </motion.span>
+          <Reveal className="hero__eyebrow-row">
+            {/* signature: the living blason — the three squares are the layers */}
+            <Blason size={26} mode="draw" breathe />
+            <span className="eyebrow">{t.hero.eyebrow}</span>
+          </Reveal>
 
-          <h1 className="hero__title">
-            {t.hero.titleLines.map((line, i) => (
-              <Line i={i + 1} key={line}>{line}</Line>
-            ))}
-            <Line i={t.hero.titleLines.length + 1}>
-              <span className="grad-text">{t.hero.grad}</span>
-            </Line>
-          </h1>
+          <Reveal as="span" delay={0.06}>
+            <h1 className="hero__title">
+              {t.hero.titleLines.map((line) => (
+                <span className="hero__tline" key={line}>
+                  {line}
+                </span>
+              ))}
+              <span className="hero__tline">
+                <span className="accent-text">{t.hero.grad}</span>
+              </span>
+            </h1>
+          </Reveal>
 
-          <motion.p className="hero__sub" custom={4} variants={reveal} initial="hidden" animate="show">
-            {t.hero.sub}
-          </motion.p>
+          <Reveal as="span" delay={0.12}>
+            <p className="hero__sub">{t.hero.sub}</p>
+          </Reveal>
 
-          <motion.div className="hero__cta" custom={5} variants={reveal} initial="hidden" animate="show">
-            <a className="btn btn-primary" href="#contact">{t.hero.ctaPrimary}</a>
-            <a className="btn btn-ghost" href="#topologie">{t.hero.ctaSecondary} →</a>
-          </motion.div>
+          <Reveal className="hero__cta" delay={0.18}>
+            <a className="btn btn-primary" href="#contact">
+              {t.hero.ctaPrimary}
+            </a>
+            <a className="btn btn-ghost" href="#topologie">
+              {t.hero.ctaSecondary} →
+            </a>
+          </Reveal>
 
-          <motion.p className="hero__context" custom={6} variants={reveal} initial="hidden" animate="show">
-            {t.hero.context}
-          </motion.p>
+          <Reveal as="span" delay={0.24}>
+            <p className="hero__context">{t.hero.context}</p>
+          </Reveal>
         </div>
 
-        {/* signature: the living blason, with the layers it represents fanned behind it */}
-        <motion.div
-          className="hero__mark"
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-          aria-hidden
-        >
-          <div className="hero__halo" />
-          <Blason size={300} mode="draw" breathe />
-          <span className="hero__own">Own Every Layer</span>
-        </motion.div>
+        {/* the proof, not the claim: the real ADEN product frame, with the
+            governed demo floating over it — the masked column made legible. */}
+        <Reveal className="hero__stage" delay={0.1}>
+          <Frame
+            src="/shots/new-aden-result.png"
+            label={FRAME_LABEL[lang]}
+            ratio="16 / 11"
+            className="hero__frame"
+            priority
+          />
+          <GovernedDemo className="hero__gdemo" />
+        </Reveal>
       </div>
 
-      <motion.div
-        className="hero__facts"
-        custom={7}
-        variants={reveal}
-        initial="hidden"
-        animate="show"
-      >
+      <Reveal className="hero__facts" delay={0.32}>
         <div className="shell hero__facts-row">
           {t.hero.facts.map((f) => (
             <div className="fact" key={f.k}>
@@ -73,22 +78,7 @@ export default function Hero() {
             </div>
           ))}
         </div>
-      </motion.div>
+      </Reveal>
     </section>
-  )
-}
-
-function Line({ i, children }: { i: number; children: React.ReactNode }) {
-  return (
-    <span className="hero__line">
-      <motion.span
-        className="hero__line-in"
-        initial={{ y: '110%' }}
-        animate={{ y: '0%' }}
-        transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.25 + i * 0.11 }}
-      >
-        {children}
-      </motion.span>
-    </span>
   )
 }
