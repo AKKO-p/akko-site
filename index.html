@@ -26,6 +26,37 @@
       content="AKKO est une plateforme data et IA souveraine, auto-hébergée sur votre infrastructure Kubernetes. Un moteur de fédération unique, un lakehouse ouvert, une IA gouvernée. Vos données, vos modèles et vos clés ne quittent jamais votre infrastructure."
     />
     <link rel="canonical" href="https://akko-ai.com/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://akko-ai.com/#org",
+          "name": "AKKO",
+          "url": "https://akko-ai.com/",
+          "logo": "https://akko-ai.com/favicon.svg",
+          "description": "AKKO est une entreprise française qui édite une plateforme data et IA souveraine, auto-hébergée sur Kubernetes.",
+          "foundingLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "FR" } },
+          "sameAs": [
+            "https://github.com/AKKO-p",
+            "https://x.com/akkoplatform"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://akko-ai.com/#software",
+          "name": "AKKO",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Kubernetes",
+          "url": "https://akko-ai.com/",
+          "publisher": { "@id": "https://akko-ai.com/#org" },
+          "description": "Plateforme data et IA souveraine : 54 briques intégrées (lakehouse Iceberg, requêtage fédéré, BI, notebooks, orchestration, IA gouvernée avec contrôle d'accès), déployable hors-ligne sur votre infrastructure Kubernetes.",
+          "inLanguage": ["fr", "en"]
+        }
+      ]
+    }
+    </script>
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AKKO" />
@@ -35,7 +66,7 @@
       content="Un moteur de fédération unique, un lakehouse ouvert, une IA gouvernée. Auto-hébergée sur votre infrastructure : vos données ne la quittent jamais."
     />
     <meta property="og:url" content="https://akko-ai.com/" />
-    <meta property="og:image" content="https://akko-ai.com/og-image.png" />
+    <meta property="og:image" content="https://akko-ai.com/og-image.jpg" />
     <meta property="og:locale" content="fr_FR" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,7 +75,7 @@
       name="twitter:description"
       content="Un moteur de fédération unique, un lakehouse ouvert, une IA gouvernée. Auto-hébergée sur votre infrastructure."
     />
-    <meta name="twitter:image" content="https://akko-ai.com/og-image.png" />
+    <meta name="twitter:image" content="https://akko-ai.com/og-image.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
