@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const catColors: Record<string, string> = {
+  'Souveraineté': 'var(--cyan)',
+  'Architecture': 'var(--amber)',
+  'Gouvernance et IA': 'var(--violet)',
+  'Actualités AKKO': 'var(--green)',
+};
+const fmt = (d: Date) =>
+  d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+<Base
+  title="Blog AKKO · Souveraineté, architecture et IA gouvernée"
+  description="Retours d'ingénierie, choix d'architecture et pédagogie sur la gouvernance des données et de l'IA, par l'équipe qui construit AKKO. Des articles signés, datés, sourcés."
+  current="blog"
+>
+  <div class="col">
+    <div class="bhead">
+      <h1>Ce que nous apprenons en construisant AKKO.</h1>
+      <p>
+        Retours d'ingénierie, choix d'architecture et pédagogie sur la gouvernance des données
+        et de l'IA. Des articles signés, datés, sourcés. Rien sans fait vérifiable.
+      </p>
+      <a class="rss" href="/rss.xml">S'abonner au flux RSS ↗</a>
+    </div>
+
+    {posts.map((p) => (
+      <article class="entry">
+        <div class="meta">
+          <span class="cat" style={`color:${catColors[p.data.category]}`}>{p.data.category}</span>
+          <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmt(p.data.date)}</time>
+          <span>{p.data.minutes} min</span>
+        </div>
+        <div>
+          <h2><a href={`/blog/${p.id}/`}>{p.data.title}</a></h2>
+          <p>{p.data.description}</p>
+          <p class="by">{p.data.author}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</Base>
+
+<style>
+.col{max-width:880px;margin:0 auto;padding:0 32px}
+.bhead{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(28px,3.6vw,40px);font-weight:630;letter-spacing:-.02em}
+.bhead p{margin-top:16px;color:var(--muted);max-width:38em}
+.bhead .rss{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:18px;display:inline-block}
+.bhead .rss:hover{color:var(--ink)}
+.entry{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:34px 0;border-bottom:1px solid var(--line)}
+.entry .meta{font-family:var(--mono);font-size:12px;color:var(--faint);line-height:1.9}
+.entry .meta .cat,.entry .meta time,.entry .meta span{display:block}
+.entry h2{font-size:21px;font-weight:600;line-height:1.35;letter-spacing:-.01em;max-width:none}
+.entry h2 a:hover{color:var(--cyan)}
+.entry p{margin-top:10px;color:var(--muted);max-width:40em}
+.entry .by{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:12px}
+@media(max-width:700px){.entry{grid-template-columns:1fr;gap:8px}}
+</style>

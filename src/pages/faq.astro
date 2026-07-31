@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+
+const faqs = [
+  {
+    q: 'AKKO fonctionne-t-il hors-ligne ?',
+    a: "Oui. L'installation embarque images et dépendances ; aucun appel externe n'est requis, ni à l'installation ni à l'usage.",
+  },
+  {
+    q: "Où tournent les modèles d'IA ?",
+    a: "Sur votre infrastructure. Aucun prompt ni document ne part vers un service tiers ; les données sensibles sont masquées avant tout échange avec un modèle.",
+  },
+  {
+    q: "Qu'est-ce que l'IA gouvernée ?",
+    a: "Une IA dont chaque réponse respecte les droits d'accès de la personne qui pose la question : mêmes règles que la BI ou les notebooks, appliquées au moteur de requête.",
+  },
+  {
+    q: "Sur quoi AKKO s'installe-t-il ?",
+    a: "Tout cluster Kubernetes conforme, on-premises ou cloud de votre choix, par une commande Helm.",
+  },
+  {
+    q: 'Suis-je réversible ?',
+    a: "Oui. Tables au format ouvert Apache Iceberg, SQL standard, exports : vos données restent lisibles sans AKKO.",
+  },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Base
+  title="Questions fréquentes · AKKO"
+  description="Les questions les plus fréquentes sur AKKO : fonctionnement hors-ligne, exécution des modèles d'IA, IA gouvernée, prérequis d'installation, réversibilité."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+
+  <div class="wrap crumbs"><a href="/">Accueil</a> / FAQ</div>
+
+  <div class="prose">
+    <h1>Questions fréquentes.</h1>
+    <dl>
+      {faqs.map((f) => (
+        <>
+          <dt>{f.q}</dt>
+          <dd>{f.a}</dd>
+        </>
+      ))}
+    </dl>
+    <p class="foot">
+      Une question qui ne figure pas ici ?
+      <a href="mailto:contact@akko-ai.com">contact@akko-ai.com</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+.prose{max-width:720px;margin:0 auto;padding:44px 32px 90px}
+h1{font-size:clamp(28px,3.6vw,42px);font-weight:630;letter-spacing:-.02em}
+dl{margin-top:28px}
+dt{font-weight:590;padding-top:24px;font-size:17px}
+dd{color:var(--muted);margin-top:8px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.foot{margin-top:28px;color:var(--faint);font-size:14.5px}
+.foot a{color:var(--cyan)}
+</style>

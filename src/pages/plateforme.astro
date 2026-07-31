@@ -1,0 +1,160 @@
+---
+import Base from '../layouts/Base.astro';
+
+const layers = [
+  {
+    tick: 'var(--cyan)',
+    name: 'Stockage et lakehouse',
+    tech: 'S3 · Apache Iceberg',
+    body: "Un stockage objet compatible S3 et un lakehouse au format ouvert Apache Iceberg. Vos tables restent lisibles par n'importe quel moteur, aujourd'hui et demain.",
+    cap: 'Capture réelle : explorateur du lakehouse',
+  },
+  {
+    tick: 'var(--violet)',
+    name: 'Fédération et calcul',
+    tech: 'Trino · Spark · Airflow',
+    body: "Un moteur SQL unique interroge toutes vos sources sans déplacer la donnée. Le calcul distribué et l'orchestration complètent la chaîne, sous la même identité.",
+    cap: 'Capture réelle : requête fédérée multi-sources',
+  },
+  {
+    tick: 'var(--amber)',
+    name: 'Catalogue et gouvernance',
+    tech: 'OpenMetadata · OPA',
+    body: "Un catalogue central avec lignage, et un contrôle d'accès appliqué au moteur : masquage de colonnes et filtrage de lignes par utilisateur, pour chaque outil.",
+    cap: 'Capture réelle : la même table vue par deux rôles',
+  },
+  {
+    tick: 'var(--green)',
+    name: 'Restitution et lab',
+    tech: 'Superset · notebooks polyglottes',
+    body: "BI, notebooks (Python, R, Julia, Scala) et applications data, sous le même contrôle d'accès que le reste de la plateforme.",
+    cap: 'Capture réelle : tableau de bord BI',
+  },
+  {
+    tick: 'linear-gradient(90deg,var(--violet),var(--cyan))',
+    name: 'IA gouvernée',
+    tech: 'ADEN · NORA · modèles on-premises',
+    body: "ADEN traduit une question métier en SQL gouverné et l'exécute sous l'identité de l'utilisateur. NORA profile et enrichit le catalogue. Les modèles tournent sur votre infrastructure, avec masquage des données sensibles dans les échanges.",
+    cap: "Capture réelle : parcours d'une question ADEN",
+  },
+  {
+    tick: 'var(--faint)',
+    name: 'Supervision',
+    tech: 'métriques · journaux · audit',
+    body: 'Métriques, journaux et audit de bout en bout, exportables vers votre SIEM.',
+    cap: 'Capture réelle : supervision de la plateforme',
+  },
+];
+
+const crumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://akko-ai.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Plateforme', item: 'https://akko-ai.com/plateforme/' },
+  ],
+};
+---
+<Base
+  title="La plateforme AKKO : architecture data et IA souveraine sur Kubernetes"
+  description="Une plateforme data souveraine est une plateforme que votre organisation héberge et gouverne elle-même. AKKO intègre 54 briques en une seule plateforme Kubernetes : lakehouse Iceberg, fédération Trino, catalogue avec lignage, contrôle d'accès OPA, IA gouvernée."
+  current="plateforme"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(crumbs)} />
+
+  <div class="wrap crumbs"><a href="/">Accueil</a> / Plateforme</div>
+
+  <section class="intro">
+    <div class="wrap">
+      <h1>Architecture d'une plateforme data et IA souveraine.</h1>
+      <p class="def">
+        <strong>Une plateforme data souveraine est une plateforme que votre organisation héberge
+        et gouverne elle-même</strong> : les données, les traitements, les modèles d'IA et les
+        clés restent dans votre infrastructure. AKKO intègre 54 briques en une seule plateforme
+        cohérente, déployée par une commande Helm sur tout cluster Kubernetes, y compris
+        hors-ligne.
+      </p>
+    </div>
+  </section>
+
+  <section class="layers">
+    <div class="wrap">
+      {layers.map((l) => (
+        <article class="layer">
+          <div class="lname">
+            <div class="tick" style={`background:${l.tick}`}></div>
+            <h2>{l.name}</h2>
+            <p class="tech">{l.tech}</p>
+          </div>
+          <p>{l.body}</p>
+          <div class="capture"><span>{l.cap}</span></div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="lego">
+    <div class="wrap">
+      <h2>Un assemblage, pas un monolithe.</h2>
+      <p class="body">
+        Chaque couche est une brique remplaçable, déclarée dans la configuration. Vous gardez vos
+        choix d'infrastructure ; AKKO fournit l'assemblage, l'identité unique (SSO) et la
+        gouvernance transverse.
+      </p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <h2>Questions fréquentes</h2>
+      <dl>
+        <dt>AKKO fonctionne-t-il hors-ligne ?</dt>
+        <dd>Oui. L'installation embarque images et dépendances ; aucun appel externe n'est requis, ni à l'installation ni à l'usage.</dd>
+        <dt>Quel matériel faut-il ?</dt>
+        <dd>Tout cluster Kubernetes conforme, on-premises ou cloud de votre choix. Les modèles d'IA fonctionnent dès des configurations CPU ; le GPU améliore la latence.</dd>
+        <dt>Combien de temps pour déployer ?</dt>
+        <dd>Une commande Helm installe la plateforme complète. Le raccordement à votre annuaire et à vos sources se fait ensuite depuis l'interface.</dd>
+      </dl>
+      <a class="more" href="/faq/">Toutes les questions →</a>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Parlons de votre plateforme souveraine.</h2>
+      <p>Une démo sur votre cas d'usage, ou un échange technique.</p>
+      <a class="btn" href="mailto:contact@akko-ai.com">Nous contacter</a>
+      <a class="btn ghost" href="https://docs.akko-ai.com/" style="margin-left:12px">Lire la documentation</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.intro{padding:44px 0 64px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(30px,3.8vw,44px);font-weight:630;letter-spacing:-.02em;line-height:1.15;max-width:20em}
+.def{margin-top:26px;font-size:18.5px;color:var(--muted);max-width:44em}
+.def strong{color:var(--ink);font-weight:560}
+.layers{padding:24px 0 40px}
+.layer{display:grid;grid-template-columns:220px 1fr 1fr;gap:40px;padding:44px 0;
+  border-bottom:1px solid var(--line);align-items:start}
+.layer:last-child{border-bottom:none}
+.lname{position:sticky;top:88px}
+.lname .tick{width:26px;height:3px;border-radius:2px;margin-bottom:14px}
+.lname h2{font-size:19px;font-weight:610;line-height:1.3;max-width:none}
+.lname .tech{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:8px;letter-spacing:.04em}
+.layer > p{color:var(--muted);max-width:34em}
+.layer .capture{aspect-ratio:16/10}
+.layer .capture span{font-size:11.5px}
+.lego{border-block:1px solid var(--line);padding:80px 0;background:
+  radial-gradient(50% 90% at 50% 0%,rgba(77,212,229,.05),transparent 70%)}
+.faq{padding:80px 0}
+.faq h2{font-size:clamp(22px,2.6vw,28px)}
+.faq dl{margin-top:28px;max-width:46em}
+.faq dt{font-weight:580;padding-top:22px}
+.faq dd{color:var(--muted);margin-top:8px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.faq .more{font-family:var(--mono);font-size:13px;color:var(--cyan);display:inline-block;margin-top:20px}
+@media(max-width:900px){
+  .layer{grid-template-columns:1fr}
+  .lname{position:static}
+}
+</style>

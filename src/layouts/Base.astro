@@ -1,0 +1,117 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  current?: 'plateforme' | 'blog' | 'qui-sommes-nous' | 'solutions';
+  ogType?: string;
+}
+const { title, description, current, ogType = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://akko-ai.com/#org',
+      name: 'AKKO',
+      url: 'https://akko-ai.com/',
+      logo: 'https://akko-ai.com/favicon.svg',
+      description:
+        "AKKO est une entreprise française qui édite une plateforme data et IA souveraine, auto-hébergée sur Kubernetes.",
+      foundingLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressCountry: 'FR' } },
+      sameAs: ['https://github.com/AKKO-p', 'https://x.com/akkoplatform'],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': 'https://akko-ai.com/#software',
+      name: 'AKKO',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Kubernetes',
+      url: 'https://akko-ai.com/',
+      publisher: { '@id': 'https://akko-ai.com/#org' },
+      description:
+        "Plateforme data et IA souveraine : 54 briques intégrées (lakehouse Iceberg, requêtage fédéré, BI, notebooks, orchestration, IA gouvernée avec contrôle d'accès), déployable hors-ligne sur votre infrastructure Kubernetes.",
+      inLanguage: ['fr', 'en'],
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Blog AKKO" href="/rss.xml" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content="https://akko-ai.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+  <slot name="head" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/">AKKO</a>
+      <nav aria-label="principale">
+        <a href="/plateforme/" aria-current={current === 'plateforme' ? 'page' : undefined}>Plateforme</a>
+        <a href="/solutions/" aria-current={current === 'solutions' ? 'page' : undefined}>Solutions</a>
+        <a href="/blog/" aria-current={current === 'blog' ? 'page' : undefined}>Blog</a>
+        <a href="/qui-sommes-nous/" aria-current={current === 'qui-sommes-nous' ? 'page' : undefined}>Qui sommes-nous</a>
+      </nav>
+      <a class="btn" href="mailto:contact@akko-ai.com">Nous contacter</a>
+      <span class="lang">FR · EN</span>
+    </div>
+  </header>
+
+  <main><slot /></main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="fgrid">
+        <div>
+          <p class="brand" style="color:var(--ink)">AKKO</p>
+          <p style="margin-top:12px;max-width:26em">
+            La plateforme data et IA souveraine, auto-hébergée sur Kubernetes. Éditée en France.
+          </p>
+        </div>
+        <div>
+          <h4>Produit</h4>
+          <ul>
+            <li><a href="/plateforme/">Plateforme</a></li>
+            <li><a href="/solutions/">Solutions</a></li>
+            <li><a href="https://docs.akko-ai.com/">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="https://github.com/AKKO-p">GitHub</a></li>
+            <li><a href="/rss.xml">Flux RSS</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="/qui-sommes-nous/">Qui sommes-nous</a></li>
+            <li><a href="mailto:contact@akko-ai.com">Nous contacter</a></li>
+            <li><a href="/mentions-legales/">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal"><span>© 2026 AKKO. Entreprise française.</span><span>FR · EN</span></div>
+    </div>
+  </footer>
+</body>
+</html>

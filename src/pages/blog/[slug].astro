@@ -1,0 +1,102 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const others = posts.filter((p) => p.id !== post.id).slice(0, 2);
+
+const catColors: Record<string, string> = {
+  'Souveraineté': 'var(--cyan)',
+  'Architecture': 'var(--amber)',
+  'Gouvernance et IA': 'var(--violet)',
+  'Actualités AKKO': 'var(--green)',
+};
+const fmt = (d: Date) =>
+  d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString().slice(0, 10),
+  author: { '@type': 'Organization', name: post.data.author },
+  publisher: { '@id': 'https://akko-ai.com/#org' },
+  mainEntityOfPage: `https://akko-ai.com/blog/${post.id}/`,
+  inLanguage: 'fr',
+};
+---
+<Base
+  title={`${post.data.title} · Blog AKKO`}
+  description={post.data.description}
+  current="blog"
+  ogType="article"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+
+  <article class="art">
+    <p class="crumbs" style="padding:0;margin-bottom:34px">
+      <a href="/">Accueil</a> / <a href="/blog/">Blog</a> / {post.data.category}
+    </p>
+    <p class="cat" style={`color:${catColors[post.data.category]}`}>{post.data.category}</p>
+    <h1>{post.data.title}</h1>
+    <p class="byline">
+      <span>{post.data.author}</span>
+      <time datetime={post.data.date.toISOString().slice(0, 10)}>{fmt(post.data.date)}</time>
+      <span>{post.data.minutes} min de lecture</span>
+    </p>
+    <div class="content"><Content /></div>
+  </article>
+
+  {others.length > 0 && (
+    <aside class="next">
+      <h2>À lire ensuite</h2>
+      {others.map((p) => (
+        <a href={`/blog/${p.id}/`}>
+          <span class="t">{p.data.title}</span>
+          <span class="m">{p.data.category} · {p.data.minutes} min</span>
+        </a>
+      ))}
+    </aside>
+  )}
+</Base>
+
+<style>
+.art{max-width:720px;margin:0 auto;padding:64px 32px 80px;font-size:16.5px;line-height:1.75}
+.cat{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(28px,3.8vw,40px);font-weight:640;letter-spacing:-.02em;line-height:1.18;margin:16px 0 22px}
+.byline{display:flex;gap:18px;font-family:var(--mono);font-size:12.5px;color:var(--faint);
+  padding-bottom:30px;border-bottom:1px solid var(--line);margin-bottom:38px}
+.content :global(p){margin:22px 0;color:var(--muted)}
+.content :global(p:first-child){font-size:19px;color:var(--ink)}
+.content :global(strong){color:var(--ink);font-weight:600}
+.content :global(h2){font-size:23px;font-weight:620;letter-spacing:-.012em;color:var(--ink);
+  margin:44px 0 6px;max-width:none}
+.content :global(ul){margin:22px 0;padding-left:0;list-style:none}
+.content :global(ul li){color:var(--muted);padding:14px 0 14px 26px;border-bottom:1px solid var(--line);position:relative}
+.content :global(ul li)::before{content:"";position:absolute;left:0;top:24px;width:10px;height:2px;background:var(--cyan)}
+.content :global(blockquote){border:1px solid var(--line);border-left:3px solid var(--amber);
+  border-radius:0 10px 10px 0;background:var(--surface);padding:4px 22px;margin:30px 0;font-size:15.5px}
+.content :global(ol){padding-left:20px;font-size:14px;color:var(--faint);margin:14px 0}
+.content :global(ol li){margin:6px 0}
+.content :global(a){color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.content :global(a:hover){color:var(--ink)}
+.next{max-width:720px;margin:0 auto;padding:0 32px 90px}
+.next h2{font-size:15px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);font-weight:560;margin-bottom:18px}
+.next a{display:block;border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:12px 0;
+  background:var(--surface)}
+.next a:hover{border-color:rgba(255,255,255,.22)}
+.next .t{font-weight:580;display:block}
+.next .m{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:6px;display:block}
+</style>

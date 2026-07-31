@@ -1,0 +1,65 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  name: string;
+  h1: string;
+  chapeau: string;
+  args: string[];
+}
+const { title, description, name, h1, chapeau, args } = Astro.props;
+
+const crumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://akko-ai.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://akko-ai.com/solutions/' },
+    { '@type': 'ListItem', position: 3, name, item: new URL(Astro.url.pathname, Astro.site).href },
+  ],
+};
+---
+<Base title={title} description={description} current="solutions">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(crumbs)} />
+
+  <div class="wrap crumbs"><a href="/">Accueil</a> / <a href="/solutions/">Solutions</a> / {name}</div>
+
+  <section class="intro">
+    <div class="wrap">
+      <h1>{h1}</h1>
+      <p class="def">{chapeau}</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="wrap">
+      <h2 class="small">Ce que cela signifie concrètement</h2>
+      <ul class="args">
+        {args.map((a) => <li>{a}</li>)}
+      </ul>
+      <slot />
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Parlons de votre plateforme souveraine.</h2>
+      <p>Une démo sur votre cas d'usage, ou un échange technique.</p>
+      <a class="btn" href="mailto:contact@akko-ai.com">Nous contacter</a>
+      <a class="btn ghost" href="/plateforme/" style="margin-left:12px">Voir l'architecture</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.intro{padding:44px 0 24px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(28px,3.6vw,42px);font-weight:630;letter-spacing:-.02em;line-height:1.16;max-width:22em}
+.def{margin:26px 0 44px;font-size:18px;color:var(--muted);max-width:44em}
+.small{font-size:15px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);font-weight:560;max-width:none}
+.args{margin-top:10px;padding-left:0;list-style:none;max-width:46em}
+.args li{color:var(--muted);padding:16px 0 16px 26px;border-bottom:1px solid var(--line);position:relative}
+.args li::before{content:"";position:absolute;left:0;top:27px;width:10px;height:2px;background:var(--cyan)}
+</style>

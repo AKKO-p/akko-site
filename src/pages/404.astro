@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Page introuvable · AKKO" description="Cette page n'existe pas ou a été déplacée.">
+  <section class="nf">
+    <div class="wrap">
+      <p class="code">404</p>
+      <h1>Cette page n'existe pas.</h1>
+      <p class="body">Elle a peut-être été déplacée lors de la refonte du site.</p>
+      <div style="margin-top:30px">
+        <a class="btn" href="/">Retour à l'accueil</a>
+        <a class="btn ghost" href="/blog/" style="margin-left:12px">Voir le blog</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.nf{padding:140px 0 160px;text-align:center}
+.code{font-family:var(--mono);font-size:13px;letter-spacing:.3em;color:var(--faint)}
+h1{font-size:clamp(28px,3.6vw,42px);font-weight:630;margin-top:14px}
+.nf .body{margin:14px auto 0}
+</style>

@@ -1,0 +1,67 @@
+/* AKKO site v2 — tokens DA (source : specs/site-astro-refonte-2026-07/mockups) */
+:root{
+  --bg:#080a12; --surface:rgba(255,255,255,.028); --line:rgba(255,255,255,.09);
+  --ink:#e9ebf3; --muted:#a2a9bc; --faint:#6e7590;
+  --violet:#7c5cff; --cyan:#4dd4e5; --amber:#ffb454; --green:#41d693;
+  --sans:"Geist","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono","JetBrains Mono",ui-monospace,"SF Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:10;background:rgba(8,10,18,.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:64px}
+.brand{font-weight:650;letter-spacing:.14em;font-size:15px}
+.nav nav{display:flex;gap:26px;margin-left:auto;font-size:14.5px;color:var(--muted)}
+.nav nav a:hover,.nav nav a[aria-current]{color:var(--ink)}
+.btn{display:inline-block;padding:9px 20px;border-radius:8px;font-size:14.5px;font-weight:560;
+  background:var(--violet);color:#fff;border:1px solid transparent;transition:filter .15s}
+.btn:hover{filter:brightness(1.12)}
+.btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.btn.ghost:hover{color:var(--ink);border-color:rgba(255,255,255,.22)}
+.lang{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-left:6px}
+.crumbs{font-family:var(--mono);font-size:12px;color:var(--faint);padding:26px 0 0}
+.crumbs a:hover{color:var(--ink)}
+
+/* sections communes */
+section{padding:88px 0}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:22px;height:2px;border-radius:2px;background:currentColor}
+h2{font-size:clamp(25px,3vw,33px);font-weight:620;letter-spacing:-.015em;line-height:1.22;max-width:22em}
+.body{margin-top:18px;color:var(--muted);max-width:38em}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.capture{border:1px solid var(--line);border-radius:12px;background:
+  linear-gradient(var(--surface),var(--surface)),
+  repeating-linear-gradient(0deg,transparent 0 23px,rgba(255,255,255,.025) 23px 24px),
+  repeating-linear-gradient(90deg,transparent 0 23px,rgba(255,255,255,.025) 23px 24px);
+  aspect-ratio:16/10;display:flex;align-items:end;padding:16px}
+.capture span{font-family:var(--mono);font-size:12px;color:var(--faint)}
+.capture img{width:100%;height:100%;object-fit:cover;border-radius:11px}
+
+/* CTA final */
+.final{border-top:1px solid var(--line);text-align:center;padding:110px 0}
+.final h2{margin:0 auto}
+.final p{margin:16px auto 34px;color:var(--muted)}
+
+/* footer */
+.site-footer{border-top:1px solid var(--line);padding:48px 0 60px;color:var(--faint);font-size:14px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.site-footer h4{font-size:13px;color:var(--muted);font-weight:590;margin-bottom:14px}
+.site-footer li{list-style:none;margin:8px 0}
+.site-footer a:hover{color:var(--ink)}
+.legal{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;
+  justify-content:space-between;font-family:var(--mono);font-size:12px}
+
+@media(max-width:900px){
+  .split,.fgrid{grid-template-columns:1fr}
+  .nav nav{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

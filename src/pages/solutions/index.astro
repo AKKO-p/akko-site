@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const sectors = [
+  {
+    href: '/solutions/secteur-public/',
+    tick: 'var(--cyan)',
+    name: 'Secteur public',
+    body: "Opérer entièrement dans votre périmètre, y compris sans accès internet. Aucune licence par utilisateur, aucun appel externe.",
+  },
+  {
+    href: '/solutions/banque-assurance/',
+    tick: 'var(--violet)',
+    name: 'Banque et assurance',
+    body: "Un contrôle d'accès appliqué au moteur de requête lui-même, un reçu d'audit pour chaque question posée à l'IA.",
+  },
+  {
+    href: '/solutions/sante/',
+    tick: 'var(--green)',
+    name: 'Santé',
+    body: "Hébergement maîtrisé, traçabilité complète, modèles d'IA exécutés sur place, masquage des données nominatives.",
+  },
+];
+---
+<Base
+  title="Solutions AKKO · Secteur public, banque et assurance, santé"
+  description="AKKO s'adresse aux organisations qui ne peuvent pas, ou ne veulent pas, confier leurs données à un cloud tiers : secteur public, banque et assurance, santé. Déployable hors-ligne, auditable, réversible."
+  current="solutions"
+>
+  <div class="wrap crumbs"><a href="/">Accueil</a> / Solutions</div>
+
+  <section class="intro">
+    <div class="wrap">
+      <h1>Une plateforme, trois contextes régulés.</h1>
+      <p class="def">
+        AKKO s'adresse aux organisations qui ne peuvent pas, ou ne veulent pas, confier leurs
+        données à un cloud tiers. Trois contextes reviennent : le secteur public, la banque et
+        l'assurance, la santé. La plateforme est la même ; la configuration, le niveau
+        d'isolement et les politiques d'accès s'adaptent.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-top:48px">
+    <div class="wrap">
+      <div class="cards">
+        {sectors.map((s) => (
+          <a class="card" href={s.href}>
+            <div class="tick" style={`background:${s.tick}`}></div>
+            <h2>{s.name}</h2>
+            <p>{s.body}</p>
+            <span class="go">Découvrir →</span>
+          </a>
+        ))}
+      </div>
+      <p class="band">Déployable hors-ligne. Auditable. Réversible (formats ouverts).</p>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Parlons de votre plateforme souveraine.</h2>
+      <p>Une démo sur votre cas d'usage, ou un échange technique.</p>
+      <a class="btn" href="mailto:contact@akko-ai.com">Nous contacter</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.intro{padding:44px 0 24px}
+h1{font-size:clamp(30px,3.8vw,44px);font-weight:630;letter-spacing:-.02em;line-height:1.15}
+.def{margin-top:26px;font-size:18px;color:var(--muted);max-width:44em}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid var(--line);border-radius:12px;padding:28px;background:var(--surface);
+  display:flex;flex-direction:column;gap:12px;transition:border-color .15s}
+.card:hover{border-color:rgba(255,255,255,.22)}
+.card .tick{width:26px;height:3px;border-radius:2px}
+.card h2{font-size:19px;font-weight:610;max-width:none}
+.card p{color:var(--muted);font-size:15px}
+.card .go{font-family:var(--mono);font-size:12.5px;color:var(--cyan);margin-top:auto;padding-top:8px}
+.band{margin-top:36px;font-family:var(--mono);font-size:13px;color:var(--faint);
+  border-top:1px solid var(--line);padding-top:22px}
+@media(max-width:900px){.cards{grid-template-columns:1fr}}
+</style>

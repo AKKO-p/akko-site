@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Qui sommes-nous · AKKO, entreprise française"
+  description="AKKO est une entreprise française. Nous construisons une plateforme data et IA que les organisations régulées peuvent héberger et gouverner elles-mêmes."
+  current="qui-sommes-nous"
+>
+  <div class="wrap crumbs"><a href="/">Accueil</a> / Qui sommes-nous</div>
+
+  <article class="prose">
+    <h1>Une entreprise française, une conviction simple.</h1>
+    <p class="lead">
+      AKKO est une entreprise française. Nous construisons une plateforme data et IA que les
+      organisations régulées peuvent héberger et gouverner elles-mêmes.
+    </p>
+
+    <h2>La conviction</h2>
+    <p>
+      Les données d'une organisation sont un actif de long terme. Les confier à des services
+      externes crée une dépendance : tarifs, formats, localisation, conditions d'accès. Nous
+      pensons qu'une organisation doit pouvoir opérer toute sa chaîne data et IA dans son propre
+      périmètre, avec des formats ouverts qui garantissent la réversibilité.
+    </p>
+
+    <h2>La démarche</h2>
+    <p>
+      Nous assemblons des briques éprouvées de l'écosystème data (Kubernetes, Trino, Iceberg,
+      OpenMetadata, OPA) et nous développons ce qui n'existe pas : l'intégration, la gouvernance
+      transverse et l'IA gouvernée (ADEN, NORA). Le tout se déploie en une commande et s'opère
+      sans dépendance externe.
+    </p>
+
+    <h2>Nous contacter</h2>
+    <p>
+      Une démo sur votre cas d'usage, un échange technique ou une question :
+      <a href="mailto:contact@akko-ai.com">contact@akko-ai.com</a>. Réponse sous 48 h ouvrées.
+    </p>
+  </article>
+</Base>
+
+<style>
+.prose{max-width:720px;margin:0 auto;padding:44px 32px 90px}
+h1{font-size:clamp(28px,3.6vw,42px);font-weight:630;letter-spacing:-.02em;line-height:1.16}
+.lead{margin:24px 0 10px;font-size:18.5px;color:var(--ink)}
+.prose h2{font-size:22px;font-weight:620;margin:44px 0 4px;max-width:none}
+.prose p{margin:16px 0;color:var(--muted)}
+.prose a{color:var(--cyan)}
+</style>

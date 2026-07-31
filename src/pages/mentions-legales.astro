@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Mentions légales · AKKO"
+  description="Mentions légales du site akko-ai.com : éditeur, hébergeur, données personnelles."
+>
+  <div class="wrap crumbs"><a href="/">Accueil</a> / Mentions légales</div>
+
+  <article class="prose">
+    <h1>Mentions légales.</h1>
+
+    <h2>Éditeur</h2>
+    <p>
+      Ce site est édité par AKKO. <em>(Raison sociale, forme juridique, SIREN et adresse du
+      siège : à compléter avant la mise en production.)</em>
+      Contact : <a href="mailto:contact@akko-ai.com">contact@akko-ai.com</a>.
+    </p>
+
+    <h2>Hébergement</h2>
+    <p>
+      Le site est hébergé par netcup GmbH, Daimlerstraße 25, 76185 Karlsruhe, Allemagne.
+    </p>
+
+    <h2>Données personnelles</h2>
+    <p>
+      Ce site ne dépose aucun cookie de suivi et ne collecte aucune donnée personnelle. Il ne
+      contient aucun formulaire : le contact se fait par courrier électronique, à votre
+      initiative.
+    </p>
+  </article>
+</Base>
+
+<style>
+.prose{max-width:720px;margin:0 auto;padding:44px 32px 90px}
+h1{font-size:clamp(26px,3.2vw,38px);font-weight:630;letter-spacing:-.02em}
+.prose h2{font-size:20px;font-weight:620;margin:38px 0 4px;max-width:none}
+.prose p{margin:14px 0;color:var(--muted)}
+.prose a{color:var(--cyan)}
+.prose em{color:var(--faint)}
+</style>
