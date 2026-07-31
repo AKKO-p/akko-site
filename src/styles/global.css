@@ -3,8 +3,8 @@
   --bg:#f5f6f8; --surface:#ffffff; --line:#dfe3ea;
   --ink:#182338; --muted:#4d5a70; --faint:#7d8798;
   --violet:#4f46e5; --cyan:#0e7490; --amber:#b45309; --green:#047857;
-  --sans:"Geist","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"Geist Mono","JetBrains Mono",ui-monospace,"SF Mono",monospace;
+  --sans:"Geist Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SF Mono",monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -21,9 +21,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .brand{font-weight:650;letter-spacing:.14em;font-size:15px}
 .nav nav{display:flex;gap:26px;margin-left:auto;font-size:14.5px;color:var(--muted)}
 .nav nav a:hover,.nav nav a[aria-current]{color:var(--ink)}
-.btn{display:inline-block;padding:9px 20px;border-radius:8px;font-size:14.5px;font-weight:560;
-  background:var(--violet);color:#fff;border:1px solid transparent;transition:filter .15s}
-.btn:hover{filter:brightness(1.12)}
+.btn{display:inline-block;padding:9px 20px;border-radius:9px;font-size:14.5px;font-weight:560;
+  background:var(--violet);color:#fff;border:1px solid transparent;transition:filter .15s;
+  box-shadow:0 1px 2px rgba(24,35,56,.2),inset 0 1px 0 rgba(255,255,255,.14)}
+.btn:hover{filter:brightness(1.1)}
+::selection{background:rgba(79,70,229,.16)}
 .btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
 .btn.ghost:hover{color:var(--ink);border-color:rgba(24,35,56,.35)}
 .lang{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-left:6px}

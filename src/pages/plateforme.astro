@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Shot from '../components/Shot.astro';
 
 const layers = [
   {
@@ -14,35 +15,40 @@ const layers = [
     name: 'Fédération et calcul',
     tech: 'Trino · Spark · Airflow',
     body: "Un moteur SQL unique interroge toutes vos sources sans déplacer la donnée. Le calcul distribué et l'orchestration complètent la chaîne, sous la même identité.",
-    cap: 'Capture réelle : requête fédérée multi-sources',
+    shot: 'compute-spark',
+    cap: 'Jobs Spark distribués, orchestrés par Airflow',
   },
   {
     tick: 'var(--amber)',
     name: 'Catalogue et gouvernance',
     tech: 'OpenMetadata · OPA',
     body: "Un catalogue central avec lignage, et un contrôle d'accès appliqué au moteur : masquage de colonnes et filtrage de lignes par utilisateur, pour chaque outil.",
-    cap: 'Capture réelle : la même table vue par deux rôles',
+    shot: 'catalog-openmetadata',
+    cap: 'Le catalogue central : tables, tags, lignage',
   },
   {
     tick: 'var(--green)',
     name: 'Restitution et lab',
     tech: 'Superset · notebooks polyglottes',
     body: "BI, notebooks (Python, R, Julia, Scala) et applications data, sous le même contrôle d'accès que le reste de la plateforme.",
-    cap: 'Capture réelle : tableau de bord BI',
+    shot: 'lab-jupyter-ai',
+    cap: 'Notebooks polyglottes sous contrôle d accès',
   },
   {
     tick: 'linear-gradient(90deg,var(--violet),var(--cyan))',
     name: 'IA gouvernée',
     tech: 'ADEN · NORA · modèles on-premises',
     body: "ADEN traduit une question métier en SQL gouverné et l'exécute sous l'identité de l'utilisateur. NORA profile et enrichit le catalogue. Les modèles tournent sur votre infrastructure, avec masquage des données sensibles dans les échanges.",
-    cap: "Capture réelle : parcours d'une question ADEN",
+    shot: 'aden-steps',
+    cap: 'Le parcours gouverné d une question ADEN',
   },
   {
     tick: 'var(--faint)',
     name: 'Supervision',
     tech: 'métriques · journaux · audit',
     body: 'Métriques, journaux et audit de bout en bout, exportables vers votre SIEM.',
-    cap: 'Capture réelle : supervision de la plateforme',
+    shot: 'monitoring-cluster',
+    cap: 'Santé du cluster et des services',
   },
 ];
 
@@ -87,7 +93,11 @@ const crumbs = {
             <p class="tech">{l.tech}</p>
           </div>
           <p>{l.body}</p>
-          <div class="capture"><span>{l.cap}</span></div>
+          {l.shot ? (
+            <figure class="lshot"><Shot src={l.shot} alt={l.cap} /><figcaption>{l.cap}</figcaption></figure>
+          ) : (
+            <div class="capture"><span>{l.cap}</span></div>
+          )}
         </article>
       ))}
     </div>
@@ -145,6 +155,8 @@ h1{font-size:clamp(30px,3.8vw,44px);font-weight:630;letter-spacing:-.02em;line-h
 .layer > p{color:var(--muted);max-width:34em}
 .layer .capture{aspect-ratio:16/10}
 .layer .capture span{font-size:11.5px}
+.lshot{margin:0}
+.lshot figcaption{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:9px}
 .lego{border-block:1px solid var(--line);padding:80px 0;background:
   radial-gradient(50% 90% at 50% 0%,rgba(14,116,144,.04),transparent 70%)}
 .faq{padding:80px 0}

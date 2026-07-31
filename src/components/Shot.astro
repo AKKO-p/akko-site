@@ -1,0 +1,31 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  eager?: boolean;
+  h?: number;
+  url?: string;
+}
+const { src, alt, eager = false, h = 957, url = 'demo.akko-ai.com' } = Astro.props;
+---
+<figure class="shot">
+  <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>{url}</span></div>
+  <img
+    src={`/screenshots/${src}.jpg`}
+    alt={alt}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    width="1800"
+    height={h}
+  />
+</figure>
+
+<style>
+.shot{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0d1424;
+  box-shadow:0 1px 2px rgba(24,35,56,.05),0 16px 40px -16px rgba(24,35,56,.22)}
+.bar{display:flex;align-items:center;gap:6px;padding:9px 13px;background:#0b111f;
+  border-bottom:1px solid rgba(255,255,255,.07)}
+.bar i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.13)}
+.bar span{font-family:var(--mono);font-size:10.5px;color:rgba(255,255,255,.35);margin-left:8px}
+.shot img{display:block;width:100%;height:auto}
+</style>
